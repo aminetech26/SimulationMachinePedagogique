@@ -1,0 +1,39 @@
+﻿<Window x:Class="ArchiMind.Window1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Height="400" Width="700"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="True"
+        Background="{x:Null}" ContentRendered="Window_ContentRendered"
+        >
+
+    <materialDesign:Card Background="{DynamicResource MaterialDesignPaper}" 
+                         materialDesign:ElevationAssist.Elevation="Dp5">
+
+        <Grid>
+
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="1,1"
+                                         EndPoint="0,0">
+                    <GradientStop Color="#7CF6FD" Offset="0" />
+                    <GradientStop Color="#317AC7" Offset="0.55" />
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid>
+                <TextBlock Text="ArchiMind" FontFamily="Montserrat" FontWeight="SemiBold" Foreground="White" FontSize="48" Width="412" Height="94" Margin="5 138 283 168" Padding="50 5 0 99"  ></TextBlock>
+                <TextBlock Text="POWERED BY ESI" FontFamily="Open Sans" FontWeight="Thin" Foreground="#43CCF8" FontSize="24" Width="275" Height="48" Margin="40 200 385 152" Padding="15 0 0 161"  ></TextBlock>
+                <TextBlock Text="Copyright © tous droits réservés" FontFamily="M PLUS Code Latin" FontWeight="Thin" Foreground="#FFFFFF" FontSize="15" Width="399" Height="44" Margin="151 344 150 20" TextAlignment="Center" ></TextBlock>
+                
+                <ProgressBar Background="#FFFFFF" Foreground="#7CF6FD" VerticalAlignment="Bottom" x:Name="ProgressBar" Height="12" Width="700" Value="0" IsIndeterminate="True" />
+            </Grid>
+        </Grid>
+
+    </materialDesign:Card>
+
+</Window>
