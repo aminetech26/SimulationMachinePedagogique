@@ -1,0 +1,194 @@
+﻿<Page x:Class="projet.Pages.QuizExo"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projet.Pages"
+      xmlns:Menu="clr-namespace:projet.Utilities"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="1028"
+      Title="QuizExo">
+
+    <Grid Background="White" Width="auto" Height="auto">
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="auto"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="slider" Grid.Column="0" Width="60" Margin="0,0,6,0" >
+            <Grid.Background>
+                <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Offset="0.1"  Color="#81C784" />
+                        <GradientStop Offset="1"   Color="#00E17C"/>
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </Grid.Background>
+
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <ToggleButton Name="menu" Grid.Row="0" Margin="0,10,0,0"
+                          Background="Transparent" BorderBrush="Transparent"
+                          Style="{StaticResource ButtonSimple}"
+                          Checked="menu_Cheked"
+                          Unchecked="menu_Uncheked" Height="40" VerticalAlignment="Top" Grid.RowSpan="2">
+                <ToggleButton.Triggers>
+
+                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+
+                        <BeginStoryboard>
+
+                            <Storyboard x:Name="HideStackPanel">
+
+                                <DoubleAnimation
+                                                Storyboard.TargetName="slider"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="228" To="60"
+                                                Duration="0:0:0.3"/>
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+
+                    </EventTrigger>
+
+                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+
+                        <BeginStoryboard>
+
+                            <Storyboard x:Name="ShowStackPanel">
+
+                                <DoubleAnimation
+                                                Storyboard.TargetName="slider"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="60" To="228"
+                                                Duration="0:0:0.15"/>
+
+                            </Storyboard>
+
+                        </BeginStoryboard>
+
+                    </EventTrigger>
+
+                </ToggleButton.Triggers>
+                <Viewbox Width="36" Height="30" VerticalAlignment="Center"  RenderTransformOrigin="0.54,1.622" Stretch="Fill" >
+
+                    <Path x:Name="menuIcon" 
+                        Fill="#fff"
+                        Data="{DynamicResource MENU_ICON}"                  
+                        VerticalAlignment="Top"
+                    />
+
+                </Viewbox>
+            </ToggleButton>
+
+            <StackPanel Name="navBar" Margin="10,50" Grid.Row="1">
+
+                <Grid Grid.Row="0">
+
+                    <Image Width="50" HorizontalAlignment="Center" Margin="0,-10,0,15"
+                           VerticalAlignment="Top" Source="/Pages/intel.png"/>
+
+                </Grid>
+                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                    <Grid >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz N№ 1" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz1" />
+                        </Grid>
+                        <StackPanel  HorizontalAlignment="Center" 
+                                     VerticalAlignment="Top">
+                            <Border  Height="5"  Width="200"  
+                                     Background="#E0E0E0" Margin="0,-30,0,0" />
+
+                        </StackPanel>
+                    </Grid>
+
+                </Menu:Btn>
+                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                    <Grid>
+                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" Margin="25,0,0,8" VerticalAlignment="Bottom" />
+                        <TextBlock Text="Quiz N№ 2" Style="{StaticResource Text_Style}"  />
+                    </Grid>
+
+                </Menu:Btn>
+
+                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                    <Grid>
+                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                        <TextBlock Text="Quiz N№ 3" Style="{StaticResource Text_Style}" />
+                    </Grid>
+
+                </Menu:Btn>
+
+                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                    <Grid>
+                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                        <TextBlock Text="Quiz N№ 4" Style="{StaticResource Text_Style}"/>
+                    </Grid>
+
+                </Menu:Btn>
+
+                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                    <Grid>
+                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                        <TextBlock Text="Quiz N№ 5" Style="{StaticResource Text_Style}"/>
+                    </Grid>
+
+                </Menu:Btn>
+
+                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                    <Grid>
+                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                        <TextBlock Text="Quiz N№ 6" Style="{StaticResource Text_Style}"/>
+                    </Grid>
+
+                </Menu:Btn>
+
+                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                    <Grid>
+                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                        <TextBlock Text="Quiz N№ 7" Style="{StaticResource Text_Style}"/>
+                    </Grid>
+
+                </Menu:Btn>
+
+                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                    <Grid>
+                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                        <TextBlock Text="Quiz N№ 8" Style="{StaticResource Text_Style}"/>
+                    </Grid>
+
+                </Menu:Btn>
+
+            </StackPanel>
+
+        </Grid>
+        <Grid  Grid.Column="1"  VerticalAlignment="Stretch">
+            <Frame Name="_PageContent"  NavigationUIVisibility="Hidden" />
+        </Grid>
+    </Grid>
+</Page>
