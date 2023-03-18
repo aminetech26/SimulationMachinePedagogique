@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="images\commencer.png" />
+    <None Remove="images\phase a phase.png" />
+    <None Remove="images\recommencer.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\commencer.png" />
+    <Resource Include="images\phase a phase.png" />
+    <Resource Include="images\recommencer.png" />
+  </ItemGroup>
+
+</Project>
