@@ -58,7 +58,7 @@
             <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
                       Padding="20 5" Margin="75 20" Height="40" Width="400" 
                       HorizontalAlignment="Left"
-                      x:Name="Combo">
+                      x:Name="Combo" >
                 <ComboBoxItem>Option 1</ComboBoxItem>
                 <ComboBoxItem>Option 2</ComboBoxItem>
                 <ComboBoxItem>Option 3</ComboBoxItem>

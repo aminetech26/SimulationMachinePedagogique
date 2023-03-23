@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Rv7FsHS95xkxJGIFd/vyvH83Gue6LgPUQ1JZpHT23AmQv0BYnxQFPpSeBmhm9nHN7xcdno3udTVNSGsh1YIKmA==",
+  "dgSpecHash": "VKanLJBN2CFcQUbKKhsTVgs5pkfRQsTN7q5SgrbydxIlxnKuFNS46RMjO9LZpeobiIyUVovgAniwo+6dBFYVTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\moham\\Desktop\\PROJET\\pr3\\projet.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\moham\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
-    "C:\\Users\\moham\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
-    "C:\\Users\\moham\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    "C:\\Users\\Admin\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
   "logs": []
 }

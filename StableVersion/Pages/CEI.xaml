@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       Title="CEI">
 
-    <Grid Background="#E0E0E0" SizeChanged="Grid_SizeChanged">
+
+    <Grid x:Name="ContentContainer" Background="#E0E0E0" SizeChanged="Grid_SizeChanged">
 
         <Grid.ColumnDefinitions>
 
@@ -29,11 +30,7 @@
 
         </Grid.RowDefinitions>
 
-
-        <UserControl x:Name="ContentArea"
-                     Background="#E0E0E0"
-                    HorizontalContentAlignment="Stretch"
-                    VerticalContentAlignment="Stretch" />
+        
 
 
         <!-- Panel 01 -->
@@ -122,7 +119,6 @@
 
         <!-- Panel 04 -->
 
-
         <Button
             x:Name="Button4"
             Grid.Column="1"
@@ -145,7 +141,6 @@
 
         <!-- Panel 05 -->
 
-
         <Button
             x:Name="Button5"
             Grid.Column="2"
@@ -167,7 +162,6 @@
         </Button>
 
         <!-- Panel 06 -->
-
 
         <Button
             x:Name="Button6"
@@ -193,6 +187,7 @@
         </Button>
 
 
-
     </Grid>
+
+
 </Page>
