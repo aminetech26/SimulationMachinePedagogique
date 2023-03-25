@@ -5,22 +5,22 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projet.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="Page2">
 
-    
 
     <Grid Background="#4E719D" SizeChanged="Grid_SizeChanged" >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="150" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="2*" />
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="75*" />
+            <RowDefinition Height="125*" />
+            <RowDefinition Height="125*" />
+            <RowDefinition Height="125*" />
+            <RowDefinition Height="150*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Orientation="Horizontal" >
+        <StackPanel Grid.Row="1" Orientation="Horizontal" x:Name="StackPanel0" >
             <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
                     Click="Go_Back" VerticalAlignment="Center" Margin="20" >
                 <Button.Template>
@@ -34,40 +34,41 @@
 
             <TextBlock Text="Selectionnez l’instruction que vous voulez simulez :" FontSize="27"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="30 0" x:Name="Text1"
+                       Foreground="White" Margin="50 0" x:Name="Text1" TextAlignment="Center"
                        ></TextBlock>
             
         </StackPanel>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" >
+        <StackPanel Grid.Row="2" Orientation="Horizontal" x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center" >
 
-            <StackPanel Margin="20 0 0 0" >
+            <StackPanel Margin="10 0 10 0" >
 
                 <TextBlock Text="Instruction" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Foreground="White" Margin="5"
                        ></TextBlock>
 
-                <ComboBox SelectedIndex="0" 
-                      Padding="20" Margin="15 0 5 0" Height="70" Width="100" 
+                <ComboBox SelectedIndex="0"
+                      Padding="20" Margin="15 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Instruction">
+
                     <ComboBoxItem>Option 1</ComboBoxItem>
-                <ComboBoxItem>Option 2</ComboBoxItem>
-                <ComboBoxItem>Option 3</ComboBoxItem>
+                    <ComboBoxItem>Option 2</ComboBoxItem>
+                    <ComboBoxItem>Option 3</ComboBoxItem>
             </ComboBox>
             </StackPanel>
             
 
-            <StackPanel Margin="20 0 0 0" >
+            <StackPanel Margin="10 0 10 0" >
 
                 <TextBlock Text="Format" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Foreground="White" Margin="5"
                        ></TextBlock>
 
-                <ComboBox SelectedIndex="0" 
-                      Padding="20" Margin="5 0 5 0" Height="70" Width="100" 
+                <ComboBox SelectedIndex="0"
+                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Format">
                     <ComboBoxItem>Option 1</ComboBoxItem>
@@ -77,7 +78,7 @@
             </StackPanel>
 
 
-            <StackPanel Margin="20 0 0 0" >
+            <StackPanel Margin="10 0 10 0" >
 
                 <TextBlock Text="Reg/M" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -85,7 +86,7 @@
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0" 
-                      Padding="20" Margin="5 0 5 0" Height="70" Width="100" 
+                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Reg">
                     <ComboBoxItem>Option 1</ComboBoxItem>
@@ -95,7 +96,7 @@
             </StackPanel>
 
 
-            <StackPanel Margin="20 0 0 0" >
+            <StackPanel Margin="10 0 10 0" >
 
                 <TextBlock Text="Dep" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -103,7 +104,7 @@
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0" 
-                      Padding="20" Margin="5 0 5 0" Height="70" Width="100" 
+                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Dep">
                     <ComboBoxItem>Option 1</ComboBoxItem>
@@ -113,7 +114,7 @@
             </StackPanel>
 
 
-            <StackPanel Margin="20 0 0 0" >
+            <StackPanel Margin="10 0 10 0" >
 
                 <TextBlock Text="Destinataire" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -121,7 +122,7 @@
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0" 
-                      Padding="20" Margin="5 0 5 0" Height="70" Width="100" 
+                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Destinataire">
                     <ComboBoxItem>Option 1</ComboBoxItem>
@@ -130,7 +131,7 @@
                 </ComboBox>
             </StackPanel>
 
-            <StackPanel Margin="20 0 0 0" >
+            <StackPanel Margin="10 0 10 0" >
 
                 <TextBlock Text="Source" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -138,7 +139,7 @@
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0"
-                      Padding="20" Margin="5 0 5 0" Height="70" Width="100" 
+                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Source">
                     <ComboBoxItem>Option 1</ComboBoxItem>
@@ -149,16 +150,92 @@
 
         </StackPanel>
 
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-        <Grid Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <TextBlock Text="Veuillez remplir le contenu des registres :" FontSize="26"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                       HorizontalAlignment="Center" Foreground="White" x:Name="Text2" Margin="7"
+                       ></TextBlock>
 
-            <Button x:Name="Button_simuler" Height="80" Width="305"
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
+
+
+                <StackPanel Orientation="Horizontal" Margin="30 10" >
+                    <TextBlock Text="AX :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
+                               VerticalAlignment="Center" Margin="20" Foreground="White" />
+
+                    
+                    <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
+                             TextAlignment="Center" GotFocus="RemoveHintText" LostFocus="AddHintText"
+                             Text="XXXX" x:Name="TextBox1" TextWrapping="NoWrap" FontSize="23" PreviewTextInput="TextBox_PreviewTextInput"
+                             Style="{StaticResource RoundedTextBox}"
+                             />
+
+                </StackPanel>
+
+
+
+                <StackPanel Orientation="Horizontal" Margin="30 10" >
+                    <TextBlock Text="BX :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
+                               VerticalAlignment="Center" Margin="20" Foreground="White" />
+
+
+                    <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
+                             TextAlignment="Center" GotFocus="TextBox2_GotFocus" LostFocus="TextBox2_LostFocus"
+                             Text="XXXX" x:Name="TextBox2" TextWrapping="NoWrap" FontSize="23" PreviewTextInput="TextBox_PreviewTextInput"
+                             Style="{StaticResource RoundedTextBox}"
+                             />
+
+                </StackPanel>
+                
+                
+                
+                <StackPanel Orientation="Horizontal" Margin="30 10" >
+                    <TextBlock Text="Valeur dep :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
+                               VerticalAlignment="Center" Margin="20" Foreground="White" />
+
+
+                    <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Black"
+                             TextAlignment="Center" x:Name="TextBox3" TextWrapping="NoWrap" FontSize="23"
+                             PreviewTextInput="TextBox_PreviewTextInput"
+                             Style="{StaticResource RoundedTextBox}"
+                             />
+
+                </StackPanel>
+             
+
+            </StackPanel>
+
+
+        </StackPanel>
+
+
+        <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+            <TextBlock Text="Instruction en hexa :" FontSize="25"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" x:Name="Text3" Margin="10"
+                       ></TextBlock>
+
+            <TextBox Background="White" Height="50" Width="200" Padding="7" Foreground="Gray"
+                     TextAlignment="Center" x:Name="Inst_En_Hexa" TextWrapping="NoWrap" 
+                     FontSize="22" PreviewTextInput="TextBox_PreviewTextInput" Margin="5"
+                     Style="{StaticResource RoundedTextBox}"
+                             />
+
+
+
+        </StackPanel>
+
+        <Grid Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+            <Button x:Name="Button_simuler" Height="75" Width="300"
                 Style="{StaticResource RoundedButtonStyle}"
                 Foreground="White"
                 BorderBrush="#4E719D"
-                HorizontalAlignment="right"
-                VerticalAlignment="Bottom"
-                Margin="75 30"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="20"
                 >
                 <Button.Background>
                     <SolidColorBrush Color="#81C784" Opacity="0.6"/>
