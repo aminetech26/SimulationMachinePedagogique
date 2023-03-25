@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -108,6 +110,11 @@ namespace projet.Pages
 
         private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
+            if (TextBox1.Text.Length >= 4)
+            {
+                e.Handled = true;
+            }
+
             TextBox? textBox = sender as TextBox;
             if (textBox != null)
             {
@@ -123,6 +130,7 @@ namespace projet.Pages
                 // Move the caret to the end of the TextBox
                 textBox.CaretIndex = textBox.Text.Length;
             }
+
         }
 
         private void TextBox2_GotFocus(object sender, RoutedEventArgs e)
@@ -142,5 +150,7 @@ namespace projet.Pages
                 TextBox2.Foreground = Brushes.Gray;
             }
         }
+
+
     }
 }

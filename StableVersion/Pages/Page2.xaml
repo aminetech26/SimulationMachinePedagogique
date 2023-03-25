@@ -12,17 +12,18 @@
     <Grid Background="#4E719D" SizeChanged="Grid_SizeChanged" >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="15*" />
-            <RowDefinition Height="75*" />
+            <RowDefinition Height="10*" /> 
+            <RowDefinition Height="40*" />
+            <RowDefinition Height="50*" />
             <RowDefinition Height="125*" />
             <RowDefinition Height="125*" />
             <RowDefinition Height="125*" />
             <RowDefinition Height="150*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" Orientation="Horizontal" x:Name="StackPanel0" >
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" >
             <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
-                    Click="Go_Back" VerticalAlignment="Center" Margin="20" >
+                    Click="Go_Back" VerticalAlignment="Top" Margin="20" >
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
@@ -31,27 +32,30 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-
-            <TextBlock Text="Selectionnez l’instruction que vous voulez simulez :" FontSize="27"
-                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="50 0" x:Name="Text1" TextAlignment="Center"
-                       ></TextBlock>
-            
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" >
+
+            <TextBlock Text="Selectionnez l’instruction que vous voulez simulez :" FontSize="27"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Top" HorizontalAlignment="Center"
+                       Foreground="White" x:Name="Text1" TextAlignment="Center"
+                       ></TextBlock>
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Orientation="Horizontal" x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center" >
 
             <StackPanel Margin="10 0 10 0" >
 
                 <TextBlock Text="Instruction" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="5"
+                       Foreground="White" Margin="7"
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0"
                       Padding="20" Margin="15 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
-                      x:Name="Instruction">
+                      x:Name="Instruction" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
 
                     <ComboBoxItem>Option 1</ComboBoxItem>
                     <ComboBoxItem>Option 2</ComboBoxItem>
@@ -64,13 +68,13 @@
 
                 <TextBlock Text="Format" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="5"
+                       Foreground="White" Margin="7"
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0"
                       Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
-                      x:Name="Format">
+                      x:Name="Format" Template="{DynamicResource MaterialDesignFloatingHintComboBoxTemplate}" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
                     <ComboBoxItem>Option 1</ComboBoxItem>
                     <ComboBoxItem>Option 2</ComboBoxItem>
                     <ComboBoxItem>Option 3</ComboBoxItem>
@@ -82,13 +86,13 @@
 
                 <TextBlock Text="Reg/M" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="5"
+                       Foreground="White" Margin="7"
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0" 
                       Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
-                      x:Name="Reg">
+                      x:Name="Reg" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
                     <ComboBoxItem>Option 1</ComboBoxItem>
                     <ComboBoxItem>Option 2</ComboBoxItem>
                     <ComboBoxItem>Option 3</ComboBoxItem>
@@ -100,13 +104,13 @@
 
                 <TextBlock Text="Dep" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="5"
+                       Foreground="White" Margin="7"
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0" 
                       Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
-                      x:Name="Dep">
+                      x:Name="Dep" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
                     <ComboBoxItem>Option 1</ComboBoxItem>
                     <ComboBoxItem>Option 2</ComboBoxItem>
                     <ComboBoxItem>Option 3</ComboBoxItem>
@@ -118,13 +122,13 @@
 
                 <TextBlock Text="Destinataire" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="5"
+                       Foreground="White" Margin="7"
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0" 
                       Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
-                      x:Name="Destinataire">
+                      x:Name="Destinataire" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
                     <ComboBoxItem>Option 1</ComboBoxItem>
                     <ComboBoxItem>Option 2</ComboBoxItem>
                     <ComboBoxItem>Option 3</ComboBoxItem>
@@ -135,13 +139,13 @@
 
                 <TextBlock Text="Source" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="5"
+                       Foreground="White" Margin="7"
                        ></TextBlock>
 
                 <ComboBox SelectedIndex="0"
                       Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
-                      x:Name="Source">
+                      x:Name="Source" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
                     <ComboBoxItem>Option 1</ComboBoxItem>
                     <ComboBoxItem>Option 2</ComboBoxItem>
                     <ComboBoxItem>Option 3</ComboBoxItem>
@@ -150,11 +154,11 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
             <TextBlock Text="Veuillez remplir le contenu des registres :" FontSize="26"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
-                       HorizontalAlignment="Center" Foreground="White" x:Name="Text2" Margin="7"
+                       HorizontalAlignment="Center" Foreground="White" x:Name="Text2" Margin="10"
                        ></TextBlock>
 
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
@@ -210,7 +214,7 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
             <TextBlock Text="Instruction en hexa :" FontSize="25"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -227,7 +231,7 @@
 
         </StackPanel>
 
-        <Grid Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Grid Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
             <Button x:Name="Button_simuler" Height="75" Width="300"
                 Style="{StaticResource RoundedButtonStyle}"
