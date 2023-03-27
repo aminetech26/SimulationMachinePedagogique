@@ -137,8 +137,86 @@ namespace ArchiMind
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
 
-       //------------------- logic instructions ---------------------------------------------------------------------------------
+        // l'intialisation des instructions de decalages 
+        //instruction SHL 
+         mycouple =new CoupleCopFormat();
+         instruction=new Instruction("Reg16/mem16,imm8","11000001xx100xxx","100");
+         mycouple.addInstruction(instruction);
+         instruction=new Instruction("Reg16/mem16,CX","11010011xx100xxx","100");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction SHR 
+         mycouple =new CoupleCopFormat();
+         instruction=new Instruction("Reg16/mem16,imm8","11000001xx101xxx","101");
+         mycouple.addInstruction(instruction);
+         instruction=new Instruction("Reg16/mem16,CX","11010011xx101xxx","101");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction SAL  -- meme cop que SHL 
+         mycouple =new CoupleCopFormat();
+         instruction=new Instruction("Reg16/mem16,imm8","11000001xx100xxx","100");
+         mycouple.addInstruction(instruction);
+         instruction=new Instruction("Reg16/mem16,CX","11010001xx100xxx","100");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction SAR 
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("Reg16/mem16,imm8","11000001xx111xxx","111");
+         mycouple.addInstruction(instruction);
+         instruction = new Instruction("Reg16/mem16,CX","11010011xx111xxx","111");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction ROR 
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("Reg16/mem16,imm8","11000001xx001xxx","001");
+         mycouple.addInstruction(instruction);
+         instruction = new Instruction("Reg16/mem16,CX","11010011xx001xxx","001");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction ROL 
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("Reg16/mem16,imm8","11000001xx000xxx","000");
+         mycouple.addInstruction(instruction);
+         instruction = new Instruction("Reg16/mem16,CX","11010011xx000xxx","000");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction RCR 
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("Reg16/mem16,imm8","11000001xx011xxx","011");
+         mycouple.addInstruction(instruction);
+         instruction = new Instruction("Reg16/mem16,CX","11010011xx011xxx","011");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction RCL 
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("Reg16/mem16,imm8","11000001xx010xxx","010");
+         mycouple.addInstruction(instruction);
+         instruction = new Instruction("Reg16/mem16,CX","11010011xx010xxx","010");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
 
+         // instructions d'entree-sorties
+         //instruction in
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("AX,DX","11101101");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction out
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("DX,AX","11101111");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction insw
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("mem16,DX","01101101");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+         //instruction outsw
+         mycouple = new CoupleCopFormat();
+         instruction = new Instruction("DX,mem16","01101111");
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
+        //--------------------------------------------------------------------------------------------------- 
         } 
        public CoupleCopFormat getMycouple(){
              return mycouple; 
