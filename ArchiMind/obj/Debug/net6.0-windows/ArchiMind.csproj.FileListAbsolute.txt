@@ -27,3 +27,14 @@ C:\Users\Admin\source\repos\yyyy\yyyy\obj\Debug\net6.0-windows\refint\ArchiMind.
 C:\Users\Admin\source\repos\yyyy\yyyy\obj\Debug\net6.0-windows\ArchiMind.pdb
 C:\Users\Admin\source\repos\yyyy\yyyy\obj\Debug\net6.0-windows\ArchiMind.genruntimeconfig.cache
 C:\Users\Admin\source\repos\yyyy\yyyy\obj\Debug\net6.0-windows\ref\ArchiMind.dll
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\ArchiMind.csproj.AssemblyReference.cache
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\Themes\Generics.baml
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\Window1.baml
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\Window1.g.cs
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\App.g.cs
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\ArchiMind_MarkupCompile.cache
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\ArchiMind_MarkupCompile.lref
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\ArchiMind.dll
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\refint\ArchiMind.dll
+C:\Users\abdrahman akhrib\OneDrive\Desktop\Myworkspace\SimulationMachinePedagogique\ArchiMind\obj\Debug\net6.0-windows\ArchiMind.pdb

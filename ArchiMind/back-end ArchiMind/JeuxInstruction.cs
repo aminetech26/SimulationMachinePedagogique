@@ -7,6 +7,8 @@ namespace ArchiMind
 {
       internal class JeuxInstruction
     {
+       static private string[] list_mem_dep={"[BX+SI+XXXX]","[BX+DI+XXXX]","[BP+SI+XXXX]","[BP+DI+XXXX]","[SI+XXXX]","[DI+XXXX]","[BP+XXXX]","[BX+XXXX]"};
+       static private string[] list_mem_sansdep={"[BX+SI]","[BX+DI]","[BP+SI]","[BP+DI]","[SI]","[DI]","[XXXX]","[BX]"};
         private CoupleCopFormat mycouple = new CoupleCopFormat() ; 
         // private ArrayList  detailInstruction = new ArrayList (); 
         // i think it should be a static attribute because it will never change again ...............                                                          
@@ -98,16 +100,17 @@ namespace ArchiMind
        // l'intialisation des format de l'istruction NOT // index = 8 
          mycouple =new CoupleCopFormat();
          instruction =new Instruction("Reg16/mem16","11110111xx010xxx","010");
-         mycouple.addInstruction(mycouple);
+         mycouple.addInstruction(instruction);
+         detailInstruction.Add(mycouple);
 
         // l'intialisation des format de l'istruction AND // index = 9 
          mycouple =new CoupleCopFormat();
          instruction =new Instruction("Reg16/mem16,imm16","10000001xx100xxx","100");
-         mycouple.addInstruction(mycouple);
+         mycouple.addInstruction(instruction);
          instruction =new Instruction("Reg16/mem16,Reg16","00100001xxxxxxxx");
-         mycouple.addInstruction(mycouple);
+         mycouple.addInstruction(instruction);
          instruction =new Instruction("Reg16,Reg16/mem16","00100011xxxxxxxx");
-         mycouple.addInstruction(mycouple);
+         mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
 
         // l'intialisation des format de l'istruction OR // index = 10 
@@ -117,9 +120,9 @@ namespace ArchiMind
          instruction=new Instruction("Reg16,mem16,imm16","10000001xx001xxx","001");
          mycouple.addInstruction(instruction);
          instruction =new Instruction("Reg16/mem16,Reg16","00001001xxxxxxxx");
-         mycouple.addInstruction(mycouple);
+         mycouple.addInstruction(instruction);
          instruction =new Instruction("Reg16,Reg16/mem16","00001011xxxxxxxx");
-         mycouple.addInstruction(mycouple);
+         mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
 
         // l'intialisation des format de l'istruction XOR // index = 11 
@@ -129,24 +132,106 @@ namespace ArchiMind
          instruction=new Instruction("Reg16,mem16,imm16","10000001xx110xxx","110");
          mycouple.addInstruction(instruction);
          instruction =new Instruction("Reg16/mem16,Reg16","00110001xxxxxxxx");
-         mycouple.addInstruction(mycouple);
+         mycouple.addInstruction(instruction);
          instruction =new Instruction("Reg16,Reg16/mem16","00110011xxxxxxxx");
-         mycouple.addInstruction(mycouple);
+         mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
 
        //------------------- logic instructions ---------------------------------------------------------------------------------
 
         } 
-        public CoupleCopFormat getMycouple(){
-             return Mycouple; 
+       public CoupleCopFormat getMycouple(){
+             return mycouple; 
         }    
-
         // les methodes de remplissage de code operation
 
-        public void recherche_index_mnemonique(Mnemoniques INST){
-          int index_of_mnemonique=(int) INST;    
+        private int recherche_index_mnemonique(Mnemoniques inst){ 
+            return (int) inst; 
         }
-        public void remplir_01(){
+        public Instruction recherche_instruction(CoupleCopFormat mycouple,string format){
+               Instruction inst=new Instruction();
+              foreach(Instruction instruction in mycouple.getListInstruction()){
+                if(format.Equals(instruction.getFormat())){
+                  inst = instruction;
+                  break;
+                }
+              }
+            return inst;
+        }
+        public string recherche_mem_depl(string reg_mem){
+             int valendecimale = 0;
+             string binaire_val;
+             foreach(string r_m in list_mem_dep){
+              if(reg_mem.Equals(r_m)){
+                 valendecimale= Array.IndexOf(list_mem_dep,r_m);
+                 break;   
+              }
+             }
+             if(valendecimale > 3){
+              binaire_val=Convert.ToString(valendecimale,2);
+             }else{
+              binaire_val="0"+Convert.ToString(valendecimale,2);
+             }
+             return binaire_val;
+        }
+          public string recherche_mem_sansdepl(string reg_mem){
+             int valendecimale = 0;
+             string binaire_val;
+             foreach(string r_m in list_mem_sansdep){
+              if(reg_mem.Equals(r_m)){
+                 valendecimale= Array.IndexOf(list_mem_sansdep,r_m);
+                 break;   
+              }
+             }
+             if(valendecimale > 3){
+              binaire_val=Convert.ToString(valendecimale,2);
+             }else{
+              binaire_val="0"+Convert.ToString(valendecimale,2);
+             }
+             return binaire_val;
+        }
+        public string recherche_reg(string reg){
+          string reg_binaire="";
+          int regvalue_decimal=0;
+          Registers_enum regist=(Registers_enum)Enum.Parse(typeof (Registers_enum),reg);
+          regvalue_decimal=(int) regist;
+          if(regvalue_decimal > 3){
+            reg_binaire=Convert.ToString(regvalue_decimal,2);
+          }else{
+             reg_binaire="0"+Convert.ToString(regvalue_decimal,2);
+          }
+          return reg_binaire;
+        }
+        public void remplir_01(Mnemoniques inst ,string Reg_mem,bool ifdepl,string deplval,string imm16_val){   // INST Reg16/mem16,imm16
+            string instruction_binaire;
+            string mod_binaire;
+            string r_m_binaire="";           
+            int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
+            Instruction myinstruction= new Instruction();
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"Reg16/mem16,imm16");
+            instruction_binaire=myinstruction.getCop();
+            if(Reg_mem[0].Equals("[")){
+               if(ifdepl){
+                      mod_binaire="00";
+                      r_m_binaire=recherche_mem_depl(Reg_mem);
+                      instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+                      instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+                      instruction_binaire=instruction_binaire+" "+deplval;
+               }else{
+                      mod_binaire="10";
+                      r_m_binaire=recherche_mem_sansdepl(Reg_mem);
+                      instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+                      instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+               }
+            }else{
+              mod_binaire="11";
+              r_m_binaire=recherche_reg(Reg_mem);
+              Console.WriteLine("im here");
+              instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+              instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+            }
+          instruction_binaire=instruction_binaire+" "+imm16_val;
+           Console.WriteLine("the instruction "+instruction_binaire);
         }      
     }
 

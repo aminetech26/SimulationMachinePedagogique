@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "Gz76OJyPuGcHjniLwceBlXZOB1k/uUKnG7bzVlq++1HptHg43L9PVWORn4Q0z4LdbogaOqpiw4LVR7GMznnuTA==",
+  "dgSpecHash": "ZOyfA8zi16V/QyMhKNAsLBIalBlfDCZWt+JII9UoylkMYOA/tl6zIQLvDQ+PNroRTPEQgSYzOmJ4ejChGgtaVA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\yyyy\\yyyy\\ArchiMind.csproj",
+  "projectFilePath": "C:\\Users\\abdrahman akhrib\\OneDrive\\Desktop\\Myworkspace\\SimulationMachinePedagogique\\ArchiMind\\ArchiMind.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    "C:\\Users\\abdrahman akhrib\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\abdrahman akhrib\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\abdrahman akhrib\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
   "logs": []
 }
