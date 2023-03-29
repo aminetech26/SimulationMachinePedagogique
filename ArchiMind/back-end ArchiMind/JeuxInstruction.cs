@@ -242,6 +242,7 @@ namespace ArchiMind
          instruction = new Instruction("DX,mem16","01101111");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
+          
         //--------------------------------------------------------------------------------------------------- 
         } 
        public CoupleCopFormat getMycouple(){
@@ -255,7 +256,8 @@ namespace ArchiMind
         private int recherche_index_mnemonique(string mnemonique){ 
              Mnemoniques mymnemonique=(Mnemoniques)Enum.Parse(typeof(Mnemoniques),mnemonique);   /// FORMAT COP CHAMPNOTUSED   reg/mem,imm  
             return (int) mymnemonique; 
-        }
+        }  
+         // instruction = format + cop 
         public Instruction recherche_instruction(CoupleCopFormat mycouple,string format){
                Instruction inst=new Instruction();
               foreach(Instruction instruction in mycouple.getListInstruction()){
@@ -274,7 +276,8 @@ namespace ArchiMind
                  valendecimale= Array.IndexOf(list_mem_dep,r_m);
                  break;   
               }
-             }
+             }  
+             // l'idial est d'utiliser la methode correctionformat dans la class erreur  
              if(valendecimale > 3){
               binaire_val=Convert.ToString(valendecimale,2);
              }else if(valendecimale>1){
@@ -293,7 +296,8 @@ namespace ArchiMind
                  valendecimale= Array.IndexOf(list_mem_sansdep,r_m);
                  break;   
               }
-             }
+             } 
+             // correction format 
              if(valendecimale > 3){
               binaire_val=Convert.ToString(valendecimale,2);
              }else if(valendecimale>1){
@@ -310,6 +314,7 @@ namespace ArchiMind
           int regvalue_decimal=0;
           Registers_enum myreg=(Registers_enum)Enum.Parse(typeof(Registers_enum),reg);
           regvalue_decimal = (int)myreg;
+          // correction format 
           if(regvalue_decimal > 3){
             reg_binaire=Convert.ToString(regvalue_decimal,2);
           }else if(regvalue_decimal>1){
@@ -336,6 +341,7 @@ namespace ArchiMind
                       r_m_binaire=recherche_mem_depl(Reg_mem);
                       instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
                       instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+                      // j pas compris pourquoi tu traite l'instruction seul 
                       instruction_binaire=instruction_binaire+" "+HexStringToBinary(deplval);
                }else{
                       mod_binaire="10";
@@ -355,9 +361,12 @@ namespace ArchiMind
         }  
         // methode dekhlelha les entrees te3 la pages hedik li 9bal simulation trj3lk instruction en binaire kima t7atha f la MC.
         public string remplir_AX_imm16(string inst,string imm16_val){   // INST AX,imm16 -- 
+            // comment distingue le AX des autres registres ?
+            // ca sera utile de verifier la valeur si elle est en 16bits + en hexa
             string instruction_binaire;          
             int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
             Instruction myinstruction= new Instruction();
+            // il faut traiter le cas ou le format ne figure pas dans l'instruction 
             myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"AX,imm16");
             instruction_binaire=myinstruction.getCop();
             instruction_binaire=instruction_binaire+" "+HexStringToBinary(imm16_val);
@@ -370,7 +379,7 @@ namespace ArchiMind
             string mod_binaire;
             int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
             Instruction myinstruction= new Instruction();
-            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"AX,imm16");
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"Reg16/Mem16");
             instruction_binaire=myinstruction.getCop();
             if(Reg_mem[0].Equals("[")){
                if(ifdepl){
@@ -400,7 +409,7 @@ namespace ArchiMind
             string r_m_binaire;        
             int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
             Instruction myinstruction= new Instruction();
-            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"AX,imm16");
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"Reg16"); 
             instruction_binaire=myinstruction.getCop();
             r_m_binaire=recherche_reg(Reg16);
             instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
