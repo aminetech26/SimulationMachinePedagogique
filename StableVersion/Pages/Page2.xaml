@@ -43,9 +43,18 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+        <Grid Grid.Row="3" x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center" >
 
-            <StackPanel Margin="10 0 10 0" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="0" Margin="10 0 10 0" >
 
                 <TextBlock Text="Instruction" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -64,7 +73,7 @@
             </StackPanel>
             
 
-            <StackPanel Margin="10 0 10 0" >
+            <StackPanel Grid.Column="1" Margin="10 0 10 0" >
 
                 <TextBlock Text="Format" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -82,7 +91,7 @@
             </StackPanel>
 
 
-            <StackPanel Margin="10 0 10 0" >
+            <StackPanel Grid.Column="2" Margin="10 0 10 0" >
 
                 <TextBlock Text="Reg/M" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -100,7 +109,7 @@
             </StackPanel>
 
 
-            <StackPanel Margin="10 0 10 0" >
+            <StackPanel Grid.Column="3" Margin="10 0 10 0" >
 
                 <TextBlock Text="Dep" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -118,7 +127,7 @@
             </StackPanel>
 
 
-            <StackPanel Margin="10 0 10 0" >
+            <StackPanel Grid.Column="4" Margin="10 0 10 0" >
 
                 <TextBlock Text="Destinataire" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -135,7 +144,7 @@
                 </ComboBox>
             </StackPanel>
 
-            <StackPanel Margin="10 0 10 0" >
+            <StackPanel Grid.Column="5" Margin="10 0 10 0" >
 
                 <TextBlock Text="Source" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
@@ -152,7 +161,7 @@
                 </ComboBox>
             </StackPanel>
 
-        </StackPanel>
+        </Grid>
 
         <StackPanel Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
