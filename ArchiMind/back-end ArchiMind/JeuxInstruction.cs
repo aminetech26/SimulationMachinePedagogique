@@ -416,6 +416,79 @@ namespace ArchiMind
             System.Console.WriteLine("instruction en binaire :"+instruction_binaire);
             return instruction_binaire;
         }
+        //-----------------------------------------------------------------------------------------------------------
+         public string remplir_reg_mem_reg(string inst,string reg_mem,string reg,bool ifdepl,string deplval){  // INST REG/MEM,REG
+               string instruction_binaire="";
+               string mod_binaire;
+               string r_m_binaire;
+               string reg_binaire;
+               int index_of_mnemonique=recherche_index_mnemonique(inst);
+               Instruction myinstruction=new Instruction();
+               myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"Reg16/Mem16,Reg16");
+               instruction_binaire=myinstruction.getCop();
+                reg_binaire=recherche_reg(reg);
+                /*result = original.Substring(0,start) + replacement + original.Substring(start + length);Console.WriteLine(result);*/
+                instruction_binaire=instruction_binaire.Substring(0,10)+reg_binaire+instruction_binaire.Substring(13);
+                Console.WriteLine(instruction_binaire);
+               if(reg_mem[0].Equals("[")){
+               if(ifdepl){
+                      mod_binaire="00";
+                      r_m_binaire=recherche_mem_depl(reg_mem);
+                      instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+                      instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+                      instruction_binaire=instruction_binaire+" "+HexStringToBinary(deplval);
+               }else{
+                      mod_binaire="10";
+                      r_m_binaire=recherche_mem_sansdepl(reg_mem);
+                      instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);            
+                      instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+               }
+            }else{
+              mod_binaire="11";
+              r_m_binaire=recherche_reg(reg_mem);
+              instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+              instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+            }
+          Console.WriteLine("the instruction "+instruction_binaire);
+           return instruction_binaire;    
+        }
+        // this is INST Reg16 , Reg16/mem16 c
+         public string remplir_reg_reg_mem(string inst,string reg_mem,string reg,bool ifdepl,string deplval){ 
+               string instruction_binaire="";
+               string mod_binaire;
+               string r_m_binaire;
+               string reg_binaire;
+               int index_of_mnemonique=recherche_index_mnemonique(inst);
+               Instruction myinstruction=new Instruction();
+               myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"Reg16,Reg16/Mem16");
+               instruction_binaire=myinstruction.getCop();
+                reg_binaire=recherche_reg(reg);
+                /*result = original.Substring(0,start) + replacement + original.Substring(start + length);Console.WriteLine(result);*/
+                instruction_binaire=instruction_binaire.Substring(0,10)+reg_binaire+instruction_binaire.Substring(13);
+                Console.WriteLine(instruction_binaire);
+               if(reg_mem[0].Equals("[")){
+               if(ifdepl){
+                      mod_binaire="00";
+                      r_m_binaire=recherche_mem_depl(reg_mem);
+                      instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+                      instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+                      instruction_binaire=instruction_binaire+" "+HexStringToBinary(deplval);
+               }else{
+                      mod_binaire="10";
+                      r_m_binaire=recherche_mem_sansdepl(reg_mem);
+                      instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);            
+                      instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+               }
+            }else{
+              mod_binaire="11";
+              r_m_binaire=recherche_reg(reg_mem);
+              instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+              instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
+            }
+          Console.WriteLine("the instruction "+instruction_binaire);
+           return instruction_binaire;    
+        }
+        //---------------------------------------------------------------------------------------------------------- 
         //------------------- 
               public string remplir_reg_mem_cx(string inst,string Reg_mem,bool ifdepl,string deplval){   // INST Reg16/mem16,CX
             string instruction_binaire="";
