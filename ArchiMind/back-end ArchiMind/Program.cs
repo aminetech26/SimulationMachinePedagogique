@@ -9,7 +9,6 @@ internal class Program
        j.intialize();
        // j.getMycouple().afficheFormatCop();
        string reg="BX";
-        j.remplir_01(Mnemoniques.ADD,reg,false,"xxxx","1234");
-        
+        j.remplir_Reg_mem_imm16("ADD",reg,false,"xxxx","1234");  
     }
 }

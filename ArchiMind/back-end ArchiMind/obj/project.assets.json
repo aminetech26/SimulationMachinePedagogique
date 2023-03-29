@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\abdrahman akhrib\\OneDrive\\Desktop\\Myworkspace\\SimulationMachinePedagogique\\ArchiMind\\back-end ArchiMind\\ArchiMind.csproj",
+      "projectUniqueName": "C:\\Users\\abdrahman akhrib\\OneDrive\\Desktop\\mypullspace\\SimulationMachinePedagogique\\ArchiMind\\back-end ArchiMind\\ArchiMind.csproj",
       "projectName": "ArchiMind",
-      "projectPath": "C:\\Users\\abdrahman akhrib\\OneDrive\\Desktop\\Myworkspace\\SimulationMachinePedagogique\\ArchiMind\\back-end ArchiMind\\ArchiMind.csproj",
+      "projectPath": "C:\\Users\\abdrahman akhrib\\OneDrive\\Desktop\\mypullspace\\SimulationMachinePedagogique\\ArchiMind\\back-end ArchiMind\\ArchiMind.csproj",
       "packagesPath": "C:\\Users\\abdrahman akhrib\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\abdrahman akhrib\\OneDrive\\Desktop\\Myworkspace\\SimulationMachinePedagogique\\ArchiMind\\back-end ArchiMind\\obj\\",
+      "outputPath": "C:\\Users\\abdrahman akhrib\\OneDrive\\Desktop\\mypullspace\\SimulationMachinePedagogique\\ArchiMind\\back-end ArchiMind\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\abdrahman akhrib\\AppData\\Roaming\\NuGet\\NuGet.Config",
