@@ -490,7 +490,7 @@ namespace ArchiMind
         }
         //---------------------------------------------------------------------------------------------------------- 
         //------------------- 
-              public string remplir_reg_mem_cx(string inst,string Reg_mem,bool ifdepl,string deplval){   // INST Reg16/mem16,CX
+            public string remplir_reg_mem_cx(string inst,string Reg_mem,bool ifdepl,string deplval){   // INST Reg16/mem16,CX
             string instruction_binaire="";
             string mod_binaire;
             string r_m_binaire="";           
@@ -522,8 +522,106 @@ namespace ArchiMind
            Console.WriteLine("the instruction "+instruction_binaire);
            return instruction_binaire;
         }  
+        //------------------------------------------------------ partie execution ---------------------------------------------------
+        // methode correction instruction .. 
+        // remplir mc -- ecrire_mc (instruction,taille,adresse debut);
 
-    
+        /*
+        methode qui manque
+          Memoire Centrale -- Case:rech_mc(adresse); // case manque --oussama
+          calcul_adresse(); //tous les cas possibles; //UAL --oussama
+          positionner_indicateur(); //UAL; --amine.
+          set/getContenuReg()                                                --generale //akhrib;
+          
+        */
+
+
+
+
+
+
+
+
+
+        /*
+        ecriture par defaut a l'adresse 0100
+        positionnement co
+        positionnemt ram / lect rim -> ri
+        ex : ADD BX,CX 03D9 lecture we7da
+        */
+        //---------------------
+        /*if(mem){
+          string adresse = calculadresse();
+          case = recherche_mc(adresse);
+          case.setContenu(contenu_user);
+        }*/
+        //CO.setCo("0100");
+        //page phase1;
+        //animation(source : "co",destinataire : "ram","adresse");
+        //MC.setRam(CO.getCo());
+        //Case case = new Case();
+        //case = rech_mc("0100");
+        //MC.setRim(case.contenu);
+        //animation("rim","ri","donnee");
+        //setRI(MC.getRim());
+        //bouton;
+        //page phase2;
+        //
+        string format;
+        switch (format){
+        case "Reg16,mem16/Reg16":
+              if (r_m){ //reg,reg
+                  //decodage -- delay
+                  //setContenuRegistre(reg1,val1);
+                  //setContenuRegistre(reg2,val2);
+                  //hover (nombreregistre,reg1,reg2);
+                  //animation(reg_destinataire,ual2,donnee);
+                  //setUAL2(getContenuReg(reg_dest));
+                  //animation(reg_source,ual1,donnee);
+                  //setUAL2(getContenuReg(reg_source));
+                  /*switch(mnemonique){
+                    case add: var result = UAL.getUAL1 + UAL.getUAL2(operation en hexa); 
+                  }*/
+                  //positionner indicateur(mnemonique,result);
+                  //animation(UAL,registres,donnee);
+                  //setContenuRegistre(reg_dest,result);
+                  
+              }else{//reg,mem ADD AX,[SI+DI+5Dh]
+                  //decodage -- delay
+                  //setContenuRegistre(reg1,val1);
+                  //switch(source){
+                   // case "[SI+DI+depl]" : //setContenuRegistre(SI,val2); //setContenuRegistre(DI,val3);
+                  //}
+                  //hover (nombreregistre,reg1,reg2);
+                  //animation(UAL,RAM,adresse);
+                  //MC.setRAM(calaculadresse());
+                  //MC.setRIM(rech_mc(adresse).getContenu());
+                  //animation(RIM,UAL1) -- destinataire f ual2 / source ual1
+                  //UAL.setUAL1(MC.getRIM());
+                  //animation(reg,UAL2);
+                  //UAL.setUAL2(getContenuReg(reg_dest));
+                  //animation(reg_destinataire,ual2,donnee);
+                  //setUAL2(getContenuReg(reg_dest));
+                  //animation(reg_source,ual1,donnee);
+                  //setUAL2(getContenuReg(reg_dest));
+                  
+                  /*switch(mnemonique){
+                    case add: var result = UAL.getUAL1 + UAL.getUAL2(operation en hexa); 
+                  }*/
+                  //positionner indicateur(mnemonique,result);
+                  //animation(UAL,registres,donnee);
+                  //setContenuRegistre(reg_dest,result);
+              }
+            break;
+        case "":
+            // code to be executed if expression equals value2
+            break;
+        ...
+        default:
+            // code to be executed if none of the above cases are true
+            break;
+        }
+
     }
 
 }
