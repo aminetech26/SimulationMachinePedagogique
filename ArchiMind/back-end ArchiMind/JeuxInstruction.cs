@@ -242,6 +242,48 @@ namespace ArchiMind
          instruction = new Instruction("DX,mem16","01101111");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
+                   // Initialisation des instructions de branchement 
+         // instruction jmp 
+         mycouple = new CoupleCopFormat(); 
+         instruction = new Instruction ("mem16","1111111100101xxx");      // nouvelle format
+         mycouple.addInstruction(instruction); 
+         detailInstruction.Add(mycouple); 
+         // instruction LOOP 
+         mycouple = new CoupleCopFormat(); 
+         instruction = new Instruction("mem16","111000100xxxxxxx"); 
+         mycouple.addInstruction(instruction); 
+         detailInstruction.Add(mycouple); 
+         // instruction LOOPZ
+         mycouple = new CoupleCopFormat(); 
+         instruction = new Instruction("mem16","111000010xxxxxxx");
+         mycouple.addInstruction(instruction); 
+         detailInstruction.Add(mycouple); 
+         // instruction LOOPE
+         mycouple = new CoupleCopFormat(); 
+         instruction = new Instruction("mem16","111000011xxxxxxx");
+         mycouple.addInstruction(instruction); 
+         detailInstruction.Add(mycouple);
+         // instruction LOOPNZ
+         mycouple = new CoupleCopFormat(); 
+         instruction = new Instruction("mem16","111000000xxxxxxx"); 
+         mycouple.addInstruction(instruction); 
+         detailInstruction.Add(mycouple); 
+         // instruction LOOPNE 
+         mycouple = new CoupleCopFormat(); 
+         instruction = new Instruction("mem16","111000001xxxxxxx");
+         mycouple.addInstruction(instruction);  
+         detailInstruction.Add(mycouple);   
+         // instruction CMP 
+         mycouple = new CoupleCopFormat(); 
+         instruction = new Instruction("Reg16/mem16,imm16","10000011xx111xxx"); 
+         mycouple.addInstruction(instruction); 
+         instruction = new Instruction("Reg16/mem16,Reg16","00111001xxxxxxxx"); 
+         mycouple.addInstruction(instruction); 
+         instruction = new Instruction("Reg16,Reg16/mem16","00111011xxxxxxxx");
+         mycouple.addInstruction(instruction);  
+         
+
+        //--------------------------------------------------------------------------------------------------- 
           
         //--------------------------------------------------------------------------------------------------- 
         } 
@@ -521,7 +563,32 @@ namespace ArchiMind
             }
            Console.WriteLine("the instruction "+instruction_binaire);
            return instruction_binaire;
-        }  
+        }   
+        public string remplir_mem16(string inst,string mem16,bool ifdepl,string deplval ){
+        string instruction_binaire = "" ;
+        string mem_binaire=""; 
+        int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
+        Instruction myinstruction = new Instruction();
+        myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"mem16");
+        instruction_binaire = myinstruction.getCop(); 
+         // l'instruction jmp est un cas particulier  
+        if (instruction_binaire.IndexOf('x')==13){
+          mem_binaire =recherche_mem_sansdepl(mem16); 
+          instruction_binaire = instruction_binaire.Replace("xxx",mem_binaire);
+            }else{
+           if(ifdepl){
+           // on doit verifie que le deplacement va etre seulement sur 16 bit ;;
+            mem_binaire=recherche_mem_depl(mem16);
+            instruction_binaire = instruction_binaire.Replace("xxxx",HexStringToBinary(deplval));
+            instruction_binaire = instruction_binaire.Replace("xxx",mem_binaire);
+            }else{
+            mem_binaire =recherche_mem_sansdepl(mem16); 
+            instruction_binaire = instruction_binaire.Replace("xxxx","0000");
+            instruction_binaire = instruction_binaire.Replace("xxx",mem_binaire);
+            }         
+            }
+       return instruction_binaire ; 
+      }
         //------------------------------------------------------ partie execution ---------------------------------------------------
         // methode correction instruction .. 
         // remplir mc -- ecrire_mc (instruction,taille,adresse debut);
@@ -567,10 +634,10 @@ namespace ArchiMind
         //bouton;
         //page phase2;
         //
-        string format;
-        switch (format){
-        case "Reg16,mem16/Reg16":
-              if (r_m){ //reg,reg
+       // string format;
+        //switch (format){
+       // case "Reg16,mem16/Reg16":
+        //      if (r_m){ //reg,reg
                   //decodage -- delay
                   //setContenuRegistre(reg1,val1);
                   //setContenuRegistre(reg2,val2);
@@ -586,7 +653,7 @@ namespace ArchiMind
                   //animation(UAL,registres,donnee);
                   //setContenuRegistre(reg_dest,result);
                   
-              }else{//reg,mem ADD AX,[SI+DI+5Dh]
+         //     }else{//reg,mem ADD AX,[SI+DI+5Dh]
                   //decodage -- delay
                   //setContenuRegistre(reg1,val1);
                   //switch(source){
@@ -611,16 +678,16 @@ namespace ArchiMind
                   //positionner indicateur(mnemonique,result);
                   //animation(UAL,registres,donnee);
                   //setContenuRegistre(reg_dest,result);
-              }
-            break;
-        case "":
+          //    }
+        //    break;
+     //   case "":
             // code to be executed if expression equals value2
-            break;
-        ...
-        default:
+       //     break;
+       
+     ///   default:
             // code to be executed if none of the above cases are true
-            break;
-        }
+          //  break;
+     //   }
 
     }
 
