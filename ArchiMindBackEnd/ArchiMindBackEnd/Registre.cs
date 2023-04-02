@@ -90,6 +90,78 @@ namespace ArchiMind
             // on peut pas l'implementer jusqu'a faire la class UAL
         }
 
+
+       //------------------ les methodes setContenuRegistre / getContenuRegistre --------------------------//
+       public static void setContenuRegistre(string reg,string val){
+            switch (reg)
+            {
+                case "AX":
+                setAx(val);
+                break;
+                case "BX":
+                setBx(val);
+                break;
+                case "CX":
+                setCx(val);
+                break;
+                case "DX":
+                setDx(val);
+                break;
+                case "SI":
+                setSi(val);
+                break;
+                case "DI":
+                setDi(val);
+                break;
+                case "SP":
+                setSp(val);
+                break;
+                case "BP":
+                setBp(val);
+                break;
+                default:
+                Console.WriteLine("error");
+                break;
+            }
+       }
+
+       public static string getContenuRegistre(string reg){
+            string valreg="";
+            switch (reg)
+            {
+                case "AX":
+                valreg=getAx();
+                break;
+                case "BX":
+                valreg = getBx();
+                break;
+                case "CX":
+                valreg = getCx();
+                break;
+                case "DX":
+                valreg= getDx();
+                break;
+                case "SI":
+                valreg= getSi();
+                break;
+                case "DI":
+                valreg=getDi();
+                break;
+                case "SP":
+                valreg=getSp();
+                break;
+                case "BP":
+                valreg=getBp();
+                break;
+                default:
+                Console.WriteLine("error");
+                break;
+            } 
+         return valreg;
+       }
+         
+       //----------------------------------------------------------------------------------------------------
+
     }
      
         
