@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\Projet2CP\\Animation\\Animation\\Animation.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Bureau\\Page_Simulation\\Animation.csproj",
       "projectName": "Animation",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\Projet2CP\\Animation\\Animation\\Animation.csproj",
+      "projectPath": "C:\\Users\\Admin\\OneDrive\\Bureau\\Page_Simulation\\Animation.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\Projet2CP\\Animation\\Animation\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\OneDrive\\Bureau\\Page_Simulation\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

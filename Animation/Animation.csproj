@@ -8,15 +8,68 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\Arrow 1.png" />
+    <None Remove="images\CO.png" />
     <None Remove="images\commencer.png" />
+    <None Remove="images\DECODEUR%282%29.png" />
+    <None Remove="images\Frame 35.png" />
+    <None Remove="images\Group 101.png" />
+    <None Remove="images\Group 102.png" />
+    <None Remove="images\Group 104%281%29.png" />
+    <None Remove="images\Group 104%283%29.png" />
+    <None Remove="images\Group 105%281%29.png" />
+    <None Remove="images\Group 105.png" />
+    <None Remove="images\Group 109.png" />
+    <None Remove="images\Group 115.png" />
+    <None Remove="images\Group 46.png" />
+    <None Remove="images\Group 76.png" />
+    <None Remove="images\Group 77.png" />
+    <None Remove="images\Group 91.png" />
+    <None Remove="images\Group 93.png" />
+    <None Remove="images\Group 98.png" />
+    <None Remove="images\Group100.png" />
+    <None Remove="images\Line 12.png" />
+    <None Remove="images\Line 13.png" />
+    <None Remove="images\Line 39.png" />
     <None Remove="images\phase a phase.png" />
+    <None Remove="images\RAM.png" />
+    <None Remove="images\RAM1.png" />
     <None Remove="images\recommencer.png" />
+    <None Remove="images\Subtract.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\Arrow 1.png" />
+    <Resource Include="images\CO.png" />
+    <Resource Include="images\DECODEUR(2).png" />
+    <Resource Include="images\Frame 35.png" />
+    <Resource Include="images\Group 101.png" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="images\commencer.png" />
+    <Resource Include="images\Group 102.png" />
+    <Resource Include="images\Group 104(1).png" />
+    <Resource Include="images\Group 104(3).png" />
+    <Resource Include="images\Group 105(1).png" />
+    <Resource Include="images\Group 109.png" />
+    <Resource Include="images\Group 115.png" />
+    <Resource Include="images\Group 46.png" />
+    <Resource Include="images\Group 76.png" />
+    <Resource Include="images\Group 77.png" />
+    <Resource Include="images\Group 91.png" />
+    <Resource Include="images\Group 93.png" />
+    <Resource Include="images\Group 98.png" />
+    <Resource Include="images\Group100.png" />
+    <Resource Include="images\Group 105.png" />
+    <Resource Include="images\Line 12.png" />
+    <Resource Include="images\Line 13.png" />
+    <Resource Include="images\Line 39.png" />
     <Resource Include="images\phase a phase.png" />
+    <Resource Include="images\RAM.png" />
+    <Resource Include="images\RAM1.png" />
     <Resource Include="images\recommencer.png" />
+    <Resource Include="images\Subtract.png" />
   </ItemGroup>
 
 </Project>
