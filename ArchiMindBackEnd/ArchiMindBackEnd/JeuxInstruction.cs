@@ -239,7 +239,7 @@ namespace ArchiMind
          instruction = new Instruction("DX,mem16","01101111");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
-                   // Initialisation des instructions de branchement 
+         // Initialisation des instructions de branchement 
          // instruction jmp 
          mycouple = new CoupleCopFormat(); 
          instruction = new Instruction ("mem16","1111111100101xxx");      // nouvelle format
@@ -685,9 +685,9 @@ namespace ArchiMind
             // code to be executed if none of the above cases are true
           //  break;
      //   }
-    public static void executer_simulation_phase_a_phase(string format,bool mem_b,String mem,bool ifdepl ,string valdepl,string ccm){
+    public static void executer_simulation_phase_a_phase(string mnemonique,string format,bool mem_b,String mem,bool ifdepl ,string valdepl,string ccm,string source,string val1,string val2,string val3){
         Case case_memoire = new Case();
-        if(mem_b){
+        if(mem_b){//mem_b memoire booleen variable qui dit si c'est memoire ou pas
           string adresse = UAL.calculAdresse(mem,ifdepl,valdepl);
           case_memoire = MC.recherche_mc(adresse);
           case_memoire.setContenu(ccm);
@@ -704,6 +704,177 @@ namespace ArchiMind
         //page phase2;
         switch(format){
           case "Reg16/mem16,Reg16":
+          break;
+          case "mem16":
+                //decodage -- delay
+                if (ifdepl){
+                    switch(source){
+                    case "[BX+SI+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BX+DI+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[BP+SI+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BP+DI+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[SI+depl]":
+                    Registre.setContenuRegistre("SI",val1);
+                    break;
+                    case "[DI+depl]":
+                    Registre.setContenuRegistre("DI",val1);
+                    break;
+                    case "[BP+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    break;
+                    case "[BX+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }
+                  }else{
+                    switch(source){
+                    case "[BX+SI]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BX+DI]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[BP+SI]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BP+DI]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[SI]":
+                    Registre.setContenuRegistre("SI",val1);
+                    break;
+                    case "[DI]":
+                    Registre.setContenuRegistre("DI",val1);
+                    break;
+                    case "[BP]":
+                    Registre.setContenuRegistre("BP",val1);
+                    break;
+                    case "[BX]":
+                    Registre.setContenuRegistre("BX",val1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }
+                  }
+                  //hover (nombreregistre,reg1,reg2);
+                  //animation(Registre,CO,adresse);
+                  Registre.setCx(val1);// f loop user must set CX content ... 
+                  switch(mnemonique){
+
+                    case "JMP":
+                    Co.setco(UAL.calculAdresse(mem,ifdepl,valdepl));
+                    MC.setRam(Co.getco());
+                    MC.setRim(MC.recherche_mc(MC.getRam()).getContenu());
+                    UAL.positionnerIndicateurs("JMP");
+                    //normalement c'est ca mnkmlush l'execution de la suite --
+                    break;
+                    case "LOOP":
+                    
+                    for(int i = 0;i<int.Parse(Registre.getCx())-1;i++){ 
+                      Registre.setCx(Convert.ToString((int.Parse(Registre.getCx())-1)));
+                      UAL.positionnerIndicateurs("LOOP");
+                      Co.setco(UAL.calculAdresse(mem,ifdepl,valdepl));
+                      MC.setRam(Co.getco());
+                      MC.setRim(MC.recherche_mc(MC.getRam()).getContenu()); 
+                      //apres la on doit dechiffrer l'instruction qui se trouve a l'adresse pour pouvoir l'executer
+                      //executer instruction a l'adresse x a partir du code binaire. -- recursif chghul lehna
+                    }
+                    //apres loop 
+                    //execution instruction suivante -- on la traite pas mais ca doit etre signale avec une fenetre -- front-end.
+                    break;
+                    case "LOOPZ":
+                      for(int i = 0;i<int.Parse(Registre.getCx())-1;i++){
+                      if (Indicateur.getZero() != '1'){
+                      UAL.positionnerIndicateurs("LOOPZ");
+                      Co.setco(UAL.calculAdresse(mem,ifdepl,valdepl));
+                      MC.setRam(Co.getco());
+                      MC.setRim(MC.recherche_mc(MC.getRam()).getContenu()); 
+                      //apres la on doit dechiffrer l'instruction qui se trouve a l'adresse pour pouvoir l'executer
+                      //executer instruction a l'adresse x a partir du code binaire. -- recursif chghul lehna
+                      //UAL.positionnerIndicateurs("mnemonique instruction a l'adresse x ");
+                      }else{
+                        break;
+                      }
+                      }
+                      //apres loop 
+                      //execution instruction suivante -- on la traite pas mais ca doit etre signale avec une fenetre -- front-end.
+                    break;
+                    case "LOOPE": //loope est identique a loopz
+                    for(int i = 0;i<int.Parse(Registre.getCx())-1;i++){
+                      if (Indicateur.getZero() == '1'){
+                      UAL.positionnerIndicateurs("LOOPE");
+                      Co.setco(UAL.calculAdresse(mem,ifdepl,valdepl));
+                      MC.setRam(Co.getco());
+                      MC.setRim(MC.recherche_mc(MC.getRam()).getContenu()); 
+                      //apres la on doit dechiffrer l'instruction qui se trouve a l'adresse pour pouvoir l'executer
+                      //executer instruction a l'adresse x a partir du code binaire. -- recursif chghul lehna
+                      //UAL.positionnerIndicateurs("mnemonique instruction a l'adresse x ");
+                      }else{
+                        break;
+                      }
+                      }
+                      //apres loop 
+                      //execution instruction suivante -- on la traite pas mais ca doit etre signale avec une fenetre -- front-end.
+                    break;
+                    case "LOOPNZ":
+                    for(int i = 0;i<int.Parse(Registre.getCx())-1;i++){
+                      if (Indicateur.getZero() != '0'){
+                      UAL.positionnerIndicateurs("LOOPNZ");
+                      Co.setco(UAL.calculAdresse(mem,ifdepl,valdepl));
+                      MC.setRam(Co.getco());
+                      MC.setRim(MC.recherche_mc(MC.getRam()).getContenu()); 
+                      //apres la on doit dechiffrer l'instruction qui se trouve a l'adresse pour pouvoir l'executer
+                      //executer instruction a l'adresse x a partir du code binaire. -- recursif chghul lehna
+                      //UAL.positionnerIndicateurs("mnemonique instruction a l'adresse x ");
+                      }else{
+                        break;
+                      }
+                      }
+                      //apres loop 
+                      //execution instruction suivante -- on la traite pas mais ca doit etre signale avec une fenetre -- front-end.
+                    break;
+                    case "LOOPNE":
+                    for(int i = 0;i<int.Parse(Registre.getCx())-1;i++){
+                      if (Indicateur.getZero() != '0'){
+                      UAL.positionnerIndicateurs("LOOPNE");
+                      Co.setco(UAL.calculAdresse(mem,ifdepl,valdepl));
+                      MC.setRam(Co.getco());
+                      MC.setRim(MC.recherche_mc(MC.getRam()).getContenu()); 
+                      //apres la on doit dechiffrer l'instruction qui se trouve a l'adresse pour pouvoir l'executer
+                      //executer instruction a l'adresse x a partir du code binaire. -- recursif chghul lehna
+                      //UAL.positionnerIndicateurs("mnemonique instruction a l'adresse x ");
+                      }else{
+                        break;
+                      }
+                      }
+                      //apres loop 
+                      //execution instruction suivante -- on la traite pas mais ca doit etre signale avec une fenetre -- front-end.
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! mnenmonique not defined");
+                    break;
+                  }
+                
           break;
           default:
           break;

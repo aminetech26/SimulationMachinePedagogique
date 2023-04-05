@@ -113,7 +113,7 @@ namespace ArchiMind
         return count;
         }
 
-        public static void positionnerIndicateurs(string mnemoniques,string result,string operand1 = "default",string operand2="default"){
+        public static void positionnerIndicateurs(string mnemoniques,string result="default",string operand1 = "default",string operand2="default"){
             int nb_bits = 16;
             switch (mnemoniques) {
             case "ADD":
@@ -615,16 +615,28 @@ namespace ArchiMind
         Indicateur.setAutoIncrDec('1');
         Indicateur.setretenuAuxiliaire('x');
         Indicateur.setTrace('x');
+        /* A VERIFIER
+        if(Registre.getCx() == "0"){
+        Indicateur.setZero('1');}
+        else{
+        Indicateur.setZero('0');
+        }*/
         Indicateur.setZero('x');
         Indicateur.setSigne('x');
         Indicateur.setParite('x');
         Indicateur.setRetenu('x');
         Indicateur.setOverflow('x');
         break;
-    case "LOOPZ":
+        case "LOOPZ":
         Indicateur.setAutoIncrDec('1');
         Indicateur.setretenuAuxiliaire('x');
         Indicateur.setTrace('x');
+        /* A VERIFIER if(Registre.getCx() == "0"){
+            
+        Indicateur.setZero('1');}
+        else{
+        Indicateur.setZero('0');
+        }*/
         Indicateur.setZero('x');
         Indicateur.setSigne('x');
         Indicateur.setParite('x');
@@ -635,6 +647,12 @@ namespace ArchiMind
         Indicateur.setAutoIncrDec('1');
         Indicateur.setretenuAuxiliaire('x');
         Indicateur.setTrace('x');
+        /* A VERIFIER
+        if(Registre.getCx() == "0"){
+        Indicateur.setZero('1');}
+        else{
+        Indicateur.setZero('0');
+        }*/
         Indicateur.setZero('x');
         Indicateur.setSigne('x');
         Indicateur.setParite('x');
@@ -645,6 +663,12 @@ namespace ArchiMind
         Indicateur.setAutoIncrDec('1');
         Indicateur.setretenuAuxiliaire('x');
         Indicateur.setTrace('x');
+        /*A VERIFIER
+        if(Registre.getCx() == "0"){
+        Indicateur.setZero('1');}
+        else{
+        Indicateur.setZero('0');
+        }*/
         Indicateur.setZero('x');
         Indicateur.setSigne('x');
         Indicateur.setParite('x');
@@ -655,6 +679,12 @@ namespace ArchiMind
         Indicateur.setAutoIncrDec('1');
         Indicateur.setretenuAuxiliaire('x');
         Indicateur.setTrace('x');
+        /* A VERIFIER
+        if(Registre.getCx() == "0"){
+        Indicateur.setZero('1');}
+        else{
+        Indicateur.setZero('0');
+        } */
         Indicateur.setZero('x');
         Indicateur.setSigne('x');
         Indicateur.setParite('x');
