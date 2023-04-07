@@ -1,4 +1,6 @@
 ﻿using System.Collections;
+using System.Globalization;
+using System.Numerics;
 using System.Text;
 
 namespace ArchiMind
@@ -875,6 +877,140 @@ namespace ArchiMind
                     break;
                   }
                 
+          break;
+          case "Reg/mem16":
+          if(mem_b){
+             if(ifdepl){
+                    switch(source){
+                    case "[BX+SI+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BX+DI+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[BP+SI+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BP+DI+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[SI+depl]":
+                    Registre.setContenuRegistre("SI",val1);
+                    break;
+                    case "[DI+depl]":
+                    Registre.setContenuRegistre("DI",val1);
+                    break;
+                    case "[BP+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    break;
+                    case "[BX+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }
+                  }else{
+                    switch(source){
+                    case "[BX+SI]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BX+DI]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[BP+SI]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BP+DI]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[SI]":
+                    Registre.setContenuRegistre("SI",val1);
+                    break;
+                    case "[DI]":
+                    Registre.setContenuRegistre("DI",val1);
+                    break;
+                    case "[BP]":
+                    Registre.setContenuRegistre("BP",val1);
+                    break;
+                    case "[BX]":
+                    Registre.setContenuRegistre("BX",val1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }
+                  }
+                  //hover (nombreregistre,reg1,reg2);
+                  //animation(Registre,CO,adresse);
+                  //animation (Registres,RAM,adresse)
+                  string adresse = UAL.calculAdresse(mem,ifdepl,valdepl);
+                  MC.setRam(adresse);
+                  MC.setRim(MC.recherche_mc(adresse).getContenu());
+                  //animation(Rim,UAL2,donee)
+                  UAL.setUal2(MC.getRim());
+                  switch(mnemonique){
+                    case "INC":
+                    UAL.setUal1("1");
+                    int hexInt = Convert.ToInt32(UAL.getUal2(), 16);
+                    hexInt++;
+                    string result = Convert.ToString(hexInt, 16).ToUpper();
+                    UAL.positionnerIndicateurs("INC");
+                    //animation (UAL,rim);
+                    MC.setRim(result);
+                    MC.recherche_mc(adresse).setContenu(result);
+                    //fin
+                    break;
+                    case "DEC":
+                    UAL.setUal1("FFFF");//-1
+                    hexInt = Convert.ToInt32(UAL.getUal2(), 16);
+                    hexInt--;
+                    result = Convert.ToString(hexInt, 16).ToUpper();
+                    UAL.positionnerIndicateurs("DEC");
+                    //animation (UAL,rim);
+                    MC.setRim(result);
+                    MC.recherche_mc(adresse).setContenu(result);
+                    //fin
+                    break;
+                    case "MUL":
+                    //in this instruction user must specify content of BX
+                    Registre.setBx(val3);
+                    //hover registre
+                    //animation (registre,UAL1);
+                    BigInteger bi1 = BigInteger.Parse(UAL.getUal2(), NumberStyles.HexNumber);
+                    BigInteger bi2 = BigInteger.Parse(Registre.getBx(), NumberStyles.HexNumber);
+                    BigInteger result_mul = bi1 * bi2;
+                    string hexResult = result_mul.ToString("X8");//32 bits representation
+                    UAL.positionnerIndicateurs("MUL");
+                    //animation(UAL,registre,donnee);
+                    string poids_fort = hexResult.Substring(0, 15);
+                    string poids_faible = hexResult.Substring(16, 32);
+                    Registre.setAx(poids_faible);
+                    Registre.setDx(poids_faible);
+                    break;
+                    case "NOT":
+                    ushort operand = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber);
+                    ushort result_not = (ushort)~operand;
+                    hexResult = result_not.ToString("X4");
+                    UAL.positionnerIndicateurs("NOT");
+                    //animation (UAL,rim);
+                    MC.setRim(hexResult);
+                    MC.recherche_mc(adresse).setContenu(hexResult);
+                    break;
+                    default:
+                    break;
+                  }
+             }else{
+
+             } 
           break;
           default:
           break;
