@@ -25,8 +25,6 @@ namespace projet.Pages
         {
             InitializeComponent();
             Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
-
-           
         }
 
 

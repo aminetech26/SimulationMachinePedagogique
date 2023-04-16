@@ -46,7 +46,7 @@
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
-            <TextBlock x:Name="Text1" Text="Quiz N° 1 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
+            <TextBlock x:Name="Text1" Text="Quiz N° 2 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
                    Margin="75 25 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
@@ -123,7 +123,8 @@ d&#39;assemblage?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                     Foreground="Black"
                     BorderBrush="#E0E0E0"
                     Margin="0 5 20 0" x:Name="Button2"
-                    >
+                    Click="Precedent"
+                >
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
                     <Image Source="/Pages/images/precedent.png" Height="15" Width="Auto" VerticalAlignment="Center" />
@@ -139,6 +140,7 @@ d&#39;assemblage?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                     Foreground="white"
                     BorderBrush="#81C784"
                     Margin="0 5 50 0"  x:Name="Button3"
+                    Click="Suivant"
                     >
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >

@@ -107,8 +107,8 @@
                 <Grid Grid.Row="1" Width="Auto" >
                    
                         <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
-                                   Text="  la mémoire contient à la fois les instructions et les données du programme, tandis que les registres sont utilisés pour stocker temporairement des données et des résultats intermédiaires lors de l'exécution des instructions."
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0" Padding="10"            
+                                   Text=" La mémoire contient à la fois les instructions et les données du programme, tandis que les registres sont utilisés pour stocker temporairement des données et des résultats intermédiaires lors de l'exécution des instructions."
                                     />
                     
                 </Grid>
@@ -118,26 +118,11 @@
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1"  >
 
             <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
-                    Background="#E0E0E0"
-                    Foreground="Black"
-                    BorderBrush="#E0E0E0"
-                    Margin="0 5 20 0" x:Name="Button2"
-                    >
-
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
-                    <Image Source="/Pages/images/precedent.png" Height="15" Width="Auto" VerticalAlignment="Center" />
-                    <TextBlock Text="Precedent" TextAlignment="Center" Padding="7"
-                               FontFamily="Montserrat"
-                               FontSize="22" FontWeight="Normal"
-                               />
-                </StackPanel>
-            </Button>
-
-            <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
                     Background="#81C784"
                     Foreground="white"
                     BorderBrush="#81C784"
                     Margin="0 5 50 0"  x:Name="Button3"
+                    Click="Suivant"
                     >
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >

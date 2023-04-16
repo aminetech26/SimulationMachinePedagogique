@@ -35,6 +35,13 @@ namespace projet.Pages
             this.NavigationService.GoBack();
         }
 
+
+        private void Suivant(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz2.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             if (e.NewSize.Width >= 1200)
@@ -46,8 +53,6 @@ namespace projet.Pages
                 Combo.Width = 500;
                 Button1.Height = 55;
                 Button1.Width = 140;
-                Button2.Height = 68;
-                Button2.Width = 168;
                 Button3.Height = 68;
                 Button3.Width = 168;
 
@@ -61,8 +66,6 @@ namespace projet.Pages
                 Combo.Width = 400;
                 Button1.Height = 43;
                 Button1.Width = 125;
-                Button2.Height = 54;
-                Button2.Width = 155;
                 Button3.Height = 55;
                 Button3.Width = 155;
 
@@ -72,7 +75,7 @@ namespace projet.Pages
 
         private void Reponse1(object sender, RoutedEventArgs e)
         {
-            ComboBoxItem selectedItem = Combo.SelectedItem as ComboBoxItem;
+            ComboBoxItem? selectedItem = Combo.SelectedItem as ComboBoxItem;
             Uri imageUri = new Uri("pack://application:,,,/Pages/images/false.png");
             BitmapImage bitmap = new BitmapImage(imageUri);
            
@@ -95,7 +98,7 @@ namespace projet.Pages
                     Text4.Inlines.Add(new Run("Vous êtes proche de la bonne réponse, mais ce n'est pas tout à fait ça."));
                     Text4.Inlines.Add(new LineBreak());
                     Text4.Inlines.Add(new Run("Essayez encore !"));
-                    Text4.Foreground = (Brush)new BrushConverter().ConvertFromString("#FFB347");
+                    Text4.Foreground = new BrushConverter().ConvertFromString("#FFB347") as Brush;
                     Text4.Visibility = Visibility.Visible;
                     Image1.Visibility = Visibility.Visible;
                     

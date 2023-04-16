@@ -61,5 +61,159 @@ namespace projet.Pages
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz.xaml", UriKind.RelativeOrAbsolute));
         }
 
+        private void toQuiz2(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz2.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz3(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz3.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz4(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz4.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz5(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz5.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz6(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz6.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz7(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz7.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz8(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz8.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz9(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz9.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz10(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz10.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz11(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz11.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz12(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz12.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz13(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz13.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz14(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz14.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz15(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz15.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz16(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz16.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz17(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz17.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz18(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz18.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz19(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz19.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz20(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz10.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz21(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz21.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz22(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz22.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void toQuiz23(object sender, MouseButtonEventArgs e)
+        {
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz23.xaml", UriKind.RelativeOrAbsolute));
+        }
+
     }
 }

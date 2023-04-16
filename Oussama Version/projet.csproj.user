@@ -70,79 +70,10 @@
     <Compile Update="Pages\PageQuiz23.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\PageQuiz24.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz25.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz26.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz27.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz28.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz29.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\PageQuiz3.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\PageQuiz30.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz31.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz32.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz33.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz34.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz35.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz36.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz37.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz38.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz39.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\PageQuiz4.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz40.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz41.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz42.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz43.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz44.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz45.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\PageQuiz46.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\PageQuiz5.xaml.cs">
@@ -240,79 +171,10 @@
     <Page Update="Pages\PageQuiz23.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\PageQuiz24.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz25.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz26.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz27.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz28.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz29.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\PageQuiz3.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\PageQuiz30.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz31.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz32.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz33.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz34.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz35.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz36.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz37.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz38.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz39.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\PageQuiz4.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz40.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz41.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz42.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz43.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz44.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz45.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\PageQuiz46.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PageQuiz5.xaml">
