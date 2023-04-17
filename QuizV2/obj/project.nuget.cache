@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "jFzzE11YbT4GZDpurvBqqiNMnwcieR/py4DRQK023jHzss7ooyr6AAOyYleXM1q6H8jxk/OhmOEWfBxSKgkwhw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Bureau\\quiz complet\\SimulationMachinePedagogique-Oussama_version -\\SimulationMachinePedagogique-Oussama_version\\Oussama Version\\projet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}

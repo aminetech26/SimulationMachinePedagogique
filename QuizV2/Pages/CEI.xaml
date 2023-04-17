@@ -1,0 +1,198 @@
+﻿<Page x:Class="projet.Pages.CEI"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projet.Pages"
+      mc:Ignorable="d" 
+      Title="CEI">
+
+    <Grid Background="#E0E0E0" SizeChanged="Grid_SizeChanged">
+
+        <Grid.ColumnDefinitions>
+
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition x:Name="Column1" Width="225"/>
+            <ColumnDefinition x:Name="Column2"  Width="225"/>
+            <ColumnDefinition x:Name="Column3"  Width="225"/>
+            <ColumnDefinition Width="*"/>
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition x:Name="Row1" Height="225"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition x:Name="Row2" Height="225"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+
+
+        <UserControl x:Name="ContentArea"
+                     Background="#E0E0E0"
+                    HorizontalContentAlignment="Stretch"
+                    VerticalContentAlignment="Stretch" />
+
+
+        <!-- Panel 01 -->
+
+        <Button
+            x:Name="Button1"
+            Grid.Column="1"
+            Grid.Row="1"
+            Style="{DynamicResource RoundedButtonStyle}"
+            Margin="5"
+            >
+
+            <StackPanel Height="Auto" Width="Auto" >
+
+                <Image Source="/Pages/images/CEI/transfert1.png" Width="Auto"
+                       Height="125" Margin="8"  />
+
+                <TextBlock Text="Instructions de transfert" 
+                           TextWrapping="Wrap" 
+                           TextAlignment="Center" 
+                           FontFamily="Montserrat" 
+                           FontSize="28" FontWeight="Normal" />
+                <TextBlock />
+
+            </StackPanel>
+
+        </Button>
+
+        <!-- Panel 02 -->
+
+        <Button
+            x:Name="Button2"
+            Grid.Column="2"
+            Grid.Row="1"    Click="GoToArith"
+            Style="{DynamicResource RoundedButtonStyle}"
+            Margin="5"
+            >
+
+            <StackPanel Height="Auto" Width="Auto" >
+
+                <Image Source="/Pages/images/CEI/maths.png"
+                       Width="Auto" Height="130" Margin="5"  />
+
+                <TextBlock Text="Instructions arithmetiques" 
+                           TextWrapping="Wrap" 
+                           TextAlignment="Center" 
+                           FontFamily="Montserrat" 
+                           FontSize="28" FontWeight="Normal" />
+                <TextBlock />
+
+            </StackPanel>
+
+        </Button>
+
+        <!-- Panel 03 -->
+
+        <Button
+            x:Name="Button3"
+            Grid.Column="3"
+            Grid.Row="1"
+            Style="{DynamicResource RoundedButtonStyle}"
+            Margin="5"
+            >
+
+            <StackPanel Height="Auto" Width="Auto" >
+
+                <Canvas Margin="7" Height="125" Width="125" >
+
+                    <Image Canvas.Left="0" Source="/Pages/images/CEI/not.png" Width="Auto" Height="60" Margin="3"  />
+                    <Image Canvas.Right="0" Source="/Pages/images/CEI/and.png" Width="Auto" Height="60" Margin="3"  />
+                    <Image Canvas.Bottom="0" Source="/Pages/images/CEI/or.png" Width="Auto" Height="60" Margin="0 0 0 2"  />
+                    <Image Canvas.Bottom="0" Canvas.Right="0"  Source="/Pages/images/CEI/xor.png" Width="Auto" Height="60" Margin="0"  />
+
+                </Canvas>
+
+                <TextBlock Text="Instructions logiques" TextWrapping="Wrap" 
+                           TextAlignment="Center" 
+                           FontFamily="Montserrat" 
+                           FontSize="28" FontWeight="Normal" />
+                <TextBlock />
+
+
+            </StackPanel>
+
+        </Button>
+
+        <!-- Panel 04 -->
+
+
+        <Button
+            x:Name="Button4"
+            Grid.Column="1"
+            Grid.Row="3"
+            Style="{DynamicResource RoundedButtonStyle}"
+            Margin="5"
+            >
+
+            <StackPanel Height="Auto" Width="Auto" >
+
+                <Image Source="/Pages/images/CEI/decalage.png" Width="Auto" Height="130" Margin="5"  />
+
+                <TextBlock Text="Instructions de décalage" TextWrapping="Wrap" TextAlignment="Center" 
+                           FontFamily="Montserrat" FontSize="28" FontWeight="Normal" />
+                <TextBlock />
+
+            </StackPanel>
+
+        </Button>
+
+        <!-- Panel 05 -->
+
+
+        <Button
+            x:Name="Button5"
+            Grid.Column="2"
+            Grid.Row="3"
+            Style="{DynamicResource RoundedButtonStyle}"
+            Margin="5"
+            >
+
+            <StackPanel Height="Auto" Width="Auto" >
+
+                <Image Source="/Pages/images/CEI/branchement.png" Width="Auto" Height="130" Margin="5"  />
+
+                <TextBlock Text="Instructions de branchement" TextWrapping="Wrap" TextAlignment="Center" 
+                           FontFamily="Montserrat" FontSize="28" FontWeight="Normal" />
+                <TextBlock />
+
+            </StackPanel>
+
+        </Button>
+
+        <!-- Panel 06 -->
+
+
+        <Button
+            x:Name="Button6"
+            Grid.Column="3"
+            Grid.Row="3"
+            Style="{DynamicResource RoundedButtonStyle}"
+            Margin="5"
+            >
+
+            <StackPanel Height="Auto" Width="Auto" >
+
+                <StackPanel Margin="10" Orientation="Horizontal" HorizontalAlignment="Center" Height="118" >
+                    <Image Source="/Pages/images/CEI/input.png" Width="85" Height="85" Margin="0 0 5 0"  />
+                    <Image Source="/Pages/images/CEI/output.png" Width="85" Height="85" Margin="5 0 0 0"  />
+                </StackPanel>
+
+                <TextBlock Text="Instructions d'entrée sortie" TextWrapping="Wrap" TextAlignment="Center" 
+                           FontFamily="Montserrat" FontSize="28" FontWeight="Normal" />
+                <TextBlock />
+
+            </StackPanel>
+
+        </Button>
+
+
+
+    </Grid>
+</Page>
