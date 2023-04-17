@@ -26,77 +26,78 @@ namespace ArchiMind
         return UAL.ual2 ; 
         }
         public static string  calculAdresse(String mem , bool ifdepl , string valdepl ){
-             string result_hex ; 
+             string result_hex  ="" ; 
              int result_decimal ; 
             if (ifdepl){
                  switch (mem){
                     case "[BX+SI+XXXX]" : 
                         result_decimal = Convert.ToInt32(Registre.getBx(),16) + Convert.ToInt32(Registre.getSi(),16) + Convert.ToInt32(valdepl,16) ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ; 
                     case "[BX+DI+XXXX]" :
                         result_decimal = Convert.ToInt32(Registre.getBx(),16) + Convert.ToInt32(Registre.getDi(),16) + Convert.ToInt32(valdepl,16) ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ; 
                     case "[BP+SI+XXXX]" :
                         result_decimal = Convert.ToInt32(Registre.getBp(),16) + Convert.ToInt32(Registre.getSi(),16) + Convert.ToInt32(valdepl,16) ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;
                     case "[BP+DI+XXXX]" :
                         result_decimal = Convert.ToInt32(Registre.getBp(),16) + Convert.ToInt32(Registre.getDi(),16) + Convert.ToInt32(valdepl,16) ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;
                     case "[SI+XXXX]"  : 
                         result_decimal = Convert.ToInt32(Registre.getSi(),16)  + Convert.ToInt32(valdepl,16) ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;
                     case "[DI+XXXX]"  :
                         result_decimal = Convert.ToInt32(Registre.getDi(),16)  + Convert.ToInt32(valdepl,16) ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;
                     case "[BP+XXXX]" :
                         result_decimal = Convert.ToInt32(Registre.getBp(),16)  + Convert.ToInt32(valdepl,16) ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ; 
                     case  "[BX+XXXX]" :  
                         result_decimal = Convert.ToInt32(Registre.getBx(),16)  + Convert.ToInt32(valdepl,16) ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;
                  }
             }else{  // "[BX+SI]","[BX+DI]","[BP+SI]"//,"[BP+DI]","[SI]","[DI]","[XXXX]","[BX]"
                 switch(mem) {
                     case "[BX+SI]" : 
                         result_decimal = Convert.ToInt32(Registre.getBx(),16) + Convert.ToInt32(Registre.getSi(),16)  ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ; 
                     case "[BX+DI]" : 
                         result_decimal = Convert.ToInt32(Registre.getBx(),16) + Convert.ToInt32(Registre.getDi(),16)  ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;
                     case "[BP+SI]" : 
                         result_decimal = Convert.ToInt32(Registre.getBp(),16) + Convert.ToInt32(Registre.getSi(),16)  ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;
                     case "[BP+DI]" : 
                      result_decimal = Convert.ToInt32(Registre.getBp(),16) + Convert.ToInt32(Registre.getDi(),16)  ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;
                     case "[SI]" :
                         result_decimal =  Convert.ToInt32(Registre.getSi(),16)  ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ; 
                     case "[DI]" :
                         result_decimal =  Convert.ToInt32(Registre.getDi(),16)  ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;  
-                    case  "[XXXX]" :
-                    break ;
+                //   case  "[XXXX]" :  il faut revoir ca ; 
+                   //  break ;
                     case  "[BX]":   
                         result_decimal =  Convert.ToInt32(Registre.getBx(),16)  ;
-                        result_hex = result_decimal.ToHexString("X");  
+                        result_hex = result_decimal.ToString("X");  
                         break ;       
                 }
-            }
+            } 
+            return result_hex ; 
         }
         static int CountOccurrences(string str, char c) // for parity check
         {
