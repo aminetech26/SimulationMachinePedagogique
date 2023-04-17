@@ -31,6 +31,9 @@
     <Compile Update="Pages\PageQuiz2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Premierpas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Quiz.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -70,6 +73,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PageQuiz2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Premierpas.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Quiz.xaml">

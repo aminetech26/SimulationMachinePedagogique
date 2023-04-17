@@ -108,7 +108,9 @@
                                     <Image Source="/Pages/images/1pas.png"
                                             Style="{StaticResource Image_Style}" />
                                     <TextBlock Text="Premier Pas"
-                                               Style="{StaticResource Text_Style}" />
+                                               Style="{StaticResource Text_Style}"
+                                               PreviewMouseDown="toPremierpasPage"
+                                               />
                                 </Grid>
                             </Menu:Btn>
                         </StackPanel>
