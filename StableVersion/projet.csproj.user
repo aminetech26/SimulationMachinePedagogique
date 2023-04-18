@@ -34,12 +34,6 @@
     <Compile Update="Pages\Premierpas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Quiz.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="Pages\QuizExo.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Splash_screen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -76,12 +70,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Premierpas.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\Quiz.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\QuizExo.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Splash_screen.xaml">

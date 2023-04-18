@@ -28,7 +28,7 @@
             </Grid.Background>
 
             <Grid.RowDefinitions>
-                <RowDefinition  Height="auto"/>
+                <RowDefinition  Height="55"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
 
@@ -89,96 +89,508 @@
                 </Viewbox>
             </ToggleButton>
 
-            <StackPanel Name="navBar" Margin="10,50" Grid.Row="1">
+            <!--<StackPanel Name="navBar" Margin="10,50" Grid.Row="1">
 
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                <Grid Grid.Row="0">
+
+                    <Image Width="50" HorizontalAlignment="Center" Margin="0,-30,0,15"
+                           VerticalAlignment="Top" Source="/Pages/images/intel.png"/>
+
+                </Grid>
+                
+            </StackPanel>-->
+            <ScrollViewer VerticalScrollBarVisibility="Visible" CanContentScroll="True" Grid.Row="1">
+                <StackPanel Margin="10,55" Grid.Row="1">
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="True"
                           VerticalAlignment="Top"  >
-                    <Grid >
-                        <Grid>
-                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                            <TextBlock Text="Quiz N№ 1" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz1" />
-                        </Grid>
-                        <StackPanel  HorizontalAlignment="Center" 
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 1" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz1" />
+                            </Grid>
+                            <StackPanel  HorizontalAlignment="Center" 
                                      VerticalAlignment="Top">
-                            <Border  Height="5"  Width="200"  
+                                <Border  Height="5"  Width="200"  
                                      Background="#E0E0E0" Margin="0,-30,0,0" />
 
-                        </StackPanel>
-                    </Grid>
+                            </StackPanel>
+                        </Grid>
 
-                </Menu:Btn>
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False"
                           VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" Margin="25,0,0,8" VerticalAlignment="Bottom" />
-                        <TextBlock Text="Quiz N№ 2" Style="{StaticResource Text_Style}"  />
-                    </Grid>
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" Margin="25,0,0,8" VerticalAlignment="Bottom" />
+                            <TextBlock Text="Quiz № 2" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz2" />
+                        </Grid>
 
-                </Menu:Btn>
+                    </Menu:Btn>
 
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False"
                           VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 3" Style="{StaticResource Text_Style}" />
-                    </Grid>
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 3" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz3" />
+                        </Grid>
 
-                </Menu:Btn>
+                    </Menu:Btn>
 
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False"
                           VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 4" Style="{StaticResource Text_Style}"/>
-                    </Grid>
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 4" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz4" />
+                        </Grid>
 
-                </Menu:Btn>
+                    </Menu:Btn>
 
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False"
                           VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 5" Style="{StaticResource Text_Style}"/>
-                    </Grid>
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 5" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz5" />
+                        </Grid>
 
-                </Menu:Btn>
+                    </Menu:Btn>
 
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False"
                           VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 6" Style="{StaticResource Text_Style}"/>
-                    </Grid>
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 6" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz6" />
+                        </Grid>
 
-                </Menu:Btn>
+                    </Menu:Btn>
 
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False"
                           VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 7" Style="{StaticResource Text_Style}"/>
-                    </Grid>
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 7" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz7" />
+                        </Grid>
 
-                </Menu:Btn>
+                    </Menu:Btn>
 
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False"
                           VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 8" Style="{StaticResource Text_Style}"/>
-                    </Grid>
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 8" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz8" />
+                        </Grid>
 
-                </Menu:Btn>
+                    </Menu:Btn>
 
-            </StackPanel>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 9" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz9" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 10" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz10" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 11" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz11" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 12" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz12" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 13" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz13" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 14" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz14" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 15" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz15" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 16" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz16" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 17" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz17" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 18" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz18" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 19" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz19" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 20" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz20" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 21" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz21" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 22" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz22" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 23" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz23" />
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 24" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz24"/>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock Text="Quiz № 25" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz25"/>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 26" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz26" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 27" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz27" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 28" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz28" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 29" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz29" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 30" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz30" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 31" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz31" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 32" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz32" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 33" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz33" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 34" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz34" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 35" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz35" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 36" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz36" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 37" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz37" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 38" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz38" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 39" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz39" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 40" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz40" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 41" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz41" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 42" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz42" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 43" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz43" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 44" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz44" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 45" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz45" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock Text="Quiz № 46" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz46" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+
+
+                </StackPanel>
+            </ScrollViewer>
 
         </Grid>
         <Grid  Grid.Column="1"  VerticalAlignment="Stretch">
