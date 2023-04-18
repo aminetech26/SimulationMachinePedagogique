@@ -41,6 +41,7 @@
     <None Remove="Pages\images\Home\plus.png" />
     <None Remove="Pages\images\intel.png" />
     <None Remove="Pages\images\ktab.png" />
+    <None Remove="Pages\images\Line 53.png" />
     <None Remove="Pages\images\precedent.png" />
     <None Remove="Pages\images\Precedent1.png" />
     <None Remove="Pages\images\Q.png" />
@@ -51,6 +52,7 @@
     <None Remove="Pages\images\retour.png" />
     <None Remove="Pages\images\revenir.png" />
     <None Remove="Pages\images\sel_inst.png" />
+    <None Remove="Pages\images\simulation.png" />
     <None Remove="Pages\images\simulation1.png" />
     <None Remove="Pages\images\siteweb.png" />
     <None Remove="Pages\images\suivant.png" />
@@ -103,6 +105,7 @@
     <Resource Include="Pages\images\Home\plus.png" />
     <Resource Include="Pages\images\intel.png" />
     <Resource Include="Pages\images\ktab.png" />
+    <Resource Include="Pages\images\Line 53.png" />
     <Resource Include="Pages\images\precedent.png" />
     <Resource Include="Pages\images\Precedent1.png" />
     <Resource Include="Pages\images\Q.png" />
@@ -113,6 +116,7 @@
     <Resource Include="Pages\images\retour.png" />
     <Resource Include="Pages\images\revenir.png" />
     <Resource Include="Pages\images\sel_inst.png" />
+    <Resource Include="Pages\images\simulation.png" />
     <Resource Include="Pages\images\simulation1.png" />
     <Resource Include="Pages\images\siteweb.png" />
     <Resource Include="Pages\images\suivant.png" />

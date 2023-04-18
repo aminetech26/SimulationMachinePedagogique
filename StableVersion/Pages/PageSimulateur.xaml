@@ -17,10 +17,8 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel>
-            <TextBlock  Text="Découvrez l'architecture des ordinateurs de manière ludique grâce à la simulation graphique des instructions de la machine pédagogique MIASM et de l’Assembleur 80x86. Plongez dans le fonctionnement interne de l'ordinateur en temps réel et visualisez les actions de chaque instruction avec des graphiques détaillés et interactifs." TextWrapping="Wrap" Foreground="White" Margin="100,50" FontSize="18" FontFamily="Montserrat"/>
-            <Button Margin="100,10"
-            Style="{DynamicResource RoundedButtonStyle}"
-        
+            <TextBlock  Text="Découvrez l'architecture des ordinateurs de manière ludique grâce à la simulation graphique des instructions de la machine pédagogique MIASM et de l’Assembleur 80x86. Plongez dans le fonctionnement interne de l'ordinateur en temps réel et visualisez les actions de chaque instruction avec des graphiques détaillés et interactifs." TextWrapping="Wrap" Foreground="White" Margin="100,50" FontSize="18.5" FontWeight="SemiBold" Padding="7" FontFamily="Montserrat"/>
+            <Border CornerRadius="12" Background="White" Margin="100,10"
             >
                 <Grid>
                     <Grid.ColumnDefinitions>
@@ -51,7 +49,7 @@
                     </StackPanel>
                     <StackPanel Grid.Column="2">
                         <Image  Source="/Pages/images/simulation.png" Width="100" Height="100" Margin="5" />
-                        <Button  Height="43" Width="190"
+                        <Button  Height="43" Width="190" Click="toCEIPage"
                 Style="{StaticResource RoundedButtonStyle}"
                 Background="#DAF3FF"
                 Foreground="Black"
@@ -70,7 +68,7 @@
 
                 
 
-            </Button>
+            </Border>
         </StackPanel>
 
     </Grid>

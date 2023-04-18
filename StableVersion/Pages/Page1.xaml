@@ -89,7 +89,7 @@
                                            Style="{StaticResource Image_Style}" />
                                     <TextBlock Text="C.E.I"
                                                Style="{StaticResource Text_Style}"
-                                               PreviewMouseDown="toCEIPage"/>
+                                               PreviewMouseDown="toSimulateurPage"/>
                                 </Grid>
                             </Menu:Btn>
 

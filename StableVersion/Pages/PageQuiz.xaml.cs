@@ -32,7 +32,7 @@ namespace projet.Pages
 
         private void GoListQuiz(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
         }
 
 

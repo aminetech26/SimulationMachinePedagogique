@@ -24,5 +24,11 @@ namespace projet.Pages
         {
             InitializeComponent();
         }
+
+        private void toCEIPage(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/CEI.xaml", UriKind.RelativeOrAbsolute));
+        }
+
     }
 }
