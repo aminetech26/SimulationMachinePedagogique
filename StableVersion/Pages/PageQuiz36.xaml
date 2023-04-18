@@ -55,7 +55,7 @@
             <TextBlock x:Name="Text3" Text="●	Dans l'adressage ____ , l'opérande est stocké directement dans l'instruction." FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                    FontWeight="Medium" Margin="75 15 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}"  
                       Padding="20 5" Margin="75 20" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">

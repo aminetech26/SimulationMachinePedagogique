@@ -109,23 +109,23 @@
                                 <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
                                 <TextBlock Text="Quiz № 1" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz1" />
                             </Grid>
-                            <StackPanel  HorizontalAlignment="Center" 
+                            <!--<StackPanel  HorizontalAlignment="Center" 
                                      VerticalAlignment="Top">
                                 <Border  Height="5"  Width="200"  
                                      Background="#E0E0E0" Margin="0,-30,0,0" />
 
-                            </StackPanel>
+                            </StackPanel>-->
                         </Grid>
 
                     </Menu:Btn>
                     <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="False"
+                          IsChecked="True"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" Margin="25,0,0,8" VerticalAlignment="Bottom" />
                             <TextBlock Text="Quiz № 2" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz2" />
                         </Grid>
-
+                        
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}"

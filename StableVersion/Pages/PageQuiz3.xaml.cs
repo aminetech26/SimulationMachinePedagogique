@@ -24,7 +24,6 @@ namespace projet.Pages
         {
             InitializeComponent();
             Text4.Visibility = Visibility.Collapsed;
-            Text44.Visibility = Visibility.Collapsed;
             Text5.Visibility = Visibility.Collapsed;
             Image1.Visibility = Visibility.Collapsed;
             Image2.Visibility = Visibility.Collapsed;
@@ -93,7 +92,6 @@ namespace projet.Pages
                 if (selectedItem.Content.ToString() == "L'emplacement de l'opérande dans la mémoire")
                 {
                     Text4.Visibility = Visibility.Visible;
-                    Text44.Visibility = Visibility.Hidden;
                     Image1.Visibility = Visibility.Visible;
                 }
                 else
@@ -106,9 +104,7 @@ namespace projet.Pages
                     Text4.Inlines.Add(new LineBreak());
                     Text4.Inlines.Add(new Run("Essayez encore !"));
                     Text4.Foreground = new BrushConverter().ConvertFromString("#FFB347") as Brush;
-                    Text44.Inlines.Add(new Run("L'emplacement de l'opérande dans la mémoire ."));
                     Text4.Visibility = Visibility.Visible;
-                    Text44.Visibility = Visibility.Visible;
                     Image1.Visibility = Visibility.Visible;
 
                 }

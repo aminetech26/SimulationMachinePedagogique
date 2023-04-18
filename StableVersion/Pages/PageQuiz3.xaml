@@ -21,9 +21,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
-            <RowDefinition Height="70" ></RowDefinition>
-            <RowDefinition Height="125" ></RowDefinition>
-            <RowDefinition Height="80" ></RowDefinition>
+            <RowDefinition Height="55" ></RowDefinition>
+            <RowDefinition Height="103" ></RowDefinition>
+            <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
 
@@ -47,16 +47,16 @@
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
             <TextBlock x:Name="Text1" Text="Quiz N° 3 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
-                   Margin="75 20 0 0" />
+                   Margin="75 25 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
 
             <TextBlock x:Name="Text3" Text="●	À quoi fait référence l'adresse physique d'un opérande?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
-                   FontWeight="Medium" Margin="75 15 0 0" FontStyle="Normal" TextAlignment="Left" />
+                   FontWeight="Medium" Margin="75 25 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 15" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                      Padding="20 5" Margin="75 20" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
                 <ComboBoxItem>L'emplacement de l'opérande dans la mémoire</ComboBoxItem>
@@ -79,23 +79,17 @@
 
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Grid.Column="1" >
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Column="1" >
 
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" >
-
-                <Image x:Name="Image1" Source="/Pages/images/checkmark.png" Width="40" Height="40" />
-                <TextBlock Text="C'est exactement ça ! Félicitations pour votre réponse juste !"
+            <Image x:Name="Image1" Source="/Pages/images/checkmark.png" Width="40" Height="40" />
+            <TextBlock Text="C'est exactement ça ! Félicitations pour votre réponse juste !"
                        Height="Auto" Width="Auto" TextWrapping="Wrap" Padding="8 0" FontFamily="Montserrat"
                        FontSize="20" FontWeight="Normal" Foreground="#81C784" TextAlignment="Left"
                        VerticalAlignment="Center" x:Name="Text4"
                        />
 
-            </StackPanel>
-
-            <TextBlock x:Name="Text44" Text="Voici la bonne reponse : " FontFamily="Montserrat" Margin="10 3" FontSize="18"></TextBlock>
-
-
         </StackPanel>
+
 
         <Grid Grid.Row="3"  Grid.Column="1" >
             <Grid x:Name="myGridExpl">
@@ -113,7 +107,7 @@
                 <Grid Grid.Row="1" Width="Auto" >
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"  Padding="10"          
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
                                    Text=" l'adresse physique d'un opérande fait référence à l'emplacement réel de l'opérande dans la mémoire du système. Cela peut être spécifié à l'aide d'un mode d'adressage tel que l'adressage direct, indirect, ou relatif."
                                     />
 

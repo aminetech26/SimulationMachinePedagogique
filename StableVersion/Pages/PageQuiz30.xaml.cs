@@ -78,9 +78,13 @@ namespace projet.Pages
 
         }
        
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
         private void Reponse1(object sender, RoutedEventArgs e)
         {
-            ComboBoxItem? selectedItem = Combo.SelectedItem as ComboBoxItem;
+            ComboBoxItem selectedItem = Combo.SelectedItem as ComboBoxItem;
             Uri imageUri = new Uri("pack://application:,,,/Pages/images/false.png");
             BitmapImage bitmap = new BitmapImage(imageUri);
 
@@ -103,7 +107,7 @@ namespace projet.Pages
                     Text4.Inlines.Add(new Run("Vous êtes proche de la bonne réponse, mais ce n'est pas tout à fait ça."));
                     Text4.Inlines.Add(new LineBreak());
                     Text4.Inlines.Add(new Run("Essayez encore !"));
-                    Text4.Foreground = new BrushConverter().ConvertFromString("#FFB347") as Brush;
+                    Text4.Foreground = (Brush)new BrushConverter().ConvertFromString("#FFB347");
                     Text4.Visibility = Visibility.Visible;
                     Image1.Visibility = Visibility.Visible;
 

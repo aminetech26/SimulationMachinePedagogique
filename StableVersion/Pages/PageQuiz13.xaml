@@ -19,10 +19,10 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="45" ></RowDefinition>
-            <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="122" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="55" ></RowDefinition>
+            <RowDefinition Height="102" ></RowDefinition>
             <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -47,7 +47,7 @@
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
             <TextBlock x:Name="Text1" Text="Quiz N° 13 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
-                   Margin="75 15 0 0" />
+                   Margin="75 25 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
@@ -55,8 +55,8 @@
             <TextBlock x:Name="Text3" Text="●	Donnez la valeur de l'opérande dans l'instruction CMP CX, [SI+0x10] si le contenu du registre SI est 0x1000 et que la valeur stockée à l'adresse physique 0x1010 est 0x23." FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                    FontWeight="Medium" Margin="75 3 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 15" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                      Padding="20 5" Margin="75 10" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
                 <ComboBoxItem>0x23</ComboBoxItem>
@@ -107,7 +107,7 @@
                 <Grid Grid.Row="1" Width="Auto" >
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"   Padding="10"         
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
                                    Text=" l&#39;opérande dans l&#39;instruction CMP CX, [SI+0x10] est obtenu en ajoutant la valeur du registre SI et l&#39;offset 0x10. Cela donne une
 adresse physique de 0x1010. La valeur stockée à cette adresse est
 0x23. La valeur de l&#39;opérande est donc 0x23."

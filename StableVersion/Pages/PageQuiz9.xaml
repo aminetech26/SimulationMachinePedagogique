@@ -21,9 +21,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="135" ></RowDefinition>
-            <RowDefinition Height="80" ></RowDefinition>
+            <RowDefinition Height="55" ></RowDefinition>
+            <RowDefinition Height="125" ></RowDefinition>
+            <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
 
@@ -53,9 +53,9 @@
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
 
             <TextBlock x:Name="Text3" Text="●	Comment appelle-t-on l'emplacement où les variables sont stockées dans un programme en langage d'assemblage?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
-                   FontWeight="Medium" Margin="75 15 0 0" FontStyle="Normal" TextAlignment="Left" />
+                   FontWeight="Medium" Margin="75 10 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
                       Padding="20 10" Margin="75 12" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
@@ -107,7 +107,7 @@
                 <Grid Grid.Row="1" Width="Auto" >
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0" Padding="7"            
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
                                    Text="En langage d'assemblage, les variables sont stockées dans la mémoire de l'ordinateur, qui peut inclure la RAM, la mémoire cache ou les disques durs. Les registres peuvent également être utilisés pour stocker temporairement des données, mais leur capacité de stockage est limitée par rapport à la mémoire."
                                     />
 

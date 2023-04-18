@@ -21,9 +21,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
-            <RowDefinition Height="60" ></RowDefinition>
-            <RowDefinition Height="120" ></RowDefinition>
-            <RowDefinition Height="80" ></RowDefinition>
+            <RowDefinition Height="55" ></RowDefinition>
+            <RowDefinition Height="105" ></RowDefinition>
+            <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
 
@@ -47,16 +47,16 @@
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
             <TextBlock x:Name="Text1" Text="Quiz N° 5 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
-                   Margin="75 20 0 0" />
+                   Margin="75 25 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
 
             <TextBlock x:Name="Text3" Text="●	Quel est le but de l'instruction MOV dans un programme en langage d'assemblage?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
-                   FontWeight="Medium" Margin="75 15 0 0" FontStyle="Normal" TextAlignment="Left" />
+                   FontWeight="Medium" Margin="75 10 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 13" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                      Padding="20 5" Margin="75 15" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
                 <ComboBoxItem>Déplacer des données d'un emplacement de mémoire à un autre</ComboBoxItem>
@@ -107,7 +107,7 @@
                 <Grid Grid.Row="1" Width="Auto" >
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0" Padding="7"           
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
                                    Text="L'instruction MOV en langage d'assemblage sert à déplacer des données entre différents emplacements de la mémoire ou entre un registre et la mémoire. Elle est souvent utilisée pour initialiser des variables ou pour copier des données dans un programme."
                                     />
 

@@ -21,9 +21,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="125" ></RowDefinition>
-            <RowDefinition Height="80" ></RowDefinition>
+            <RowDefinition Height="55" ></RowDefinition>
+            <RowDefinition Height="103" ></RowDefinition>
+            <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
 
@@ -47,7 +47,7 @@
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
             <TextBlock x:Name="Text1" Text="Quiz N° 12 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
-                   Margin="75 20 0 0" />
+                   Margin="75 25 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
@@ -58,8 +58,8 @@ ADD AX, BX
 " FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                    FontWeight="Medium" Margin="75 3 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 15" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                      Padding="20 5" Margin="75 10" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
                 <ComboBoxItem>AX = 0x1234, BX = 0x5678</ComboBoxItem>
@@ -111,7 +111,7 @@ ADD AX, BX
                 <Grid Grid.Row="1" Width="Auto" >
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"   Padding="10"         
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
                                    Text="l'instruction ADD AX, BX ajoute la valeur du registre BX à la valeur du registre AX et stocke le résultat dans le registre AX. La valeur de AX est donc 0x1234 + 0x5678 = 0x68AC. La valeur du registre BX reste inchangée à 0x5678."
                                     />
 

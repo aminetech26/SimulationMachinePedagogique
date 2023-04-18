@@ -22,7 +22,7 @@
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="110" ></RowDefinition>
+            <RowDefinition Height="100" ></RowDefinition>
             <RowDefinition Height="80" ></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -55,7 +55,7 @@
             <TextBlock x:Name="Text3" Text="●	Si le registre AX contient la valeur 7FFFH et que l'instruction 'INC AX' est exécutée, quelle sera la valeur de AX ?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                    FontWeight="Medium" Margin="75 20 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}"  
                       Padding="20 5" Margin="75 15" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">

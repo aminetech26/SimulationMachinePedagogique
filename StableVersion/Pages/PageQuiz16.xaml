@@ -19,10 +19,10 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="45" ></RowDefinition>
-            <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="155" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="55" ></RowDefinition>
+            <RowDefinition Height="123" ></RowDefinition>
             <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -47,16 +47,16 @@
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
             <TextBlock x:Name="Text1" Text="Quiz N° 16 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
-                   Margin="75 20 0 0" />
+                   Margin="75 25 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
 
             <TextBlock x:Name="Text3" Text="●	Qu'est-ce que le prétraitement dans l'architecture d'un microprocesseur ?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
-                   FontWeight="Medium" Margin="75 15 0 0" FontStyle="Normal" TextAlignment="Left" />
+                   FontWeight="Medium" Margin="75 5 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 10" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}"  
+                      Padding="20 5" Margin="75 8" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
                 <ComboBoxItem>La conversion des instructions en langage machine</ComboBoxItem>
@@ -107,8 +107,8 @@
                 <Grid Grid.Row="1" Width="Auto" >
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="17.5"   x:Name="Text5"   Margin="0,0,10,0"  Padding="7"          
-                                   Text="Le prétraitement est une étape du processus de compilation d'un programme. Il s'agit de la phase de vérification de la syntaxe du code source pour détecter les erreurs éventuelles. Le prétraitement ne concerne pas la conversion des instructions en langage machine, ni l'optimisation du code source. C'est l'étape suivante, la compilation, qui se charge de ces tâches."
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
+                                   Text="Le prétraitement est une étape du processus de compilation d'un programme. Il s'agit de la phase de vérification de la syntaxe du code source pour détecter les erreurs éventuelles. Le prétraitement ne concerne pas la conversion des instructions en langage machine, ni l'optimisation du code source."
                                     />
 
                 </Grid>

@@ -19,10 +19,10 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="40" ></RowDefinition>
-            <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="140" ></RowDefinition>
+            <RowDefinition Height="*" ></RowDefinition>
+            <RowDefinition Height="55" ></RowDefinition>
+            <RowDefinition Height="103" ></RowDefinition>
             <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
@@ -55,7 +55,7 @@
             <TextBlock x:Name="Text3" Text="●	Donnez la valeur de l'opérande dans l'instruction MOV AX, [BX+SI+0x10] si le contenu des registres BX et SI est 0x1000 et 0x200 respectivement et que la valeur stockée à l'adresse physique 0x1020 est 0xABCD. " FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                    FontWeight="Medium" Margin="75 1 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}"  
                       Padding="20 5" Margin="75 10" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
@@ -107,8 +107,8 @@
                 <Grid Grid.Row="1" Width="Auto" >
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0" Padding="7"
-                                   Text=" l'opérande dans l'instruction MOV AX, [BX+SI+0x10] est obtenu en ajoutant la valeur des registres BX, SI et l'offset 0x10. Cela donne une adresse physique de 0x1020. La valeur stockée à cette adresse est 0xABCD. Comme l'opérande est de taille 16 bits (AX), la valeur est stockée en little-endian, donc la réponse est 0xCDAB."
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
+                                   Text=" l'opérande dans l'instruction MOV AX, [BX+SI+0x10] est obtenu en ajoutant la valeur des registres BX, SI et l'offset 0x10. Cela donne une adresse physique de 0x1020. La valeur stockée à cette adresse est 0xABCD."
                                     />
 
                 </Grid>

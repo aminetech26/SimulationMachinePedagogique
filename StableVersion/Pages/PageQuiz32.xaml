@@ -23,7 +23,7 @@
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="85" ></RowDefinition>
-            <RowDefinition Height="90" ></RowDefinition>
+            <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
 
@@ -55,8 +55,8 @@
             <TextBlock x:Name="Text3" Text="●	Le ____ est une zone de mémoire qui permet d'accélérer l'accès aux données en les stockant temporairement." FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                    FontWeight="Medium" Margin="75 15 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 20" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}"  
+                      Padding="20 5" Margin="75 25" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
                 <ComboBoxItem>mémoire cache</ComboBoxItem>

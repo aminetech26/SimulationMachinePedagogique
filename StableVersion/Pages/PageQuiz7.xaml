@@ -21,9 +21,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
-            <RowDefinition Height="50" ></RowDefinition>
-            <RowDefinition Height="125" ></RowDefinition>
-            <RowDefinition Height="80" ></RowDefinition>
+            <RowDefinition Height="55" ></RowDefinition>
+            <RowDefinition Height="103" ></RowDefinition>
+            <RowDefinition Height="75" ></RowDefinition>
         </Grid.RowDefinitions>
 
 
@@ -47,16 +47,16 @@
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
             <TextBlock x:Name="Text1" Text="Quiz N° 7 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
-                   Margin="75 20 0 0" />
+                   Margin="75 25 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
 
             <TextBlock x:Name="Text3" Text="●	Quelle instruction en langage d'assemblage est utilisée pour ajouter deux valeurs?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
-                   FontWeight="Medium" Margin="75 15 0 0" FontStyle="Normal" TextAlignment="Left" />
+                   FontWeight="Medium" Margin="75 25 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 15" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                      Padding="20 5" Margin="75 10" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
                 <ComboBoxItem>SUB</ComboBoxItem>
@@ -107,7 +107,7 @@
                 <Grid Grid.Row="1" Width="Auto" >
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
-                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0" Padding="10"           
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
                                    Text=" L'instruction en langage d'assemblage utilisée pour ajouter deux valeurs est l'instruction ADD. Elle est utilisée pour ajouter la valeur d'un opérande à la valeur d'un autre opérande et stocker le résultat dans le premier opérande"
                                     />
 

@@ -58,8 +58,8 @@ SUB AX, BX
 " FontSize="23"  TextWrapping="Wrap"
                    FontWeight="Medium" Margin="75 5 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 17" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                      Padding="20 5" Margin="75 15" Height="40" Width="400" 
                       HorizontalAlignment="Left"
                       x:Name="Combo">
                 <ComboBoxItem>AX = 0x0F0F, BX = 0x0505</ComboBoxItem>
