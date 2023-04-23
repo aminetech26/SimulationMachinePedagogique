@@ -24,8 +24,6 @@ namespace projet.Pages
         public CEI()
         {
             InitializeComponent();
-            
-            
         }
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -64,7 +62,6 @@ namespace projet.Pages
                 Row2.Height = new GridLength(225);
 
             }
-           
 
         }
 
@@ -72,6 +69,21 @@ namespace projet.Pages
         private void GoToArith(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page2.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageSimulateur.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void GoToEntreeSortie(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page_EntreeSortie.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void GoToDecalage(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page_Decalage.xaml", UriKind.RelativeOrAbsolute));
         }
 
     }

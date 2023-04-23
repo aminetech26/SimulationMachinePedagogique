@@ -49,10 +49,15 @@ namespace projet.Pages
         {
             Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
-
-        private void toCEIPage(object sender, MouseButtonEventArgs e)
+        
+        private void toSimulateurPage(object sender, MouseButtonEventArgs e)
         {
-            Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/CEI.xaml", UriKind.RelativeOrAbsolute));
+            Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageSimulateur.xaml", UriKind.RelativeOrAbsolute));
+        }
+        
+        private void toPremierpasPage(object sender, MouseButtonEventArgs e)
+        {
+            Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void Fermer(object sender, MouseButtonEventArgs e)
