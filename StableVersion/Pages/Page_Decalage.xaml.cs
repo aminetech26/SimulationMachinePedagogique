@@ -210,42 +210,73 @@ namespace projet.Pages
             if (selectedItem != null)
             {
                 // Format.Items.Clear();
-                if (selectedItem.Content.ToString() == "ADD")
+                if (selectedItem.Content.ToString() == "SHL")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("AX , Imd");
-                    Format.Items.Add("Reg , Reg/M");
-                    Format.Items.Add("Reg/M , Reg");
-                    Format.Items.Add("Reg/M , Imd");
-                    //if (Format.SelectedIndex == 1) { Format.SelectedItem = "AX , Imd"; }
+                    Format.Items.Add("Reg , imm8");
+                    Format.Items.Add("Mem , imm8");
+                    Format.Items.Add("Reg , CX");
+                    Format.Items.Add("Mem , CX");
 
                 }
-                else if (selectedItem.Content.ToString() == "SUB")
+                else if (selectedItem.Content.ToString() == "SHR")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("AX , Imd");
-                    Format.Items.Add("Reg , Reg/M");
-                    Format.Items.Add("Reg/M , Reg");
-                    Format.Items.Add("Reg/M , Imd");
+                    Format.Items.Add("Reg , imm8");
+                    Format.Items.Add("Mem , imm8");
+                    Format.Items.Add("Reg , CX");
+                    Format.Items.Add("Mem , CX");
 
                 }
-                else if (selectedItem.Content.ToString() == "INC")
+                else if (selectedItem.Content.ToString() == "SAL")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add(" Reg ");
-                    Format.Items.Add(" Reg/M ");
+                    Format.Items.Add("Reg , imm8");
+                    Format.Items.Add("Mem , imm8");
+                    Format.Items.Add("Reg , CX");
+                    Format.Items.Add("Mem , CX");
                 }
-                else if (selectedItem.Content.ToString() == "DEC")
+                else if (selectedItem.Content.ToString() == "SAR")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add(" Reg ");
-                    Format.Items.Add(" Reg/M ");
+                    Format.Items.Add("Reg , imm8");
+                    Format.Items.Add("Mem , imm8");
+                    Format.Items.Add("Reg , CX");
+                    Format.Items.Add("Mem , CX");
                 }
-                else if (selectedItem.Content.ToString() == "MUL")
+                else if (selectedItem.Content.ToString() == "ROR")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add(" Reg/M ");
+                    Format.Items.Add("Reg , imm8");
+                    Format.Items.Add("Mem , imm8");
+                    Format.Items.Add("Reg , CX");
+                    Format.Items.Add("Mem , CX");
                 }
+                else if (selectedItem.Content.ToString() == "ROL")
+                {
+                    Format.Items.Clear();
+                    Format.Items.Add("Reg , imm8");
+                    Format.Items.Add("Mem , imm8");
+                    Format.Items.Add("Reg , CX");
+                    Format.Items.Add("Mem , CX");
+                }
+                else if (selectedItem.Content.ToString() == "RCR")
+                {
+                    Format.Items.Clear();
+                    Format.Items.Add("Reg , imm8");
+                    Format.Items.Add("Mem , imm8");
+                    Format.Items.Add("Reg , CX");
+                    Format.Items.Add("Mem , CX");
+                }
+                else if (selectedItem.Content.ToString() == "RCX")
+                {
+                    Format.Items.Clear();
+                    Format.Items.Add("Reg , imm8");
+                    Format.Items.Add("Mem , imm8");
+                    Format.Items.Add("Reg , CX");
+                    Format.Items.Add("Mem , CX");
+                }
+
             }
 
 
@@ -440,7 +471,7 @@ namespace projet.Pages
 
         private void componentReg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem selectedItem = Reg.SelectedItem as ComboBoxItem;
+            ComboBoxItem? selectedItem = Reg.SelectedItem as ComboBoxItem;
 
             string letter = Reg.SelectedItem.ToString();
             string letter2 = Format.SelectedItem.ToString();

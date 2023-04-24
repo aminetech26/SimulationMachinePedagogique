@@ -70,11 +70,14 @@
                            HorizontalAlignment="Left" Background="White" Foreground="Black"
                            x:Name="Instruction" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
 
-                        <ComboBoxItem>ADD</ComboBoxItem>
-                        <ComboBoxItem>SUB</ComboBoxItem>
-                        <ComboBoxItem>MUL</ComboBoxItem>
-                        <ComboBoxItem>INC</ComboBoxItem>
-                        <ComboBoxItem>DEC</ComboBoxItem>
+                        <ComboBoxItem>SHL</ComboBoxItem>
+                        <ComboBoxItem>SHR</ComboBoxItem>
+                        <ComboBoxItem>SAL</ComboBoxItem>
+                        <ComboBoxItem>SAR</ComboBoxItem>
+                        <ComboBoxItem>ROR</ComboBoxItem>
+                        <ComboBoxItem>ROL</ComboBoxItem>
+                        <ComboBoxItem>RCR</ComboBoxItem>
+                        <ComboBoxItem>RCX</ComboBoxItem>
                     </ComboBox>
                 </StackPanel>
 
