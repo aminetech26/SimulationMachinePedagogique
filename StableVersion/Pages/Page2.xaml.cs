@@ -118,7 +118,6 @@ namespace projet.Pages
         }
 
 
-
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             TextBox textBox = (TextBox)sender;
@@ -128,7 +127,6 @@ namespace projet.Pages
                 textBox.CaretIndex = 4;
             }
         }
-
 
 
         private void TextBox2_GotFocus(object sender, RoutedEventArgs e)
@@ -253,8 +251,6 @@ namespace projet.Pages
         
         private void componentFormat_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-            ComboBoxItem selectedItem = Format.SelectedItem as ComboBoxItem;
 
             string letter = Format.SelectedItem.ToString();
            
@@ -440,7 +436,7 @@ namespace projet.Pages
 
         private void componentReg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem selectedItem = Reg.SelectedItem as ComboBoxItem;
+            ComboBoxItem? selectedItem = Reg.SelectedItem as ComboBoxItem;
 
             string letter = Reg.SelectedItem.ToString();
             string letter2 = Format.SelectedItem.ToString();

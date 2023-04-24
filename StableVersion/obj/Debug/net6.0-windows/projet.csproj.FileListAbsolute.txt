@@ -728,3 +728,11 @@ C:\Users\Admin\OneDrive\Bureau\20_04_2023\StableVersion\obj\Debug\net6.0-windows
 C:\Users\Admin\OneDrive\Bureau\20_04_2023\StableVersion\obj\Debug\net6.0-windows\Pages\Page_EntreeSortie.g.cs
 C:\Users\Admin\OneDrive\Bureau\20_04_2023\StableVersion\obj\Debug\net6.0-windows\Pages\Page_Decalage.baml
 C:\Users\Admin\OneDrive\Bureau\20_04_2023\StableVersion\obj\Debug\net6.0-windows\Pages\Page_EntreeSortie.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Animation.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Animation.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page_Decalage.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page_EntreeSortie.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Animation.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Animation.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page_Decalage.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page_EntreeSortie.baml
