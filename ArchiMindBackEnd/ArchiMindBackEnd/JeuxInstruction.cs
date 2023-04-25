@@ -165,56 +165,56 @@ namespace ArchiMind
         // l'intialisation des instructions de decalages 
         //instruction SHL 
          mycouple =new CoupleCopFormat();
-         instruction=new Instruction("Reg16/mem16,imm8","11000001xx100xxx","100");
+         instruction=new Instruction("Reg16/mem16,imm16","11000001xx100xxx","100");
          mycouple.addInstruction(instruction);
          instruction=new Instruction("Reg16/mem16,CX","11010011xx100xxx","100");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
          //instruction SHR 
          mycouple =new CoupleCopFormat();
-         instruction=new Instruction("Reg16/mem16,imm8","11000001xx101xxx","101");
+         instruction=new Instruction("Reg16/mem16,imm16","11000001xx101xxx","101");
          mycouple.addInstruction(instruction);
          instruction=new Instruction("Reg16/mem16,CX","11010011xx101xxx","101");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
          //instruction SAL  -- meme cop que SHL 
          mycouple =new CoupleCopFormat();
-         instruction=new Instruction("Reg16/mem16,imm8","11000001xx100xxx","100");
+         instruction=new Instruction("Reg16/mem16,imm16","11000001xx100xxx","100");
          mycouple.addInstruction(instruction);
          instruction=new Instruction("Reg16/mem16,CX","11010001xx100xxx","100");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
          //instruction SAR 
          mycouple = new CoupleCopFormat();
-         instruction = new Instruction("Reg16/mem16,imm8","11000001xx111xxx","111");
+         instruction = new Instruction("Reg16/mem16,imm16","11000001xx111xxx","111");
          mycouple.addInstruction(instruction);
          instruction = new Instruction("Reg16/mem16,CX","11010011xx111xxx","111");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
          //instruction ROR 
          mycouple = new CoupleCopFormat();
-         instruction = new Instruction("Reg16/mem16,imm8","11000001xx001xxx","001");
+         instruction = new Instruction("Reg16/mem16,imm16","11000001xx001xxx","001");
          mycouple.addInstruction(instruction);
          instruction = new Instruction("Reg16/mem16,CX","11010011xx001xxx","001");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
          //instruction ROL 
          mycouple = new CoupleCopFormat();
-         instruction = new Instruction("Reg16/mem16,imm8","11000001xx000xxx","000");
+         instruction = new Instruction("Reg16/mem16,imm16","11000001xx000xxx","000");
          mycouple.addInstruction(instruction);
          instruction = new Instruction("Reg16/mem16,CX","11010011xx000xxx","000");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
          //instruction RCR 
          mycouple = new CoupleCopFormat();
-         instruction = new Instruction("Reg16/mem16,imm8","11000001xx011xxx","011");
+         instruction = new Instruction("Reg16/mem16,imm16","11000001xx011xxx","011");
          mycouple.addInstruction(instruction);
          instruction = new Instruction("Reg16/mem16,CX","11010011xx011xxx","011");
          mycouple.addInstruction(instruction);
          detailInstruction.Add(mycouple);
          //instruction RCL 
          mycouple = new CoupleCopFormat();
-         instruction = new Instruction("Reg16/mem16,imm8","11000001xx010xxx","010");
+         instruction = new Instruction("Reg16/mem16,imm16","11000001xx010xxx","010");
          mycouple.addInstruction(instruction);
          instruction = new Instruction("Reg16/mem16,CX","11010011xx010xxx","010");
          mycouple.addInstruction(instruction);
@@ -1277,7 +1277,7 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
                   UAL.setUal2(MC.getRim());
                   switch(mnemonique){
                     case "INC":
-                    UAL.setUal1("1");
+                    UAL.setUal1("0001");
                     int hexInt = Convert.ToInt32(UAL.getUal2(), 16);
                     hexInt++;
                      result = Convert.ToString(hexInt, 16).ToUpper();
@@ -1326,9 +1326,1506 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
                     default:
                     break;
                   }
-             }else{
+
+             }else{//reste
 
              } 
+          break;
+          case "Reg16/Mem16,imm16":
+          if(mem_b){
+             if(ifdepl){
+                    switch(source){ //khdmt b source mais f hed le cas c'est destinataire -- nom a revoir
+                    case "[BX+SI+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BX+DI+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[BP+SI+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BP+DI+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[SI+depl]":
+                    Registre.setContenuRegistre("SI",val1);
+                    break;
+                    case "[DI+depl]":
+                    Registre.setContenuRegistre("DI",val1);
+                    break;
+                    case "[BP+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    break;
+                    case "[BX+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }
+                  }else{
+                    switch(source){
+                    case "[BX+SI]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BX+DI]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[BP+SI]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BP+DI]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[SI]":
+                    Registre.setContenuRegistre("SI",val1);
+                    break;
+                    case "[DI]":
+                    Registre.setContenuRegistre("DI",val1);
+                    break;
+                    case "[BP]":
+                    Registre.setContenuRegistre("BP",val1);
+                    break;
+                    case "[BX]":
+                    Registre.setContenuRegistre("BX",val1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }}
+                    //hover (nombreregistre,reg1,reg2);
+                    //animation(Registre,CO,adresse);
+                    //animation (Registres,RAM,adresse)
+                    string adresse = UAL.calculAdresse(mem,ifdepl,valdepl);
+                    MC.setRam(adresse);
+                    MC.setRim(MC.recherche_mc(adresse).getContenu());
+                    //animation(Rim,UAL1,donnee)
+                    UAL.setUal1(MC.getRim());
+                    //on lit le deuxieme mot memoire pour avoir l'operande immediat
+                    Co.setco("0101");//premier mot adresse 100 deuxieme adresse 101
+                    //animation(CO,RAM,adresse);
+                    MC.setRam("0101");
+                    MC.setRim(MC.recherche_mc("0101").getContenu());
+                    UAL.setUal2(MC.getRim());
+                    switch(mnemonique){
+                      case "ADD":
+                      result  =   (Convert.ToInt32(UAL.getUal1(),16) + Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("ADD",result);
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(result);
+                      MC.recherche_mc(adresse).setContenu(result);
+                      //fin
+                      break;
+                      case "SUB":
+                      result  =  (Convert.ToInt32(UAL.getUal1(),16) - Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("SUB",result);
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(result);
+                      MC.recherche_mc(adresse).setContenu(result);
+                      //fin
+                      break;
+                      case "MOV":
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("MOV",result);
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(UAL.getUal2());
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "AND":
+                      result  =   (Convert.ToInt32(UAL.getUal1(),16) & Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("AND",result);
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(result);
+                      MC.recherche_mc(adresse).setContenu(result);
+                      //fin
+                      break;
+                      case "OR":
+                      result  =   (Convert.ToInt32(UAL.getUal1(),16) | Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("OR",result);
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(result);
+                      MC.recherche_mc(adresse).setContenu(result);
+                      //fin
+                      break;
+                      case "XOR":
+                      result  =   (Convert.ToInt32(UAL.getUal1(),16) ^ Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("XOR",result);
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(result);
+                      MC.recherche_mc(adresse).setContenu(result);
+                      //fin
+                      break;
+                      case "SHL":
+                      //ushort pour 16-bit representation
+                      ushort destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      ushort count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by
+                      // Shift the destination left by the count value
+                      string str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                      string str_res = destination.ToString("X");
+                      
+                      UAL.positionnerIndicateurs("SHL",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                      bool newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "SHR":
+                      //ushort pour 16-bit representation
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by
+                      // Shift the destination left by the count value
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination >> count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SHR",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x0001) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "SAL": // same brk on conserve le bit de signe -- nombre signe
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+                      // Check the value of the MSB before the shift
+                      bool signBit = (destination & 0x8000) != 0;
+                      // Shift the value left by the count value, preserving the sign bit
+                      destination = (ushort)(destination << count);
+                      if (signBit)
+                      {
+                      // The MSB was set before the shift, so set it again
+                      destination |= 0x8000;
+                      }
+                      // Check the value of the MSB after the shift
+                      bool newSignBit = (destination & 0x8000) != 0;
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SAL",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "SAR":
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+                      // Check the value of the MSB before the shift
+                       signBit = (destination & 0x8000) != 0;
+                      // Shift the value right by the count value, preserving the sign bit
+                      destination = (ushort)(destination >> count);
+                      if (signBit)
+                      {
+                     // The MSB was set before the shift, so set it again
+                      destination |= (ushort)(0xFFFF << (16 - count));
+                      }
+                      // Check the value of the MSB after the shift
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SAR",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "ROR":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination >> count) | (destination << (16 - count)));
+                      bool carryFlag = (destination & 0x0001) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       string str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("ROR",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the LSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the LSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+
+                      break;
+                      case "ROL":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination << count) | (destination >> (16 - count)));
+                      carryFlag = (destination & 0x8000) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("ROL",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "RCR"://the user must set the value of CF indicateur !!! -- a signaler 
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination >> count) | (Convert.ToBoolean(Indicateur.getretenuAuxiliaire()) ? (0xFFFF << (16 - count)) : 0));
+                      carryFlag = (destination & 0x0001) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("RCR",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the LSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the LSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+
+                      break;
+                      case "RCL":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      while (count > 0)
+                      {
+                          // Get the value of the most significant bit before the rotation
+                          bool msb = (destination & 0x8000) != 0;
+
+                          // Shift the value left by one bit and OR it with the carry flag
+                          destination = (ushort)((destination << 1) | (Convert.ToBoolean(Indicateur.getretenuAuxiliaire()) ? 1 : 0));
+
+                          // Update the carry flag with the original value of the most significant bit
+                          carryFlag = msb;
+
+                          count--;
+                      }
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("RCL",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       carryFlag = (destination & 0x8000) != 0;
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "CMP":
+                      result  =  (Convert.ToInt32(UAL.getUal1(),16) - Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("CMP",result);
+                      break;
+                      default:
+                      System.Console.WriteLine("error ! no such mnemonique");
+                      break;
+                    }
+                    }
+                    //-------------------------------------------------------------------------------
+                    else{//reg,imm16
+                    //animation registre to ual1
+                    Registre.setContenuRegistre(source,val3);//val3 valeur te3 registre // une autre fois je travaille avec source alors que c'est destinataire -- juste notation
+                    UAL.setUal1(Registre.getContenuRegistre(source));
+                    //on lit le deuxieme mot memoire pour avoir l'operande immediat
+                    Co.setco("0101");//premier mot adresse 100 deuxieme adresse 101
+                    //animation(CO,RAM,adresse);
+                    MC.setRam("0101");
+                    MC.setRim(MC.recherche_mc("0101").getContenu());
+                    UAL.setUal2(MC.getRim());
+                    switch(mnemonique){
+                      case "SHL":
+                      //ushort pour 16-bit representation
+                      ushort destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      ushort count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by
+                      // Shift the destination left by the count value
+                      string str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                      string str_res = destination.ToString("X");
+                      
+                      UAL.positionnerIndicateurs("SHL",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                      bool newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "SHR":
+                      //ushort pour 16-bit representation
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by
+                      // Shift the destination left by the count value
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination >> count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SHR",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x0001) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "SAL": // same brk on conserve le bit de signe -- nombre signe
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+                      // Check the value of the MSB before the shift
+                      bool signBit = (destination & 0x8000) != 0;
+                      // Shift the value left by the count value, preserving the sign bit
+                      destination = (ushort)(destination << count);
+                      if (signBit)
+                      {
+                      // The MSB was set before the shift, so set it again
+                      destination |= 0x8000;
+                      }
+                      // Check the value of the MSB after the shift
+                      bool newSignBit = (destination & 0x8000) != 0;
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SAL",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "SAR":
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+                      // Check the value of the MSB before the shift
+                       signBit = (destination & 0x8000) != 0;
+                      // Shift the value right by the count value, preserving the sign bit
+                      destination = (ushort)(destination >> count);
+                      if (signBit)
+                      {
+                     // The MSB was set before the shift, so set it again
+                      destination |= (ushort)(0xFFFF << (16 - count));
+                      }
+                      // Check the value of the MSB after the shift
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SAR",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "ROR":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination >> count) | (destination << (16 - count)));
+                      bool carryFlag = (destination & 0x0001) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       string str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("ROR",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the LSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the LSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+
+                      break;
+                      case "ROL":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination << count) | (destination >> (16 - count)));
+                      carryFlag = (destination & 0x8000) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("ROL",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "RCR"://the user must set the value of CF indicateur !!! -- a signaler 
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination >> count) | (Convert.ToBoolean(Indicateur.getretenuAuxiliaire()) ? (0xFFFF << (16 - count)) : 0));
+                      carryFlag = (destination & 0x0001) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("RCR",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the LSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the LSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+
+                      break;
+                      case "RCL":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      while (count > 0)
+                      {
+                          // Get the value of the most significant bit before the rotation
+                          bool msb = (destination & 0x8000) != 0;
+
+                          // Shift the value left by one bit and OR it with the carry flag
+                          destination = (ushort)((destination << 1) | (Convert.ToBoolean(Indicateur.getretenuAuxiliaire()) ? 1 : 0));
+
+                          // Update the carry flag with the original value of the most significant bit
+                          carryFlag = msb;
+
+                          count--;
+                      }
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("RCL",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       carryFlag = (destination & 0x8000) != 0;
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "CMP":
+                      result  =  (Convert.ToInt32(UAL.getUal1(),16) - Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("CMP",result);
+                      break;
+                      case "ADD":
+                      result  =   (Convert.ToInt32(UAL.getUal1(),16) + Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("ADD",result);
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,result);
+                      //fin
+                      break;
+                      case "SUB":
+                      result  =  (Convert.ToInt32(UAL.getUal1(),16) - Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("SUB",result);
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,result);
+                      //fin
+                      break;
+                      case "MOV":
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("MOV",result);
+                     //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,result);
+                      break;
+                      case "AND":
+                      result  =   (Convert.ToInt32(UAL.getUal1(),16) & Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("AND",result);
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,result);
+                      //fin
+                      break;
+                      case "OR":
+                      result  =   (Convert.ToInt32(UAL.getUal1(),16) | Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("OR",result);
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,result);
+                      //fin
+                      break;
+                      case "XOR":
+                      result  =   (Convert.ToInt32(UAL.getUal1(),16) ^ Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("XOR",result);
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,result);
+                      //fin
+                      break;
+                      default:
+                      System.Console.WriteLine("error ! no such mnemonique");
+                      break;
+                    }
+                    }
+          break;
+          case "AX,DX":
+          switch(mnemonique){
+            case "IN":
+                      //animation registre(ax,dx)
+                      //afficher fenetre (contient numero periph ex : clavier) Registre.getDX();
+                      string value1 = Console.ReadLine();
+                      UAL.setUal2(value1);
+                      //animation registre ual2 (AX,UAL2,donne);
+                      UAL.setUal1(Registre.getAx());
+                      //animation Indicateurs
+                      UAL.positionnerIndicateurs("IN",value1);
+                      //animation UAL registre
+                      Registre.setAx(value1);
+
+            break;
+            default:
+            System.Console.WriteLine("no such mnemonique");
+            break;
+          }
+          break;
+          case "mem16,DX":
+          switch(mnemonique){
+            case "INSW":
+                      //animation registre(dx)
+                      //afficher fenetre (contient numero periph ex : clavier) Registre.getDX();
+                      string value = Console.ReadLine();
+                      string adresse = UAL.calculAdresse(mem,ifdepl,valdepl);
+                      Co.setco(adresse);
+                      //Co to Ram
+                      MC.setRam(adresse);
+                      MC.setRim(value);
+                      MC.recherche_mc(adresse).setContenu(value);
+                      UAL.positionnerIndicateurs("IN",value);
+                      //animation UAL registre
+            break;
+            default:
+            System.Console.WriteLine("no such mnemonique");
+            break;
+          }         
+          break;
+          case "Reg16/Mem16,CX":
+          if(mem_b){
+             if(ifdepl){
+                    switch(source){ //khdmt b source mais f hed le cas c'est destinataire -- nom a revoir
+                    case "[BX+SI+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BX+DI+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[BP+SI+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BP+DI+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[SI+depl]":
+                    Registre.setContenuRegistre("SI",val1);
+                    break;
+                    case "[DI+depl]":
+                    Registre.setContenuRegistre("DI",val1);
+                    break;
+                    case "[BP+depl]":
+                    Registre.setContenuRegistre("BP",val1);
+                    break;
+                    case "[BX+depl]":
+                    Registre.setContenuRegistre("BX",val1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }
+                  }else{
+                    switch(source){
+                    case "[BX+SI]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BX+DI]":
+                    Registre.setContenuRegistre("BX",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[BP+SI]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("SI",val2);
+                    break;
+                    case "[BP+DI]":
+                    Registre.setContenuRegistre("BP",val1);
+                    Registre.setContenuRegistre("DI",val2);
+                    break;
+                    case "[SI]":
+                    Registre.setContenuRegistre("SI",val1);
+                    break;
+                    case "[DI]":
+                    Registre.setContenuRegistre("DI",val1);
+                    break;
+                    case "[BP]":
+                    Registre.setContenuRegistre("BP",val1);
+                    break;
+                    case "[BX]":
+                    Registre.setContenuRegistre("BX",val1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }}
+                    //hover (nombreregistre,reg1,reg2);
+                    //animation(Registre,CO,adresse);
+                    //animation (Registres,RAM,adresse)
+                    string adresse = UAL.calculAdresse(mem,ifdepl,valdepl);
+                    MC.setRam(adresse);
+                    MC.setRim(MC.recherche_mc(adresse).getContenu());
+                    //animation(Rim,UAL1,donnee)
+                    UAL.setUal1(MC.getRim());
+                    //on met le contenu de cx dans ual2
+                    UAL.setUal2(Registre.getCx());
+                    switch(mnemonique){
+                      case "SHL":
+                      //ushort pour 16-bit representation
+                      ushort destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      ushort count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by
+                      // Shift the destination left by the count value
+                      string str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                      string str_res = destination.ToString("X");
+                      
+                      UAL.positionnerIndicateurs("SHL",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                      bool newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "SHR":
+                      //ushort pour 16-bit representation
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by
+                      // Shift the destination left by the count value
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination >> count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SHR",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x0001) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "SAL": // same brk on conserve le bit de signe -- nombre signe
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+                      // Check the value of the MSB before the shift
+                      bool signBit = (destination & 0x8000) != 0;
+                      // Shift the value left by the count value, preserving the sign bit
+                      destination = (ushort)(destination << count);
+                      if (signBit)
+                      {
+                      // The MSB was set before the shift, so set it again
+                      destination |= 0x8000;
+                      }
+                      // Check the value of the MSB after the shift
+                      bool newSignBit = (destination & 0x8000) != 0;
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SAL",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "SAR":
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+                      // Check the value of the MSB before the shift
+                       signBit = (destination & 0x8000) != 0;
+                      // Shift the value right by the count value, preserving the sign bit
+                      destination = (ushort)(destination >> count);
+                      if (signBit)
+                      {
+                     // The MSB was set before the shift, so set it again
+                      destination |= (ushort)(0xFFFF << (16 - count));
+                      }
+                      // Check the value of the MSB after the shift
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SAR",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "ROR":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination >> count) | (destination << (16 - count)));
+                      bool carryFlag = (destination & 0x0001) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       string str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("ROR",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the LSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the LSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+
+                      break;
+                      case "ROL":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination << count) | (destination >> (16 - count)));
+                      carryFlag = (destination & 0x8000) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("ROL",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      case "RCR"://the user must set the value of CF indicateur !!! -- a signaler 
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination >> count) | (Convert.ToBoolean(Indicateur.getretenuAuxiliaire()) ? (0xFFFF << (16 - count)) : 0));
+                      carryFlag = (destination & 0x0001) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("RCR",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the LSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the LSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+
+                      break;
+                      case "RCL":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      while (count > 0)
+                      {
+                          // Get the value of the most significant bit before the rotation
+                          bool msb = (destination & 0x8000) != 0;
+
+                          // Shift the value left by one bit and OR it with the carry flag
+                          destination = (ushort)((destination << 1) | (Convert.ToBoolean(Indicateur.getretenuAuxiliaire()) ? 1 : 0));
+
+                          // Update the carry flag with the original value of the most significant bit
+                          carryFlag = msb;
+
+                          count--;
+                      }
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("RCL",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       carryFlag = (destination & 0x8000) != 0;
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      Co.setco(adresse);
+                      //animation(CO,ram,adresse)
+                      MC.setRam(adresse);
+                      //animation (UAL,rim,donnee)
+                      MC.setRim(destination.ToString("X"));
+                      MC.recherche_mc(adresse).setContenu(MC.getRim());
+                      break;
+                      default:
+                      System.Console.WriteLine("error ! no such mnemonique");
+                      break;
+                    }
+                    }
+                    //-------------------------------------------------------------------------------
+                    else{//reg,cx
+                    //animation registre to ual1
+                    Registre.setContenuRegistre(source,val3);//val3 valeur te3 registre // une autre fois je travaille avec source alors que c'est destinataire -- juste notation
+                    UAL.setUal1(Registre.getContenuRegistre(source));
+                    //on met cx dans ual2
+                    UAL.setUal2(Registre.getCx());
+                    switch(mnemonique){
+                      case "SHL":
+                      //ushort pour 16-bit representation
+                      ushort destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      ushort count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by
+                      // Shift the destination left by the count value
+                      string str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                      string str_res = destination.ToString("X");
+                      
+                      UAL.positionnerIndicateurs("SHL",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                      bool newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "SHR":
+                      //ushort pour 16-bit representation
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by
+                      // Shift the destination left by the count value
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination >> count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SHR",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x0001) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "SAL": // same brk on conserve le bit de signe -- nombre signe
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+                      // Check the value of the MSB before the shift
+                      bool signBit = (destination & 0x8000) != 0;
+                      // Shift the value left by the count value, preserving the sign bit
+                      destination = (ushort)(destination << count);
+                      if (signBit)
+                      {
+                      // The MSB was set before the shift, so set it again
+                      destination |= 0x8000;
+                      }
+                      // Check the value of the MSB after the shift
+                      bool newSignBit = (destination & 0x8000) != 0;
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SAL",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(Registre,co,adresse)
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "SAR":
+                       destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                       count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+                      // Check the value of the MSB before the shift
+                       signBit = (destination & 0x8000) != 0;
+                      // Shift the value right by the count value, preserving the sign bit
+                      destination = (ushort)(destination >> count);
+                      if (signBit)
+                      {
+                     // The MSB was set before the shift, so set it again
+                      destination |= (ushort)(0xFFFF << (16 - count));
+                      }
+                      // Check the value of the MSB after the shift
+                       str_op2 = destination.ToString("X"); 
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("SAR",str_res,operand2:str_op2);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       newCarryFlag = ((destination & 0x8000) != 0);
+                      // Set the new value of the CF flag
+                      if (newCarryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "ROR":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination >> count) | (destination << (16 - count)));
+                      bool carryFlag = (destination & 0x0001) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       string str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("ROR",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the LSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the LSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+
+                      break;
+                      case "ROL":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination << count) | (destination >> (16 - count)));
+                      carryFlag = (destination & 0x8000) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("ROL",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the MSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      case "RCR"://the user must set the value of CF indicateur !!! -- a signaler 
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      destination = (ushort)((destination >> count) | (Convert.ToBoolean(Indicateur.getretenuAuxiliaire()) ? (0xFFFF << (16 - count)) : 0));
+                      carryFlag = (destination & 0x0001) != 0;
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("RCR",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the LSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the LSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+
+                      break;
+                      case "RCL":
+                      destination = ushort.Parse(UAL.getUal1(), NumberStyles.HexNumber);
+                      count = ushort.Parse(UAL.getUal2(), NumberStyles.HexNumber); // number of bits to shift the operand by // number of bits to shift the value by
+
+                      // Perform the rotation
+                      while (count > 0)
+                      {
+                          // Get the value of the most significant bit before the rotation
+                          bool msb = (destination & 0x8000) != 0;
+
+                          // Shift the value left by one bit and OR it with the carry flag
+                          destination = (ushort)((destination << 1) | (Convert.ToBoolean(Indicateur.getretenuAuxiliaire()) ? 1 : 0));
+
+                          // Update the carry flag with the original value of the most significant bit
+                          carryFlag = msb;
+
+                          count--;
+                      }
+                      //---------------------------------------------
+                       str_op2 = destination.ToString("X"); 
+                       str_op1 = count.ToString("X");
+                      destination = (ushort)(destination << count);
+                       str_res = destination.ToString("X");
+                      UAL.positionnerIndicateurs("RCL",str_res,operand2:str_op2,operand1:str_op1);
+                      // Check the new value of the LSB to determine the new value of the CF flag
+                       carryFlag = (destination & 0x8000) != 0;
+                      // Set the new value of the CF flag
+                      if (carryFlag)
+                      {
+                      // If the MSB is set, set the CF flag to 1
+                      Indicateur.setretenuAuxiliaire('1');
+                      }
+                      else
+                      {
+                      // If the MSB is not set, set the CF flag to 0
+                      Indicateur.setretenuAuxiliaire('0');
+                      }
+                      //ecriture des resultats
+                      //animation(UAL,registre)
+                      Registre.setContenuRegistre(source,destination.ToString("X"));
+                      break;
+                      default:
+                      System.Console.WriteLine("error ! no such mnemonique");
+                      break;
+                    }
+                    }
           break;
           default:
           break;
