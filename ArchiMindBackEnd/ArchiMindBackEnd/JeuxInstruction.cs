@@ -588,48 +588,55 @@ namespace ArchiMind
             }
        return instruction_binaire ; 
       }
+        //added remplir methods 
+        public string remplir_AX_DX()
+        {
+            return "11101101"; // this instruction doesn't need a decoudage // IN AX,DX
+        }
 
-      public string remplir_AX_DX(){
-         return "11101101"; // this instruction doesn't need a decoudage // IN AX,DX
-      }
+        public string remplir_DX_AX()
+        {
+            return "11101111";  // this instruction doesn't need a decoudage // IN DX,AX
+        }
 
-      public string remplir_DX_AX(){
-        return "11101111";  // this instruction doesn't need a decoudage // IN DX,AX
-      }
+        public string remplir_mem16_DX()
+        {
+            return "01101101";  //"mem16,DX","01101101" insw
+        }
 
-      public string remplir_mem16_DX(){
-        return "01101101";  //"mem16,DX","01101101" insw
-      }
-      
-      public string remplir_DX_mem16(){
-        return "01101111";  //"DX,mem16","01101111" outsw
-      }
+        public string remplir_DX_mem16()
+        {
+            return "01101111";  //"DX,mem16","01101111" outsw
+        }
 
-        public string remplir_AX_Reg16(string inst ,string Reg16){   // INST AX,reg16 
-            string instruction_binaire;  
-            string r_m_binaire;        
-            int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
-            Instruction myinstruction= new Instruction();
-            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"AX,imm16"); 
-            instruction_binaire=myinstruction.getCop();
-            r_m_binaire=recherche_reg(Reg16);
-            instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
-            System.Console.WriteLine("instruction en binaire :"+instruction_binaire);
+        public string remplir_AX_Reg16(string inst, string Reg16)
+        {   // INST AX,reg16 
+            string instruction_binaire;
+            string r_m_binaire;
+            int index_of_mnemonique = recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
+            Instruction myinstruction = new Instruction();
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique], "AX,imm16");
+            instruction_binaire = myinstruction.getCop();
+            r_m_binaire = recherche_reg(Reg16);
+            instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
+            System.Console.WriteLine("instruction en binaire :" + instruction_binaire);
             return instruction_binaire;
         }
 
-        public string remplir_Reg16_imm16(string inst ,string Reg16,string imm_val){   // INST reg16,imm16 
-            string instruction_binaire;  
-            string r_m_binaire;        
-            int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
-            Instruction myinstruction= new Instruction();
-            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"Reg16,imm16"); 
-            instruction_binaire=myinstruction.getCop();
-            r_m_binaire=recherche_reg(Reg16);
-            instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
-            System.Console.WriteLine("instruction en binaire :"+instruction_binaire);
-            return instruction_binaire+HexStringToBinary(imm_val);
+        public string remplir_Reg16_imm16(string inst, string Reg16, string imm_val)
+        {   // INST reg16,imm16 
+            string instruction_binaire;
+            string r_m_binaire;
+            int index_of_mnemonique = recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
+            Instruction myinstruction = new Instruction();
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique], "Reg16,imm16");
+            instruction_binaire = myinstruction.getCop();
+            r_m_binaire = recherche_reg(Reg16);
+            instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
+            System.Console.WriteLine("instruction en binaire :" + instruction_binaire);
+            return instruction_binaire + HexStringToBinary(imm_val);
         }
+
 
 
         //------------------------------------------------------ partie execution ---------------------------------------------------
@@ -677,61 +684,61 @@ namespace ArchiMind
         //bouton;
         //page phase2;
         //
-       // string format;
+        // string format;
         //switch (format){
-       // case "Reg16,mem16/Reg16":
+        // case "Reg16,mem16/Reg16":
         //      if (r_m){ //reg,reg
-                  //decodage -- delay
-                  //setContenuRegistre(reg1,val1);
-                  //setContenuRegistre(reg2,val2);
-                  //hover (nombreregistre,reg1,reg2);
-                  //animation(reg_destinataire,ual2,donnee);
-                  //setUAL2(getContenuReg(reg_dest));
-                  //animation(reg_source,ual1,donnee);
-                  //setUAL2(getContenuReg(reg_source));
-                  /*switch(mnemonique){
-                    case add: var result = UAL.getUAL1 + UAL.getUAL2(operation en hexa); 
-                  }*/
-                  //positionner indicateur(mnemonique,result);
-                  //animation(UAL,registres,donnee);
-                  //setContenuRegistre(reg_dest,result);
-                  
-         //     }else{//reg,mem ADD AX,[SI+DI+5Dh]
-                  //decodage -- delay
-                  //setContenuRegistre(reg1,val1);
-                  //switch(source){
-                   // case "[SI+DI+depl]" : //setContenuRegistre(SI,val2); //setContenuRegistre(DI,val3);
-                  //}
-                  //hover (nombreregistre,reg1,reg2);
-                  //animation(UAL,RAM,adresse);
-                  //MC.setRAM(calaculadresse());
-                  //MC.setRIM(rech_mc(adresse).getContenu());
-                  //animation(RIM,UAL1) -- destinataire f ual2 / source ual1
-                  //UAL.setUAL1(MC.getRIM());
-                  //animation(reg,UAL2);
-                  //UAL.setUAL2(getContenuReg(reg_dest));
-                  //animation(reg_destinataire,ual2,donnee);
-                  //setUAL2(getContenuReg(reg_dest));
-                  //animation(reg_source,ual1,donnee);
-                  //setUAL2(getContenuReg(reg_dest));
-                  
-                  /*switch(mnemonique){
-                    case add: var result = UAL.getUAL1 + UAL.getUAL2(operation en hexa); 
-                  }*/
-                  //positionner indicateur(mnemonique,result);
-                  //animation(UAL,registres,donnee);
-                  //setContenuRegistre(reg_dest,result);
-          //    }
+        //decodage -- delay
+        //setContenuRegistre(reg1,val1);
+        //setContenuRegistre(reg2,val2);
+        //hover (nombreregistre,reg1,reg2);
+        //animation(reg_destinataire,ual2,donnee);
+        //setUAL2(getContenuReg(reg_dest));
+        //animation(reg_source,ual1,donnee);
+        //setUAL2(getContenuReg(reg_source));
+        /*switch(mnemonique){
+          case add: var result = UAL.getUAL1 + UAL.getUAL2(operation en hexa); 
+        }*/
+        //positionner indicateur(mnemonique,result);
+        //animation(UAL,registres,donnee);
+        //setContenuRegistre(reg_dest,result);
+
+        //     }else{//reg,mem ADD AX,[SI+DI+5Dh]
+        //decodage -- delay
+        //setContenuRegistre(reg1,val1);
+        //switch(source){
+        // case "[SI+DI+depl]" : //setContenuRegistre(SI,val2); //setContenuRegistre(DI,val3);
+        //}
+        //hover (nombreregistre,reg1,reg2);
+        //animation(UAL,RAM,adresse);
+        //MC.setRAM(calaculadresse());
+        //MC.setRIM(rech_mc(adresse).getContenu());
+        //animation(RIM,UAL1) -- destinataire f ual2 / source ual1
+        //UAL.setUAL1(MC.getRIM());
+        //animation(reg,UAL2);
+        //UAL.setUAL2(getContenuReg(reg_dest));
+        //animation(reg_destinataire,ual2,donnee);
+        //setUAL2(getContenuReg(reg_dest));
+        //animation(reg_source,ual1,donnee);
+        //setUAL2(getContenuReg(reg_dest));
+
+        /*switch(mnemonique){
+          case add: var result = UAL.getUAL1 + UAL.getUAL2(operation en hexa); 
+        }*/
+        //positionner indicateur(mnemonique,result);
+        //animation(UAL,registres,donnee);
+        //setContenuRegistre(reg_dest,result);
+        //    }
         //    break;
-     //   case "":
-            // code to be executed if expression equals value2
-       //     break;
-        
-     ///   default:
-            // code to be executed if none of the above cases are true
-          //  break;
-     //   }
-      public static void format_reg_regOUmem(string mnemonique , string format , bool mem_b , string distinataire , bool ifdepl , string valdepl ,string contenueCaseMemoire , string source , string val1 , string val2 , string val3 ){
+        //   case "":
+        // code to be executed if expression equals value2
+        //     break;
+
+        ///   default:
+        // code to be executed if none of the above cases are true
+        //  break;
+        //   }
+        public static void format_reg_regOUmem(string mnemonique , string format , bool mem_b , string distinataire , bool ifdepl , string valdepl ,string contenueCaseMemoire , string source , string val1 , string val2 , string val3 ){
         // le contenue de distinataire est toujour dans ual1
         string adresse ="" ; 
         string result ="" ; 
