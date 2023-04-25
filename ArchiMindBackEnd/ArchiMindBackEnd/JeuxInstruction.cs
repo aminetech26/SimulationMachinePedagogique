@@ -737,7 +737,203 @@ namespace ArchiMind
         ///   default:
         // code to be executed if none of the above cases are true
         //  break;
-        //   }
+        //   }  
+        
+     // lES FORMATS AJOUTER -------------------------------------------------------------
+      public static void format_dx_ax ( string mnenmonique , string valDx , string valAx){
+       // out 
+      }
+      public static void format_reg16( string mnemonique ,string reg , string valReg){
+        //inc , dec 
+          string result = "" ;
+          Registre.setContenuRegistre(reg,valReg); 
+          // animation (registre, UAL1, donne ); 
+          UAL.setUal1(Registre.getContenuRegistre(reg)); 
+          switch (mnemonique){
+            case "INC" : 
+             result =  (Convert.ToInt32(Registre.getContenuRegistre(reg)) + 1).ToString("X") ;
+             break ; 
+            case "DEC" : 
+             result =  (Convert.ToInt32(Registre.getContenuRegistre(reg)) - 1).ToString("X") ;
+            break ;
+            default :
+            Console.WriteLine("erreur");  
+            break ;  
+          }
+          // positionner les indicateurs 
+          UAL.positionnerIndicateurs(mnemonique,result);
+          // animation (ual,registre,donne); 
+          Registre.setContenuRegistre(reg,result);
+      } 
+       public static void format_ax_imm16(string mnemonique, string valAx , string valImmediate16){
+    // ici je vais faire un petite bloc du code pour intialisé la 2eme case de la memoire par la valeur immidiate
+     Case case_memoire = new Case();
+     case_memoire = MC.recherche_mc("0101");
+     case_memoire.setContenu(valImmediate16);
+     case_memoire.setAdr("0101"); 
+     MC.AjouterCase(Convert.ToInt32("0101",16),case_memoire); 
+     // fin de l'intialisation 
+      Registre.setAx(valAx); 
+      // animation(registre,ual1,donne); 
+      Co.incCo(); 
+      // animation(co,ram,adresse); 
+      MC.setRam(Co.getco()); 
+      case_memoire = MC.recherche_mc(Co.getco()); 
+      MC.setRim(case_memoire.getContenu());
+      // animation (rim,ual2,donne) ; 
+      UAL.setUal2(MC.getRim()); 
+      string result ="" ; 
+      switch(mnemonique){
+        //ADD , SUB , OR , XOR 
+         case "ADD" : 
+                 //  result = ccm + contenue de registre ; 
+                   result  =   (Convert.ToInt32(UAL.getUal1(),16)+ Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                  break ; 
+         case "SUB" : 
+                   result  =   (Convert.ToInt32(UAL.getUal1(),16) -  Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                  break ; 
+         case "OR" : 
+                  result = ( Convert.ToInt32(UAL.getUal1(),16) | Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                  break ;
+         case "XOR" : 
+                  result = ( Convert.ToInt32(UAL.getUal1(),16) ^ Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
+                  break ; 
+      }  
+      UAL.positionnerIndicateurs(mnemonique,result); 
+      // animation (UAL,registre,donne ); 
+      Registre.setAx(result); 
+  }    
+  public static void format_reg16_imm16(string mnemonique,string reg ,string valReg,string valImm16 ){
+     // ici je vais faire un petite bloc du code pour intialisé la 2eme case de la memoire par la valeur immidiate
+     Case case_memoire = new Case();
+     case_memoire = MC.recherche_mc("0101");
+     case_memoire.setContenu(valImm16);
+     case_memoire.setAdr("0101"); 
+     MC.AjouterCase(Convert.ToInt32("0101",16),case_memoire); 
+     // ----------------------------------//
+     Registre.setContenuRegistre(reg,valReg); 
+     // animation(registre,UAL1,donne); 
+     UAL.setUal1(Registre.getContenuRegistre(reg));
+     Co.incCo(); 
+     // animation(co , ram , adresse ) ; 
+     MC.setRam(Co.getco());
+     case_memoire = MC.recherche_mc(Co.getco());
+     MC.setRim(case_memoire.getContenu());
+    // animation (rim,ual2,donne) ; 
+     UAL.setUal2(MC.getRim());
+     string result =""; 
+     switch(mnemonique){
+      case "MOV" : 
+      result = UAL.getUal2(); 
+      break ; 
+      default : 
+       Console.WriteLine("Erreur") ; 
+      break   ; 
+     } 
+     // positionner les indicateurs 
+    UAL.positionnerIndicateurs(mnemonique,result) ;
+     //animation(ual , registre , donne  )  ; 
+     Registre.setContenuRegistre(reg,result);  
+  } 
+  public static void format_dx_mem16 (string mnemonique ,string ccm, string mem  , bool ifdepl , string  valDepl , string valdx , string valmem1 , string valmem2  ) {
+    string adresse = "" ; 
+    string result = ""; 
+    Registre.setDx(valdx); 
+      if(ifdepl){
+                  switch(mem){
+                     case "[BX+SI+depl]":
+                    Registre.setContenuRegistre("BX",valmem1);
+                    Registre.setContenuRegistre("SI",valmem2);
+                    break;
+                    case "[BX+DI+depl]":
+                    Registre.setContenuRegistre("BX",valmem1);
+                    Registre.setContenuRegistre("DI",valmem2);
+                    break;
+                    case "[BP+SI+depl]":
+                    Registre.setContenuRegistre("BP",valmem1);
+                    Registre.setContenuRegistre("SI",valmem2);
+                    break;
+                    case "[BP+DI+depl]":
+                    Registre.setContenuRegistre("BP",valmem1);
+                    Registre.setContenuRegistre("DI",valmem2);
+                    break;
+                    case "[SI+depl]":
+                    Registre.setContenuRegistre("SI",valmem1);
+                    break;
+                    case "[DI+depl]":
+                    Registre.setContenuRegistre("DI",valmem1);
+                    break;
+                    case "[BP+depl]":
+                    Registre.setContenuRegistre("BP",valmem1);
+                    break;
+                    case "[BX+depl]":
+                    Registre.setContenuRegistre("BX",valmem1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                    }
+                  }else{
+                    switch(mem){
+                    case "[BX+SI]":
+                    Registre.setContenuRegistre("BX",valmem1);
+                    Registre.setContenuRegistre("SI",valmem2);
+                    break;
+                    case "[BX+DI]":
+                    Registre.setContenuRegistre("BX",valmem1);
+                    Registre.setContenuRegistre("DI",valmem2);
+                    break;
+                    case "[BP+SI]":
+                    Registre.setContenuRegistre("BP",valmem1);
+                    Registre.setContenuRegistre("SI",valmem2);
+                    break;
+                    case "[BP+DI]":
+                    Registre.setContenuRegistre("BP",valmem1);
+                    Registre.setContenuRegistre("DI",valmem2);
+                    break;
+                    case "[SI]":
+                    Registre.setContenuRegistre("SI",valmem1);
+                    break;
+                    case "[DI]":
+                    Registre.setContenuRegistre("DI",valmem1);
+                    break;
+                    case "[BP]":
+                    Registre.setContenuRegistre("BP",valmem1);
+                    break;
+                    case "[BX]":
+                    Registre.setContenuRegistre("BX",valmem1);
+                    break;
+                    default:
+                    System.Console.WriteLine("Error ! no such mem_depl");
+                    break;
+                  } 
+                } 
+                adresse =UAL.calculAdresse(mem,ifdepl,valDepl);
+                // animation ( UAL ,RAM ,adresse ) 
+                 MC.setRam(adresse); 
+                 // ajouter la case memoire  dans l'adresse pointé 
+                 Case case_memoire = new Case(); 
+                 case_memoire.setAdr(adresse) ; 
+                 case_memoire.setContenu(ccm); 
+                 MC.AjouterCase(Convert.ToInt32(adresse,16),case_memoire);
+                 //  
+                MC.setRim(ccm); 
+                // animation (rim,ual2,donne) 
+                UAL.setUal2(MC.getRim());
+                // animation ( registre , ual1, donne) ; 
+                UAL.setUal1(Registre.getDx()); 
+                switch(mnemonique){
+                  // outsw 
+                  case "OUTSW" : 
+                    // ici ON A RIEN A FAIRE COMME ANIMATION 
+                    UAL.positionnerIndicateurs(mnemonique) ; 
+                  break ; 
+                  default :
+                  Console.WriteLine("erreur "); 
+                  break ; 
+                }
+  } 
+  //////////////////////////////////////////////////////////////////////////////////////::
         public static void format_reg_regOUmem(string mnemonique , string format , bool mem_b , string distinataire , bool ifdepl , string valdepl ,string contenueCaseMemoire , string source , string val1 , string val2 , string val3 ){
         // le contenue de distinataire est toujour dans ual1
         string adresse ="" ; 
@@ -834,6 +1030,7 @@ namespace ArchiMind
                   result = UAL.getUal2() ; 
                   break ;
                   case "XCHG" : // ANIMATION PARTICULIER  
+                      UAL.positionnerIndicateurs(mnemonique) ; 
                   break ; 
                   case "AND" : 
                   result = ( Convert.ToInt32(UAL.getUal1(),16) & Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
@@ -845,9 +1042,11 @@ namespace ArchiMind
                   result = ( Convert.ToInt32(UAL.getUal1(),16) ^ Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
                   break ; 
                 }  
-            // if ( mnemonique != xchg)
+             if ( mnemonique != "XCHG") {
+              UAL.positionnerIndicateurs(mnemonique,result) ; 
             // animation(ual,registre,donne) ; 
             Registre.setContenuRegistre(distinataire,result); 
+             }
 
         }else{  //  reg,reg
            Registre.setContenuRegistre(distinataire,val1);
@@ -870,6 +1069,7 @@ namespace ArchiMind
                   result = UAL.getUal2() ; 
                   break ;
                   case "XCHG" : // ANIMATION PARTICULIER  
+                  UAL.positionnerIndicateurs(mnemonique); 
                   break ; 
                   case "AND" : 
                   result = ( Convert.ToInt32(UAL.getUal1(),16) & Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
@@ -881,9 +1081,10 @@ namespace ArchiMind
                   result = ( Convert.ToInt32(UAL.getUal1(),16) ^ Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
                   break ; 
            } 
-           // if(mnemonique != xchg){
+            if(mnemonique != "XCHG"){
             // animation(ual,registre,donne); 
-            Registre.setContenuRegistre(distinataire,result);          
+            Registre.setContenuRegistre(distinataire,result);   
+            }       
          }
         }
 public static void format_ax_reg ( string mnenmonique , string source ,string  valAx ,string valsource  ) {
@@ -896,11 +1097,13 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
    switch(mnenmonique){
     //xchg , 
     case "XCHG":
+    // positionner les indicateur ;
+       UAL.positionnerIndicateurs(mnenmonique) ; 
       // animation (ual , registre , donne )
       Registre.setAx(UAL.getUal2()); 
       // animation (ual,registre , donne ); 
       Registre.setContenuRegistre(source,UAL.getUal2());
-      // positionner les indicateur ; 
+       
     break ;
     default :
     Console.WriteLine("il ya un erreur"); 
@@ -1003,6 +1206,7 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
                 // animation(UAL,RAM,adresse); 
                 MC.setRam(adresse); 
                 case_memoire = MC.recherche_mc(adresse);
+                case_memoire.setAdr(adresse) ; 
                 case_memoire.setContenu(ccm);
                 MC.setRim(ccm);
                 // animation(RIM,UAL1,DONNE); 
@@ -1013,7 +1217,6 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
                   case "ADD" : 
                  //  result = ccm + contenue de registre ; 
                    result  =   (Convert.ToInt32(ccm,16)+ Convert.ToInt32(val3,16)).ToString("X");
-                   // positionner les flags 
                   break ; 
                   case "SUB" : 
                    result  =   (Convert.ToInt32(ccm,16) -  Convert.ToInt32(val3,16)).ToString("X");
@@ -1034,9 +1237,13 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
                   break ; 
                 }  
                  // vu que xchng a une animation particulier on va la traiter dans le switch
-                  //  if(mnemonique != xchg)
+                  if(mnemonique != "XCHG"){
+                    UAL.positionnerIndicateurs(mnemonique,result); 
                  // animation(ual,rim,donne)
                  MC.setRim(result); 
+                 case_memoire.setContenu(result);
+                 MC.AjouterCase(Convert.ToInt32(case_memoire.getAdr(),16),case_memoire); 
+                 }
              }else { // la on est dans ke cas de reg,reg 
                Registre.setContenuRegistre(mem,val1);
                Registre.setContenuRegistre(source,val2);
@@ -1068,7 +1275,9 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
                   case "XOR" : 
                   result = ( Convert.ToInt32(UAL.getUal1(),16) ^ Convert.ToInt32(UAL.getUal2(),16)).ToString("X");
                   break ; 
-                } // animation(ual,registre,donne); 
+                }  // indicateur 
+                 UAL.positionnerIndicateurs(mnemonique); 
+                // animation(ual,registre,donne); 
                    Registre.setContenuRegistre(mem,result);
 
 
