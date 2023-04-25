@@ -588,6 +588,50 @@ namespace ArchiMind
             }
        return instruction_binaire ; 
       }
+
+      public string remplir_AX_DX(){
+         return "11101101"; // this instruction doesn't need a decoudage // IN AX,DX
+      }
+
+      public string remplir_DX_AX(){
+        return "11101111";  // this instruction doesn't need a decoudage // IN DX,AX
+      }
+
+      public string remplir_mem16_DX(){
+        return "01101101";  //"mem16,DX","01101101" insw
+      }
+      
+      public string remplir_DX_mem16(){
+        return "01101111";  //"DX,mem16","01101111" outsw
+      }
+
+        public string remplir_AX_Reg16(string inst ,string Reg16){   // INST AX,reg16 
+            string instruction_binaire;  
+            string r_m_binaire;        
+            int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
+            Instruction myinstruction= new Instruction();
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"AX,imm16"); 
+            instruction_binaire=myinstruction.getCop();
+            r_m_binaire=recherche_reg(Reg16);
+            instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+            System.Console.WriteLine("instruction en binaire :"+instruction_binaire);
+            return instruction_binaire;
+        }
+
+        public string remplir_Reg16_imm16(string inst ,string Reg16,string imm_val){   // INST reg16,imm16 
+            string instruction_binaire;  
+            string r_m_binaire;        
+            int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
+            Instruction myinstruction= new Instruction();
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"Reg16,imm16"); 
+            instruction_binaire=myinstruction.getCop();
+            r_m_binaire=recherche_reg(Reg16);
+            instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
+            System.Console.WriteLine("instruction en binaire :"+instruction_binaire);
+            return instruction_binaire+HexStringToBinary(imm_val);
+        }
+
+
         //------------------------------------------------------ partie execution ---------------------------------------------------
         // methode correction instruction .. 
         // remplir mc -- ecrire_mc (instruction,taille,adresse debut);
