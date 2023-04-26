@@ -10,6 +10,9 @@
     <Compile Update="Animation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Instruction_Ligne.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\CEI.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -43,6 +46,9 @@
     <Compile Update="Pages\Premierpas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ProgrammePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Splash_screen.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -52,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="images\Icons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Instruction_Ligne.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -88,6 +97,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Premierpas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ProgrammePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Splash_screen.xaml">

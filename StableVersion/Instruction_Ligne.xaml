@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="projet.Instruction_Ligne"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:projet"
+             d:DesignHeight="30" d:DesignWidth="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <ComboBox Grid.Column="0" x:Name="ComboBox1" SelectionChanged="ComboBox1_SelectionChanged">
+            
+        </ComboBox>
+        <ComboBox Grid.Column="1" x:Name="ComboBox2" SelectionChanged="ComboBox2_SelectionChanged">
+            
+        </ComboBox>
+        <ComboBox Grid.Column="2" x:Name="ComboBox3" SelectionChanged="ComboBox3_SelectionChanged">
+            <ComboBoxItem>Option 1</ComboBoxItem>
+            <ComboBoxItem>Option 2</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Grid.Column="3" x:Name="ComboBox4" SelectionChanged="ComboBox4_SelectionChanged">
+            <ComboBoxItem>Option 1</ComboBoxItem>
+            <ComboBoxItem>Option 2</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Grid.Column="4" x:Name="ComboBox5" SelectionChanged="ComboBox5_SelectionChanged">
+            <ComboBoxItem>Option 1</ComboBoxItem>
+            <ComboBoxItem>Option 2</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Grid.Column="5" x:Name="ComboBox6" SelectionChanged="ComboBox6_SelectionChanged">
+            <ComboBoxItem>Option 1</ComboBoxItem>
+            <ComboBoxItem>Option 2</ComboBoxItem>
+        </ComboBox>
+        <ComboBox Grid.Column="6" x:Name="ComboBox7" SelectionChanged="ComboBox7_SelectionChanged">
+            <ComboBoxItem>Option 1</ComboBoxItem>
+            <ComboBoxItem>Option 2</ComboBoxItem>
+        </ComboBox>
+        
+    </Grid>
+</UserControl>

@@ -1,0 +1,22 @@
+﻿<Page x:Class="projet.ProgrammePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projet"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ProgrammePage">
+    <Grid x:Name="containerElement">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <local:Instruction_Ligne Grid.Row="1" />
+
+        <Button Grid.Row="2" Content="Add Instruction" Click="AddInstruction_Click"/>
+    </Grid>
+
+</Page>
