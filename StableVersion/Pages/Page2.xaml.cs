@@ -377,6 +377,7 @@ namespace projet.Pages
                     {
                         StackPanel1.Children.Remove(stkDes);
                     }
+
                     int columnIndex2 = Grid.GetColumn(stkDep);
 
                     // Check if the column index is greater than or equal to zero
@@ -385,6 +386,7 @@ namespace projet.Pages
                         // StackPanel1.ColumnDefinitions.RemoveAt(2);
                         StackPanel1.Children.Remove(stkDep);
                     }
+
                     int columnIndex3 = Grid.GetColumn(stkReg);
                     if (columnIndex3 >= 0)
                     {
