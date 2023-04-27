@@ -3,7 +3,7 @@ using System.Numerics;
 
 namespace ArchiMind
 {
-     internal class Instruction
+     public class Instruction
     {
         private string format;
         private string cop;
@@ -50,10 +50,7 @@ namespace ArchiMind
         public void setMem(bool mem)
         {
             this.mem = mem;
-        }
-
-        public Instruction (){
-        }  
+        } 
         public Instruction (string format , string cop ){
             this.format = format;
             this.cop = cop;
@@ -64,7 +61,8 @@ namespace ArchiMind
             this.cop = cop;
             this.champ_notused=champ_notused;
         }  
-        public Instruction(string format, string cop, string champ_notused, string mnemonique, bool mem, string destination, string source, bool ifdepl, string valdep) : this(format, cop, champ_notused){
+        public Instruction(string mnemonique, string format, string destination, string source, bool mem=true, bool ifdepl=true, string valdep=""){
+            this.format=format;
             this.mnemonique = mnemonique;
             this.mem = mem;
             this.destination = destination;
