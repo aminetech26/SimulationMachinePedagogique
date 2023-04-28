@@ -1,0 +1,9 @@
+# Ignore build files
+build/
+bin/
+obj/
+
+# Ignore Visual Studio files
+*.suo
+*.user
+*.vs/
