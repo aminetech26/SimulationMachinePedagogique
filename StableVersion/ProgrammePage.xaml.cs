@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.Xml;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -80,5 +82,145 @@ namespace projet
             containerElement.Children.Add(newInstruction);
            // instructionList.Add(newInstruction);
         }
+        // --------------------------------------------------------------------------------
+        public string convertir_instruction_Lmnemonique(Instruction instruction)
+        {
+            string my_instruction = "";
+             return instruction.getMnemonique()+" "+convertir_First_part(instruction)+convertir_Second_part(instruction);
+        }
+        // ---------------------------------------------------------------------------------
+        public string convertir_First_part(Instruction instruction)   // we consider INST First_part,Second_part
+        {
+            string my_first_part="";
+          switch(instruction.getFormat()){
+                case "AX,DX" :
+                case "AX,imm16":
+                case "AX,Reg16":
+                    my_first_part = "AX";
+                break;
+                case "DX,AX":
+                case "DX,mem16":
+                    my_first_part ="DX" ;
+                break;
+                case "Reg16/Mem16,imm16":
+                case "Reg16/mem16":
+                case "Reg16/mem16,imm8":
+                case "Reg16/mem16,CX":
+                    my_first_part = case_reg_mem(instruction);
+                break;
+                case "Reg16,Reg16/mem16":
+                case "Reg16,imm16":
+                case "Reg16":
+                    my_first_part = case_reg(instruction);
+                    break;
+                case "mem16,DX":
+                case "mem16":
+                    my_first_part=case_mem(instruction);
+                    break;
+                default:
+                    my_first_part= "error";
+            }
+           return my_first_part;
+        }
+        // --------------------------------
+        public string case_reg_mem(Instruction instruction)  // if it was reg or mem
+        {
+            if (instruction.getmem())
+            {
+               return case_mem(instruction);
+            }
+            else // case of register {AX,BX ...}
+            {
+               return case_reg(instruction);
+            }
+        }
+        // -------------------------------------
+        public string case_reg(Instruction instruction) // Inst reg, ....
+        {
+            return instruction.getSource();
+        }
+        //--------------------------------------
+        public string case_mem(Instruction instruction) { // Inst mem, ....
+            if (instruction.getifdepl())
+            {
+                return instruction.getSource().Replace("XXXX",instruction.getValDepl());
+            }
+            else
+            {
+                return instruction.getSource();
+            }
+        }
+        //----------------------------------------------------------
+        public string convertir_Second_part(Instruction instruction)
+        {
+            string my_second_part = "";
+            switch (instruction.getFormat())
+            {
+                case "AX,DX":
+                case "mem16,DX":
+                    my_second_part =",DX";
+                    break;
+                case "DX,AX":
+                    my_second_part = ",AX";
+                    break;
+                case "Reg16/mem16,CX":
+                    my_second_part = ",CX";
+                    break;
+                case "Reg16,Reg16/mem16":
+                    my_second_part =","+des_case_reg_mem(instruction);
+                    break;
+                case "DX,mem16":
+                    my_second_part = "," + des_case_mem(instruction);
+                    break;
+                case "Reg16/mem16":
+                case "Reg16":
+                case "mem16":
+                    my_second_part = "";
+                    break;
+                case "AX,imm16":
+                case "Reg16/Mem16,imm16":
+                case "Reg16/mem16,imm8":
+                case "Reg16,imm16":
+                    my_second_part = "," + instruction.getval_imm16();
+                  break;
+                case "AX,Reg16":
+                    my_second_part = "," + des_case_reg(instruction);
+                    break;
+                default:
+                    my_second_part = "error";
+                    break;
+            }
+            return my_second_part;
+        }
+        // ----------------------------------------
+        public string des_case_reg_mem(Instruction instruction)
+        {
+            if (instruction.getmem())
+            {
+                return des_case_mem(instruction);
+            }
+            else // case of register {AX,BX ...}
+            {
+                return des_case_reg(instruction);
+            }
+        }
+        // -------------------------------------
+        public string des_case_reg(Instruction instruction) // Inst reg, ....
+        {
+            return instruction.getDestination();
+        }
+        //--------------------------------------
+        public string des_case_mem(Instruction instruction)
+        { // Inst mem, ....
+            if (instruction.getifdepl())
+            {
+                return instruction.getDestination().Replace("XXXX", instruction.getValDepl());
+            }
+            else
+            {
+                return instruction.getDestination();
+            }
+        }
+
     }
 }

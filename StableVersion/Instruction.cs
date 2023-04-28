@@ -14,6 +14,7 @@ namespace ArchiMind
         private string source;
         private bool ifdepl;
         private string valdep;
+        private string val_imm16;
 
         public void setFormat (string format) { this.format = format; }
         public void setCop (string cop) { this.cop= cop; }
@@ -23,9 +24,9 @@ namespace ArchiMind
         {
                return this.mnemonique;
         }
-        public bool getRegM()
+        public bool getmem()
         {
-            return mem; 
+            return this.mem; 
         }
         public string getSource()
         {
@@ -42,6 +43,14 @@ namespace ArchiMind
         public string getValDepl()
         {
             return this.valdep;
+        }
+        public string getval_imm16()
+        {
+            return this.val_imm16;
+        }
+        public void setval_imm16(string val_imm16)
+        {
+            this.valdep = val_imm16;
         }
         public void setIfDepl(bool ifdepl)
         {

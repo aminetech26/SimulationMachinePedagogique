@@ -149,7 +149,7 @@ namespace ArchiMind
             mycouple = new CoupleCopFormat();
             instruction = new Instruction("AX,imm16", "00001101");
             mycouple.addInstruction(instruction);
-            instruction = new Instruction("Reg16,mem16,imm16", "10000001xx001xxx", "001");
+            instruction = new Instruction("Reg16/mem16,imm16", "10000001xx001xxx", "001");
             mycouple.addInstruction(instruction);
             instruction = new Instruction("Reg16/mem16,Reg16", "00001001xxxxxxxx");
             mycouple.addInstruction(instruction);
@@ -161,7 +161,7 @@ namespace ArchiMind
             mycouple = new CoupleCopFormat();
             instruction = new Instruction("AX,imm16", "00110101");
             mycouple.addInstruction(instruction);
-            instruction = new Instruction("Reg16,mem16,imm16", "10000001xx110xxx", "110");
+            instruction = new Instruction("Reg16/mem16,imm16", "10000001xx110xxx", "110");
             mycouple.addInstruction(instruction);
             instruction = new Instruction("Reg16/mem16,Reg16", "00110001xxxxxxxx");
             mycouple.addInstruction(instruction);

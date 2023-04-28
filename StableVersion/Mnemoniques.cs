@@ -30,7 +30,7 @@ namespace ArchiMind{
         LOOPE,
         LOOPNZ,
         LOOPNE,
-        CMP,
+        CMP, 
 
     }
 }
