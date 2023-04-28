@@ -14,7 +14,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 using ArchiMind;
+
 
 namespace projet
 {
@@ -85,8 +87,7 @@ namespace projet
         // --------------------------------------------------------------------------------
         public string convertir_instruction_Lmnemonique(Instruction instruction)
         {
-            string my_instruction = "";
-             return instruction.getMnemonique()+" "+convertir_First_part(instruction)+convertir_Second_part(instruction);
+             return instruction.getmnemonique()+" "+convertir_First_part(instruction)+convertir_Second_part(instruction);
         }
         // ---------------------------------------------------------------------------------
         public string convertir_First_part(Instruction instruction)   // we consider INST First_part,Second_part
@@ -119,6 +120,7 @@ namespace projet
                     break;
                 default:
                     my_first_part= "error";
+                    break;
             }
            return my_first_part;
         }
@@ -137,17 +139,17 @@ namespace projet
         // -------------------------------------
         public string case_reg(Instruction instruction) // Inst reg, ....
         {
-            return instruction.getSource();
+            return instruction.getDestination();
         }
         //--------------------------------------
         public string case_mem(Instruction instruction) { // Inst mem, ....
             if (instruction.getifdepl())
             {
-                return instruction.getSource().Replace("XXXX",instruction.getValDepl());
+                return instruction.getDestination().Replace("XXXX",instruction.getValDepl());
             }
             else
             {
-                return instruction.getSource();
+                return instruction.getDestination();
             }
         }
         //----------------------------------------------------------
@@ -167,10 +169,10 @@ namespace projet
                     my_second_part = ",CX";
                     break;
                 case "Reg16,Reg16/mem16":
-                    my_second_part =","+des_case_reg_mem(instruction);
+                    my_second_part =","+src_case_reg_mem(instruction);
                     break;
                 case "DX,mem16":
-                    my_second_part = "," + des_case_mem(instruction);
+                    my_second_part = "," + src_case_mem(instruction);
                     break;
                 case "Reg16/mem16":
                 case "Reg16":
@@ -181,10 +183,10 @@ namespace projet
                 case "Reg16/Mem16,imm16":
                 case "Reg16/mem16,imm8":
                 case "Reg16,imm16":
-                    my_second_part = "," + instruction.getval_imm16();
+                    my_second_part = "," + BinaryStringToHexString(instruction.getval_imm16());
                   break;
                 case "AX,Reg16":
-                    my_second_part = "," + des_case_reg(instruction);
+                    my_second_part = "," + src_case_reg(instruction);
                     break;
                 default:
                     my_second_part = "error";
@@ -193,34 +195,123 @@ namespace projet
             return my_second_part;
         }
         // ----------------------------------------
-        public string des_case_reg_mem(Instruction instruction)
+        public string src_case_reg_mem(Instruction instruction)
         {
             if (instruction.getmem())
             {
-                return des_case_mem(instruction);
+                return src_case_mem(instruction);
             }
             else // case of register {AX,BX ...}
             {
-                return des_case_reg(instruction);
+                return src_case_reg(instruction);
             }
         }
         // -------------------------------------
-        public string des_case_reg(Instruction instruction) // Inst reg, ....
+        public string src_case_reg(Instruction instruction) // Inst reg, ....
         {
-            return instruction.getDestination();
+            return instruction.getSource();
         }
         //--------------------------------------
-        public string des_case_mem(Instruction instruction)
+        public string src_case_mem(Instruction instruction)
         { // Inst mem, ....
             if (instruction.getifdepl())
             {
-                return instruction.getDestination().Replace("XXXX", instruction.getValDepl());
+                return instruction.getSource().Replace("XXXX", instruction.getValDepl());
             }
             else
             {
-                return instruction.getDestination();
+                return instruction.getSource();
             }
         }
+    // la fonction principale qui convertir tout les instruction et les sauvgarder dans un fichier text ... chaque line avec une instruction
+      public void convertir_list_inst_fochier_txt(List<Instruction> programInstructions){
+         string file_path="./myfile.txt";
+         using StreamWriter write=new StreamWriter(file_path,true);
+         foreach(Instruction inst in programInstructions){
+             write.WriteLine(convertir_instruction_Lmnemonique(inst));
+         }
+      }
+      //-------------------------------------------------------------------------------------------------------------------
+       // convertir la list des instruction a la forme en hexa decimale
+       public void convertir_list_inst_hexaforme(){
 
+       }
+       // convertion de chaque instruction ........
+       public string inst_to_hexaforme(Instruction inst){
+        string hexaforme;
+        string binaryforme;
+        JeuxInstruction jeux_inst=new JeuxInstruction();
+        switch(inst.getFormat()){
+            case "AX,imm16":
+             binaryforme=jeux_inst.remplir_AX_imm16(inst.getmnemonique(),inst.getval_imm16());
+            break;
+            case "Reg16/Mem16,imm16":
+            binaryforme=jeux_inst.remplir_Reg_mem_imm16(inst.getmnemonique(),inst.getDestination(),inst.getifdepl(),inst.getValDepl(),inst.getval_imm16());
+            break;
+            case "Reg16/Mem16,Reg16":
+             binaryforme=jeux_inst.remplir_reg_mem_reg(inst.getmnemonique(),inst.getDestination(),inst.getSource(),inst.getifdepl(),inst.getValDepl());
+            break;
+            case "Reg16,Reg16/Mem16":
+            binaryforme=jeux_inst.remplir_reg_reg_mem(inst.getmnemonique(),inst.getDestination(),inst.getSource(),inst.getifdepl(),inst.getValDepl());
+            break;
+            case "Reg16":
+            binaryforme=jeux_inst.remplir_reg16(inst.getmnemonique(),inst.getDestination());
+            break;
+            case "Reg16/mem16":
+            binaryforme=jeux_inst.remplir_reg16_mem16(inst.getmnemonique(),inst.getDestination(),inst.getifdepl(),inst.getValDepl());
+            break;
+            case "Reg16,imm16":
+            binaryforme=jeux_inst.remplir_Reg16_imm16(inst.getmnemonique(),inst.getDestination(),inst.getval_imm16());
+            break;
+            case "AX,Reg16":
+            binaryforme=jeux_inst.remplir_AX_Reg16(inst.getmnemonique(),inst.getDestination());
+            break;
+            case "Reg16/mem16,CX":
+            binaryforme=jeux_inst.remplir_reg_mem_cx(inst.getmnemonique(),inst.getDestination(),inst.getifdepl(),inst.getValDepl());
+            break;
+            case "AX,DX":
+             binaryforme=jeux_inst.remplir_AX_DX();
+            break;
+            case "DX,AX":
+            binaryforme=jeux_inst.remplir_DX_AX();
+            break;
+            case "mem16,DX":
+            binaryforme=jeux_inst.remplir_mem16_DX();
+            break;
+            case "DX,mem16":
+            binaryforme=jeux_inst.remplir_mem16_DX();
+            break;
+            default:
+            binaryforme="error";
+            break;
+        }
+        hexaforme=BinaryStringToHexString(binaryforme);
+        return hexaforme;
+       }
+       //---------------------------------------------------------------------------------------------------------
+       public static string BinaryStringToHexString(string binary)
+{
+    if (string.IsNullOrEmpty(binary))
+        return binary;
+
+    StringBuilder result = new StringBuilder(binary.Length / 8 + 1);
+
+    // TODO: check all 1's or 0's... throw otherwise
+
+    int mod4Len = binary.Length % 8;
+    if (mod4Len != 0)
+    {
+        // pad to length multiple of 8
+        binary = binary.PadLeft(((binary.Length / 8) + 1) * 8, '0');
+    }
+
+    for (int i = 0; i < binary.Length; i += 8)
+    {
+        string eightBits = binary.Substring(i, 8);
+        result.AppendFormat("{0:X2}", Convert.ToByte(eightBits, 2));
+    }
+
+    return result.ToString();
+}
     }
 }

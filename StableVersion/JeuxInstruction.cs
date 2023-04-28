@@ -186,7 +186,7 @@ namespace ArchiMind
             detailInstruction.Add(mycouple);
             //instruction SAL  -- meme cop que SHL 
             mycouple = new CoupleCopFormat();
-            instruction = new Instruction("Reg16/mem16,imm8", "11000001xx100xxx", "100");
+            instruction = new Instruction("Reg16/mem16,imm8", "11000001xx100xxx", "100"); // here bro
             mycouple.addInstruction(instruction);
             instruction = new Instruction("Reg16/mem16,CX", "11010001xx100xxx", "100");
             mycouple.addInstruction(instruction);
@@ -230,7 +230,7 @@ namespace ArchiMind
             // instructions d'entree-sorties
             //instruction in
             mycouple = new CoupleCopFormat();
-            instruction = new Instruction("AX,DX", "11101101");
+            instruction = new Instruction("AX,DX", "11101101"); //here bro
             mycouple.addInstruction(instruction);
             detailInstruction.Add(mycouple);
             //instruction out
@@ -399,6 +399,7 @@ namespace ArchiMind
             }
             return reg_binaire;
         }
+       
         //cbn:remplir 01 fiha qlq details lzm ytbdlou -- meshi void string .. + deplval et tt rj3hum en binaire -- voir exemple lt7t.
         public string remplir_Reg_mem_imm16(string inst, string Reg_mem, bool ifdepl, string deplval, string imm16_val)
         {   // INST Reg16/mem16,imm16
@@ -456,7 +457,7 @@ namespace ArchiMind
             Console.WriteLine("the instruction : " + instruction_binaire);
             return instruction_binaire;
         }
-        public string remplir_reg16_mem16(string inst, string Reg_mem, bool ifdepl, string deplval, string imm16_val)
+        public string remplir_reg16_mem16(string inst, string Reg_mem, bool ifdepl, string deplval)
         {   // INST reg16/mem16 -- 
             string instruction_binaire;
             string r_m_binaire;
@@ -666,6 +667,53 @@ namespace ArchiMind
             }
             return instruction_binaire;
         }
+         public string remplir_AX_Reg16(string inst, string Reg16)
+        {   // INST AX,reg16 
+            string instruction_binaire;
+            string r_m_binaire;
+            int index_of_mnemonique = recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
+            Instruction myinstruction = new Instruction();
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique], "AX,imm16");
+            instruction_binaire = myinstruction.getCop();
+            r_m_binaire = recherche_reg(Reg16);
+            instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
+            System.Console.WriteLine("instruction en binaire :" + instruction_binaire);
+            return instruction_binaire;
+        }
+        public string remplir_Reg16_imm16(string inst, string Reg16, string imm_val)
+        {   // INST reg16,imm16 
+            string instruction_binaire;
+            string r_m_binaire;
+            int index_of_mnemonique = recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
+            Instruction myinstruction = new Instruction();
+            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique], "Reg16,imm16");
+            instruction_binaire = myinstruction.getCop();
+            r_m_binaire = recherche_reg(Reg16);
+            instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
+            System.Console.WriteLine("instruction en binaire :" + instruction_binaire);
+            return instruction_binaire + HexStringToBinary(imm_val);
+        }
+         //added remplir methods 
+        public string remplir_AX_DX()
+        {
+            return "11101101"; // this instruction doesn't need a decoudage // IN AX,DX
+        }
+
+        public string remplir_DX_AX()
+        {
+            return "11101111";  // this instruction doesn't need a decoudage // IN DX,AX
+        }
+
+        public string remplir_mem16_DX()
+        {
+            return "01101101";  //"mem16,DX","01101101" insw
+        }
+
+        public string remplir_DX_mem16()
+        {
+            return "01101111";  //"DX,mem16","01101111" outsw
+        }
+       
         //------------------------------------------------------ partie execution ---------------------------------------------------
         // methode correction instruction .. 
         // remplir mc -- ecrire_mc (instruction,taille,adresse debut);

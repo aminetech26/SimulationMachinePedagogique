@@ -20,7 +20,7 @@ namespace ArchiMind
         public void setCop (string cop) { this.cop= cop; }
         public string getFormat () { return this.format; }
         public string getCop() { return this.cop; }
-        public string getMnemonique()
+        public string getmnemonique()
         {
                return this.mnemonique;
         }
@@ -47,6 +47,9 @@ namespace ArchiMind
         public string getval_imm16()
         {
             return this.val_imm16;
+        }
+         public void setmnemonique(string mnemoniques){
+            this.mnemonique = mnemonique;
         }
         public void setval_imm16(string val_imm16)
         {
@@ -85,6 +88,9 @@ namespace ArchiMind
         {
             Console.Write(getFormat()+" ");
             Console.WriteLine(getCop());
+            
+        }
+        public Instruction(){
             
         }
     }
