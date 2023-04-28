@@ -30,6 +30,10 @@ namespace ArchiMind
        public static Case recherche_mc(string adr){
          Case case_adr = mc.Find(c => adr.Equals(c.getAdr()));
          return case_adr;
-       }
+       } 
+         public static void AjouterCase(int index, Case nouvelleCase)
+        {
+          mc.Insert(index, nouvelleCase);
+        }
     }
 }
