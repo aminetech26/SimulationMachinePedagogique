@@ -3124,8 +3124,60 @@ public static void executer_simulation_phase_a_phase(string type_exec, string mn
       }
     }
 
-      
-
+    public static int nbMemWordsToFill(List<Instruction> programInstructions){
+      int result = 0;
+      foreach(Instruction inst in programInstructions){
+        if (inst.getRegM() == true){//means memoire -- que les instructions qui solicitent la memoire deplacement ou sans
+          result ++;
+        }
+    }
+      return result;
+    }
+    public static bool IsHexCharacter(char c)
+    {
+        return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
+    }
+    public static List<Case> casesToFill(List<Instruction> programInstructions){
+    List<Case> casesToFill = new List<Case>();
+    List<string> adresses = new List<string>();
+    Case caseToFill = new Case();
+    try
+    {
+    string filePath = "hexaFile.txt";
+    string hexContent = File.ReadAllText(filePath).Replace(" ", "");
+    int count = 0;
+    foreach (char c in hexContent)
+    {
+        if (IsHexCharacter(c))
+        {
+            count++;
+        }
+    }
+    int nbMemWords = count / 4;
+    ushort startAdress = 0x0100;
+    ushort endAdress = startAdress;
+    for (int i = 0; i < nbMemWords; i++)
+    {
+        
+        endAdress++;
+    }
+    
+    for (int i = 0; i < nbMemWordsToFill(programInstructions); i++)
+    {
+        string hexAddress = endAdress.ToString("X4");// a revoir si *4 ou *3
+        adresses.Add(hexAddress);
+        caseToFill = new Case();
+        caseToFill.setAdr(hexAddress);
+        casesToFill.Add(caseToFill);
+        endAdress++;
     }
 
+  }
+  catch (FileNotFoundException ex)
+  {
+    Console.WriteLine("File not found: " + ex.Message);
+  }
+  return casesToFill;
+  }
+}
 }
