@@ -1110,7 +1110,11 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
     break ; 
    } 
 }
-    public static void executer_simulation_phase_a_phase(string mnemonique,string format,bool mem_b,String mem,bool ifdepl ,string valdepl,string ccm,string source,string val1,string val2,string val3){
+//manque Image argument
+public static void executer_simulation_phase_a_phase(string type_exec, string mnemonique, string format, bool mem_b, string mem, string valdepl, string source, bool ifdepl = false, string ccm = "", string val1 = "", string val2 = "", string val3 = "")
+        {
+        if (type_exec == "instruction")
+        {        
         Case case_memoire = new Case();
         string result =""; 
         if(mem_b){//mem_b memoire booleen variable qui dit si c'est memoire ou pas
@@ -3059,8 +3063,8 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
                           count--;
                       }
                       //---------------------------------------------
-                       str_op2 = destination.ToString("X"); 
-                       str_op1 = count.ToString("X");
+                      str_op2 = destination.ToString("X"); 
+                      str_op1 = count.ToString("X");
                       destination = (ushort)(destination << count);
                        str_res = destination.ToString("X");
                       UAL.positionnerIndicateurs("RCL",str_res,operand2:str_op2,operand1:str_op1);
@@ -3088,9 +3092,40 @@ public static void format_ax_reg ( string mnenmonique , string source ,string  v
                     }
           break;
           default:
+                    
           break;
         }
+    }else{ //execution programme -- sans animation te3 la boule reste uniquement animation des registres.
+          
     }
+    }
+
+
+    public static void executer_programme(List<Instruction> programInstructions){
+      //initialisation du contexte -- registre et memoire centrale.
+      ArrayList registres = new ArrayList();
+      registres.Add("AX");
+      registres.Add("BX");
+      registres.Add("CX");
+      registres.Add("DX");
+      registres.Add("SI");
+      registres.Add("DI");
+      registres.Add("BP");
+      registres.Add("SP");
+      
+      foreach(string registre in registres){
+          //Registre.setContenuRegistre(registre,containerElement.TextBox.Text);
+      }
+      MC mc = new MC();
+      //initialiser mc -- methode a creer
+      //------------------------------------------------------------------------
+      foreach(Instruction inst in programInstructions){
+        executer_simulation_phase_a_phase("programme",inst.getMnemonique(),inst.getFormat(),inst.getRegM(),inst.getDestination(),inst.getValDepl(),inst.getSource(),inst.getifdepl());
+      }
+    }
+
+      
+
     }
 
 }
