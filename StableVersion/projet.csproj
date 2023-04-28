@@ -50,6 +50,7 @@
     <None Remove="Pages\decalage.png" />
     <None Remove="Pages\images\1pas.png" />
     <None Remove="Pages\images\accueil.png" />
+    <None Remove="Pages\images\Add.png" />
     <None Remove="Pages\images\carre.png" />
     <None Remove="Pages\images\cei.png" />
     <None Remove="Pages\images\CEI\and.png" />
@@ -142,6 +143,7 @@
   <ItemGroup>
     <Resource Include="Pages\images\1pas.png" />
     <Resource Include="Pages\images\accueil.png" />
+    <Resource Include="Pages\images\Add.png" />
     <Resource Include="Pages\images\carre.png" />
     <Resource Include="Pages\images\cei.png" />
     <Resource Include="Pages\images\CEI\and.png" />

@@ -736,3 +736,10 @@ C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVers
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Animation.baml
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page_Decalage.baml
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page_EntreeSortie.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page3.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ProgrammePage.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\ICSharpCode.AvalonEdit.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page3.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ProgrammePage.baml

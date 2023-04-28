@@ -8,10 +8,19 @@
     ".NETCoreApp,Version=v6.0": {
       "projet/1.0.0": {
         "dependencies": {
+          "AvalonEdit": "6.3.0.90",
           "MaterialDesignThemes": "4.7.1"
         },
         "runtime": {
           "projet.dll": {}
+        }
+      },
+      "AvalonEdit/6.3.0.90": {
+        "runtime": {
+          "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
+            "assemblyVersion": "6.3.0.90",
+            "fileVersion": "6.3.0.90"
+          }
         }
       },
       "MaterialDesignColors/2.1.1": {
@@ -49,6 +58,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AvalonEdit/6.3.0.90": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WVTb5MxwGqKdeasd3nG5udlV4t6OpvkFanziwI133K0/QJ5FvZmfzRQgpAjGTJhQfIA8GP7AzKQ3sTY9JOFk8Q==",
+      "path": "avalonedit/6.3.0.90",
+      "hashPath": "avalonedit.6.3.0.90.nupkg.sha512"
     },
     "MaterialDesignColors/2.1.1": {
       "type": "package",

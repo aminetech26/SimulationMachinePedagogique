@@ -5,8 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              xmlns:local="clr-namespace:projet"
-             d:DesignHeight="30" d:DesignWidth="400">
-    <Grid>
+             d:DesignHeight="75" d:DesignWidth="400">
+    
+    <Grid Background="Transparent" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -17,32 +18,133 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ComboBox Grid.Column="0" x:Name="ComboBox1" SelectionChanged="ComboBox1_SelectionChanged">
-            
-        </ComboBox>
-        <ComboBox Grid.Column="1" x:Name="ComboBox2" SelectionChanged="ComboBox2_SelectionChanged">
-            
-        </ComboBox>
-        <ComboBox Grid.Column="2" x:Name="ComboBox3" SelectionChanged="ComboBox3_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Column="3" x:Name="ComboBox4" SelectionChanged="ComboBox4_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Column="4" x:Name="ComboBox5" SelectionChanged="ComboBox5_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Column="5" x:Name="ComboBox6" SelectionChanged="ComboBox6_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Column="6" x:Name="ComboBox7" SelectionChanged="ComboBox7_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
+
+        <Grid Grid.Column="0" >
+            <StackPanel >
+
+                <TextBlock Text="Categorie" FontSize="15"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" Margin="2"
+                       ></TextBlock>
+
+                <ComboBox Grid.Column="0" x:Name="ComboBox1" SelectionChanged="ComboBox1_SelectionChanged"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}" Foreground="Black"
+                  Margin="5 0" Background="White"
+                  >
+                </ComboBox>
+                
+            </StackPanel>
+
+        </Grid>
         
+        <Grid Grid.Column="1" >
+            <StackPanel >
+
+                <TextBlock Text="Instruction" FontSize="15"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" Margin="2"
+                       ></TextBlock>
+
+                <ComboBox Grid.Column="0" x:Name="ComboBox2" SelectionChanged="ComboBox1_SelectionChanged"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}" Foreground="Black"
+                  Margin="5 0" Background="White"
+                  >
+                </ComboBox>
+                
+            </StackPanel>
+
+        </Grid>
+        
+        <Grid Grid.Column="2" >
+            <StackPanel >
+
+                <TextBlock Text="Format" FontSize="15"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" Margin="2"
+                       ></TextBlock>
+
+                <ComboBox Grid.Column="0" x:Name="ComboBox3" SelectionChanged="ComboBox1_SelectionChanged"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}" Foreground="Black"
+                  Margin="5 0" Background="White"
+                  >
+                </ComboBox>
+                
+            </StackPanel>
+
+        </Grid>
+        
+        <Grid Grid.Column="3" >
+            <StackPanel >
+
+                <TextBlock Text="Reg/M" FontSize="15"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" Margin="2"
+                       ></TextBlock>
+
+                <ComboBox Grid.Column="0" x:Name="ComboBox4" SelectionChanged="ComboBox1_SelectionChanged"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}" Foreground="Black"
+                  Margin="5 0" Background="White"
+                  >
+                </ComboBox>
+                
+            </StackPanel>
+
+        </Grid>
+        
+        <Grid Grid.Column="4" >
+            <StackPanel >
+
+                <TextBlock Text="Dep" FontSize="15"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" Margin="2"
+                       ></TextBlock>
+
+                <ComboBox Grid.Column="0" x:Name="ComboBox5" SelectionChanged="ComboBox1_SelectionChanged"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}" Foreground="Black"
+                  Margin="5 0" Background="White"
+                  >
+                </ComboBox>
+                
+            </StackPanel>
+
+        </Grid>
+        
+        <Grid Grid.Column="5" >
+            <StackPanel >
+
+                <TextBlock Text="Destinataire" FontSize="15"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" Margin="2"
+                       ></TextBlock>
+
+                <ComboBox Grid.Column="0" x:Name="ComboBox6" SelectionChanged="ComboBox1_SelectionChanged"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}" Foreground="Black"
+                  Margin="5 0" Background="White"
+                  >
+                </ComboBox>
+                
+            </StackPanel>
+
+        </Grid>
+        
+        <Grid Grid.Column="6" >
+            <StackPanel >
+
+                <TextBlock Text="Source" FontSize="15"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                       Foreground="White" Margin="2"
+                       ></TextBlock>
+
+                <ComboBox Grid.Column="0" x:Name="ComboBox7" SelectionChanged="ComboBox1_SelectionChanged"
+                  Style="{DynamicResource MaterialDesignOutlinedComboBox}" Foreground="Black"
+                  Margin="5 0" Background="White"
+                  >
+                </ComboBox>
+                
+            </StackPanel>
+
+        </Grid>
+
     </Grid>
+    
 </UserControl>
