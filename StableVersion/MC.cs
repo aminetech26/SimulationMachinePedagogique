@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace ArchiMind
 {
@@ -15,7 +16,15 @@ namespace ArchiMind
        public static void setRam(String ram) {
          MC.ram = ram ; 
        }
-       public static string getRam(){
+        public static List<Case> getMc()
+        {
+            return mc;
+        }
+        public static void setMc(List<Case> list_cases)
+        {
+            MC.mc = list_cases;
+        }
+        public static string getRam(){
         return MC.ram; 
        }
         public static void setRim(String rim) {
@@ -30,6 +39,18 @@ namespace ArchiMind
        public static Case recherche_mc(string adr){
          Case case_adr = mc.Find(c => adr.Equals(c.getAdr()));
          return case_adr;
-       }
+         } 
+         public static void AjouterCase(string adresse, Case nouvelleCase)
+         {
+            try
+            {
+                int index = Convert.ToInt32(adresse, 16);
+                mc.Insert(index,nouvelleCase);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+         }
     }
 }

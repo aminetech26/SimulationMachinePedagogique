@@ -1,16 +1,13 @@
-﻿<Window x:Class="projet.ProgrammePage"
+﻿<Page x:Class="projet.ProgrammePage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projet"
-      mc:Ignorable="d"
-      WindowStyle="None"
-      Height="600" Width="800"
-        WindowStartupLocation="CenterScreen"
+      mc:Ignorable="d" 
       Title="ProgrammePage">
 
-    <Grid x:Name="containerElement" Background="#317AC7" >
+    <Grid x:Name="GlobalGrid" Background="#317AC7" >
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
             <RowDefinition Height="*"/>
@@ -19,7 +16,7 @@
 
         <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal" >
             <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
-                    Click="Go_Back" Margin="30 0 0 0" >
+                     Margin="30 0 0 0" > //add Click
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
@@ -118,6 +115,9 @@
             </Button>
 
         </Grid>
+        <Button x:Name="NextPage" Click="NextPage_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20 0" Height="50" Width="50" >
+            Next Page
+        </Button>
     </Grid>
 
-</Window>
+</Page>

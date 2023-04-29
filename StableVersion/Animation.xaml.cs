@@ -155,7 +155,7 @@ namespace projet
             if (dep == "Avec deplacement") ifdep = true;
             else ifdep= false;
 
-            JeuxInstruction.executer_simulation_phase_a_phase(memonique,Format,mem_b,destinaitr,ifdep,Valdep,ccm,source,Reg1, Reg2, Reg3, myImag18e,myImag3e);
+         //   JeuxInstruction.executer_simulation_phase_a_phase(memonique,Format,mem_b,destinaitr,ifdep,Valdep,ccm,source,Reg1, Reg2, Reg3, myImag18e,myImag3e);
 
             //RI.Text =Reg1;
             //CO.Text =Reg2;
