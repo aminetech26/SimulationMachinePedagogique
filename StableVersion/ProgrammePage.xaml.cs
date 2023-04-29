@@ -33,23 +33,28 @@ namespace projet
         {
             programInstructions = new List<Instruction>();//bech a chaque nreinitialiser
         }
+        //private void Go_Back(object sender, RoutedEventArgs e)
+        //{
+        //    this.Close();
+        //}
 
         private Instruction SetInstruction(string mnemonique, string format, string destination, string source, bool mem = true, bool ifdepl = true, string valdep = "")
         {
             Instruction new_instruction = new Instruction(mnemonique, format, destination, source, mem = true, ifdepl = true, valdep = "");
             return new_instruction;
         }
-            
+
+        private int currentLineNumber = 1;
         private void AddInstruction_Click(object sender, RoutedEventArgs e)
         {
+            Instruction_Ligne currentInstruction = (Instruction_Ligne)Grid_Inst.Children[Grid_Inst.Children.Count - 1];
+            string? mnemonique = (currentInstruction.ComboBox2.SelectedItem != null) ? currentInstruction.ComboBox2.SelectedItem.ToString() : "";
+            string? format = (currentInstruction.ComboBox3.SelectedItem != null) ? currentInstruction.ComboBox3.SelectedItem.ToString() : "";
+            string? reg_m = (currentInstruction.ComboBox4.IsEnabled && currentInstruction.ComboBox4.SelectedItem != null) ? currentInstruction.ComboBox4.SelectedItem.ToString() : "";
+            string? depl = (currentInstruction.ComboBox5.IsEnabled && currentInstruction.ComboBox5.SelectedItem != null) ? currentInstruction.ComboBox5.SelectedItem.ToString() : "";
+            string? destinataire = (currentInstruction.ComboBox6.IsEnabled && currentInstruction.ComboBox6.SelectedItem != null) ? currentInstruction.ComboBox6.SelectedItem.ToString() : "";
+            string? source = (currentInstruction.ComboBox7.IsEnabled && currentInstruction.ComboBox7.SelectedItem != null) ? currentInstruction.ComboBox7.SelectedItem.ToString() : "";
 
-            Instruction_Ligne previousInstruction = (Instruction_Ligne)containerElement.Children[containerElement.Children.Count - 2];
-            string mnemonique = previousInstruction.ComboBox1.SelectedItem.ToString();
-            string format = previousInstruction.ComboBox2.SelectedItem.ToString();
-            string reg_m = (previousInstruction.ComboBox3.IsEnabled) ? previousInstruction.ComboBox3.SelectedItem.ToString() : "";
-            string depl = (previousInstruction.ComboBox4.IsEnabled) ? previousInstruction.ComboBox4.SelectedItem.ToString() : "";
-            string destinataire = (previousInstruction.ComboBox5.IsEnabled) ? previousInstruction.ComboBox3.SelectedItem.ToString() : "";
-            string source = (previousInstruction.ComboBox6.IsEnabled) ? previousInstruction.ComboBox6.SelectedItem.ToString() : "";
             bool deplacement;
             bool mem;
             if (depl == "Avec deplacement")
@@ -68,158 +73,91 @@ namespace projet
             {
                 mem = false;
             }
-            //reste a traiter les cas particulier (immediat + valeur deplacement)
-            Instruction instruction;
-            instruction = SetInstruction(mnemonique,format,destinataire,source,deplacement,mem);
-            programInstructions.Add(instruction);
-            Instruction_Ligne newInstruction = new Instruction_Ligne();
-
-            // Set the position of the new control relative to the previous control
-            double previousControlBottom = Canvas.GetTop(containerElement.Children[containerElement.Children.Count - 2]) + containerElement.Children[containerElement.Children.Count - 2].RenderSize.Height;
-            Canvas.SetBottom(newInstruction, previousControlBottom + 20);
-
-            // Add the new control to the container
-            containerElement.Children.Add(newInstruction);
-           // instructionList.Add(newInstruction);
-        }
-        // --------------------------------------------------------------------------------
-        public string convertir_instruction_Lmnemonique(Instruction instruction)
-        {
-            string my_instruction = "";
-             return instruction.getMnemonique()+" "+convertir_First_part(instruction)+convertir_Second_part(instruction);
-        }
-        // ---------------------------------------------------------------------------------
-        public string convertir_First_part(Instruction instruction)   // we consider INST First_part,Second_part
-        {
-            string my_first_part="";
-          switch(instruction.getFormat()){
-                case "AX,DX" :
-                case "AX,imm16":
-                case "AX,Reg16":
-                    my_first_part = "AX";
-                break;
-                case "DX,AX":
-                case "DX,mem16":
-                    my_first_part ="DX" ;
-                break;
-                case "Reg16/Mem16,imm16":
-                case "Reg16/mem16":
-                case "Reg16/mem16,imm8":
-                case "Reg16/mem16,CX":
-                    my_first_part = case_reg_mem(instruction);
-                break;
-                case "Reg16,Reg16/mem16":
-                case "Reg16,imm16":
-                case "Reg16":
-                    my_first_part = case_reg(instruction);
-                    break;
-                case "mem16,DX":
-                case "mem16":
-                    my_first_part=case_mem(instruction);
-                    break;
-                default:
-                    my_first_part= "error";
-            }
-           return my_first_part;
-        }
-        // --------------------------------
-        public string case_reg_mem(Instruction instruction)  // if it was reg or mem
-        {
-            if (instruction.getmem())
+            bool allChecked = true;
+            foreach (UIElement element in Grid_Inst.Children)
             {
-               return case_mem(instruction);
+                if (element is Instruction_Ligne ins)
+                {
+                    // Check if all enabled ComboBoxes have a selected item
+                    if (ins.ComboBox1.IsEnabled && ins.ComboBox1.SelectedItem == null)
+                    {
+                        allChecked = false;
+                        break;
+                    }
+                    if (ins.ComboBox2.IsEnabled && ins.ComboBox2.SelectedItem == null)
+                    {
+                        allChecked = false;
+                        break;
+                    }
+                    if (ins.ComboBox3.IsEnabled && ins.ComboBox3.SelectedItem == null)
+                    {
+                        allChecked = false;
+                        break;
+                    }
+                    if (ins.ComboBox4.IsEnabled && ins.ComboBox4.SelectedItem == null)
+                    {
+                        allChecked = false;
+                        break;
+                    }
+                    if (ins.ComboBox5.IsEnabled && ins.ComboBox5.SelectedItem == null)
+                    {
+                        allChecked = false;
+                        break;
+                    }
+                    if (ins.ComboBox6.IsEnabled && ins.ComboBox6.SelectedItem == null)
+                    {
+                        allChecked = false;
+                        break;
+                    }
+                }
             }
-            else // case of register {AX,BX ...}
+            if (!allChecked)
             {
-               return case_reg(instruction);
-            }
-        }
-        // -------------------------------------
-        public string case_reg(Instruction instruction) // Inst reg, ....
-        {
-            return instruction.getSource();
-        }
-        //--------------------------------------
-        public string case_mem(Instruction instruction) { // Inst mem, ....
-            if (instruction.getifdepl())
-            {
-                return instruction.getSource().Replace("XXXX",instruction.getValDepl());
+                MessageBox.Show("Veuillez sélectionner un élément dans toutes les listes déroulantes activées.");
             }
             else
             {
-                return instruction.getSource();
+                Instruction instruction = new Instruction();
+                instruction = SetInstruction(mnemonique, format, destinataire, source, deplacement, mem);
+                programInstructions.Add(instruction);
+                currentLineNumber++;
+                var instructionLigne = new Instruction_Ligne();
+                Grid_Inst.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
+                Grid_Inst.Children.Add(instructionLigne);
+                Grid.SetRow(instructionLigne, currentLineNumber - 1);
+                Grid.SetColumn(instructionLigne, 1);
+
+                var lineTextBlock = new TextBlock();
+                lineTextBlock.Text = currentLineNumber.ToString();
+                lineTextBlock.FontSize = 25;
+                lineTextBlock.FontWeight = FontWeights.Bold;
+                lineTextBlock.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4E719D"));
+                lineTextBlock.FontFamily = new FontFamily("Montserrat");
+                lineTextBlock.TextAlignment = TextAlignment.Center;
+                lineTextBlock.Margin = new Thickness(0, 27, 0, 27);
+                lineTextBlock.Height = Double.NaN;
+                lineTextBlock.Width = Double.NaN;
+                leftColumnGrid.Children.Add(lineTextBlock);
+                lineTextBlock.SetValue(Grid.RowProperty, currentLineNumber - 1);
+
+                // Check if currentLineNumber is greater than 5 and set the VerticalScrollBarVisibility property of the ScrollViewer to Visible
+                if (currentLineNumber > 5)
+                {
+                    Grid_InstructionsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
+                }
             }
         }
-        //----------------------------------------------------------
-        public string convertir_Second_part(Instruction instruction)
+
+        private void NextPage_Click(object sender, RoutedEventArgs e)
         {
-            string my_second_part = "";
-            switch (instruction.getFormat())
+            JeuxInstruction j = new JeuxInstruction();
+            string text = "";
+            foreach(Instruction ins in programInstructions)
             {
-                case "AX,DX":
-                case "mem16,DX":
-                    my_second_part =",DX";
-                    break;
-                case "DX,AX":
-                    my_second_part = ",AX";
-                    break;
-                case "Reg16/mem16,CX":
-                    my_second_part = ",CX";
-                    break;
-                case "Reg16,Reg16/mem16":
-                    my_second_part =","+des_case_reg_mem(instruction);
-                    break;
-                case "DX,mem16":
-                    my_second_part = "," + des_case_mem(instruction);
-                    break;
-                case "Reg16/mem16":
-                case "Reg16":
-                case "mem16":
-                    my_second_part = "";
-                    break;
-                case "AX,imm16":
-                case "Reg16/Mem16,imm16":
-                case "Reg16/mem16,imm8":
-                case "Reg16,imm16":
-                    my_second_part = "," + instruction.getval_imm16();
-                  break;
-                case "AX,Reg16":
-                    my_second_part = "," + des_case_reg(instruction);
-                    break;
-                default:
-                    my_second_part = "error";
-                    break;
+                text = text + j.convertir_instruction_Lmnemonique(ins) + "  \n";
             }
-            return my_second_part;
-        }
-        // ----------------------------------------
-        public string des_case_reg_mem(Instruction instruction)
-        {
-            if (instruction.getmem())
-            {
-                return des_case_mem(instruction);
-            }
-            else // case of register {AX,BX ...}
-            {
-                return des_case_reg(instruction);
-            }
-        }
-        // -------------------------------------
-        public string des_case_reg(Instruction instruction) // Inst reg, ....
-        {
-            return instruction.getDestination();
-        }
-        //--------------------------------------
-        public string des_case_mem(Instruction instruction)
-        { // Inst mem, ....
-            if (instruction.getifdepl())
-            {
-                return instruction.getDestination().Replace("XXXX", instruction.getValDepl());
-            }
-            else
-            {
-                return instruction.getDestination();
-            }
+            MessageBox.Show(text);
+            //  NavigationService.Navigate(new NextPage(programInstructions));
         }
 
     }

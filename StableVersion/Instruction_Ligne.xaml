@@ -5,8 +5,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              mc:Ignorable="d" 
              xmlns:local="clr-namespace:projet"
-             d:DesignHeight="30" d:DesignWidth="400">
+             d:DesignHeight="60" d:DesignWidth="400">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -17,32 +21,68 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <ComboBox Grid.Column="0" x:Name="ComboBox1" SelectionChanged="ComboBox1_SelectionChanged">
-            
-        </ComboBox>
-        <ComboBox Grid.Column="1" x:Name="ComboBox2" SelectionChanged="ComboBox2_SelectionChanged">
-            
-        </ComboBox>
-        <ComboBox Grid.Column="2" x:Name="ComboBox3" SelectionChanged="ComboBox3_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Column="3" x:Name="ComboBox4" SelectionChanged="ComboBox4_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Column="4" x:Name="ComboBox5" SelectionChanged="ComboBox5_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Column="5" x:Name="ComboBox6" SelectionChanged="ComboBox6_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
-        <ComboBox Grid.Column="6" x:Name="ComboBox7" SelectionChanged="ComboBox7_SelectionChanged">
-            <ComboBoxItem>Option 1</ComboBoxItem>
-            <ComboBoxItem>Option 2</ComboBoxItem>
-        </ComboBox>
         
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Categorie" FontSize="20"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="0" x:Name="ComboBox1" SelectionChanged="ComboBox1_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Mnemonique" FontSize="20"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="1" x:Name="ComboBox2" SelectionChanged="ComboBox2_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Format" FontSize="20"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="2" x:Name="ComboBox3" SelectionChanged="ComboBox3_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="Reg/M" FontSize="20"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="3" x:Name="ComboBox4" SelectionChanged="ComboBox4_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="4" Text="Dep" FontSize="20"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="4" x:Name="ComboBox5" SelectionChanged="ComboBox5_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="5" Text="Destinataire" FontSize="20"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="5" x:Name="ComboBox6" SelectionChanged="ComboBox6_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="6" Text="Source" FontSize="20"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="6" x:Name="ComboBox7" SelectionChanged="ComboBox7_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
     </Grid>
 </UserControl>

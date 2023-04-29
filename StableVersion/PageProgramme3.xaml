@@ -1,0 +1,168 @@
+﻿<Page x:Class="projet.PageProgramme3"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+
+      xmlns:local="clr-namespace:projet"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="PageProgramme3">
+
+    <Grid x:Name="containerGridElement" Background="#90CAF9">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="450"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,-350,0,0" >
+            <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
+                     Margin="30 0 0 0" >//add Click
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="/Pages/images/revenir.png" Height="25" Width="25" Stretch="Uniform"  />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <TextBlock Text="Cree un programme" Width="680" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" TextAlignment="Center" FontSize="25"
+                       Foreground="White" FontWeight="SemiBold" FontFamily="Montserrat"
+                       ></TextBlock>
+        </StackPanel>
+        <Grid Margin="0,120,0,0" Name="Reg_Grid">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- First 4 elements -->
+            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TextBox}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Row="0" BorderThickness="0" Background="Transparent">
+                                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                        </Border>
+                                        <Rectangle Grid.Row="1" Height="1" Width="60" Fill="Black" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </StackPanel.Resources>
+
+                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
+                        <TextBlock Text="AX:"/>
+                        <TextBox x:Name="AX" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4">
+                        </TextBox>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
+                        <TextBlock Text="BX:"/>
+                        <TextBox x:Name="BX" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
+                        <TextBlock Text="CX:"/>
+                        <TextBox x:Name="CX" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4" />
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
+                        <TextBlock Text="DX:"/>
+                        <TextBox x:Name="DX" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+
+            <!-- Second 4 elements -->
+            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical">
+                <StackPanel.Resources>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Margin" Value="5"/>
+                    </Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <Setter Property="Margin" Value="5"/>
+                        <Setter Property="Padding" Value="0"/>
+                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type TextBox}">
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="6"/>
+                                        </Grid.RowDefinitions>
+                                        <Border Grid.Row="0" BorderThickness="0" Background="Transparent">
+                                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                        </Border>
+                                        <Rectangle Grid.Row="1" Height="1" Width="60" Fill="Black" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </StackPanel.Resources>
+                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
+                        <TextBlock Text="SI:"/>
+                        <TextBox x:Name="SI" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
+                        <TextBlock Text="DI:"/>
+                        <TextBox x:Name="DI" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
+                        <TextBlock Text="SP:"/>
+                        <TextBox x:Name="SP" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
+                        <TextBlock Text="BP:"/>
+                        <TextBox x:Name="BP" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </Grid>
+        <Button Margin="0,300,0,0"  Name="suivant" Width="100" Click="suivant_Click">Suivant</Button>
+    </Grid>
+</Page>

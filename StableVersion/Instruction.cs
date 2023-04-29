@@ -60,6 +60,10 @@ namespace ArchiMind
         {
             this.mem = mem;
         } 
+        public Instruction()
+        {
+
+        }
         public Instruction (string format , string cop ){
             this.format = format;
             this.cop = cop;
@@ -83,9 +87,11 @@ namespace ArchiMind
 
         public void afficheInstruction()
         {
-            Console.Write(getFormat()+" ");
-            Console.WriteLine(getCop());
-            
+            Console.Write(getMnemonique()+" ");
+            Console.Write(getFormat() + " ");
+            Console.Write(getDestination() + " ");
+            Console.Write(getSource() + " ");
+            Console.Write(getValDepl() + " ");
         }
     }
 

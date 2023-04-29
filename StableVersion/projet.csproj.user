@@ -13,6 +13,9 @@
     <Compile Update="Instruction_Ligne.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PageProgramme3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\CEI.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -64,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageProgramme3.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CEI.xaml">
