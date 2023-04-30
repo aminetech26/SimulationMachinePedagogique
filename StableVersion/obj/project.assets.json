@@ -2,6 +2,82 @@
   "version": 3,
   "targets": {
     "net6.0-windows7.0": {
+      "Ark.Tools.Core/4.9.2": {
+        "type": "package",
+        "dependencies": {
+          "Ensure.That": "10.1.0",
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
+          "Microsoft.CodeAnalysis.NetAnalyzers": "7.0.1",
+          "NodaTime": "3.1.9",
+          "Polly": "7.2.3",
+          "System.Reactive": "5.0.0",
+          "morelinq": "3.4.2"
+        },
+        "compile": {
+          "lib/net6.0/Ark.Tools.Core.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Ark.Tools.Core.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Ark.Tools.NewtonsoftJson/4.9.2": {
+        "type": "package",
+        "dependencies": {
+          "Ark.Tools.Nodatime.Json": "4.9.2",
+          "Microsoft.CodeAnalysis.NetAnalyzers": "7.0.1",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "lib/net6.0/Ark.Tools.NewtonsoftJson.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Ark.Tools.NewtonsoftJson.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Ark.Tools.Nodatime/4.9.2": {
+        "type": "package",
+        "dependencies": {
+          "Ark.Tools.Core": "4.9.2",
+          "Microsoft.CodeAnalysis.NetAnalyzers": "7.0.1"
+        },
+        "compile": {
+          "lib/net6.0/Ark.Tools.Nodatime.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Ark.Tools.Nodatime.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Ark.Tools.Nodatime.Json/4.9.2": {
+        "type": "package",
+        "dependencies": {
+          "Ark.Tools.Nodatime": "4.9.2",
+          "Microsoft.CodeAnalysis.NetAnalyzers": "7.0.1",
+          "Newtonsoft.Json": "13.0.3",
+          "NodaTime.Serialization.JsonNet": "3.0.1"
+        },
+        "compile": {
+          "lib/net6.0/Ark.Tools.Nodatime.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Ark.Tools.Nodatime.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "AvalonEdit/6.3.0.90": {
         "type": "package",
         "compile": {
@@ -17,6 +93,19 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App"
         ]
+      },
+      "Ensure.That/10.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Ensure.That.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Ensure.That.dll": {
+            "related": ".xml"
+          }
+        }
       },
       "MaterialDesignColors/2.1.2": {
         "type": "package",
@@ -51,6 +140,25 @@
           "build/MaterialDesignThemes.targets": {}
         }
       },
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.NetAnalyzers/7.0.1": {
+        "type": "package",
+        "build": {
+          "build/_._": {}
+        }
+      },
       "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
         "type": "package",
         "compile": {
@@ -66,10 +174,191 @@
         "frameworkReferences": [
           "Microsoft.WindowsDesktop.App.WPF"
         ]
+      },
+      "morelinq/3.4.2": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/MoreLinq.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/MoreLinq.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "NodaTime/3.1.9": {
+        "type": "package",
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
+        },
+        "compile": {
+          "lib/net6.0/NodaTime.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/NodaTime.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "NodaTime.Serialization.JsonNet/3.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.1",
+          "NodaTime": "[3.0.0, 4.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.0/NodaTime.Serialization.JsonNet.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/NodaTime.Serialization.JsonNet.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "Polly/7.2.3": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Polly.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "System.Reactive/5.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net5.0/_._": {}
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+        "type": "package",
+        "compile": {
+          "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll": {
+            "related": ".xml"
+          }
+        }
       }
     }
   },
   "libraries": {
+    "Ark.Tools.Core/4.9.2": {
+      "sha512": "WAlbJ7MhEGSdlCISeHZi0PlYNTK4+O79dAcl3nMXZGyfcsa9r6r9oP70DNv7NJDbFqV1fSfGH85iqVMApPMj3A==",
+      "type": "package",
+      "path": "ark.tools.core/4.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ark-dark.png",
+        "ark.tools.core.4.9.2.nupkg.sha512",
+        "ark.tools.core.nuspec",
+        "lib/net472/Ark.Tools.Core.dll",
+        "lib/net472/Ark.Tools.Core.xml",
+        "lib/net6.0/Ark.Tools.Core.dll",
+        "lib/net6.0/Ark.Tools.Core.xml",
+        "lib/netstandard2.0/Ark.Tools.Core.dll",
+        "lib/netstandard2.0/Ark.Tools.Core.xml",
+        "lib/netstandard2.1/Ark.Tools.Core.dll",
+        "lib/netstandard2.1/Ark.Tools.Core.xml"
+      ]
+    },
+    "Ark.Tools.NewtonsoftJson/4.9.2": {
+      "sha512": "V7elLAd8ovuR9zIRwHnDl97LgA6Z7eP57o77LleHBo8Zzg6mJ+fcdIH19TR7vHXTmyxvDa239s7XPz1485xv9g==",
+      "type": "package",
+      "path": "ark.tools.newtonsoftjson/4.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ark-dark.png",
+        "ark.tools.newtonsoftjson.4.9.2.nupkg.sha512",
+        "ark.tools.newtonsoftjson.nuspec",
+        "lib/net472/Ark.Tools.NewtonsoftJson.dll",
+        "lib/net472/Ark.Tools.NewtonsoftJson.xml",
+        "lib/net6.0/Ark.Tools.NewtonsoftJson.dll",
+        "lib/net6.0/Ark.Tools.NewtonsoftJson.xml",
+        "lib/netstandard2.0/Ark.Tools.NewtonsoftJson.dll",
+        "lib/netstandard2.0/Ark.Tools.NewtonsoftJson.xml",
+        "lib/netstandard2.1/Ark.Tools.NewtonsoftJson.dll",
+        "lib/netstandard2.1/Ark.Tools.NewtonsoftJson.xml"
+      ]
+    },
+    "Ark.Tools.Nodatime/4.9.2": {
+      "sha512": "iPjVJhMqOemx1GI+5HNgXbVY2SLIiBOj2oNIbKOd321vEJk5DEfcHWaOXnkZX/bfga3w2zxYZS68+H7AbdKEgw==",
+      "type": "package",
+      "path": "ark.tools.nodatime/4.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ark-dark.png",
+        "ark.tools.nodatime.4.9.2.nupkg.sha512",
+        "ark.tools.nodatime.nuspec",
+        "lib/net472/Ark.Tools.Nodatime.dll",
+        "lib/net472/Ark.Tools.Nodatime.xml",
+        "lib/net6.0/Ark.Tools.Nodatime.dll",
+        "lib/net6.0/Ark.Tools.Nodatime.xml",
+        "lib/netstandard2.0/Ark.Tools.Nodatime.dll",
+        "lib/netstandard2.0/Ark.Tools.Nodatime.xml",
+        "lib/netstandard2.1/Ark.Tools.Nodatime.dll",
+        "lib/netstandard2.1/Ark.Tools.Nodatime.xml"
+      ]
+    },
+    "Ark.Tools.Nodatime.Json/4.9.2": {
+      "sha512": "sRp6kIti/5mtLd8lJxPrWVmGaQlT/NDyoVDGI9PYQgwI2G35PExoOBG7w9wzrZN91rQNdkC7bIZdG9fi8I2/7Q==",
+      "type": "package",
+      "path": "ark.tools.nodatime.json/4.9.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ark-dark.png",
+        "ark.tools.nodatime.json.4.9.2.nupkg.sha512",
+        "ark.tools.nodatime.json.nuspec",
+        "lib/net472/Ark.Tools.Nodatime.Json.dll",
+        "lib/net472/Ark.Tools.Nodatime.Json.xml",
+        "lib/net6.0/Ark.Tools.Nodatime.Json.dll",
+        "lib/net6.0/Ark.Tools.Nodatime.Json.xml",
+        "lib/netstandard2.0/Ark.Tools.Nodatime.Json.dll",
+        "lib/netstandard2.0/Ark.Tools.Nodatime.Json.xml",
+        "lib/netstandard2.1/Ark.Tools.Nodatime.Json.dll",
+        "lib/netstandard2.1/Ark.Tools.Nodatime.Json.xml"
+      ]
+    },
     "AvalonEdit/6.3.0.90": {
       "sha512": "WVTb5MxwGqKdeasd3nG5udlV4t6OpvkFanziwI133K0/QJ5FvZmfzRQgpAjGTJhQfIA8GP7AzKQ3sTY9JOFk8Q==",
       "type": "package",
@@ -87,6 +376,25 @@
         "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.xml",
         "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.dll",
         "lib/net7.0-windows7.0/ICSharpCode.AvalonEdit.xml"
+      ]
+    },
+    "Ensure.That/10.1.0": {
+      "sha512": "rzTMSs0lQnu0WsesvTjs/zDzqiZXb9r5dv+wFQcPg/iIZqXb5BzwpIWEwi8Q3HA0TS4ytRcY129aSek6IzuOmA==",
+      "type": "package",
+      "path": "ensure.that/10.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "ensure.that.10.1.0.nupkg.sha512",
+        "ensure.that.nuspec",
+        "lib/net451/Ensure.That.dll",
+        "lib/net451/Ensure.That.xml",
+        "lib/netstandard1.1/Ensure.That.dll",
+        "lib/netstandard1.1/Ensure.That.xml",
+        "lib/netstandard2.0/Ensure.That.dll",
+        "lib/netstandard2.0/Ensure.That.xml",
+        "lib/netstandard2.1/Ensure.That.dll",
+        "lib/netstandard2.1/Ensure.That.xml"
       ]
     },
     "MaterialDesignColors/2.1.2": {
@@ -154,6 +462,298 @@
         "tools/VisualStudioToolsManifest.xml"
       ]
     },
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "sha512": "UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
+      "type": "package",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/net461/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.0/Microsoft.Bcl.AsyncInterfaces.xml",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.xml",
+        "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+        "microsoft.bcl.asyncinterfaces.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.CodeAnalysis.NetAnalyzers/7.0.1": {
+      "sha512": "IG5tvEbSVIOvQXhis+VV/1NdatfT7EHKSuKTpfmQdi6WaRrs+cUaQcBPZgKxSqmfQlCRGiqcNirw2OGiEfY08A==",
+      "type": "package",
+      "path": "microsoft.codeanalysis.netanalyzers/7.0.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "ThirdPartyNotices.txt",
+        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll",
+        "analyzers/dotnet/cs/Microsoft.CodeAnalysis.NetAnalyzers.dll",
+        "analyzers/dotnet/cs/cs/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/de/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/es/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/fr/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/it/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/ja/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/ko/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/pl/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/pt-BR/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/ru/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/tr/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/zh-Hans/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/cs/zh-Hant/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/Microsoft.CodeAnalysis.NetAnalyzers.dll",
+        "analyzers/dotnet/vb/Microsoft.CodeAnalysis.VisualBasic.NetAnalyzers.dll",
+        "analyzers/dotnet/vb/cs/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/de/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/es/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/fr/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/it/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/ja/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/ko/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/pl/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/pt-BR/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/ru/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/tr/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/zh-Hans/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "analyzers/dotnet/vb/zh-Hant/Microsoft.CodeAnalysis.NetAnalyzers.resources.dll",
+        "build/DisableNETAnalyzersForNuGetPackage.props",
+        "build/Microsoft.CodeAnalysis.NetAnalyzers.props",
+        "build/Microsoft.CodeAnalysis.NetAnalyzers.targets",
+        "build/config/analysislevel_5_all.editorconfig",
+        "build/config/analysislevel_5_default.editorconfig",
+        "build/config/analysislevel_5_minimum.editorconfig",
+        "build/config/analysislevel_5_none.editorconfig",
+        "build/config/analysislevel_5_recommended.editorconfig",
+        "build/config/analysislevel_6_all.editorconfig",
+        "build/config/analysislevel_6_default.editorconfig",
+        "build/config/analysislevel_6_minimum.editorconfig",
+        "build/config/analysislevel_6_none.editorconfig",
+        "build/config/analysislevel_6_recommended.editorconfig",
+        "build/config/analysislevel_7_all.editorconfig",
+        "build/config/analysislevel_7_default.editorconfig",
+        "build/config/analysislevel_7_minimum.editorconfig",
+        "build/config/analysislevel_7_none.editorconfig",
+        "build/config/analysislevel_7_recommended.editorconfig",
+        "build/config/analysisleveldesign_5_all.editorconfig",
+        "build/config/analysisleveldesign_5_default.editorconfig",
+        "build/config/analysisleveldesign_5_minimum.editorconfig",
+        "build/config/analysisleveldesign_5_none.editorconfig",
+        "build/config/analysisleveldesign_5_recommended.editorconfig",
+        "build/config/analysisleveldesign_6_all.editorconfig",
+        "build/config/analysisleveldesign_6_default.editorconfig",
+        "build/config/analysisleveldesign_6_minimum.editorconfig",
+        "build/config/analysisleveldesign_6_none.editorconfig",
+        "build/config/analysisleveldesign_6_recommended.editorconfig",
+        "build/config/analysisleveldesign_7_all.editorconfig",
+        "build/config/analysisleveldesign_7_default.editorconfig",
+        "build/config/analysisleveldesign_7_minimum.editorconfig",
+        "build/config/analysisleveldesign_7_none.editorconfig",
+        "build/config/analysisleveldesign_7_recommended.editorconfig",
+        "build/config/analysisleveldocumentation_5_all.editorconfig",
+        "build/config/analysisleveldocumentation_5_default.editorconfig",
+        "build/config/analysisleveldocumentation_5_minimum.editorconfig",
+        "build/config/analysisleveldocumentation_5_none.editorconfig",
+        "build/config/analysisleveldocumentation_5_recommended.editorconfig",
+        "build/config/analysisleveldocumentation_6_all.editorconfig",
+        "build/config/analysisleveldocumentation_6_default.editorconfig",
+        "build/config/analysisleveldocumentation_6_minimum.editorconfig",
+        "build/config/analysisleveldocumentation_6_none.editorconfig",
+        "build/config/analysisleveldocumentation_6_recommended.editorconfig",
+        "build/config/analysisleveldocumentation_7_all.editorconfig",
+        "build/config/analysisleveldocumentation_7_default.editorconfig",
+        "build/config/analysisleveldocumentation_7_minimum.editorconfig",
+        "build/config/analysisleveldocumentation_7_none.editorconfig",
+        "build/config/analysisleveldocumentation_7_recommended.editorconfig",
+        "build/config/analysislevelglobalization_5_all.editorconfig",
+        "build/config/analysislevelglobalization_5_default.editorconfig",
+        "build/config/analysislevelglobalization_5_minimum.editorconfig",
+        "build/config/analysislevelglobalization_5_none.editorconfig",
+        "build/config/analysislevelglobalization_5_recommended.editorconfig",
+        "build/config/analysislevelglobalization_6_all.editorconfig",
+        "build/config/analysislevelglobalization_6_default.editorconfig",
+        "build/config/analysislevelglobalization_6_minimum.editorconfig",
+        "build/config/analysislevelglobalization_6_none.editorconfig",
+        "build/config/analysislevelglobalization_6_recommended.editorconfig",
+        "build/config/analysislevelglobalization_7_all.editorconfig",
+        "build/config/analysislevelglobalization_7_default.editorconfig",
+        "build/config/analysislevelglobalization_7_minimum.editorconfig",
+        "build/config/analysislevelglobalization_7_none.editorconfig",
+        "build/config/analysislevelglobalization_7_recommended.editorconfig",
+        "build/config/analysislevelinteroperability_5_all.editorconfig",
+        "build/config/analysislevelinteroperability_5_default.editorconfig",
+        "build/config/analysislevelinteroperability_5_minimum.editorconfig",
+        "build/config/analysislevelinteroperability_5_none.editorconfig",
+        "build/config/analysislevelinteroperability_5_recommended.editorconfig",
+        "build/config/analysislevelinteroperability_6_all.editorconfig",
+        "build/config/analysislevelinteroperability_6_default.editorconfig",
+        "build/config/analysislevelinteroperability_6_minimum.editorconfig",
+        "build/config/analysislevelinteroperability_6_none.editorconfig",
+        "build/config/analysislevelinteroperability_6_recommended.editorconfig",
+        "build/config/analysislevelinteroperability_7_all.editorconfig",
+        "build/config/analysislevelinteroperability_7_default.editorconfig",
+        "build/config/analysislevelinteroperability_7_minimum.editorconfig",
+        "build/config/analysislevelinteroperability_7_none.editorconfig",
+        "build/config/analysislevelinteroperability_7_recommended.editorconfig",
+        "build/config/analysislevelmaintainability_5_all.editorconfig",
+        "build/config/analysislevelmaintainability_5_default.editorconfig",
+        "build/config/analysislevelmaintainability_5_minimum.editorconfig",
+        "build/config/analysislevelmaintainability_5_none.editorconfig",
+        "build/config/analysislevelmaintainability_5_recommended.editorconfig",
+        "build/config/analysislevelmaintainability_6_all.editorconfig",
+        "build/config/analysislevelmaintainability_6_default.editorconfig",
+        "build/config/analysislevelmaintainability_6_minimum.editorconfig",
+        "build/config/analysislevelmaintainability_6_none.editorconfig",
+        "build/config/analysislevelmaintainability_6_recommended.editorconfig",
+        "build/config/analysislevelmaintainability_7_all.editorconfig",
+        "build/config/analysislevelmaintainability_7_default.editorconfig",
+        "build/config/analysislevelmaintainability_7_minimum.editorconfig",
+        "build/config/analysislevelmaintainability_7_none.editorconfig",
+        "build/config/analysislevelmaintainability_7_recommended.editorconfig",
+        "build/config/analysislevelnaming_5_all.editorconfig",
+        "build/config/analysislevelnaming_5_default.editorconfig",
+        "build/config/analysislevelnaming_5_minimum.editorconfig",
+        "build/config/analysislevelnaming_5_none.editorconfig",
+        "build/config/analysislevelnaming_5_recommended.editorconfig",
+        "build/config/analysislevelnaming_6_all.editorconfig",
+        "build/config/analysislevelnaming_6_default.editorconfig",
+        "build/config/analysislevelnaming_6_minimum.editorconfig",
+        "build/config/analysislevelnaming_6_none.editorconfig",
+        "build/config/analysislevelnaming_6_recommended.editorconfig",
+        "build/config/analysislevelnaming_7_all.editorconfig",
+        "build/config/analysislevelnaming_7_default.editorconfig",
+        "build/config/analysislevelnaming_7_minimum.editorconfig",
+        "build/config/analysislevelnaming_7_none.editorconfig",
+        "build/config/analysislevelnaming_7_recommended.editorconfig",
+        "build/config/analysislevelperformance_5_all.editorconfig",
+        "build/config/analysislevelperformance_5_default.editorconfig",
+        "build/config/analysislevelperformance_5_minimum.editorconfig",
+        "build/config/analysislevelperformance_5_none.editorconfig",
+        "build/config/analysislevelperformance_5_recommended.editorconfig",
+        "build/config/analysislevelperformance_6_all.editorconfig",
+        "build/config/analysislevelperformance_6_default.editorconfig",
+        "build/config/analysislevelperformance_6_minimum.editorconfig",
+        "build/config/analysislevelperformance_6_none.editorconfig",
+        "build/config/analysislevelperformance_6_recommended.editorconfig",
+        "build/config/analysislevelperformance_7_all.editorconfig",
+        "build/config/analysislevelperformance_7_default.editorconfig",
+        "build/config/analysislevelperformance_7_minimum.editorconfig",
+        "build/config/analysislevelperformance_7_none.editorconfig",
+        "build/config/analysislevelperformance_7_recommended.editorconfig",
+        "build/config/analysislevelreliability_5_all.editorconfig",
+        "build/config/analysislevelreliability_5_default.editorconfig",
+        "build/config/analysislevelreliability_5_minimum.editorconfig",
+        "build/config/analysislevelreliability_5_none.editorconfig",
+        "build/config/analysislevelreliability_5_recommended.editorconfig",
+        "build/config/analysislevelreliability_6_all.editorconfig",
+        "build/config/analysislevelreliability_6_default.editorconfig",
+        "build/config/analysislevelreliability_6_minimum.editorconfig",
+        "build/config/analysislevelreliability_6_none.editorconfig",
+        "build/config/analysislevelreliability_6_recommended.editorconfig",
+        "build/config/analysislevelreliability_7_all.editorconfig",
+        "build/config/analysislevelreliability_7_default.editorconfig",
+        "build/config/analysislevelreliability_7_minimum.editorconfig",
+        "build/config/analysislevelreliability_7_none.editorconfig",
+        "build/config/analysislevelreliability_7_recommended.editorconfig",
+        "build/config/analysislevelsecurity_5_all.editorconfig",
+        "build/config/analysislevelsecurity_5_default.editorconfig",
+        "build/config/analysislevelsecurity_5_minimum.editorconfig",
+        "build/config/analysislevelsecurity_5_none.editorconfig",
+        "build/config/analysislevelsecurity_5_recommended.editorconfig",
+        "build/config/analysislevelsecurity_6_all.editorconfig",
+        "build/config/analysislevelsecurity_6_default.editorconfig",
+        "build/config/analysislevelsecurity_6_minimum.editorconfig",
+        "build/config/analysislevelsecurity_6_none.editorconfig",
+        "build/config/analysislevelsecurity_6_recommended.editorconfig",
+        "build/config/analysislevelsecurity_7_all.editorconfig",
+        "build/config/analysislevelsecurity_7_default.editorconfig",
+        "build/config/analysislevelsecurity_7_minimum.editorconfig",
+        "build/config/analysislevelsecurity_7_none.editorconfig",
+        "build/config/analysislevelsecurity_7_recommended.editorconfig",
+        "build/config/analysislevelusage_5_all.editorconfig",
+        "build/config/analysislevelusage_5_default.editorconfig",
+        "build/config/analysislevelusage_5_minimum.editorconfig",
+        "build/config/analysislevelusage_5_none.editorconfig",
+        "build/config/analysislevelusage_5_recommended.editorconfig",
+        "build/config/analysislevelusage_6_all.editorconfig",
+        "build/config/analysislevelusage_6_default.editorconfig",
+        "build/config/analysislevelusage_6_minimum.editorconfig",
+        "build/config/analysislevelusage_6_none.editorconfig",
+        "build/config/analysislevelusage_6_recommended.editorconfig",
+        "build/config/analysislevelusage_7_all.editorconfig",
+        "build/config/analysislevelusage_7_default.editorconfig",
+        "build/config/analysislevelusage_7_minimum.editorconfig",
+        "build/config/analysislevelusage_7_none.editorconfig",
+        "build/config/analysislevelusage_7_recommended.editorconfig",
+        "documentation/Analyzer Configuration.md",
+        "documentation/Microsoft.CodeAnalysis.NetAnalyzers.md",
+        "documentation/Microsoft.CodeAnalysis.NetAnalyzers.sarif",
+        "editorconfig/AllRulesDefault/.editorconfig",
+        "editorconfig/AllRulesDisabled/.editorconfig",
+        "editorconfig/AllRulesEnabled/.editorconfig",
+        "editorconfig/DataflowRulesDefault/.editorconfig",
+        "editorconfig/DataflowRulesEnabled/.editorconfig",
+        "editorconfig/DesignRulesDefault/.editorconfig",
+        "editorconfig/DesignRulesEnabled/.editorconfig",
+        "editorconfig/DocumentationRulesDefault/.editorconfig",
+        "editorconfig/DocumentationRulesEnabled/.editorconfig",
+        "editorconfig/GlobalizationRulesDefault/.editorconfig",
+        "editorconfig/GlobalizationRulesEnabled/.editorconfig",
+        "editorconfig/InteroperabilityRulesDefault/.editorconfig",
+        "editorconfig/InteroperabilityRulesEnabled/.editorconfig",
+        "editorconfig/MaintainabilityRulesDefault/.editorconfig",
+        "editorconfig/MaintainabilityRulesEnabled/.editorconfig",
+        "editorconfig/NamingRulesDefault/.editorconfig",
+        "editorconfig/NamingRulesEnabled/.editorconfig",
+        "editorconfig/PerformanceRulesDefault/.editorconfig",
+        "editorconfig/PerformanceRulesEnabled/.editorconfig",
+        "editorconfig/PortedFromFxCopRulesDefault/.editorconfig",
+        "editorconfig/PortedFromFxCopRulesEnabled/.editorconfig",
+        "editorconfig/ReliabilityRulesDefault/.editorconfig",
+        "editorconfig/ReliabilityRulesEnabled/.editorconfig",
+        "editorconfig/SecurityRulesDefault/.editorconfig",
+        "editorconfig/SecurityRulesEnabled/.editorconfig",
+        "editorconfig/UsageRulesDefault/.editorconfig",
+        "editorconfig/UsageRulesEnabled/.editorconfig",
+        "microsoft.codeanalysis.netanalyzers.7.0.1.nupkg.sha512",
+        "microsoft.codeanalysis.netanalyzers.nuspec",
+        "rulesets/AllRulesDefault.ruleset",
+        "rulesets/AllRulesDisabled.ruleset",
+        "rulesets/AllRulesEnabled.ruleset",
+        "rulesets/DataflowRulesDefault.ruleset",
+        "rulesets/DataflowRulesEnabled.ruleset",
+        "rulesets/DesignRulesDefault.ruleset",
+        "rulesets/DesignRulesEnabled.ruleset",
+        "rulesets/DocumentationRulesDefault.ruleset",
+        "rulesets/DocumentationRulesEnabled.ruleset",
+        "rulesets/GlobalizationRulesDefault.ruleset",
+        "rulesets/GlobalizationRulesEnabled.ruleset",
+        "rulesets/InteroperabilityRulesDefault.ruleset",
+        "rulesets/InteroperabilityRulesEnabled.ruleset",
+        "rulesets/MaintainabilityRulesDefault.ruleset",
+        "rulesets/MaintainabilityRulesEnabled.ruleset",
+        "rulesets/NamingRulesDefault.ruleset",
+        "rulesets/NamingRulesEnabled.ruleset",
+        "rulesets/PerformanceRulesDefault.ruleset",
+        "rulesets/PerformanceRulesEnabled.ruleset",
+        "rulesets/PortedFromFxCopRulesDefault.ruleset",
+        "rulesets/PortedFromFxCopRulesEnabled.ruleset",
+        "rulesets/ReliabilityRulesDefault.ruleset",
+        "rulesets/ReliabilityRulesEnabled.ruleset",
+        "rulesets/SecurityRulesDefault.ruleset",
+        "rulesets/SecurityRulesEnabled.ruleset",
+        "rulesets/UsageRulesDefault.ruleset",
+        "rulesets/UsageRulesEnabled.ruleset",
+        "tools/install.ps1",
+        "tools/uninstall.ps1"
+      ]
+    },
     "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
       "sha512": "8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
       "type": "package",
@@ -178,29 +778,202 @@
         "microsoft.xaml.behaviors.wpf.nuspec",
         "tools/Install.ps1"
       ]
+    },
+    "morelinq/3.4.2": {
+      "sha512": "nKdpt7Ai+xQO8PZ0YFTn13INGJcKO0Nx65kO/ut0zaDirRo6d7atedmW2l68YB3x7U4pOqTLdMfYsBys8KxA1Q==",
+      "type": "package",
+      "path": "morelinq/3.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "COPYING.txt",
+        "README.md",
+        "lib/net462/MoreLinq.dll",
+        "lib/net462/MoreLinq.pdb",
+        "lib/net462/MoreLinq.xml",
+        "lib/net6.0/MoreLinq.dll",
+        "lib/net6.0/MoreLinq.pdb",
+        "lib/net6.0/MoreLinq.xml",
+        "lib/netstandard1.0/MoreLinq.dll",
+        "lib/netstandard1.0/MoreLinq.pdb",
+        "lib/netstandard1.0/MoreLinq.xml",
+        "lib/netstandard2.0/MoreLinq.dll",
+        "lib/netstandard2.0/MoreLinq.pdb",
+        "lib/netstandard2.0/MoreLinq.xml",
+        "lib/netstandard2.1/MoreLinq.dll",
+        "lib/netstandard2.1/MoreLinq.pdb",
+        "lib/netstandard2.1/MoreLinq.xml",
+        "morelinq.3.4.2.nupkg.sha512",
+        "morelinq.nuspec"
+      ]
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "NodaTime/3.1.9": {
+      "sha512": "EzjwDOtsETlXWBDE6qvTQqc3guP+9xrAOf9j1mHL++UD4VeZay+dbCPNnXyZhoQMkKAOZ/+hIOtz7STl0Rkknw==",
+      "type": "package",
+      "path": "nodatime/3.1.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net6.0/NodaTime.dll",
+        "lib/net6.0/NodaTime.pdb",
+        "lib/net6.0/NodaTime.xml",
+        "lib/netstandard2.0/NodaTime.dll",
+        "lib/netstandard2.0/NodaTime.pdb",
+        "lib/netstandard2.0/NodaTime.xml",
+        "nodatime.3.1.9.nupkg.sha512",
+        "nodatime.nuspec"
+      ]
+    },
+    "NodaTime.Serialization.JsonNet/3.0.1": {
+      "sha512": "bmw+ElaOr21HZQQVYWZKgqs0QpSb/rJcJxem3Ok6YWAdenqOi0PS2hIkvlh+QJfsl2X3VJcla9Rhya/N3JnweA==",
+      "type": "package",
+      "path": "nodatime.serialization.jsonnet/3.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/NodaTime.Serialization.JsonNet.dll",
+        "lib/netstandard2.0/NodaTime.Serialization.JsonNet.pdb",
+        "lib/netstandard2.0/NodaTime.Serialization.JsonNet.xml",
+        "nodatime.serialization.jsonnet.3.0.1.nupkg.sha512",
+        "nodatime.serialization.jsonnet.nuspec"
+      ]
+    },
+    "Polly/7.2.3": {
+      "sha512": "DeCY0OFbNdNxsjntr1gTXHJ5pKUwYzp04Er2LLeN3g6pWhffsGuKVfMBLe1lw7x76HrPkLxKEFxBlpRxS2nDEQ==",
+      "type": "package",
+      "path": "polly/7.2.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Polly.png",
+        "lib/net461/Polly.dll",
+        "lib/net461/Polly.pdb",
+        "lib/net461/Polly.xml",
+        "lib/net472/Polly.dll",
+        "lib/net472/Polly.pdb",
+        "lib/net472/Polly.xml",
+        "lib/netstandard1.1/Polly.dll",
+        "lib/netstandard1.1/Polly.pdb",
+        "lib/netstandard1.1/Polly.xml",
+        "lib/netstandard2.0/Polly.dll",
+        "lib/netstandard2.0/Polly.pdb",
+        "lib/netstandard2.0/Polly.xml",
+        "polly.7.2.3.nupkg.sha512",
+        "polly.nuspec"
+      ]
+    },
+    "System.Reactive/5.0.0": {
+      "sha512": "erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
+      "type": "package",
+      "path": "system.reactive/5.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net5.0/_._",
+        "build/netcoreapp3.1/System.Reactive.dll",
+        "build/netcoreapp3.1/System.Reactive.targets",
+        "build/netcoreapp3.1/System.Reactive.xml",
+        "buildTransitive/net5.0/_._",
+        "buildTransitive/netcoreapp3.1/System.Reactive.targets",
+        "lib/net472/System.Reactive.dll",
+        "lib/net472/System.Reactive.xml",
+        "lib/net5.0-windows10.0.19041/System.Reactive.dll",
+        "lib/net5.0-windows10.0.19041/System.Reactive.xml",
+        "lib/net5.0/System.Reactive.dll",
+        "lib/net5.0/System.Reactive.xml",
+        "lib/netcoreapp3.1/_._",
+        "lib/netstandard2.0/System.Reactive.dll",
+        "lib/netstandard2.0/System.Reactive.xml",
+        "lib/uap10.0.16299/System.Reactive.dll",
+        "lib/uap10.0.16299/System.Reactive.pri",
+        "lib/uap10.0.16299/System.Reactive.xml",
+        "system.reactive.5.0.0.nupkg.sha512",
+        "system.reactive.nuspec"
+      ]
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "sha512": "zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+      "type": "package",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netcoreapp2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "lib/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/net461/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard1.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.dll",
+        "ref/netstandard2.0/System.Runtime.CompilerServices.Unsafe.xml",
+        "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512",
+        "system.runtime.compilerservices.unsafe.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "Ark.Tools.NewtonsoftJson >= 4.9.2",
       "AvalonEdit >= 6.3.0.90",
       "MaterialDesignColors >= 2.1.2",
       "MaterialDesignThemes >= 4.7.1"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Admin\\.nuget\\packages\\": {}
+    "C:\\Users\\Amine's PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+      "projectUniqueName": "C:\\Users\\Amine's PC\\Music\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
       "projectName": "projet",
-      "projectPath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
-      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\obj\\",
+      "projectPath": "C:\\Users\\Amine's PC\\Music\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+      "packagesPath": "C:\\Users\\Amine's PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Amine's PC\\Music\\SimulationMachinePedagogique\\StableVersion\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Amine's PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -226,6 +999,10 @@
       "net6.0-windows7.0": {
         "targetAlias": "net6.0-windows",
         "dependencies": {
+          "Ark.Tools.NewtonsoftJson": {
+            "target": "Package",
+            "version": "[4.9.2, )"
+          },
           "AvalonEdit": {
             "target": "Package",
             "version": "[6.3.0.90, )"
@@ -250,6 +1027,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[6.0.15, 6.0.15]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
@@ -258,7 +1053,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "projet/1.0.0": {
         "dependencies": {
+          "Ark.Tools.NewtonsoftJson": "4.9.2",
           "AvalonEdit": "6.3.0.90",
           "MaterialDesignColors": "2.1.2",
           "MaterialDesignThemes": "4.7.1"
@@ -16,11 +17,75 @@
           "projet.dll": {}
         }
       },
+      "Ark.Tools.Core/4.9.2": {
+        "dependencies": {
+          "Ensure.That": "10.1.0",
+          "Microsoft.Bcl.AsyncInterfaces": "6.0.0",
+          "Microsoft.CodeAnalysis.NetAnalyzers": "7.0.1",
+          "NodaTime": "3.1.9",
+          "Polly": "7.2.3",
+          "System.Reactive": "5.0.0",
+          "morelinq": "3.4.2"
+        },
+        "runtime": {
+          "lib/net6.0/Ark.Tools.Core.dll": {
+            "assemblyVersion": "4.9.2.0",
+            "fileVersion": "4.9.2.0"
+          }
+        }
+      },
+      "Ark.Tools.NewtonsoftJson/4.9.2": {
+        "dependencies": {
+          "Ark.Tools.Nodatime.Json": "4.9.2",
+          "Microsoft.CodeAnalysis.NetAnalyzers": "7.0.1",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "runtime": {
+          "lib/net6.0/Ark.Tools.NewtonsoftJson.dll": {
+            "assemblyVersion": "4.9.2.0",
+            "fileVersion": "4.9.2.0"
+          }
+        }
+      },
+      "Ark.Tools.Nodatime/4.9.2": {
+        "dependencies": {
+          "Ark.Tools.Core": "4.9.2",
+          "Microsoft.CodeAnalysis.NetAnalyzers": "7.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Ark.Tools.Nodatime.dll": {
+            "assemblyVersion": "4.9.2.0",
+            "fileVersion": "4.9.2.0"
+          }
+        }
+      },
+      "Ark.Tools.Nodatime.Json/4.9.2": {
+        "dependencies": {
+          "Ark.Tools.Nodatime": "4.9.2",
+          "Microsoft.CodeAnalysis.NetAnalyzers": "7.0.1",
+          "Newtonsoft.Json": "13.0.3",
+          "NodaTime.Serialization.JsonNet": "3.0.1"
+        },
+        "runtime": {
+          "lib/net6.0/Ark.Tools.Nodatime.Json.dll": {
+            "assemblyVersion": "4.9.2.0",
+            "fileVersion": "4.9.2.0"
+          }
+        }
+      },
       "AvalonEdit/6.3.0.90": {
         "runtime": {
           "lib/net6.0-windows7.0/ICSharpCode.AvalonEdit.dll": {
             "assemblyVersion": "6.3.0.90",
             "fileVersion": "6.3.0.90"
+          }
+        }
+      },
+      "Ensure.That/10.1.0": {
+        "runtime": {
+          "lib/netstandard2.1/Ensure.That.dll": {
+            "assemblyVersion": "10.1.0.0",
+            "fileVersion": "10.1.0.0"
           }
         }
       },
@@ -44,6 +109,15 @@
           }
         }
       },
+      "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+        "runtime": {
+          "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.21.52210"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.NetAnalyzers/7.0.1": {},
       "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
         "runtime": {
           "lib/net5.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
@@ -51,7 +125,63 @@
             "fileVersion": "1.1.39.4716"
           }
         }
-      }
+      },
+      "morelinq/3.4.2": {
+        "runtime": {
+          "lib/net6.0/MoreLinq.dll": {
+            "assemblyVersion": "3.4.2.0",
+            "fileVersion": "3.4.2.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.3": {
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "NodaTime/3.1.9": {
+        "dependencies": {
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
+        },
+        "runtime": {
+          "lib/net6.0/NodaTime.dll": {
+            "assemblyVersion": "3.1.9.0",
+            "fileVersion": "3.1.9.0"
+          }
+        }
+      },
+      "NodaTime.Serialization.JsonNet/3.0.1": {
+        "dependencies": {
+          "Newtonsoft.Json": "13.0.3",
+          "NodaTime": "3.1.9"
+        },
+        "runtime": {
+          "lib/netstandard2.0/NodaTime.Serialization.JsonNet.dll": {
+            "assemblyVersion": "3.0.1.0",
+            "fileVersion": "3.0.1.0"
+          }
+        }
+      },
+      "Polly/7.2.3": {
+        "runtime": {
+          "lib/netstandard2.0/Polly.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.2.3.0"
+          }
+        }
+      },
+      "System.Reactive/5.0.0": {
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {}
     }
   },
   "libraries": {
@@ -60,12 +190,47 @@
       "serviceable": false,
       "sha512": ""
     },
+    "Ark.Tools.Core/4.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WAlbJ7MhEGSdlCISeHZi0PlYNTK4+O79dAcl3nMXZGyfcsa9r6r9oP70DNv7NJDbFqV1fSfGH85iqVMApPMj3A==",
+      "path": "ark.tools.core/4.9.2",
+      "hashPath": "ark.tools.core.4.9.2.nupkg.sha512"
+    },
+    "Ark.Tools.NewtonsoftJson/4.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-V7elLAd8ovuR9zIRwHnDl97LgA6Z7eP57o77LleHBo8Zzg6mJ+fcdIH19TR7vHXTmyxvDa239s7XPz1485xv9g==",
+      "path": "ark.tools.newtonsoftjson/4.9.2",
+      "hashPath": "ark.tools.newtonsoftjson.4.9.2.nupkg.sha512"
+    },
+    "Ark.Tools.Nodatime/4.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-iPjVJhMqOemx1GI+5HNgXbVY2SLIiBOj2oNIbKOd321vEJk5DEfcHWaOXnkZX/bfga3w2zxYZS68+H7AbdKEgw==",
+      "path": "ark.tools.nodatime/4.9.2",
+      "hashPath": "ark.tools.nodatime.4.9.2.nupkg.sha512"
+    },
+    "Ark.Tools.Nodatime.Json/4.9.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sRp6kIti/5mtLd8lJxPrWVmGaQlT/NDyoVDGI9PYQgwI2G35PExoOBG7w9wzrZN91rQNdkC7bIZdG9fi8I2/7Q==",
+      "path": "ark.tools.nodatime.json/4.9.2",
+      "hashPath": "ark.tools.nodatime.json.4.9.2.nupkg.sha512"
+    },
     "AvalonEdit/6.3.0.90": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-WVTb5MxwGqKdeasd3nG5udlV4t6OpvkFanziwI133K0/QJ5FvZmfzRQgpAjGTJhQfIA8GP7AzKQ3sTY9JOFk8Q==",
       "path": "avalonedit/6.3.0.90",
       "hashPath": "avalonedit.6.3.0.90.nupkg.sha512"
+    },
+    "Ensure.That/10.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rzTMSs0lQnu0WsesvTjs/zDzqiZXb9r5dv+wFQcPg/iIZqXb5BzwpIWEwi8Q3HA0TS4ytRcY129aSek6IzuOmA==",
+      "path": "ensure.that/10.1.0",
+      "hashPath": "ensure.that.10.1.0.nupkg.sha512"
     },
     "MaterialDesignColors/2.1.2": {
       "type": "package",
@@ -81,12 +246,75 @@
       "path": "materialdesignthemes/4.7.1",
       "hashPath": "materialdesignthemes.4.7.1.nupkg.sha512"
     },
+    "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UcSjPsst+DfAdJGVDsu346FX0ci0ah+lw3WRtn18NUwEqRt70HaOQ7lI72vy3+1LxtqI3T5GWwV39rQSrCzAeg==",
+      "path": "microsoft.bcl.asyncinterfaces/6.0.0",
+      "hashPath": "microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512"
+    },
+    "Microsoft.CodeAnalysis.NetAnalyzers/7.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-IG5tvEbSVIOvQXhis+VV/1NdatfT7EHKSuKTpfmQdi6WaRrs+cUaQcBPZgKxSqmfQlCRGiqcNirw2OGiEfY08A==",
+      "path": "microsoft.codeanalysis.netanalyzers/7.0.1",
+      "hashPath": "microsoft.codeanalysis.netanalyzers.7.0.1.nupkg.sha512"
+    },
     "Microsoft.Xaml.Behaviors.Wpf/1.1.39": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-8PZKqw9QOcu42xk8puY4P1+EXHL9YGOR9b7qhaYx5cILHul456H073tj99vyPcCt0W0781T9RwHqkx507ZyUpQ==",
       "path": "microsoft.xaml.behaviors.wpf/1.1.39",
       "hashPath": "microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    },
+    "morelinq/3.4.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nKdpt7Ai+xQO8PZ0YFTn13INGJcKO0Nx65kO/ut0zaDirRo6d7atedmW2l68YB3x7U4pOqTLdMfYsBys8KxA1Q==",
+      "path": "morelinq/3.4.2",
+      "hashPath": "morelinq.3.4.2.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "path": "newtonsoft.json/13.0.3",
+      "hashPath": "newtonsoft.json.13.0.3.nupkg.sha512"
+    },
+    "NodaTime/3.1.9": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EzjwDOtsETlXWBDE6qvTQqc3guP+9xrAOf9j1mHL++UD4VeZay+dbCPNnXyZhoQMkKAOZ/+hIOtz7STl0Rkknw==",
+      "path": "nodatime/3.1.9",
+      "hashPath": "nodatime.3.1.9.nupkg.sha512"
+    },
+    "NodaTime.Serialization.JsonNet/3.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bmw+ElaOr21HZQQVYWZKgqs0QpSb/rJcJxem3Ok6YWAdenqOi0PS2hIkvlh+QJfsl2X3VJcla9Rhya/N3JnweA==",
+      "path": "nodatime.serialization.jsonnet/3.0.1",
+      "hashPath": "nodatime.serialization.jsonnet.3.0.1.nupkg.sha512"
+    },
+    "Polly/7.2.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DeCY0OFbNdNxsjntr1gTXHJ5pKUwYzp04Er2LLeN3g6pWhffsGuKVfMBLe1lw7x76HrPkLxKEFxBlpRxS2nDEQ==",
+      "path": "polly/7.2.3",
+      "hashPath": "polly.7.2.3.nupkg.sha512"
+    },
+    "System.Reactive/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
+      "path": "system.reactive/5.0.0",
+      "hashPath": "system.reactive.5.0.0.nupkg.sha512"
+    },
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
     }
   }
 }

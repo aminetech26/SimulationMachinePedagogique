@@ -736,15 +736,36 @@ C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVers
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Animation.baml
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page_Decalage.baml
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page_EntreeSortie.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\ICSharpCode.AvalonEdit.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page3.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page3.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ProgrammePage.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ProgrammePage.baml
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\projet.exe
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\projet.deps.json
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\projet.runtimeconfig.json
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\projet.dll
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\projet.pdb
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ark.Tools.Core.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ark.Tools.NewtonsoftJson.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ark.Tools.Nodatime.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ark.Tools.Nodatime.Json.dll
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\ICSharpCode.AvalonEdit.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ensure.That.dll
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\MaterialDesignColors.dll
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\MaterialDesignThemes.Wpf.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\MoreLinq.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\NodaTime.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\NodaTime.Serialization.JsonNet.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Polly.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\System.Reactive.dll
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\projet.csproj.AssemblyReference.cache
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Images\Icons.baml
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\MainWindow.baml
@@ -761,6 +782,7 @@ C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\n
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Animation.g.cs
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.g.cs
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\MainWindow.g.cs
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.g.cs
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Animation.g.cs
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\CEI.g.cs
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Cours.g.cs
@@ -831,6 +853,7 @@ C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\n
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\App.baml
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Animation.baml
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.baml
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.baml
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Animation.baml
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\CEI.baml
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Cours.baml
@@ -904,14 +927,3 @@ C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\n
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\projet.pdb
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\projet.genruntimeconfig.cache
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ref\projet.dll
-C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.g.cs
-C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.baml
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\ICSharpCode.AvalonEdit.dll
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.g.cs
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page3.g.cs
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.baml
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page3.baml
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.g.cs
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ProgrammePage.g.cs
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.baml
-C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ProgrammePage.baml
