@@ -235,7 +235,7 @@
                         <RowDefinition Height="auto"/>
                         <RowDefinition Height="auto"/>
                     </Grid.RowDefinitions>
-                    <Button x:Name="Button1" Style="{DynamicResource RoundedButtonStyle}" Height="54" Width="520" Margin="20,10" 
+                    <Button x:Name="Button1" Style="{DynamicResource RoundedButtonStyle}" Click="GoToCreerProgramme" Height="54" Width="520" Margin="20,10" 
                         Grid.Row="0"  >
                         <StackPanel Orientation="Horizontal" Width="520">
                             <Image Source="/Pages/images/ktab.png" Height="58" Width="33" RenderTransformOrigin="0.5,10.20" Margin="22,0,-10,0"/>

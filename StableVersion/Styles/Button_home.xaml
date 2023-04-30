@@ -4,44 +4,46 @@
 
     <!-- Rounded Button -->
 
-    <Style TargetType="Button" x:Key="RoundedButtonStyle">
-        <Setter Property="Background" Value="White" />
-        <Setter Property="Foreground" Value="Black" />
+    <Style x:Key="CustomScrollBarStyle" TargetType="{x:Type ScrollBar}">
+        <Setter Property="Background" Value="#F5F5F5" />
+        <Setter Property="Foreground" Value="#333333" />
+        <Setter Property="BorderBrush" Value="#BDBDBD" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Minimum" Value="0" />
         <Setter Property="Template">
-       
             <Setter.Value>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Border x:Name="ButtonBorder" CornerRadius="40" 
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
-                                BorderThickness="{TemplateBinding BorderThickness}" 
-                                Margin="0,0,0,0" 
-                                Padding="0,0,0,0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                            <Border.Effect>
-                                <DropShadowEffect ShadowDepth="5" 
-                                                  BlurRadius="10" 
-                                                  Opacity="0.8" 
-                                                  Color="Gray" />
-                            </Border.Effect>
-                        </Border>
-                        <Border CornerRadius="20" 
-                                Background="{x:Null}" 
-                                BorderBrush="{x:Null}" 
-                                BorderThickness="5" 
-                                Margin="5,5,5,5">
-                        </Border>
+                <ControlTemplate TargetType="{x:Type ScrollBar}">
+                    <Grid x:Name="GridRoot" Background="{TemplateBinding Background}">
+                        <Border x:Name="PART_Track" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="2" />
+                        <RepeatButton x:Name="PART_LineUpButton" Command="{x:Static ScrollBar.LineUpCommand}" Opacity="0" />
+                        <RepeatButton x:Name="PART_LineDownButton" Command="{x:Static ScrollBar.LineDownCommand}" Opacity="0" />
+                        <Thumb x:Name="PART_Thumb" Background="{TemplateBinding Foreground}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"  />
                     </Grid>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="#FCF9B9" />
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="PART_Track" Property="Background" Value="#E5E5E5" />
                         </Trigger>
-                        <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="#FFB347" />
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="PART_Track" Property="Background" Value="#EEEEEE" />
+                            <Setter TargetName="PART_Track" Property="BorderBrush" Value="#CFCFCF" />
+                            <Setter TargetName="PART_LineUpButton" Property="Opacity" Value="0" />
+                            <Setter TargetName="PART_LineDownButton" Property="Opacity" Value="0" />
+                            <Setter TargetName="PART_Thumb" Property="Visibility" Value="Collapsed" />
                         </Trigger>
-                        <Trigger Property="IsMouseOver" Value="False">
-                            <Setter TargetName="ButtonBorder" Property="Effect" Value="{x:Null}" />
+                        <Trigger Property="Orientation" Value="Horizontal">
+                            <Setter TargetName="PART_Track" Property="Height" Value="8" />
+                            <Setter TargetName="PART_Track" Property="Width" Value="Auto" />
+                            <Setter TargetName="PART_Thumb" Property="Width" Value="16" />
+                            <Setter TargetName="PART_Thumb" Property="Height" Value="Auto" />
+                        </Trigger>
+                        <Trigger Property="Orientation" Value="Vertical">
+                            <Setter TargetName="PART_Track" Property="Width" Value="8" />
+                            <Setter TargetName="PART_Track" Property="Height" Value="Auto" />
+                            <Setter TargetName="PART_Thumb" Property="Height" Value="16" />
+                            <Setter TargetName="PART_Thumb" Property="Width" Value="Auto" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="true">
+                            <Setter TargetName="PART_Thumb" Property="Visibility" Value="Visible" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

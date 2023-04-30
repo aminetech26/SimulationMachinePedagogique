@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "uWkD00FlJ3Ww5YdhuaNNWPssV+hU/a7wDnaMx7dUc/bUGd2/u9JkOZ1peTpGLgLrBz7la/lFL8Oocs0UO7KZ8A==",
+  "dgSpecHash": "isCcdncBtjj7lhZE0GgkqAtXrF1Bct/g2FcU+Br2io6TF4smlKG/DvSJTe7WzJu4uuh+12Kw4syrTo4gP5rtqQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+  "projectFilePath": "C:\\Users\\TRETEC\\Music\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    "C:\\Users\\TRETEC\\.nuget\\packages\\avalonedit\\6.3.0.90\\avalonedit.6.3.0.90.nupkg.sha512",
+    "C:\\Users\\TRETEC\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\TRETEC\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\TRETEC\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
   "logs": []
 }

@@ -74,6 +74,10 @@ namespace projet.Pages
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page3.xaml", UriKind.RelativeOrAbsolute));
         }
+        private void GoToPage6(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page6.xaml", UriKind.RelativeOrAbsolute));
+        }
 
         private void Go_Back(object sender, RoutedEventArgs e)
         {

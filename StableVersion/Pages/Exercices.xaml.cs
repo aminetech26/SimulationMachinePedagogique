@@ -29,11 +29,15 @@ namespace projet.Pages
         {
             this.NavigationService.GoBack();
         }
+        private void GoToCreerProgramme(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Creerprogramme.xaml", UriKind.RelativeOrAbsolute));
+        }
 
-        
 
-       
-       
+
+
+
 
         private void Fermer(object sender, MouseButtonEventArgs e)
         {

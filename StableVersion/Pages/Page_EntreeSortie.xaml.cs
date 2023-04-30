@@ -186,7 +186,6 @@ namespace projet.Pages
             string deplace;
             string destinatair;
             string source;
-            string Forma;
             ComboBoxItem? selectedItem = Instruction.SelectedItem as ComboBoxItem;
             string letter = Format.SelectedItem.ToString();
             ComboBoxItem? selectedItem2 = Reg.SelectedItem as ComboBoxItem; if (selectedItem2 == null) { Registr = "0000"; } else { Registr = selectedItem2.ToString(); }

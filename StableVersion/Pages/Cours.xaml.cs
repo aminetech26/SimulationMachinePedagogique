@@ -66,5 +66,6 @@ namespace projet.Pages
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
+      
     }
 }

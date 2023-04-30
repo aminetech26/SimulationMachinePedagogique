@@ -46,6 +46,9 @@
     <Compile Update="Pages\Premierpas.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\TestScroll.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ProgrammePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -97,6 +100,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Premierpas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\TestScroll.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ProgrammePage.xaml">
