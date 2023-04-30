@@ -929,3 +929,17 @@ C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\n
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ref\projet.dll
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ExecutionProgramme.g.cs
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ExecutionProgramme.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ark.Tools.Core.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ark.Tools.NewtonsoftJson.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ark.Tools.Nodatime.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ark.Tools.Nodatime.Json.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Ensure.That.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\MoreLinq.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\NodaTime.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\NodaTime.Serialization.JsonNet.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\Polly.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\System.Reactive.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ExecutionProgramme.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ExecutionProgramme.baml

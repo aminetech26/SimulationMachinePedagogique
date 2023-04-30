@@ -68,6 +68,7 @@
     <None Remove="Pages\images\ExercicesTypes.png" />
     <None Remove="Pages\images\false.png" />
     <None Remove="Pages\images\fermer.png" />
+    <None Remove="Pages\images\Help.png" />
     <None Remove="Pages\images\Home\cpu1.png" />
     <None Remove="Pages\images\Home\dossier.png" />
     <None Remove="Pages\images\Home\plus.png" />
@@ -161,6 +162,7 @@
     <Resource Include="Pages\images\ExercicesTypes.png" />
     <Resource Include="Pages\images\false.png" />
     <Resource Include="Pages\images\fermer.png" />
+    <Resource Include="Pages\images\Help.png" />
     <Resource Include="Pages\images\Home\dossier.png" />
   </ItemGroup>
 
