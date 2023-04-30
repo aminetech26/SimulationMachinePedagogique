@@ -374,7 +374,7 @@ namespace projet.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/projet;component/pages/page_decalage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/projet;V1.0.0.0;component/pages/page_decalage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\Page_Decalage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

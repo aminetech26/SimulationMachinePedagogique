@@ -470,7 +470,7 @@ namespace projet {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/projet;component/animation.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/projet;V1.0.0.0;component/animation.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Animation.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

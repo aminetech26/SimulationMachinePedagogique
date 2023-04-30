@@ -151,7 +151,7 @@ namespace projet.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/projet;component/pages/pagequiz17.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/projet;V1.0.0.0;component/pages/pagequiz17.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Pages\PageQuiz17.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

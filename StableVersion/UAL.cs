@@ -25,7 +25,7 @@ namespace ArchiMind
       public static string getUal2(){
         return UAL.ual2 ; 
         }
-        public static string  calculAdresse(String mem , bool ifdepl , string valdepl ){
+        public static string  calculAdresse(String mem , bool ifdepl , string valdepl = ""){
              string result_hex  ="" ; 
              int result_decimal ; 
             if (ifdepl){
