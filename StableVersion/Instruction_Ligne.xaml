@@ -22,7 +22,7 @@
         </Grid.ColumnDefinitions>
 
         
-        <TextBlock Grid.Row="0" Grid.Column="0" Text="Categorie" FontSize="20"
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Categorie" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
         <ComboBox 
@@ -31,7 +31,7 @@
             Background="White" Foreground="Black"
             />
 
-        <TextBlock Grid.Row="0" Grid.Column="1" Text="Mnemonique" FontSize="20"
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Mnemonique" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
         <ComboBox 
@@ -40,7 +40,7 @@
             Background="White" Foreground="Black"
             />
         
-        <TextBlock Grid.Row="0" Grid.Column="2" Text="Format" FontSize="20"
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Format" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
         <ComboBox 
@@ -49,7 +49,7 @@
             Background="White" Foreground="Black"
             />
         
-        <TextBlock Grid.Row="0" Grid.Column="3" Text="Reg/M" FontSize="20"
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="Reg/M" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
         <ComboBox 
@@ -58,7 +58,7 @@
             Background="White" Foreground="Black"
             />
         
-        <TextBlock Grid.Row="0" Grid.Column="4" Text="Dep" FontSize="20"
+        <TextBlock Grid.Row="0" Grid.Column="4" Text="Dep" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
         <ComboBox 
@@ -67,7 +67,7 @@
             Background="White" Foreground="Black"
             />
         
-        <TextBlock Grid.Row="0" Grid.Column="5" Text="Destinataire" FontSize="20"
+        <TextBlock Grid.Row="0" Grid.Column="5" Text="Destinataire" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
         <ComboBox 
@@ -76,7 +76,7 @@
             Background="White" Foreground="Black"
             />
         
-        <TextBlock Grid.Row="0" Grid.Column="6" Text="Source" FontSize="20"
+        <TextBlock Grid.Row="0" Grid.Column="6" Text="Source" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
         <ComboBox 

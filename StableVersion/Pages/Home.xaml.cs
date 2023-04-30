@@ -25,8 +25,7 @@ namespace projet.Pages
         public Home()
         {
             InitializeComponent();
-
-            
+            Grid_Language.Visibility = Visibility.Hidden;
 
         }
 
@@ -70,6 +69,21 @@ namespace projet.Pages
         private void Exmpl(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Cours.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void GoToProgrammePage(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/ProgrammePage.xaml", UriKind.Relative));
+        }
+
+        private void Button_Fr_En_Click(object sender, RoutedEventArgs e)
+        {
+            Grid_Language.Visibility= Visibility.Visible ;
+        }
+
+        private void Button_Fr_En_MouseLeave(object sender, MouseEventArgs e)
+        {
+            Grid_Language.Visibility = Visibility.Hidden;
         }
     }
 }

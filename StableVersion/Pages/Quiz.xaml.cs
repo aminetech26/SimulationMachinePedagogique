@@ -68,7 +68,6 @@ namespace projet.Pages
         private void BackCEI(object sender, MouseButtonEventArgs e)
         {
             this.NavigationService.GoBack();
-            
         }
 
 
@@ -79,7 +78,6 @@ namespace projet.Pages
 
         private void GoToCours(object sender, RoutedEventArgs e)
         {    
-            
                 NavigationService.Navigate(new Uri("pack://application:,,,/Pages/QuizExo.xaml", UriKind.RelativeOrAbsolute));   
         }
 

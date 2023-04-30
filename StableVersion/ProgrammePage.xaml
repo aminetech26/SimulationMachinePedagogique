@@ -9,14 +9,21 @@
 
     <Grid x:Name="GlobalGrid" Background="#317AC7" >
         <Grid.RowDefinitions>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal" >
-            <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
-                     Margin="30 0 0 0" > //add Click
+        <Grid Grid.Row="0" VerticalAlignment="Center" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="10*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                     Margin="30 0 0 0" Click="GoBack_To_Home" >
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
@@ -26,12 +33,16 @@
                 </Button.Template>
             </Button>
 
-            <TextBlock Text="Cree un programme" Width="680" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" TextAlignment="Center" FontSize="25"
+            <TextBlock Grid.Column="1" Text="Cree un programme" Width="680" VerticalAlignment="Center"
+                       HorizontalAlignment="Center" TextAlignment="Center" FontSize="23"
                        Foreground="White" FontWeight="SemiBold" FontFamily="Montserrat"
                        ></TextBlock>
 
-        </StackPanel>
+            <Button Grid.Column="2" x:Name="NextPage" Click="NextPage_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0 0 20 0" Height="40" Width="Auto" >
+                Next
+            </Button>
+            
+        </Grid>
 
 
         <ScrollViewer Grid.Row="1" Name="Grid_InstructionsScrollViewer">
@@ -67,7 +78,7 @@
                     <StackPanel x:Name="leftColumnGrid" >
 
                         <TextBlock Text="1" FontSize="25" FontWeight="Bold" Foreground="#4E719D"
-                           FontFamily="Montserrat" TextAlignment="Center" Margin="0 27"
+                           FontFamily="Montserrat" TextAlignment="Center" Margin="0 20"
                            Height="Auto" Width="Auto"
                            ></TextBlock>
                         <!--
@@ -115,9 +126,6 @@
             </Button>
 
         </Grid>
-        <Button x:Name="NextPage" Click="NextPage_Click" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20 0" Height="50" Width="50" >
-            Next Page
-        </Button>
     </Grid>
 
 </Page>

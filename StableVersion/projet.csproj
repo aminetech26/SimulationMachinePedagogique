@@ -73,6 +73,7 @@
     <None Remove="Pages\images\Home\plus.png" />
     <None Remove="Pages\images\intel.png" />
     <None Remove="Pages\images\ktab.png" />
+    <None Remove="Pages\images\language.png" />
     <None Remove="Pages\images\Line 53.png" />
     <None Remove="Pages\images\precedent.png" />
     <None Remove="Pages\images\Precedent1.png" />
@@ -174,6 +175,7 @@
     <Resource Include="Pages\images\Home\plus.png" />
     <Resource Include="Pages\images\intel.png" />
     <Resource Include="Pages\images\ktab.png" />
+    <Resource Include="Pages\images\language.png" />
     <Resource Include="Pages\images\Line 53.png" />
     <Resource Include="Pages\images\precedent.png" />
     <Resource Include="Pages\images\Precedent1.png" />

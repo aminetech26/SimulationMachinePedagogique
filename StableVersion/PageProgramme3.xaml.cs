@@ -18,13 +18,14 @@ using Page = System.Windows.Controls.Page;
 using TextBox = System.Windows.Controls.TextBox;
 using ArchiMind;
 using System.Xml.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace projet
 {
     /// <summary>
     /// Interaction logic for PageProgramme3.xaml
     /// </summary>
-    public partial class PageProgramme3 : Page
+    public partial class PageProgramme3
     {
         public PageProgramme3()
         {
@@ -32,6 +33,7 @@ namespace projet
             suivant.IsEnabled= false;
             AX.Focus();
         }
+
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
             foreach (var tb in FindVisualChildren<TextBox>(this))
@@ -88,7 +90,7 @@ namespace projet
             foreach (var tb in FindVisualChildren<TextBox>(this))
             {
                 string input = tb.Text.Trim();
-                TextBox textBox = sender as TextBox;
+                TextBox? textBox = sender as TextBox;
                 textBox.CaretIndex = textBox.Text.Length;
                 if (!Regex.IsMatch(input, @"^[0-9A-Fa-f]{4}$"))
                 {
@@ -121,5 +123,11 @@ namespace projet
             MessageBox.Show("AX:"+Registre.getAx()+"BP:"+Registre.getBp());
             //navigate to execution page.
         }
+
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
+        }
+
     }
 }

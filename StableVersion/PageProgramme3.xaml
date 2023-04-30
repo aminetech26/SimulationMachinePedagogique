@@ -6,19 +6,25 @@
 
       xmlns:local="clr-namespace:projet"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="PageProgramme3">
 
     <Grid x:Name="containerGridElement" Background="#90CAF9">
         <Grid.RowDefinitions>
-            <RowDefinition Height="450"/>
+            <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" VerticalAlignment="Center" Orientation="Horizontal" Margin="0,-350,0,0" >
-            <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
-                     Margin="30 0 0 0" >//add Click
+            <Grid Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10*" />
+                </Grid.ColumnDefinitions>
+
+
+            <Button Grid.Column="0" x:Name="Button_2" Width="50" Height="30" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                     Margin="30 0 0 0" Click="Go_Back" >
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
@@ -28,46 +34,37 @@
                 </Button.Template>
             </Button>
 
-            <TextBlock Text="Cree un programme" Width="680" VerticalAlignment="Center"
-                       HorizontalAlignment="Center" TextAlignment="Center" FontSize="25"
-                       Foreground="White" FontWeight="SemiBold" FontFamily="Montserrat"
-                       ></TextBlock>
-        </StackPanel>
-        <Grid Margin="0,120,0,0" Name="Reg_Grid">
+            <TextBlock Grid.Column="1" Text="Cree un programme" Width="Auto" VerticalAlignment="Bottom" TextAlignment="Center" FontSize="23"
+                       Foreground="White" FontWeight="SemiBold" FontFamily="Montserrat" Margin="-50 0 0 0"
+                       />
+
+            </Grid>
+        
+        <Grid Grid.Row="1" Name="Reg_Grid" Margin="10 25 10 0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
 
             <!-- First 4 elements -->
-            <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Vertical">
+            <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <StackPanel.Resources>
-                    <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="Margin" Value="5"/>
-                    </Style>
                     <Style TargetType="{x:Type TextBox}">
-                        <Setter Property="Margin" Value="5"/>
-                        <Setter Property="Padding" Value="0"/>
-                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontWeight" Value="Normal"/>
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type TextBox}">
                                     <Grid>
                                         <Grid.RowDefinitions>
+                                            <RowDefinition Height="3*"/>
                                             <RowDefinition Height="*"/>
-                                            <RowDefinition Height="6"/>
                                         </Grid.RowDefinitions>
                                         <Border Grid.Row="0" BorderThickness="0" Background="Transparent">
                                             <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                                         </Border>
-                                        <Rectangle Grid.Row="1" Height="1" Width="60" Fill="Black" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+                                        <Rectangle Grid.Row="1" Height="0.5" Width="90" Fill="Black" Margin="0" />
                                     </Grid>
                                 </ControlTemplate>
                             </Setter.Value>
@@ -75,94 +72,123 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
-                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
-                        <TextBlock Text="AX:"/>
-                        <TextBox x:Name="AX" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4">
+                <Border Background="#DAF3FF" Margin="0 12" Width="200" Height="45" CornerRadius="12" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="25 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <TextBlock Text="AX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
+                        <TextBox x:Name="AX" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
+                                 Height="30" MaxLength="4"
+                                 >
                         </TextBox>
                     </StackPanel>
                 </Border>
 
-                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
-                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
-                        <TextBlock Text="BX:"/>
-                        <TextBox x:Name="BX" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                <Border Background="#DAF3FF" Margin="0 12" Width="200" Height="45" CornerRadius="12" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="25 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <TextBlock Text="BX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
+                        <TextBox x:Name="BX" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
+                                 Height="30" MaxLength="4"
+                                 >
+                        </TextBox>
                     </StackPanel>
                 </Border>
 
-                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
-                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
-                        <TextBlock Text="CX:"/>
-                        <TextBox x:Name="CX" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4" />
+                <Border Background="#DAF3FF" Margin="0 12" Width="200" Height="45" CornerRadius="12" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="25 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <TextBlock Text="CX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
+                        <TextBox x:Name="CX" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
+                                 Height="30" MaxLength="4"
+                                 >
+                        </TextBox>
                     </StackPanel>
                 </Border>
 
-                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
-                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
-                        <TextBlock Text="DX:"/>
-                        <TextBox x:Name="DX" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                <Border Background="#DAF3FF" Margin="0 12" Width="200" Height="45" CornerRadius="12" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="25 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <TextBlock Text="DX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
+                        <TextBox x:Name="DX" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
+                                 Height="30" MaxLength="4"
+                                 >
+                        </TextBox>
                     </StackPanel>
                 </Border>
+
             </StackPanel>
 
             <!-- Second 4 elements -->
-            <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Vertical">
+            
+            <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <StackPanel.Resources>
-                    <Style TargetType="{x:Type TextBlock}">
-                        <Setter Property="Margin" Value="5"/>
-                    </Style>
                     <Style TargetType="{x:Type TextBox}">
-                        <Setter Property="Margin" Value="5"/>
-                        <Setter Property="Padding" Value="0"/>
-                        <Setter Property="Height" Value="20"/>
+                        <Setter Property="FontSize" Value="20"/>
+                        <Setter Property="FontWeight" Value="Normal"/>
                         <Setter Property="Background" Value="Transparent"/>
                         <Setter Property="Template">
                             <Setter.Value>
                                 <ControlTemplate TargetType="{x:Type TextBox}">
                                     <Grid>
                                         <Grid.RowDefinitions>
+                                            <RowDefinition Height="3*"/>
                                             <RowDefinition Height="*"/>
-                                            <RowDefinition Height="6"/>
                                         </Grid.RowDefinitions>
                                         <Border Grid.Row="0" BorderThickness="0" Background="Transparent">
                                             <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
                                         </Border>
-                                        <Rectangle Grid.Row="1" Height="1" Width="60" Fill="Black" Margin="0,0,0,0" HorizontalAlignment="Left"/>
+                                        <Rectangle Grid.Row="1" Height="0.5" Width="90" Fill="Black" Margin="0" />
                                     </Grid>
                                 </ControlTemplate>
                             </Setter.Value>
                         </Setter>
                     </Style>
                 </StackPanel.Resources>
-                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
-                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
-                        <TextBlock Text="SI:"/>
-                        <TextBox x:Name="SI" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+
+                <Border Background="#DAF3FF" Margin="0 12" Width="200" Height="45" CornerRadius="12" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="25 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <TextBlock Text="SI :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
+                        <TextBox x:Name="SI" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
+                                 Height="30" MaxLength="4"
+                                 >
+                        </TextBox>
                     </StackPanel>
                 </Border>
 
-                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
-                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
-                        <TextBlock Text="DI:"/>
-                        <TextBox x:Name="DI" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                <Border Background="#DAF3FF" Margin="0 12" Width="200" Height="45" CornerRadius="12" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="25 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <TextBlock Text="DI :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
+                        <TextBox x:Name="DI" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
+                                 Height="30" MaxLength="4"
+                                 >
+                        </TextBox>
                     </StackPanel>
                 </Border>
 
-                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
-                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
-                        <TextBlock Text="SP:"/>
-                        <TextBox x:Name="SP" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                <Border Background="#DAF3FF" Margin="0 12" Width="200" Height="45" CornerRadius="12" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="25 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <TextBlock Text="BP :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
+                        <TextBox x:Name="BP" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
+                                 Height="30" MaxLength="4"
+                                 >
+                        </TextBox>
                     </StackPanel>
                 </Border>
 
-                <Border Background="#DAF3FF" Margin="5,5,100,20" Width="200" Height="35" CornerRadius="20" Padding="2">
-                    <StackPanel Orientation="Horizontal" Margin="20,0,3,0">
-                        <TextBlock Text="BP:"/>
-                        <TextBox x:Name="BP" Margin="10,-10,0,0" TextChanged="TextBox_TextChanged" MaxLength="4"/>
+                <Border Background="#DAF3FF" Margin="0 12" Width="200" Height="45" CornerRadius="12" Padding="2">
+                    <StackPanel Orientation="Horizontal" Margin="25 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
+                        <TextBlock Text="SP :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
+                        <TextBox x:Name="SP" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
+                                 Height="30" MaxLength="4"
+                                 >
+                        </TextBox>
                     </StackPanel>
                 </Border>
+
             </StackPanel>
         </Grid>
-        <Button Margin="0,300,0,0"  Name="suivant" Width="100" Click="suivant_Click">Suivant</Button>
+
+        <Button Grid.Row="2" Foreground="White" Background="#317AC7" Name="suivant" Width="215" Height="50" 
+                Style="{StaticResource RoundedButtonStyle2}" Click="suivant_Click" BorderBrush="#317AC7"
+                VerticalAlignment="Top" HorizontalAlignment="Center"
+                >
+            <TextBlock Text="Simuler Maintenant" FontFamily="Montserrat" FontSize="20" FontWeight="SemiBold" ></TextBlock>
+        </Button>
     </Grid>
 </Page>

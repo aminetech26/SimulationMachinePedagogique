@@ -50,10 +50,10 @@ namespace projet
             Instruction_Ligne currentInstruction = (Instruction_Ligne)Grid_Inst.Children[Grid_Inst.Children.Count - 1];
             string? mnemonique = (currentInstruction.ComboBox2.SelectedItem != null) ? currentInstruction.ComboBox2.SelectedItem.ToString() : "";
             string? format = (currentInstruction.ComboBox3.SelectedItem != null) ? currentInstruction.ComboBox3.SelectedItem.ToString() : "";
-            string? reg_m = (currentInstruction.ComboBox4.IsEnabled && currentInstruction.ComboBox4.SelectedItem != null) ? currentInstruction.ComboBox4.SelectedItem.ToString() : "";
-            string? depl = (currentInstruction.ComboBox5.IsEnabled && currentInstruction.ComboBox5.SelectedItem != null) ? currentInstruction.ComboBox5.SelectedItem.ToString() : "";
-            string? destinataire = (currentInstruction.ComboBox6.IsEnabled && currentInstruction.ComboBox6.SelectedItem != null) ? currentInstruction.ComboBox6.SelectedItem.ToString() : "";
-            string? source = (currentInstruction.ComboBox7.IsEnabled && currentInstruction.ComboBox7.SelectedItem != null) ? currentInstruction.ComboBox7.SelectedItem.ToString() : "";
+            string? reg_m = (currentInstruction.ComboBox4.IsEnabled && currentInstruction.ComboBox4.SelectedItem != null) ? currentInstruction.ComboBox3.SelectedItem.ToString() : "";
+            string? depl = (currentInstruction.ComboBox5.IsEnabled && currentInstruction.ComboBox5.SelectedItem != null) ? currentInstruction.ComboBox4.SelectedItem.ToString() : "";
+            string? destinataire = (currentInstruction.ComboBox6.IsEnabled && currentInstruction.ComboBox6.SelectedItem != null) ? currentInstruction.ComboBox3.SelectedItem.ToString() : "";
+            string? source = (currentInstruction.ComboBox7.IsEnabled && currentInstruction.ComboBox7.SelectedItem != null) ? currentInstruction.ComboBox6.SelectedItem.ToString() : "";
 
             bool deplacement;
             bool mem;
@@ -134,7 +134,7 @@ namespace projet
                 lineTextBlock.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4E719D"));
                 lineTextBlock.FontFamily = new FontFamily("Montserrat");
                 lineTextBlock.TextAlignment = TextAlignment.Center;
-                lineTextBlock.Margin = new Thickness(0, 27, 0, 27);
+                lineTextBlock.Margin = new Thickness(0, 35, 0, 35);
                 lineTextBlock.Height = Double.NaN;
                 lineTextBlock.Width = Double.NaN;
                 leftColumnGrid.Children.Add(lineTextBlock);
@@ -154,11 +154,16 @@ namespace projet
             string text = "";
             foreach(Instruction ins in programInstructions)
             {
-                text = text + j.convertir_instruction_Lmnemonique(ins) + "  \n";
+                text = j.convertir_instruction_Lmnemonique(ins) + "  \n";
             }
             MessageBox.Show(text);
-            //  NavigationService.Navigate(new NextPage(programInstructions));
+            
+            NavigationService.Navigate(new Uri("/PageProgramme3.xaml", UriKind.Relative));
         }
 
+        private void GoBack_To_Home(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Pages/Home.xaml", UriKind.Relative));
+        }
     }
 }

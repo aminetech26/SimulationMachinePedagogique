@@ -174,7 +174,11 @@ namespace projet
                     break;
 
                 case "Reg16":
+                case "Reg16,imm16":
                 case "AX,Reg16":
+                case "AX,imm16":
+                case "AX,DX":
+                case "DX,AX":
                     ComboBox4.ItemsSource = new List<string> { "Registre" };
                     break;
 
@@ -213,6 +217,7 @@ namespace projet
 
                     switch (selectedItem_Format)
                     {
+                        case "Reg16,imm16":
                         case "Reg16/Mem16,imm16":
                         case "Reg16/Mem16,Reg16":
                         case "Reg16,Reg16/Mem16":
@@ -235,12 +240,10 @@ namespace projet
 
                         case "AX,DX":
                             ComboBox6.ItemsSource = new List<string> { "AX" };
-                            ComboBox7.ItemsSource = new List<string> { "DX" };
                             break;
 
                         case "DX,AX":
                             ComboBox6.ItemsSource = new List<string> { "DX" };
-                            ComboBox7.ItemsSource = new List<string> { "AX" };
                             break;
 
                         case "DX,Mem16":
@@ -248,10 +251,11 @@ namespace projet
                             break;
 
                         case "Reg16":
-                            ComboBox6.IsEnabled = false;
-                            ComboBox6.ItemsSource = null;
-                            ComboBox7.IsEnabled = true;
-                            ComboBox7.ItemsSource = new List<string> { "AX", "BX", "CX", "DX", "BP", "SP", "SI", "DI" };
+                        case "Reg16/Mem16":
+                            ComboBox7.IsEnabled = false;
+                            ComboBox7.ItemsSource = null;
+                            ComboBox6.IsEnabled = true;
+                            ComboBox6.ItemsSource = new List<string> { "AX", "BX", "CX", "DX", "BP", "SP", "SI", "DI" };
                             break;
                     }
 
@@ -300,10 +304,8 @@ namespace projet
 
                         case "Reg16/Mem16":
                         case "Mem16":
-                            ComboBox6.ItemsSource = null;
-                            ComboBox6.IsEnabled = false;
-                            ComboBox7.IsEnabled = true;
-                            ComboBox7.ItemsSource = new List<string> { "[BX+SI+DEP]", "[BX+DI+DEP]", "[BP+SI+DEP]", "[BP+DI+DEP]", "[SI+DEP]", "[DI+DEP]", "[BX+DEP]", "[BP+DEP]" };
+                            ComboBox6.IsEnabled = true;
+                            ComboBox6.ItemsSource = new List<string> { "[BX+SI+DEP]", "[BX+DI+DEP]", "[BP+SI+DEP]", "[BP+DI+DEP]", "[SI+DEP]", "[DI+DEP]", "[BX+DEP]", "[BP+DEP]" };
                             break;
 
                         case "DX,Mem16":
@@ -345,10 +347,8 @@ namespace projet
 
                         case "Reg16/Mem16":
                         case "Mem16":
-                            ComboBox6.ItemsSource = null;
-                            ComboBox6.IsEnabled = false;
-                            ComboBox7.IsEnabled = true;
-                            ComboBox7.ItemsSource = new List<string> { "[BX+SI]", "[BX+DI]", "[BP+SI]", "[BP+DI]", "[SI]", "[DI]", "[BX]", "[BP]" };
+                            ComboBox6.ItemsSource = new List<string> { "[BX+SI]", "[BX+DI]", "[BP+SI]", "[BP+DI]", "[SI]", "[DI]", "[BX]", "[BP]" };
+                            ComboBox6.IsEnabled = true;
                             break;
 
                         case "DX,Mem16":
@@ -392,12 +392,23 @@ namespace projet
 
                             break;
 
+                        case "Reg16,imm16":
                         case "Reg16/Mem16,imm16":
                         case "AX,imm16":
 
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;                            
 
+                            break;
+
+                        case "AX,DX":
+                            ComboBox7.ItemsSource = new List<string> { "DX" };
+                            break;
+
+                        case "Reg16":
+                        case "Reg16/Mem16":
+                            ComboBox7.ItemsSource = null;
+                            ComboBox7.IsEnabled = false;
                             break;
 
                     }
@@ -420,6 +431,7 @@ namespace projet
                             }
                             break;
 
+                        case "Reg16,imm16":
                         case "Reg16/Mem16,imm16":
 
                             ComboBox7.ItemsSource = null;
@@ -427,6 +439,15 @@ namespace projet
 
                             break;
 
+                        case "AX,DX":
+                            ComboBox7.ItemsSource = new List<string> { "DX" };
+                            break;
+
+                        case "Reg16":
+                        case "Reg16/Mem16":
+                            ComboBox7.ItemsSource = null;
+                            ComboBox7.IsEnabled = false;
+                            break;
                     }
                     break;
 
@@ -447,11 +468,18 @@ namespace projet
                             }
                             break;
 
+                        case "Reg16,imm16":
                         case "Reg16/Mem16,imm16":
 
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
 
+                            break;
+
+                        case "Reg16":
+                        case "Reg16/Mem16":
+                            ComboBox7.ItemsSource = null;
+                            ComboBox7.IsEnabled = false;
                             break;
                     }
                     break;
@@ -473,11 +501,22 @@ namespace projet
                             }
                             break;
 
+                        case "Reg16,imm16":
                         case "Reg16/Mem16,imm16":
 
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
 
+                            break;
+
+                        case "DX,AX":
+                            ComboBox7.ItemsSource = new List<string> { "AX" };
+                            break;
+
+                        case "Reg16":
+                        case "Reg16/Mem16":
+                            ComboBox7.ItemsSource = null;
+                            ComboBox7.IsEnabled = false;
                             break;
                     }
                     break;
@@ -499,12 +538,17 @@ namespace projet
                             }
 
                             break;
+
+                        case "Reg16,imm16":
                         case "Reg16/Mem16,imm16":
+                        case "Reg16":
+                        case "Reg16/Mem16":
 
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
 
                             break;
+
                     }
                     break;
 
@@ -525,8 +569,11 @@ namespace projet
                             }
 
                             break;
-                        case "Reg16/Mem16,imm16":
 
+                        case "Reg16,imm16":
+                        case "Reg16/Mem16,imm16":
+                        case "Reg16":
+                        case "Reg16/Mem16":
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
 
@@ -551,7 +598,11 @@ namespace projet
                             }
 
                             break;
+
+                        case "Reg16,imm16":
+                        case "Reg16":
                         case "Reg16/Mem16,imm16":
+                        case "Reg16/Mem16":
 
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
@@ -577,13 +628,18 @@ namespace projet
                             }
 
                             break;
+
+                        case "Reg16,imm16":
+                        case "Reg16":
                         case "Reg16/Mem16,imm16":
+                        case "Reg16/Mem16":
 
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
 
                             break;
                     }
+
                     break;
 
                 case null :
@@ -594,6 +650,7 @@ namespace projet
                     switch (selectedItem_Format)
                     {
                         case "Reg16/Mem16,imm16":
+                        case "Mem16":
                             ComboBox7.IsEnabled = false;
                             ComboBox7.ItemsSource = null;
                             break;

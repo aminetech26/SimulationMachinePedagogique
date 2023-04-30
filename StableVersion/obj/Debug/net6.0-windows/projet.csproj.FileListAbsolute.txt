@@ -906,3 +906,12 @@ C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\n
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ref\projet.dll
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.g.cs
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\bin\Debug\net6.0-windows\ICSharpCode.AvalonEdit.dll
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page3.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Instruction_Ligne.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page3.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ProgrammePage.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\PageProgramme3.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ProgrammePage.baml
