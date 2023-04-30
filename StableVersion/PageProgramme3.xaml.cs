@@ -122,6 +122,7 @@ namespace projet
             //test
             MessageBox.Show("AX:"+Registre.getAx()+"BP:"+Registre.getBp());
             //navigate to execution page.
+            NavigationService.Navigate(new Uri("/ExecutionProgramme.xaml", UriKind.Relative));
         }
 
         private void Go_Back(object sender, RoutedEventArgs e)

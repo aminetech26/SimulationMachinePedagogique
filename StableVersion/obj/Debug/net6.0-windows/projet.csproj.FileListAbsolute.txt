@@ -927,3 +927,5 @@ C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\n
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\projet.pdb
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\projet.genruntimeconfig.cache
 C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ref\projet.dll
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ExecutionProgramme.g.cs
+C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ExecutionProgramme.baml
