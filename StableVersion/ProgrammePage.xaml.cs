@@ -63,9 +63,9 @@ namespace projet
             return new_instruction;
         }
 
-        private int currentLineNumber = 1;
         private void AddInstruction_Click(object sender, RoutedEventArgs e)
         {
+
             Instruction_Ligne currentInstruction = (Instruction_Ligne)Grid_Inst.Children[Grid_Inst.Children.Count - 1];
             string? mnemonique = (currentInstruction.ComboBox2.SelectedItem != null) ? currentInstruction.ComboBox2.SelectedItem.ToString() : "";
             string? format = (currentInstruction.ComboBox3.SelectedItem != null) ? currentInstruction.ComboBox3.SelectedItem.ToString() : "";
@@ -73,7 +73,7 @@ namespace projet
             string? depl = (currentInstruction.ComboBox5.IsEnabled && currentInstruction.ComboBox5.SelectedItem != null) ? currentInstruction.ComboBox5.SelectedItem.ToString() : "";
             string? destinataire = (currentInstruction.ComboBox6.IsEnabled && currentInstruction.ComboBox6.SelectedItem != null) ? currentInstruction.ComboBox6.SelectedItem.ToString() : "";
             string? source = (currentInstruction.ComboBox7.IsEnabled && currentInstruction.ComboBox7.SelectedItem != null) ? currentInstruction.ComboBox7.SelectedItem.ToString() : "";
-
+            int currentLineNumber = 1;
             bool deplacement;
             bool mem;
             if (depl == "Avec deplacement")
@@ -183,6 +183,7 @@ namespace projet
         {
             NavigationService.Navigate(new Uri("/Pages/Home.xaml", UriKind.Relative));
         }
+
         public void SaveProgramToFile(string filename)
         {
             List<Dictionary<string, string>> programData = new List<Dictionary<string, string>>();
@@ -205,13 +206,16 @@ namespace projet
             string serializedData = JsonConvert.SerializeObject(programData, Formatting.Indented);
             File.WriteAllText(filename, serializedData);
         }
+
         public void LoadProgramFromFile(string filePath)
         {
-            string filePathJson = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\schema.json";
-            string filePathArchimind = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\Program.archimind";
+            int currentLineNumber = 1;
+
+            //    string filePathJson = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\schema.json";
+            //    string filePathArchimind = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\Program.archimind";
 
             //Load the JSON data from the .archimind file and deserialize it
-            string serializedData = File.ReadAllText(filePathArchimind);
+            string serializedData = File.ReadAllText(filePath);
             List<Dictionary<string, string>> programData0 = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(serializedData);
             List<Dictionary<string, string>> programData;
             try
@@ -280,11 +284,12 @@ namespace projet
                 Instruction instruction = new Instruction();
                 instruction = SetInstruction(mnemonique, format, destinataire, source, deplacement, mem);
                 programInstructions.Add(instruction);
-                currentLineNumber++;
+                //currentLineNumber++;
                 Grid_Inst.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
                 Grid_Inst.Children.Add(newInstruction);
                 Grid.SetRow(newInstruction, currentLineNumber - 1);
                 Grid.SetColumn(newInstruction, 1);
+                currentLineNumber++;
                 var lineTextBlock = new TextBlock();
                 lineTextBlock.Text = currentLineNumber.ToString();
                 lineTextBlock.FontSize = 25;

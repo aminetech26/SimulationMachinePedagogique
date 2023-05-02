@@ -74,6 +74,7 @@ namespace projet.Pages
         private void GoToProgrammePage(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/ProgrammePage.xaml", UriKind.Relative));
+            
         }
 
         private void Button_Fr_En_Click(object sender, RoutedEventArgs e)

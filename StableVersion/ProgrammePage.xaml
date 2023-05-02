@@ -33,7 +33,7 @@
                 </Button.Template>
             </Button>
 
-            <TextBlock Grid.Column="1" Text="Cree un programme" Width="200" VerticalAlignment="Center"
+            <TextBlock Grid.Column="1" Text="Cree un programme" Width="Auto" VerticalAlignment="Center"
                        HorizontalAlignment="Center" TextAlignment="Center" FontSize="23"
                        Foreground="White" FontWeight="SemiBold" FontFamily="Montserrat"
                        ></TextBlock>
@@ -46,8 +46,11 @@
         </Grid>
 
 
-        <ScrollViewer Grid.Row="1" Name="Grid_InstructionsScrollViewer">
+        
+        <!--*****************************************************************************-->
 
+        <ScrollViewer Grid.Row="1" Name="Grid_InstructionsScrollViewer" >
+            
             <Grid x:Name="Grid_Instructions" >
 
                 <Grid.ColumnDefinitions>
@@ -118,21 +121,38 @@
 
         </ScrollViewer>
 
-        <Grid Grid.Row="2" Height="40" Width="60" Background="#DAF3FF" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.267,0.417" >
 
-            <Button x:Name="ButtonAdd" BorderThickness="0" Background="Transparent" Click="AddInstruction_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="0" >
+        <!--******************************************************************************-->
 
-                <Path Height="27" Width="27" Data="M15.3333 25.3333H18.6666V18.6666H25.3333V15.3333H18.6666V8.66658H15.3333V15.3333H8.66658V18.6666H15.3333V25.3333ZM16.9999 33.6666C14.6944 33.6666 12.5277 33.2288 10.4999 32.3533C8.47214 31.4777 6.70825 30.2905 5.20825 28.7916C3.70825 27.2916 2.52103 25.5277 1.64659 23.4999C0.772141 21.4721 0.334363 19.3055 0.333252 16.9999C0.333252 14.6944 0.77103 12.5277 1.64659 10.4999C2.52214 8.47214 3.70936 6.70825 5.20825 5.20825C6.70825 3.70825 8.47214 2.52103 10.4999 1.64659C12.5277 0.772141 14.6944 0.334363 16.9999 0.333252C19.3055 0.333252 21.4721 0.77103 23.4999 1.64659C25.5277 2.52214 27.2916 3.70936 28.7916 5.20825C30.2916 6.70825 31.4794 8.47214 32.3549 10.4999C33.2305 12.5277 33.6677 14.6944 33.6666 16.9999C33.6666 19.3055 33.2288 21.4721 32.3533 23.4999C31.4777 25.5277 30.2905 27.2916 28.7916 28.7916C27.2916 30.2916 25.5277 31.4794 23.4999 32.3549C21.4721 33.2305 19.3055 33.6677 16.9999 33.6666ZM16.9999 30.3333C20.7221 30.3333 23.8749 29.0416 26.4583 26.4583C29.0416 23.8749 30.3333 20.7221 30.3333 16.9999C30.3333 13.2777 29.0416 10.1249 26.4583 7.54158C23.8749 4.95825 20.7221 3.66659 16.9999 3.66659C13.2777 3.66659 10.1249 4.95825 7.54158 7.54158C4.95825 10.1249 3.66659 13.2777 3.66659 16.9999C3.66659 20.7221 4.95825 23.8749 7.54158 26.4583C10.1249 29.0416 13.2777 30.3333 16.9999 30.3333Z" Fill="#4E719D" Stretch="Fill"/>
+        <Grid Grid.Row="2" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
 
+
+            <Grid Grid.Column="0" Height="40" Width="60" Background="#DAF3FF" VerticalAlignment="Center" HorizontalAlignment="Left" RenderTransformOrigin="0.267,0.417" >
+
+                <Button x:Name="ButtonAdd" BorderThickness="0" Background="Transparent" Click="AddInstruction_Click" HorizontalAlignment="Center" VerticalAlignment="Top" Padding="0" >
+
+                    <Path Height="27" Width="27" Data="M15.3333 25.3333H18.6666V18.6666H25.3333V15.3333H18.6666V8.66658H15.3333V15.3333H8.66658V18.6666H15.3333V25.3333ZM16.9999 33.6666C14.6944 33.6666 12.5277 33.2288 10.4999 32.3533C8.47214 31.4777 6.70825 30.2905 5.20825 28.7916C3.70825 27.2916 2.52103 25.5277 1.64659 23.4999C0.772141 21.4721 0.334363 19.3055 0.333252 16.9999C0.333252 14.6944 0.77103 12.5277 1.64659 10.4999C2.52214 8.47214 3.70936 6.70825 5.20825 5.20825C6.70825 3.70825 8.47214 2.52103 10.4999 1.64659C12.5277 0.772141 14.6944 0.334363 16.9999 0.333252C19.3055 0.333252 21.4721 0.77103 23.4999 1.64659C25.5277 2.52214 27.2916 3.70936 28.7916 5.20825C30.2916 6.70825 31.4794 8.47214 32.3549 10.4999C33.2305 12.5277 33.6677 14.6944 33.6666 16.9999C33.6666 19.3055 33.2288 21.4721 32.3533 23.4999C31.4777 25.5277 30.2905 27.2916 28.7916 28.7916C27.2916 30.2916 25.5277 31.4794 23.4999 32.3549C21.4721 33.2305 19.3055 33.6677 16.9999 33.6666ZM16.9999 30.3333C20.7221 30.3333 23.8749 29.0416 26.4583 26.4583C29.0416 23.8749 30.3333 20.7221 30.3333 16.9999C30.3333 13.2777 29.0416 10.1249 26.4583 7.54158C23.8749 4.95825 20.7221 3.66659 16.9999 3.66659C13.2777 3.66659 10.1249 4.95825 7.54158 7.54158C4.95825 10.1249 3.66659 13.2777 3.66659 16.9999C3.66659 20.7221 4.95825 23.8749 7.54158 26.4583C10.1249 29.0416 13.2777 30.3333 16.9999 30.3333Z" Fill="#4E719D" Stretch="Fill"/>
+
+                </Button>
+
+            </Grid>
+
+            <Button Grid.Column="1" Style="{StaticResource RoundedButtonStyle}" x:Name="SavePage" Click="SaveButton_Click"  Margin="0 3" Height="Auto" Width="100" Grid.RowSpan="2" Grid.Row="1" >
+                Save
+            </Button>
+            <Button Grid.Column="2" x:Name="LoadPage" Click="LoadButton_Click" Style="{StaticResource RoundedButtonStyle}" Margin="0 3" Height="Auto" Width="100" Grid.RowSpan="2" Grid.Row="1" >
+                Load
             </Button>
 
+
         </Grid>
-        <Button  x:Name="SavePage" Click="SaveButton_Click"  Margin="110,78,169,2" Height="40" Width="50" Grid.RowSpan="2" Grid.Row="1" >
-            Save
-        </Button>
-        <Button  x:Name="LoadPage" Click="LoadButton_Click"  Margin="76,78,24,2" Height="40" Width="50" Grid.RowSpan="2" Grid.Row="1" >
-            Load
-        </Button>
+
+
     </Grid>
 
 </Page>

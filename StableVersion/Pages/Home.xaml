@@ -74,7 +74,7 @@
 
             <Grid Grid.Column="0" >
                 <Button x:Name="Button1" Style="{StaticResource RoundedButtonStyle}"  
-                        HorizontalAlignment="Center" VerticalAlignment="Center" 
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
                         Height="64" Width="338" Margin="0,30,0,0" Click="GoToProgrammePage" >
 
                     <StackPanel Orientation="Horizontal" Width="336" >

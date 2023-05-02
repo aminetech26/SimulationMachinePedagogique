@@ -387,14 +387,16 @@
             <DataGrid x:Name="dataGrid1" Grid.Column="4" SelectionChanged="dataGrid1_SelectionChanged"
                               Height="272" 
                               VerticalAlignment="Center" 
-                               SelectionMode="Extended"
+                              SelectionMode="Extended"
                               CanUserSortColumns="False" 
                               CanUserResizeColumns="False" 
-                              CanUserReorderColumns="False"     
+                              CanUserReorderColumns="false"     
                               MinColumnWidth="140"
                               RowHeaderWidth="0"
-                             SelectionUnit="FullRow" Width="300" HorizontalAlignment="Center" 
-                            >
+                              SelectionUnit="FullRow" Width="300" HorizontalAlignment="Center"
+                              ScrollViewer.IsDeferredScrollingEnabled="True"             
+                      >
+
                 <DataGrid.RowStyle>
                     <Style TargetType="{x:Type DataGridRow}">
                         <Setter Property="Background" Value="#D9D9D9"/>
@@ -405,12 +407,14 @@
                         </Style.Triggers>
                     </Style>
                 </DataGrid.RowStyle>
+
                 <DataGrid.CellStyle>
                     <Style TargetType="{x:Type DataGridCell}">
                         <Setter Property="FontSize" Value="23" />
                         <Setter Property="IsHitTestVisible" Value="False" />
                     </Style>
                 </DataGrid.CellStyle>
+
             </DataGrid>
 
 
