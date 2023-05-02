@@ -1,0 +1,36 @@
+using System;
+namespace ArchiMind{
+    public enum Mnemoniques{
+        ADD,
+        SUB,
+        INC,
+        DEC,
+        MUL,
+        MOV,
+        XCHG,
+        NOT,
+        AND,
+        OR,
+        XOR,
+        SHL,
+        SHR,
+        SAL,
+        SAR,
+        ROR,
+        ROL,
+        RCR,
+        RCL,
+        IN,
+        OUT,
+        INSW,
+        OUTSW,
+        JMP,
+        LOOP,
+        LOOPZ,
+        LOOPE,
+        LOOPNZ,
+        LOOPNE,
+        CMP,
+
+    }
+}

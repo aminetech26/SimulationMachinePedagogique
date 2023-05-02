@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Animation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Instruction_Ligne.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\CEI.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -28,13 +34,28 @@
     <Compile Update="Pages\Page2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Page5.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\PageQuiz2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Quiz.xaml.cs">
+    <Compile Update="Pages\Page_Decalage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\QuizExo.xaml.cs">
+    <Compile Update="Pages\Page_EntreeSortie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Premierpas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Transfer1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Transfert.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ProgrammePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Splash_screen.xaml.cs">
@@ -42,7 +63,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Images\Icons.xaml">
+    <Page Update="Animation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="images\Icons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Instruction_Ligne.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
@@ -69,13 +96,28 @@
     <Page Update="Pages\Page2.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Page5.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\PageQuiz2.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Quiz.xaml">
+    <Page Update="Pages\Page_Decalage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\QuizExo.xaml">
+    <Page Update="Pages\Page_EntreeSortie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Premierpas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Transfer1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Transfert.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ProgrammePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Splash_screen.xaml">

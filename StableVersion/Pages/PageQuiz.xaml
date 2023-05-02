@@ -22,8 +22,8 @@
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="60" ></RowDefinition>
-            <RowDefinition Height="60" ></RowDefinition>
-            <RowDefinition Height="100" ></RowDefinition>
+            <RowDefinition Height="120" ></RowDefinition>
+            <RowDefinition Height="80" ></RowDefinition>
         </Grid.RowDefinitions>
 
 
@@ -46,28 +46,28 @@
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
-            <TextBlock x:Name="Text1" Text="Quiz N° 1 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
-                   Margin="75 25 0 0" />
+            <TextBlock x:Name="Text1" Text="Quiz N° 1 :" FontFamily="Open Sans" FontSize="30" FontWeight="SemiBold" 
+                   Margin="75 10 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
 
-            <TextBlock x:Name="Text3" Text="Que fait l’instruction suivante : MOV AX,BX" FontFamily="Montserrat" FontSize="23" 
-                   FontWeight="Medium" Margin="75 35 0 0" FontStyle="Normal" TextAlignment="Left" />
+            <TextBlock x:Name="Text3" Text="●	Que contient la mémoire et les registres dans un programme en langage d'assemblage?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
+                   FontWeight="Medium" Margin="75 20 0 0" FontStyle="Normal" TextAlignment="Left" />
 
-            <ComboBox Style="{DynamicResource ComboBoxStyle1}" SelectedIndex="0" 
-                      Padding="20 5" Margin="75 20" Height="40" Width="400" 
+            <ComboBox Style="{DynamicResource ComboBoxStyle1}" 
+                      Padding="20 5" Margin="75 7" Height="50" Width="500" 
                       HorizontalAlignment="Left"
-                      x:Name="Combo" >
-                <ComboBoxItem>Option 1</ComboBoxItem>
-                <ComboBoxItem>Option 2</ComboBoxItem>
-                <ComboBoxItem>Option 3</ComboBoxItem>
-                <ComboBoxItem>Option 4</ComboBoxItem>
+                      x:Name="Combo">
+                <ComboBoxItem>Les instructions du programme</ComboBoxItem>
+                <ComboBoxItem>Les données du programme</ComboBoxItem>
+                <ComboBoxItem>Les deux premieres reponses</ComboBoxItem>
+                <ComboBoxItem>Aucune des réponses ci-dessus</ComboBoxItem>
             </ComboBox>
 
             <Button x:Name="Button1" Height="43" Width="125"
                 Style="{StaticResource RoundedButtonStyle}"
-                Background="#81C784"
+                Background="#81C784" Click="Reponse1"
                 Foreground="White"
                 BorderBrush="#81C784"
                 HorizontalAlignment="Left"
@@ -84,47 +84,45 @@
             <Image x:Name="Image1" Source="/Pages/images/checkmark.png" Width="40" Height="40" />
             <TextBlock Text="C'est exactement ça ! Félicitations pour votre réponse juste !"
                        Height="Auto" Width="Auto" TextWrapping="Wrap" Padding="8 0" FontFamily="Montserrat"
-                       FontSize="21" FontWeight="Normal" Foreground="#81C784" TextAlignment="Left"
+                       FontSize="20" FontWeight="Normal" Foreground="#81C784" TextAlignment="Left"
                        VerticalAlignment="Center" x:Name="Text4"
                        />
 
         </StackPanel>
 
 
-        <StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Left" Margin="1,0,0,0" Grid.Column="1" >
-
-            <Image x:Name="Image2" Source="/Pages/images/false.png" Width="30" Height="30" />
-            <TextBlock Height="Auto" Width="Auto" TextWrapping="Wrap" Padding="12 0" FontFamily="Montserrat"
-                       FontSize="21" FontWeight="Normal" Foreground="#FFB347" TextAlignment="Left"
-                       VerticalAlignment="Center" x:Name="Text5"
-                       > Vous êtes proche de la bonne réponse, mais ce n'est pas tout à fait ça.<LineBreak/> Essayez encore !</TextBlock>
-            
-
-        </StackPanel>
+        <Grid Grid.Row="3"  Grid.Column="1" >
+            <Grid x:Name="myGridExpl">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top">
+                        <Image x:Name="Image2" Source="/Pages/images/idee-removebg-preview 1.png" 
+                                 Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <TextBlock Text="Explication :" FontSize="23" />
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" Width="Auto" >
+                   
+                        <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
+                                   FontSize="18"   x:Name="Text5"   Margin="0,0,10,0" Padding="10"            
+                                   Text=" La mémoire contient à la fois les instructions et les données du programme, tandis que les registres sont utilisés pour stocker temporairement des données et des résultats intermédiaires lors de l'exécution des instructions."
+                                    />
+                    
+                </Grid>
+            </Grid>
+        </Grid>
 
         <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1"  >
-
-            <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
-                    Background="#E0E0E0"
-                    Foreground="Black"
-                    BorderBrush="#E0E0E0"
-                    Margin="0 5 20 0" x:Name="Button2"
-                    >
-
-                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
-                    <Image Source="/Pages/images/precedent.png" Height="15" Width="Auto" VerticalAlignment="Center" />
-                    <TextBlock Text="Precedent" TextAlignment="Center" Padding="7"
-                               FontFamily="Montserrat"
-                               FontSize="22" FontWeight="Normal"
-                               />
-                </StackPanel>
-            </Button>
 
             <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
                     Background="#81C784"
                     Foreground="white"
                     BorderBrush="#81C784"
                     Margin="0 5 50 0"  x:Name="Button3"
+                    Click="Suivant"
                     >
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >

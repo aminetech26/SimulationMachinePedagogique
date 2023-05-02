@@ -25,11 +25,16 @@ namespace projet
         public MainWindow()
         {
             InitializeComponent();
-           window.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page1.xaml", UriKind.RelativeOrAbsolute));
+            window.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page1.xaml", UriKind.RelativeOrAbsolute));
 
 
         }
+        public MainWindow(object c, string Reg1, string Reg2, string Reg3, string ccm, string Valdep, string memonique, string Format, string RegM, string dep, string destinaitr, string source, string NomReg1, string NomReg2, string NomReg3)
+        {
 
-         
+            Animation wind = new Animation(Reg1, Reg2, Reg3, ccm, Valdep, memonique, Format, RegM, dep, destinaitr, source, NomReg1, NomReg2, NomReg3);
+            wind.ShowDialog();
+        }
+
     }
 }

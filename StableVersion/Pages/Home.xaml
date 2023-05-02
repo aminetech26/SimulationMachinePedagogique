@@ -50,7 +50,7 @@
             <Grid Grid.Column="0" >
                 <Button x:Name="Button1" Style="{StaticResource RoundedButtonStyle}"  
                         HorizontalAlignment="Center" VerticalAlignment="Center" 
-                        Height="64" Width="338" Margin="0,30,0,0"  >
+                        Height="64" Width="338" Margin="0,30,0,0" Click="GoToProgrammePage" >
 
                     <StackPanel Orientation="Horizontal" Width="336" >
                         <Image Source="/Pages/images/Home/plus.png" Height="22.75" Width="22.75"  

@@ -1,0 +1,1082 @@
+﻿<Window x:Class="projet.Animation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projet"
+        xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+        xmlns:controlsprimitives="using:Microsoft.Toolkit.Uwp.UI.Controls.Primitives"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Title="MainWindow" Height="680" Width="1300">
+
+    <Window.Resources>
+        <DataGridLength x:Key="DataGridColumnWidth1">SizeToHeader</DataGridLength>
+        <RotateTransform x:Key="VerticalTransform" Angle="-90" />
+    </Window.Resources>
+
+    <Grid Background="White" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" Window.DpiChanged="RowDefinition_DpiChanged" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+
+        <!-- the first grid  -->
+        <Grid Grid.Row="0" Background="#E0E0E0" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="0" Width="Auto" Height="Auto" BorderBrush="#E0E0E0"
+                VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_retour_Click">
+
+
+            </Button>
+
+            <!-- Phase à phase  -->
+
+            <Button Grid.Column="1" Style="{StaticResource RoundedButtonStyle}" Height="Auto" Width="Auto"
+                    Background="#E0E0E0"
+                    Foreground="Black"
+                    BorderBrush="#E0E0E0"
+                    Click="Button_Etape_Click"
+                    HorizontalAlignment="Stretch"
+                    >
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                    <Image Source="/images/phase a phase.png" Height="30" Width="30" />
+                    <TextBlock Text="Etape par etape" TextAlignment="Center" VerticalAlignment="Center"
+                               HorizontalAlignment="Center" FontFamily="Open Sans" Padding="7"
+                               FontSize="20" FontWeight="Normal"
+                               />
+                </StackPanel>
+            </Button>
+
+            <!-- Commencer  -->
+
+            <Button Grid.Column="2" Style="{StaticResource RoundedButtonStyle}" Height="Auto" Width="Auto"
+                    Background="#E0E0E0"
+                    Foreground="Black"
+                    BorderBrush="#E0E0E0"
+                    Click="Button_commencer_Click"
+                    HorizontalAlignment="Stretch"
+                    >
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                    <Image Source="/images/commencer.png" Height="Auto" Width="Auto" />
+                    <TextBlock Text="Commencer" TextAlignment="Center" VerticalAlignment="Center"
+                               HorizontalAlignment="Center" FontFamily="Open Sans" Padding="7"
+                               FontSize="20" FontWeight="Normal"
+                               />
+                </StackPanel>
+            </Button>
+
+            <!-- Recommencer  -->
+
+            <Button Grid.Column="3" Style="{StaticResource RoundedButtonStyle}" Height="Auto" Width="Auto"
+                    Background="#E0E0E0"
+                    Foreground="Black"
+                    BorderBrush="#E0E0E0"
+                    Click="Button_recommencer_Click"
+                    HorizontalAlignment="Stretch"
+                    >
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                    <Image Source="/images/recommencer.png" Height="Auto" Width="Auto" />
+                    <TextBlock Text="Recommencer" TextAlignment="Center" VerticalAlignment="Center"
+                               HorizontalAlignment="Center" FontFamily="Open Sans" Padding="7"
+                               FontSize="20" FontWeight="Normal"
+                               />
+                </StackPanel>
+            </Button>
+
+        </Grid>
+        <!-- the second grid  -->
+        <Grid Grid.Row="1" >
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- the grid of the memoir and rim   -->
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="180"/>
+                </Grid.RowDefinitions>
+                <!-- the grid of the rim   -->
+                <Grid Grid.Row="1">
+                    <Canvas >
+                        <Rectangle Width="190" Height="55"
+                                           Fill="#D9d9d9" 
+                                           Canvas.Left="122" Canvas.Top="35"  
+                                           RadiusX="15" RadiusY="15" RenderTransformOrigin="0.915,0.491" HorizontalAlignment="Left" VerticalAlignment="Center" />
+
+                        <TextBox x:Name="RIM" Text="87 54h" FontSize="25"
+                                Canvas.Left="177" Canvas.Top="46" 
+                                 BorderThickness="0" BorderBrush="Transparent"
+                                 HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                 Background="#D9D9D9" Width="80"/>
+
+                    </Canvas>
+                    <TextBlock Text="RIM" FontSize="30" FontWeight="DemiBold"
+                                   HorizontalAlignment="Center" 
+                                   Canvas.Left="195" VerticalAlignment="Top" Margin="0,-3,0,0"/>
+                    <Canvas Margin="0,0,0,-15">
+                        <Image Source="/images/Group 93.png" Canvas.Left="194" Canvas.Top="98" Height="100" Width="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.71,0.467"/>
+                    </Canvas>
+                </Grid>
+                <!-- the grid of memoir centrale   -->
+                <Grid Grid.Row="0">
+                    <Canvas>
+                        <Image Source="/images/Group 46.png" HorizontalAlignment="Center" Canvas.Top="68" VerticalAlignment="Top" Height="277"/>
+                        <Image Source="/images/DECODEUR(2).png" Canvas.Left="19" Canvas.Top="148" HorizontalAlignment="Center" Height="116" VerticalAlignment="Top"/>
+                        <TextBox x:Name="textBox1" Height="22" Margin="10,10,365,0" VerticalAlignment="Top" Text="16" />
+                        <TextBlock Text="MEMOIRE CENTRALE " FontWeight="SemiBold" FontSize="30" Canvas.Left="66" Canvas.Top="21"/>
+                        <DataGrid x:Name="dataGrid1" SelectionChanged="dataGrid1_SelectionChanged"
+                              Height="272" 
+                              VerticalAlignment="Center" 
+                               SelectionMode="Extended"
+                              CanUserSortColumns="False" 
+                              CanUserResizeColumns="False" 
+                              CanUserReorderColumns="False"     
+                              MinColumnWidth="140"
+                              RowHeaderWidth="0" IsReadOnly="False"
+                             SelectionUnit="FullRow" Canvas.Left="66" Canvas.Top="68" Width="301" HorizontalAlignment="Left" 
+                            >
+                            <DataGrid.RowStyle>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#D9D9D9"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="AlternationIndex" Value="1">
+                                            <Setter Property="Background" Value="Blue"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </DataGrid.RowStyle>
+                            <DataGrid.CellStyle>
+                                <Style TargetType="{x:Type DataGridCell}">
+                                    <Setter Property="FontSize" Value="23" />
+                                    <Setter Property="IsHitTestVisible" Value="False" />
+                                </Style>
+                            </DataGrid.CellStyle>
+                        </DataGrid>
+                    </Canvas>
+
+
+                </Grid>
+
+            </Grid>
+            <!-- the grid of the secod column co seq ri   -->
+            <Grid Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="188*"/>
+                        <RowDefinition Height="15*"/>
+                        <RowDefinition Height="367*"/>
+                    </Grid.RowDefinitions>
+                    <Canvas Grid.RowSpan="3">
+                        <Canvas>
+                            <Rectangle Width="130" Height="55"
+                                           Fill="#D9d9d9" Canvas.Left="-15" 
+                                           Canvas.Top="183"  
+                                           RadiusX="15" RadiusY="15" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                                <Rectangle.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                            <TextBox x:Name="RAM" Text="" FontSize="25"
+                                Canvas.Left="10" Canvas.Top="196" 
+                                 BorderThickness="0" BorderBrush="Transparent"
+                                 HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                 Background="#D9D9D9" Width="80" RenderTransformOrigin="0.5,0.5">
+                                <TextBox.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-92.58"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </TextBox.RenderTransform>
+                            </TextBox>
+                        </Canvas>
+                        <TextBlock Text="RAM" FontSize="25" FontWeight="SemiBold"
+                                   RenderTransformOrigin="0.573,1.604" 
+                                   Canvas.Left="-12" Canvas.Top="182"
+                                   LayoutTransform="{StaticResource VerticalTransform}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="55"/>
+                    </Canvas>
+
+
+                </Grid>
+
+
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15*" />
+                        <RowDefinition Height="23*"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Line X1="10" Y1="10" X2="74" Y2="10" Stroke="Black" StrokeThickness="2" Margin="47,18,-47,-18"/>
+                        <Image Source="/images/Group 76.png" Margin="21,10,273,181" RenderTransformOrigin="0.627,-0.225"/>
+                        <Canvas Height="237" VerticalAlignment="Top">
+                            <Canvas>
+                                <Rectangle Width="130" Height="54"
+                                           Fill="#D9d9d9" Canvas.Left="108" 
+                                           Canvas.Top="58"
+                                           RadiusX="15" RadiusY="15" />
+                                <TextBox x:Name="CO" Text="" FontSize="25"
+                                Canvas.Left="133" Canvas.Top="68" 
+                                 BorderThickness="0" BorderBrush="Transparent"
+                                 HorizontalAlignment="Left" VerticalAlignment="Top" 
+                                 Background="#D9D9D9" Width="80" RenderTransformOrigin="0.5,0.5">
+
+                                </TextBox>
+                            </Canvas>
+                            <TextBlock Text="CO" FontSize="30" FontWeight="DemiBold" Canvas.Left="153" Canvas.Top="18" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                            <Polygon Points="0,10 40,10 40,0 60,20 40,40 40,30 0,30 -150,30 -150,10"
+                                Fill="White"
+                                Stroke="Black"
+                                     Canvas.Top="195"
+                                     Canvas.Left="276"
+                                StrokeThickness="1.5" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                            <Line X1="20" Y1="0" X2="20" Y2="22" Stroke="White" StrokeThickness="3" HorizontalAlignment="Center" Canvas.Top="204" VerticalAlignment="Top" Canvas.Left="106"/>
+
+                        </Canvas>
+                        <Image Source="/images/Group 93.png" HorizontalAlignment="Left" Width="49" Margin="152,112,0,21" RenderTransformOrigin="0.238,0.524"/>
+                        <Image Source="/images/Arrow 1.png" Margin="112,26,214,153" RenderTransformOrigin="0.453,0.529"/>
+                        <Canvas >
+                            <Image x:Name="myImag60e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag61e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag62e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag9e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag10e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="105" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag11e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="108" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag48e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag49e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag50e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag33e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag34e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag35e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="0,0,50,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="4*" />
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.ColumnSpan="2" Margin="237,5,0,-20">
+
+                            <Polygon Points="45,10 20,50 30,50 30,370 60,370 60,50 70,50"
+         Fill="White"
+         Stroke="Black"
+         StrokeThickness="1"
+         VerticalAlignment="Top"
+         HorizontalAlignment="Center"
+         Height="373"
+         Width="86" Margin="0,-9,0,0" />
+
+                            <!-- 40,0 10,40 20,40 20,60 50,60 50,40 60,40 -->
+
+                            <!--    <Polygon Points="0,20 10,0 20,20"
+                                     Fill="White"
+                                     Stroke="Black"
+                                     StrokeThickness="1" />
+                        -->
+
+
+
+                        </Grid>
+                        <Grid Grid.Column="0" Margin="-23,0,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <Canvas>
+
+                                    <Path Data="m 0 10 l 10 -10 h -70 l 10 10 Z" Fill="#D9D9D9" RenderTransformOrigin="0.5,0.5"
+                                          Stretch="Fill" Stroke="#D9D9D9" StrokeEndLineCap="Round" HorizontalAlignment="Center" Width="240" Height="101" Canvas.Top="48.5" VerticalAlignment="Top" Canvas.Left="10.333"
+                                          >
+                                        <Path.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform/>
+                                                <SkewTransform/>
+                                                <RotateTransform Angle="-0"/>
+                                                <TranslateTransform/>
+                                            </TransformGroup>
+                                        </Path.RenderTransform>
+                                    </Path>
+                                    <TextBlock Text="SEQUENCEUR" FontSize="25" FontWeight="SemiBold"
+                                               Canvas.Left="52" Canvas.Top="82" />
+                                </Canvas>
+                            </Grid>
+                            <Grid Margin="0,172,0,-19" Grid.RowSpan="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="32*" />
+                                    <RowDefinition Height="31*"/>
+                                    <RowDefinition Height="33*"/>
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <TextBlock Text="RI" FontSize="35" FontWeight="SemiBold" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
+                                </Grid>
+                                <Grid Grid.Row="1">
+                                    <Canvas>
+                                        <Rectangle Width="261" Height="55"
+                                       Fill="#D9d9d9" RadiusX="15" RadiusY="15" RenderTransformOrigin="0.915,0.491" 
+                                       HorizontalAlignment="Center" VerticalAlignment="Center"  />
+                                        <TextBox x:Name="RI" Text="" FontSize="30"
+                                             Canvas.Left="76" Canvas.Top="8" 
+                                             BorderThickness="0" BorderBrush="Transparent"
+                                            HorizontalAlignment="Center" VerticalAlignment="Top" 
+                                            Background="#D9D9D9" Width="109" RenderTransformOrigin="0.5,0.5">
+
+                                        </TextBox>
+                                    </Canvas>
+
+                                </Grid>
+
+                                <Polygon Grid.Row="1" Points="45,10 20,50 30,50 30,76 60,76 60,50 70,50"
+                                         Fill="White"
+                                         Stroke="Black"
+                                         StrokeThickness="1.5"
+                                         VerticalAlignment="Top"
+                                         HorizontalAlignment="Center"
+                                         Height="75"
+                                         Width="97" RenderTransformOrigin="0.517,0.578" Margin="0,53,0,0" Grid.RowSpan="2" />
+
+                            </Grid>
+                        </Grid>
+
+                    </Grid>
+
+                </Grid>
+
+
+            </Grid>
+            <Grid Grid.Column="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Canvas Margin="0,0,0,-19">
+                        <Line X1="20" Y1="0" X2="20" Y2="475" Stroke="Black" StrokeThickness="1.5" HorizontalAlignment="Center" Canvas.Top="114" VerticalAlignment="Top"/>
+                        <Line X1="40" Y1="0" X2="40" Y2="460" Stroke="Black" StrokeThickness="1.5" HorizontalAlignment="Center" Canvas.Top="129" VerticalAlignment="Top"/>
+                        <Line X1="10" Y1="10" X2="70" Y2="10" Stroke="Black" StrokeThickness="1.5" HorizontalAlignment="Left" Canvas.Top="103" VerticalAlignment="Center" Canvas.Left="10"/>
+                        <Line X1="10" Y1="20" X2="50" Y2="20" Stroke="Black" StrokeThickness="1.5" HorizontalAlignment="Left" Canvas.Top="108" VerticalAlignment="Center" Canvas.Left="30"/>
+                    </Canvas>
+
+
+                    <!--<Polyline Stroke="Black" StrokeThickness="2" Points="5,0 5,400 0,400 10,410 20,400 15,400 15,20" 
+                              StrokeLineJoin="Round" HorizontalAlignment="Center" VerticalAlignment="Bottom" />-->
+
+                </Grid>
+                <TextBox x:Name="txADR" Text="h" Height="40" Width="90" Background="Red" Margin="465,118,-159,412"/>
+                <TextBox x:Name="txtDonne" Height="40" Width="90" Background="Red" Margin="446,73,-140,457"/>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="3*" />
+                        <RowDefinition Height="4*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="3*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid Grid.Column="0" x:Name="REG">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock Text="REGISTRES" FontSize="25" 
+                                           FontWeight="DemiBold" VerticalAlignment="Bottom"
+                                           HorizontalAlignment="Center"/>
+                            </Grid>
+                            <Grid Grid.Row="1" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0" >
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="AX" FontSize="25" FontWeight="SemiBold" Canvas.Left="20" Canvas.Top="5"/>
+                                        </Canvas>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="BX" FontSize="25" FontWeight="SemiBold" Canvas.Left="20" Canvas.Top="5"/>
+                                        </Canvas>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="CX" FontSize="25" FontWeight="SemiBold" Canvas.Left="20" Canvas.Top="5"/>
+                                        </Canvas>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="DX" FontSize="25" FontWeight="SemiBold" Canvas.Left="20" Canvas.Top="5"/>
+                                        </Canvas>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="SI" FontSize="25" FontWeight="SemiBold" Canvas.Left="20" Canvas.Top="5"/>
+                                        </Canvas>
+                                    </Grid>
+                                    <Grid Grid.Row="0">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="SI" FontSize="25" FontWeight="SemiBold" Canvas.Left="27" Canvas.Top="6" RenderTransformOrigin="1.103,0.614" HorizontalAlignment="Left" VerticalAlignment="Center" Width="31"/>
+                                        </Canvas>
+                                    </Grid>
+                                    <Grid Grid.Row="1">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="DI" FontSize="25" FontWeight="SemiBold" Canvas.Left="24" Canvas.Top="6"/>
+                                        </Canvas>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="SP" FontSize="25" FontWeight="SemiBold" Canvas.Left="20" Canvas.Top="5"/>
+                                        </Canvas>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <Canvas >
+                                            <Rectangle Width="50" Height="30"
+                                                       Fill="#D9d9d9"  HorizontalAlignment="Center" VerticalAlignment="Top"
+                                                       RadiusX="15" RadiusY="15" Canvas.Left="12" Canvas.Top="8" />
+                                            <TextBlock Text="BP" FontSize="25" FontWeight="SemiBold" Canvas.Left="20" Canvas.Top="5"/>
+                                        </Canvas>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="4*"/>
+                                <RowDefinition Height="3*" />
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="3*"/>
+                                <RowDefinition Height="2*" />
+                                <RowDefinition Height="3*"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0">
+                                <TextBlock x:Name="Box1Name" Text="AX" FontSize="25" FontWeight="SemiBold"
+                                           HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG, Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="1">
+                                <Rectangle Height="45" Width="160" RadiusX="15" x:Name="Rec1"
+                                           RadiusY="15" Fill="#D9D9D9">
+                                    <Rectangle.Style>
+                                        <Style TargetType="Rectangle">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG ,Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Rectangle.Style>
+                                </Rectangle>
+                                <TextBox x:Name="REG1" Text="" FontSize="25"
+                                         Canvas.Left="177" Canvas.Top="46" 
+                                         BorderThickness="0" BorderBrush="Transparent"
+                                         HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                         Background="#D9D9D9" Width="80">
+                                    <TextBox.Style>
+                                        <Style TargetType="{x:Type TextBox}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG, Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+                                </TextBox>
+
+                            </Grid>
+                            <Grid Grid.Row="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="69*"/>
+                                    <ColumnDefinition Width="148*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="Box2Name" Text="BX" FontSize="25" FontWeight="SemiBold"
+                                           HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Margin="39,0,0,0">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG, Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="3">
+                                <Rectangle Height="45" Width="160" RadiusX="15" x:Name="Rec2"
+                                           RadiusY="15" Fill="#D9D9D9">
+                                    <Rectangle.Style>
+                                        <Style TargetType="Rectangle">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG ,Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Rectangle.Style>
+                                </Rectangle>
+                                <TextBox x:Name="REG2" Text="" FontSize="25"
+                                         Canvas.Left="177" Canvas.Top="46" 
+                                         BorderThickness="0" BorderBrush="Transparent"
+                                         HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                         Background="#D9D9D9" Width="80">
+                                    <TextBox.Style>
+                                        <Style TargetType="{x:Type TextBox}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG, Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+                                </TextBox>
+                            </Grid>
+                            <Grid Grid.Row="4">
+                                <TextBlock x:Name="Box3Name" Text="CX" FontSize="25" FontWeight="SemiBold"
+                                           HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                    <TextBlock.Style>
+                                        <Style TargetType="{x:Type TextBlock}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG, Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBlock.Style>
+                                </TextBlock>
+                            </Grid>
+                            <Grid Grid.Row="5">
+                                <Rectangle Height="45" Width="160" RadiusX="15" x:Name="Rec3"
+                                           RadiusY="15" Fill="#D9D9D9">
+                                    <Rectangle.Style>
+                                        <Style TargetType="Rectangle">
+                                            <Setter Property="Visibility" Value="Collapsed"/>
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG ,Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Rectangle.Style>
+                                </Rectangle>
+                                <TextBox x:Name="REG3" Text="" FontSize="25"
+                                         Canvas.Left="177" Canvas.Top="46" 
+                                         BorderThickness="0" BorderBrush="Transparent"
+                                         HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                         Background="#D9D9D9" Width="80">
+                                    <TextBox.Style>
+                                        <Style TargetType="{x:Type TextBox}">
+                                            <Setter Property="Visibility" Value="Collapsed" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=REG, Path=IsMouseOver}" Value="True">
+                                                    <Setter Property="Visibility" Value="Visible" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </TextBox.Style>
+                                </TextBox>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                    <Grid Margin="0,244,0,-20" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70*"/>
+                            <RowDefinition Height="199*" />
+                            <RowDefinition Height="77*"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="1" Margin="0,178,0,0" Grid.RowSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="121*" />
+                                <ColumnDefinition Width="63*"/>
+                                <ColumnDefinition Width="177*"/>
+                            </Grid.ColumnDefinitions>
+
+
+                            <Grid Grid.Column="0" Grid.ColumnSpan="2" >
+                                <Polygon Points="-50,5 40,5 40,0 70,10 40,20 40,15 -50,15"
+                                Fill="White"
+                                Stroke="Black"
+                                StrokeThickness="1.5" Margin="63,46,-20,10" />
+
+                            </Grid>
+
+                            <Polygon Grid.Column="1" Points="45,5 20,40 30,40 30,100 60,100 60,40 70,40 "
+                                Fill="White"
+                                Stroke="Black"
+                                StrokeThickness="1.5"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center" Height="100" Width="92" />
+
+                            <Polygon Grid.Column="2" Points="45,5 20,40 30,40 30,100 60,100 60,40 70,40 "
+                                Fill="White"
+                                Stroke="Black"
+                                StrokeThickness="1.5"
+                                VerticalAlignment="Top"
+                                HorizontalAlignment="Center" Height="100" Width="99" />
+
+                            <Grid Grid.Column="0" Margin="-7,10,56,10" Grid.ColumnSpan="2"/>
+
+                        </Grid>
+                        <Grid Margin="0,65,0,0" Grid.RowSpan="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40*" />
+                                <ColumnDefinition Width="58*"/>
+                                <ColumnDefinition Width="263*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,1,-77" Height="269" VerticalAlignment="Bottom">
+                                <Polygon Stroke="Black" StrokeThickness="1.5" Fill="White" Points="5,0 15,0 15,-275 25,-275 25,0 35,0 20,20" 
+                             HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="-12,0,0,3"/>
+
+                                <Line X1="0" Y1="10" X2="185" Y2="10" Stroke="Black" StrokeThickness="1.5" HorizontalAlignment="Left" Canvas.Top="103" VerticalAlignment="Top" Canvas.Left="10" Margin="14,-40,0,0"/>
+                                <Line X1="0" Y1="20" X2="175" Y2="20" Stroke="Black" StrokeThickness="1.5" HorizontalAlignment="Left" Canvas.Top="108" VerticalAlignment="Top" Canvas.Left="30" Margin="14,-40,0,0"/>
+                                <Line X1="20" Y1="0" X2="20" Y2="17" Stroke="Black" StrokeThickness="1.5" HorizontalAlignment="Left" Canvas.Top="114" VerticalAlignment="Top" Margin="168,-20,0,0"/>
+                                <Line X1="20" Y1="0" X2="20" Y2="27" Stroke="Black" StrokeThickness="1.5" HorizontalAlignment="Left" Canvas.Top="114" VerticalAlignment="Top" Margin="178,-30,0,0"/>
+
+
+
+                            </Grid>
+                            <Grid Grid.ColumnSpan="2" Margin="34,0,0,0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Column="0">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="1">
+                                        <TextBlock Text="Z" FontSize="15" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <TextBlock Text="P" FontSize="15" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <TextBlock Text="I" FontSize="15" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <TextBlock Text="D" FontSize="15" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <TextBlock Text="R" FontSize="15" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <TextBlock Text="A" FontSize="15" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="7">
+                                        <TextBlock Text="S" FontSize="15" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="8">
+                                        <TextBlock Text="T" FontSize="15" FontWeight="SemiBold"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Grid>
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="2*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid Grid.Row="0">
+                                        <TextBlock Text="IND" FontSize="25" FontWeight="SemiBold" HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="1"  >
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="Z"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="2">
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="P"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="3">
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="I"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="4">
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="D"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="5">
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="R"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="6">
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="A"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="7">
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="S"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                    <Grid Grid.Row="8">
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="T"
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </Grid>
+
+                            </Grid>
+                            <Grid Grid.Column="2" Margin="2,0,0,10" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="3*"/>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid Grid.Row="0">
+                                    <Canvas Margin="0,0,0,0">
+                                        <Image Source="/images/Group 102.png" HorizontalAlignment="Center"
+                                               VerticalAlignment="Center" Canvas.Left="25" Canvas.Top="3"/>
+                                        <TextBlock Text="U A L" FontSize="25" FontWeight="SemiBold" Canvas.Left="79" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.461,1.108"
+                                                   />
+                                    </Canvas>
+                                </Grid>
+                                <Grid Grid.Row="1" Margin="0,0,0,10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,130,-8">
+                                        <Canvas>
+                                            <Rectangle Height="30" Width="55" Fill="#D9D9D9" RadiusX="10" RadiusY="10"
+                                                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="25,6,0,0"/>
+                                            <TextBox x:Name="UAL1" Text="" FontSize="18"
+                                                      Canvas.Left="25" Canvas.Top="9" 
+                                                      BorderThickness="0" BorderBrush="Transparent"
+                                                      HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                                      Background="#D9D9D9" Width="55" RenderTransformOrigin="0.515,-0.069">
+
+                                            </TextBox>
+
+                                        </Canvas>
+
+                                    </Grid>
+                                    <Grid Grid.Column="1" Margin="0,0,0,-8">
+                                        <Canvas>
+                                            <Rectangle Height="30" Width="55" Fill="#D9D9D9" RadiusX="10" RadiusY="10"
+                                                   HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,6,0,0"/>
+                                            <TextBox x:Name="UAL2" Text="" FontSize="18"
+                                                      Canvas.Left="10" Canvas.Top="9" 
+                                                      BorderThickness="0" BorderBrush="Transparent"
+                                                      HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                                      Background="#D9D9D9" Width="55" RenderTransformOrigin="0.515,-0.069">
+
+                                            </TextBox>
+                                        </Canvas>
+
+                                    </Grid>
+                                </Grid>
+
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+
+        <Canvas Grid.Row="2" HorizontalAlignment="Left" Width="85" Margin="1215,3,0,0" >
+            <Polygon Points="0,20 60,20 60,5 75,30 60,55 60,40 0,40 -1200,40 -1200,20"
+             Fill="White"
+                     Canvas.Bottom="0"
+                     Canvas.Left="-4"
+                     Canvas.Right="0"
+                     Canvas.Top="0"
+             Stroke="Black"
+             StrokeThickness="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="85" />
+
+            <Polygon Points="80,20 20,20 20,5 5,30 20,55 20,40 1272,40 1272,20"
+                    Fill="White"
+                     Width="1316"
+                     Canvas.Left="-1216"
+                     Canvas.Right="1000"
+                     Stroke="Black"
+                     StrokeThickness="1" VerticalAlignment="Center" HorizontalAlignment="Left" />
+            <Canvas x:Name="canvas">
+                <Image x:Name="myImage" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas x:Name="canvas1">
+                <Image x:Name="myImage1" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-73" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas x:Name="canvas2">
+                <Image x:Name="myImage2" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-51" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag30e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag31e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-73" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag32e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-51" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag53e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag51e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag52e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag2e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-703" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag1e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-703" Canvas.Top="0" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag0e"  Visibility="Collapsed"   Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-703" Canvas.Top="-3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag3e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-900" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag4e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-900" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag5e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-900" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag6e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag7e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag39e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag40e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag41e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag8e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag12e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag13e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag14e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag54e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag55e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag56e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag36e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag37e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag38e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag57e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag58e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag59e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag15e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag46e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-539" Canvas.Top="4" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag47e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-539" Canvas.Top="4" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag45e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-539" Canvas.Top="4" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag16e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag17e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-995" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag42e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag43e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag44e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag18e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag19e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag20e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag21e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-157" Canvas.Top="11" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag22e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag23e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag24e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-157" Canvas.Top="11" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag25e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag26e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+
+        </Canvas>
+
+
+
+    </Grid>
+</Window>

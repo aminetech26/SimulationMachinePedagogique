@@ -12,13 +12,13 @@
     <Grid Background="#4E719D" SizeChanged="Grid_SizeChanged" >
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="10*" /> 
+            <RowDefinition Height="10*" />
             <RowDefinition Height="40*" />
             <RowDefinition Height="50*" />
             <RowDefinition Height="125*" />
             <RowDefinition Height="125*" />
-            <RowDefinition Height="125*" />
-            <RowDefinition Height="150*" />
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="180*" />
         </Grid.RowDefinitions>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Center" >
@@ -32,134 +32,144 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
+           
         </StackPanel>
 
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" >
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" >
 
             <TextBlock Text="Selectionnez l’instruction que vous voulez simulez :" FontSize="27"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Top" HorizontalAlignment="Center"
                        Foreground="White" x:Name="Text1" TextAlignment="Center"
                        ></TextBlock>
+            <Button x:Name="actualiser" Width="30" Height="30" HorizontalAlignment="Right"
+                    VerticalAlignment="Top" Margin="0 0 -90 0" Background="Blue"
+                    Click="Actualiser"/>
 
         </StackPanel>
 
-        <Grid Grid.Row="3" x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center" >
+        <Grid Grid.Row="3" x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center"  >
 
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            
-            <StackPanel Grid.Column="0" Margin="10 0 10 0" >
 
-                <TextBlock Text="Instruction" FontSize="19"
+            <Grid x:Name="stkInstr" Grid.Column="0" Margin="10,0,0,0" >
+                <StackPanel HorizontalAlignment="Center" >
+
+                    <TextBlock Text="Instruction" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Foreground="White" Margin="7"
                        ></TextBlock>
 
-                <ComboBox SelectedIndex="0"
-                      Padding="20" Margin="15 0 5 0" Height="60" Width="100" 
-                      HorizontalAlignment="Left" Background="White" Foreground="Black"
-                      x:Name="Instruction" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
+                    <ComboBox SelectionChanged="componentComboBox_SelectionChanged"
+                          Padding="20" Margin="15 0 5 0" Height="50" Width="120" 
+                           HorizontalAlignment="Left" Background="White" Foreground="Black"
+                           x:Name="Instruction" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
 
-                    <ComboBoxItem>Option 1</ComboBoxItem>
-                    <ComboBoxItem>Option 2</ComboBoxItem>
-                    <ComboBoxItem>Option 3</ComboBoxItem>
-            </ComboBox>
-            </StackPanel>
-            
+                        <ComboBoxItem>ADD</ComboBoxItem>
+                        <ComboBoxItem>SUB</ComboBoxItem>
+                        <ComboBoxItem>MUL</ComboBoxItem>
+                        <ComboBoxItem>INC</ComboBoxItem>
+                        <ComboBoxItem>DEC</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
 
-            <StackPanel Grid.Column="1" Margin="10 0 10 0" >
+            </Grid>
 
-                <TextBlock Text="Format" FontSize="19"
+            <Grid Grid.Column="1" x:Name="stkFrm" Margin="10,0,0,0">
+                <StackPanel HorizontalAlignment="Center"  >
+
+                    <TextBlock Text="Format" FontSize="19" HorizontalAlignment="Center"
+                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                       Foreground="White" Margin="7"
+                       ></TextBlock>
+
+                    <ComboBox   Padding="20" Margin="5 0 5 0" Height="50" Width="120" SelectedItem="{Binding SelectedItem}"
+                            HorizontalAlignment="Left" Background="White" Foreground="Black"
+                            x:Name="Format" Template="{DynamicResource MaterialDesignFloatingHintComboBoxTemplate}" 
+                            Style="{DynamicResource MaterialDesignOutlinedComboBox}"   SelectionChanged="componentFormat_SelectionChanged"
+                            >
+
+                    </ComboBox>
+                </StackPanel>
+
+            </Grid>
+
+            <Grid Grid.Column="2" x:Name="stkReg" Margin="10,0,0,0" >
+                <StackPanel HorizontalAlignment="Center" >
+
+                    <TextBlock Text="Reg/M" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Foreground="White" Margin="7"
                        ></TextBlock>
 
-                <ComboBox SelectedIndex="0"
-                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
-                      HorizontalAlignment="Left" Background="White" Foreground="Black"
-                      x:Name="Format" Template="{DynamicResource MaterialDesignFloatingHintComboBoxTemplate}" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
-                    <ComboBoxItem>Option 1</ComboBoxItem>
-                    <ComboBoxItem>Option 2</ComboBoxItem>
-                    <ComboBoxItem>Option 3</ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
-
-
-            <StackPanel Grid.Column="2" Margin="10 0 10 0" >
-
-                <TextBlock Text="Reg/M" FontSize="19"
-                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" Margin="7"
-                       ></TextBlock>
-
-                <ComboBox SelectedIndex="0" 
-                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
+                    <ComboBox 
+                      Padding="20" Margin="5 0 5 0" Height="50" Width="120"  SelectionChanged="componentReg_SelectionChanged"
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Reg" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
-                    <ComboBoxItem>Option 1</ComboBoxItem>
-                    <ComboBoxItem>Option 2</ComboBoxItem>
-                    <ComboBoxItem>Option 3</ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
 
+                    </ComboBox>
+                </StackPanel>
 
-            <StackPanel Grid.Column="3" Margin="10 0 10 0" >
+            </Grid>
 
-                <TextBlock Text="Dep" FontSize="19"
+            <Grid Grid.Column="3" x:Name="stkDep" Margin="10,0,0,0" HorizontalAlignment="Center" >
+                <StackPanel  >
+
+                    <TextBlock Text="Dep" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Foreground="White" Margin="7"
                        ></TextBlock>
 
-                <ComboBox SelectedIndex="0" 
-                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
+                    <ComboBox  
+                      Padding="20" Margin="5 0 5 0" Height="50" Width="120"  SelectionChanged="componentDep_SelectionChanged"
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Dep" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
-                    <ComboBoxItem>Option 1</ComboBoxItem>
-                    <ComboBoxItem>Option 2</ComboBoxItem>
-                    <ComboBoxItem>Option 3</ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
 
+                    </ComboBox>
+                </StackPanel>
 
-            <StackPanel Grid.Column="4" Margin="10 0 10 0" >
+            </Grid>
 
-                <TextBlock Text="Destinataire" FontSize="19"
+            <Grid Grid.Column="4" x:Name="stkDes" Margin="10,0,0,0" >
+                <StackPanel  >
+                    <TextBlock Text="Destinataire" FontSize="19" x:Name="txtDes"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Foreground="White" Margin="7"
                        ></TextBlock>
 
-                <ComboBox SelectedIndex="0" 
-                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
+                    <ComboBox 
+                      Padding="20" Margin="5 0 5 0" Height="50" Width="120" SelectionChanged="componentDes_SelectionChanged"
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Destinataire" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
-                    <ComboBoxItem>Option 1</ComboBoxItem>
-                    <ComboBoxItem>Option 2</ComboBoxItem>
-                    <ComboBoxItem>Option 3</ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
 
-            <StackPanel Grid.Column="5" Margin="10 0 10 0" >
+                    </ComboBox>
 
-                <TextBlock Text="Source" FontSize="19"
+                </StackPanel>
+
+            </Grid>
+            <Grid Grid.Column="5" x:Name="stkSrc" Margin="10,0,0,0" >
+                <StackPanel >
+                    <TextBlock Text="Source" FontSize="19"
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
                        Foreground="White" Margin="7"
                        ></TextBlock>
 
-                <ComboBox SelectedIndex="0"
-                      Padding="20" Margin="5 0 5 0" Height="60" Width="100" 
+                    <ComboBox 
+                      Padding="20" Margin="5 0 5 0" Height="50" Width="120"  SelectionChanged="componentSrc_SelectionChanged"
                       HorizontalAlignment="Left" Background="White" Foreground="Black"
                       x:Name="Source" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
-                    <ComboBoxItem>Option 1</ComboBoxItem>
-                    <ComboBoxItem>Option 2</ComboBoxItem>
-                    <ComboBoxItem>Option 3</ComboBoxItem>
-                </ComboBox>
-            </StackPanel>
+
+                    </ComboBox>
+
+                </StackPanel>
+
+            </Grid>
 
         </Grid>
 
@@ -174,48 +184,51 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="30 10" >
-                    <TextBlock Text="AX :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
+                    <TextBlock x:Name="champ1" Text="AX :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
                                VerticalAlignment="Center" Margin="20" Foreground="White" />
 
-                    
+
                     <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
                              TextAlignment="Center" GotFocus="RemoveHintText" LostFocus="AddHintText"
-                             Text="XXXX" x:Name="TextBox1" TextWrapping="NoWrap" FontSize="23" PreviewTextInput="TextBox_PreviewTextInput"
-                             Style="{StaticResource RoundedTextBox}"
-                             />
+                             Text="XXXX" x:Name="TextBox1" TextWrapping="NoWrap" FontSize="23" 
+                             Style="{StaticResource RoundedTextBox}" TextChanged="TextBox_TextChanged"
+                             >
+
+                    </TextBox>
 
                 </StackPanel>
 
 
 
-                <StackPanel Orientation="Horizontal" Margin="30 10" >
-                    <TextBlock Text="BX :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
-                               VerticalAlignment="Center" Margin="20" Foreground="White" />
+                <StackPanel Orientation="Horizontal" Margin="30 10" x:Name="stc_2" >
+                    <TextBlock x:Name="champ2" Text="BX :" FontSize="20" FontWeight="Thin" 
+                               FontFamily="Montserrat"  VerticalAlignment="Center" 
+                               Margin="20" Foreground="White" />
 
 
                     <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
                              TextAlignment="Center" GotFocus="TextBox2_GotFocus" LostFocus="TextBox2_LostFocus"
-                             Text="XXXX" x:Name="TextBox2" TextWrapping="NoWrap" FontSize="23" PreviewTextInput="TextBox_PreviewTextInput"
-                             Style="{StaticResource RoundedTextBox}"
+                             Text="XXXX" x:Name="TextBox2" TextWrapping="NoWrap" FontSize="23" 
+                             Style="{StaticResource RoundedTextBox}" TextChanged="TextBox_TextChanged"
                              />
 
                 </StackPanel>
-                
-                
-                
-                <StackPanel Orientation="Horizontal" Margin="30 10" >
-                    <TextBlock Text="Valeur dep :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
-                               VerticalAlignment="Center" Margin="20" Foreground="White" />
 
 
-                    <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Black"
+
+                <StackPanel  Orientation="Horizontal" Margin="30 10" x:Name="stc_3" >
+                    <TextBlock x:Name="champ3" Text=" SI :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
+                               VerticalAlignment="Center" Margin="20" Foreground="White"  />
+
+
+                    <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
                              TextAlignment="Center" x:Name="TextBox3" TextWrapping="NoWrap" FontSize="23"
-                             PreviewTextInput="TextBox_PreviewTextInput"
-                             Style="{StaticResource RoundedTextBox}"
+                             Style="{StaticResource RoundedTextBox}" Text="XXXX"  TextChanged="TextBox_TextChanged"
+                             GotFocus="deplac_GotFocus" LostFocus="deplac_LostFocus" 
                              />
 
                 </StackPanel>
-             
+
 
             </StackPanel>
 
@@ -223,44 +236,128 @@
         </StackPanel>
 
 
-        <StackPanel Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Center" >
+        <Grid Grid.Row="5" x:Name="Grid5" HorizontalAlignment="Center" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0"  x:Name="grid_dep" Margin="20, 10">
+                <StackPanel x:Name="stc_dep" Orientation="Horizontal" HorizontalAlignment="Center" >
+                    <TextBlock x:Name="champ4" Text="Valeur dep :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
+                               VerticalAlignment="Center" Margin="20" Foreground="White"  />
 
-            <TextBlock Text="Instruction en hexa :" FontSize="25"
-                       FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
-                       Foreground="White" x:Name="Text3" Margin="10"
-                       ></TextBlock>
 
-            <TextBox Background="White" Height="50" Width="200" Padding="7" Foreground="Gray"
-                     TextAlignment="Center" x:Name="Inst_En_Hexa" TextWrapping="NoWrap" 
-                     FontSize="22" PreviewTextInput="TextBox_PreviewTextInput" Margin="5"
-                     Style="{StaticResource RoundedTextBox}"
+                    <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
+                             TextAlignment="Center" x:Name="TextBox4" TextWrapping="NoWrap" FontSize="23"
+                             Style="{StaticResource RoundedTextBox}" Text="XXXX"  TextChanged="TextBox_TextChanged"
+                             GotFocus="deplac_GotFocus" LostFocus="deplac_LostFocus" 
                              />
 
+                </StackPanel>
+            </Grid>
 
 
-        </StackPanel>
+            <Grid Grid.Column="1"  x:Name="grid_ccm" Margin="30,10,0,10" >
+                <StackPanel  Orientation="Horizontal"  >
+                    <TextBlock x:Name="champ5" Text=" CCM :" FontSize="20" FontWeight="Thin" FontFamily="Montserrat" 
+                               VerticalAlignment="Center" Margin="20" Foreground="White"  />
 
-        <Grid Grid.Row="6" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-            <Button x:Name="Button_simuler" Height="75" Width="300"
+                    <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
+                             TextAlignment="Center" x:Name="TextBox5" TextWrapping="NoWrap" FontSize="23"
+                             Style="{StaticResource RoundedTextBox}" Text="XXXX"  TextChanged="TextBox_TextChanged"
+                             GotFocus="deplac_GotFocus" LostFocus="deplac_LostFocus" 
+                             />
+
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+
+        <Grid Grid.Row="6" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="1">
+                <Button x:Name="Button_simuler" Height="75" Width="300"
                 Style="{StaticResource RoundedButtonStyle}"
-                Foreground="White"
+                Foreground="White" Click="convertButton_Click"
                 BorderBrush="#4E719D"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Margin="20"
                 >
-                <Button.Background>
-                    <SolidColorBrush Color="#81C784" Opacity="0.6"/>
-                </Button.Background>
+                    <Button.Background>
+                        <SolidColorBrush Color="#81C784" Opacity="0.6"/>
+                    </Button.Background>
 
-                <TextBlock Text="Simuler Maintenant" FontFamily="Montserrat" FontSize="24" FontWeight="SemiBold" ></TextBlock>
+                    <TextBlock Text="Simuler Maintenant" FontFamily="Montserrat" FontSize="24" FontWeight="SemiBold" ></TextBlock>
 
-            </Button>
+                </Button>
+               
+            </Grid>
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <TextBlock Background="White" Height="50" Width="150" Padding="7" Foreground="Gray"
+                                   TextAlignment="Center" x:Name="Inst" TextWrapping="NoWrap" HorizontalAlignment="Center"
+                                   FontSize="22"  />
+                    </Grid>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="Memon  :" FontSize="25"
+                                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                    Foreground="White" x:Name="Text3" />
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="1">
+                        <TextBlock Background="White" Height="50" Width="150" Padding="7" Foreground="Gray"
+                                   TextAlignment="Center" x:Name="Inst_En_Hexa" TextWrapping="NoWrap" HorizontalAlignment="Center"
+                                   FontSize="22"   />
+                    </Grid>
+                    <Grid Grid.Column="0">
+                        <TextBlock Text="En hexa :" FontSize="25"
+                                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
+                                    Foreground="White" x:Name="Text4" />
+                    </Grid>
+                </Grid>
+
+                <!--<StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                       
+                       
+                        <TextBlock Background="White" Height="50" Width="200" Padding="7" Foreground="Gray"
+                                   TextAlignment="Center" x:Name="Inst" TextWrapping="NoWrap" HorizontalAlignment="Right"
+                                   FontSize="22"  Margin="20"  />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                       
+
+                        
+
+
+
+                    </StackPanel>-->
+                <!--</StackPanel>-->
+
+            </Grid>
+
 
         </Grid>
 
 
-        </Grid>
-
+    </Grid>
 </Page>

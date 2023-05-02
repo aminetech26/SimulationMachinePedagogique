@@ -71,5 +71,11 @@ namespace projet.Pages
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Cours.xaml", UriKind.RelativeOrAbsolute));
         }
+
+        private void GoToProgrammePage(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/ProgrammePage.xaml", UriKind.RelativeOrAbsolute));
+        }
+
     }
 }
