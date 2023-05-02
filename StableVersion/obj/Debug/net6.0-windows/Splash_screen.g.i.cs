@@ -72,7 +72,7 @@ namespace projet {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/projet;V1.0.0.0;component/splash_screen.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/projet;component/splash_screen.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\Splash_screen.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

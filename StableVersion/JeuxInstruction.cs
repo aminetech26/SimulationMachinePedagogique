@@ -13,12 +13,104 @@ using System.Security.Cryptography.X509Certificates;
 using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Controls.Ribbon;
 using System.Security.Cryptography;
+using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace ArchiMind
 {
 
     internal class JeuxInstruction
     {
+        private static Animation contexOfAnimation;
+        public static void setContextOfAnimation(Animation animation)
+        {
+            contexOfAnimation = animation;
+        }
+        public static void AnimatIndicateur()
+        {
+            Rectangle Z = (Rectangle)contexOfAnimation.FindName("Z");
+            Rectangle A = (Rectangle)contexOfAnimation.FindName("A");
+            Rectangle S = (Rectangle)contexOfAnimation.FindName("S");
+            Rectangle D = (Rectangle)contexOfAnimation.FindName("D");
+            Rectangle R = (Rectangle)contexOfAnimation.FindName("R");
+            Rectangle P = (Rectangle)contexOfAnimation.FindName("P");
+            Rectangle T = (Rectangle)contexOfAnimation.FindName("T");
+            Rectangle I = (Rectangle)contexOfAnimation.FindName("I");
+            switch (Indicateur.getZero())
+            {
+                case '1':
+                    Z.Fill = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    Z.Fill = new SolidColorBrush(Colors.Blue);
+                    break;
+                    // default: Z.Fill = new SolidColorBrush(Colors.Black); break;
+            }
+            switch (Indicateur.getSigne())
+            {
+                case '1':
+                    S.Fill = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    S.Fill = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getOverflow())
+            {
+                case '1':
+                    D.Fill = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    D.Fill = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+
+            switch (Indicateur.getRetenu())
+            {
+                case '1':
+                    R.Fill = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    R.Fill = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getretenuAuxiliaire())
+            {
+                case '1':
+                    A.Fill = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    A.Fill = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getParite())
+            {
+                case '1':
+                    P.Fill = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    P.Fill = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getTrace())
+            {
+                case '1':
+                    T.Fill = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    T.Fill = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getAutoIncrDec())
+            {
+                case '1':
+                    I.Fill = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    I.Fill = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+        }
         private static string myInt;
 
         // Méthode statique pour stocker un entier
@@ -915,6 +1007,10 @@ namespace ArchiMind
                         resultf = JeuxInstruction.GetInt();
                         break;
                     case "XCHG": // ANIMATION PARTICULIER  
+                        Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
+                        Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
+                        Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
+                        UAL.positionnerIndicateurs(mnemonique);
                         JeuxInstruction.SetInt(result);
                         resultf = JeuxInstruction.GetInt();
                         break;
@@ -938,6 +1034,7 @@ namespace ArchiMind
                 string r = JeuxInstruction.GetInt();
                 if (mnemonique != "XCHG")
                 {
+                    UAL.positionnerIndicateurs(mnemonique,result,UAL.getUal1(),UAL.getUal2());
                     // animation(ual, registre, donne);
                     // sortie to registr
                     Animation.AnimateImage2(Images[57], Images[54], -1165, -30, -1210, -465, 1);
@@ -986,6 +1083,10 @@ namespace ArchiMind
                         result = UAL.getUal2();
                         break;
                     case "XCHG": // ANIMATION PARTICULIER  
+                        Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
+                        Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
+                        Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
+                        UAL.positionnerIndicateurs(mnemonique); 
                         break;
                     case "AND":
                         result = (r & r1).ToString("X4");
@@ -1000,6 +1101,7 @@ namespace ArchiMind
                 }
                 if (mnemonique != "XCHG")
                 {
+                    UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
                     // animation(ual, registre, donne);
                     // sortie to registr
                     Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
@@ -1014,7 +1116,7 @@ namespace ArchiMind
 
 
         }
-        public static async void format_ax_reg(string mnenmonique, string source, string valAx, string valsource, List<System.Windows.Controls.Image> Images)
+        public static async void format_ax_reg(string mnemonique, string source, string valAx, string valsource, List<System.Windows.Controls.Image> Images)
         {
             Registre.setAx(valAx);
             Registre.setContenuRegistre(source, valsource);
@@ -1035,7 +1137,7 @@ namespace ArchiMind
             Registre.setAx(UAL.getUal2());
             Registre.setContenuRegistre(source, UAL.getUal1());
             JeuxInstruction.SetInt(Registre.getContenuRegistre(source));
-            switch (mnenmonique)
+            switch (mnemonique)
             {
                 //xchg , 
                 case "XCHG":
@@ -1043,9 +1145,7 @@ namespace ArchiMind
                     Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
                     Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
                     Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
-
-                    // animation (ual,registre , donne ); 
-
+                    UAL.positionnerIndicateurs(mnemonique);
 
                     // positionner les indicateur ; 
                     break;
@@ -1096,27 +1196,25 @@ namespace ArchiMind
                 case "ADD":
                     //  result = ccm + contenue de registre ; 
                     result = (Convert.ToInt32(UAL.getUal1(), 16) + Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
-                    Registre.setAx(result);
-                    // positionner les flags 
                     break;
                 case "SUB":
                     result = (Convert.ToInt32(UAL.getUal1(), 16) - Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
-                    Registre.setAx(result);
+                   
                     break;
                 case "OR":
                     result = (Convert.ToInt32(UAL.getUal1(), 16) | Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
-
-                    Registre.setAx(result);
                     break;
                 case "XOR":
                     result = (Convert.ToInt32(UAL.getUal1(), 16) ^ Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
-                    Registre.setAx(result);
+                   
                     break;
             }
+            UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(),UAL.getUal2());   
             // animation (UAL,registre,donne ); 
             Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
+            Registre.setAx(result);
 
         }
 
@@ -1159,7 +1257,7 @@ namespace ArchiMind
                     break;
             }
             // positionner les indicateurs 
-            // UAL.positionnerIndicateurs(mnemonique, result);
+              UAL.positionnerIndicateurs(mnemonique, result);
             // animation (ual,registre,donne); 
             // ual to registr
             Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
@@ -1211,18 +1309,20 @@ namespace ArchiMind
                 case "MOV":
                     result = UAL.getUal2();
                     JeuxInstruction.SetInt(result);
+                    // positionner les indicateurs 
+                    UAL.positionnerIndicateurs(mnemonique, result);
+                    //animation(ual , registre , donne  )  ;
+                    // // ual to registr
+                    Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
+                    Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
+                    Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
+                    Registre.setContenuRegistre(reg,result);
                     break;
                 default:
                     Console.WriteLine("Erreur");
                     break;
             }
-            // positionner les indicateurs 
-            UAL.positionnerIndicateurs(mnemonique, result);
-            //animation(ual , registre , donne  )  ;
-            // // ual to registr
-            Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
-            Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
-            Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
+           
 
         }
 
@@ -3157,7 +3257,7 @@ namespace ArchiMind
                                 str_op2 = destination.ToString("X");
                                 destination = (ushort)(destination >> count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("SHR", str_res, operand2: str_op2);
+                                UAL.positionnerIndicateurs("SHR", str_res, operand2hex: str_op2);
                                 // Check the new value of the MSB to determine the new value of the CF flag
                                 newCarryFlag = ((destination & 0x0001) != 0);
                                 // Set the new value of the CF flag
@@ -3197,7 +3297,7 @@ namespace ArchiMind
                                 str_op2 = destination.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("SAL", str_res, operand2: str_op2);
+                                UAL.positionnerIndicateurs("SAL", str_res, operand2hex: str_op2);
                                 // Check the new value of the MSB to determine the new value of the CF flag
                                 newCarryFlag = ((destination & 0x8000) != 0);
                                 // Set the new value of the CF flag
@@ -3236,7 +3336,7 @@ namespace ArchiMind
                                 str_op2 = destination.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("SAR", str_res, operand2: str_op2);
+                                UAL.positionnerIndicateurs("SAR", str_res, operand2hex: str_op2);
                                 // Check the new value of the MSB to determine the new value of the CF flag
                                 newCarryFlag = ((destination & 0x8000) != 0);
                                 // Set the new value of the CF flag
@@ -3271,7 +3371,7 @@ namespace ArchiMind
                                 string str_op1 = count.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("ROR", str_res, operand2: str_op2, operand1: str_op1);
+                                UAL.positionnerIndicateurs("ROR", str_res, operand2hex: str_op2, operand1Hex: str_op1);
                                 // Check the new value of the LSB to determine the new value of the CF flag
 
                                 // Set the new value of the CF flag
@@ -3307,7 +3407,7 @@ namespace ArchiMind
                                 str_op1 = count.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("ROL", str_res, operand2: str_op2, operand1: str_op1);
+                                UAL.positionnerIndicateurs("ROL", str_res, operand2hex: str_op2, operand1Hex: str_op1);
                                 // Check the new value of the MSB to determine the new value of the CF flag
 
                                 // Set the new value of the CF flag
@@ -3342,7 +3442,7 @@ namespace ArchiMind
                                 str_op1 = count.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("RCR", str_res, operand2: str_op2, operand1: str_op1);
+                                UAL.positionnerIndicateurs("RCR", str_res, operand2hex: str_op2, operand1Hex: str_op1);
                                 // Check the new value of the LSB to determine the new value of the CF flag
 
                                 // Set the new value of the CF flag
@@ -3389,7 +3489,7 @@ namespace ArchiMind
                                 str_op1 = count.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("RCL", str_res, operand2: str_op2, operand1: str_op1);
+                                UAL.positionnerIndicateurs("RCL", str_res, operand2hex: str_op2, operand1Hex: str_op1);
                                 // Check the new value of the LSB to determine the new value of the CF flag
                                 carryFlag = (destination & 0x8000) != 0;
                                 // Set the new value of the CF flag
@@ -3436,7 +3536,7 @@ namespace ArchiMind
                                 destination = (ushort)(destination << count);
                                 string str_res = destination.ToString("X");
 
-                                UAL.positionnerIndicateurs("SHL", str_res, operand2: str_op2);
+                                UAL.positionnerIndicateurs("SHL", str_res, operand2hex: str_op2);
                                 // Check the new value of the MSB to determine the new value of the CF flag
                                 bool newCarryFlag = ((destination & 0x8000) != 0);
                                 // Set the new value of the CF flag
@@ -3462,7 +3562,7 @@ namespace ArchiMind
                                 str_op2 = destination.ToString("X");
                                 destination = (ushort)(destination >> count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("SHR", str_res, operand2: str_op2);
+                                UAL.positionnerIndicateurs("SHR", str_res, operand2hex: str_op2);
                                 // Check the new value of the MSB to determine the new value of the CF flag
                                 newCarryFlag = ((destination & 0x0001) != 0);
                                 // Set the new value of the CF flag
@@ -3497,7 +3597,7 @@ namespace ArchiMind
                                 str_op2 = destination.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("SAL", str_res, operand2: str_op2);
+                                UAL.positionnerIndicateurs("SAL", str_res, operand2hex: str_op2);
                                 // Check the new value of the MSB to determine the new value of the CF flag
                                 newCarryFlag = ((destination & 0x8000) != 0);
                                 // Set the new value of the CF flag
@@ -3533,7 +3633,7 @@ namespace ArchiMind
                                 str_op2 = destination.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("SAR", str_res, operand2: str_op2);
+                                UAL.positionnerIndicateurs("SAR", str_res, operand2hex: str_op2);
                                 // Check the new value of the MSB to determine the new value of the CF flag
                                 newCarryFlag = ((destination & 0x8000) != 0);
                                 // Set the new value of the CF flag
@@ -3563,7 +3663,7 @@ namespace ArchiMind
                                 string str_op1 = count.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("ROR", str_res, operand2: str_op2, operand1: str_op1);
+                                UAL.positionnerIndicateurs("ROR", str_res, operand2hex: str_op2, operand1Hex: str_op1);
                                 // Check the new value of the LSB to determine the new value of the CF flag
 
                                 // Set the new value of the CF flag
@@ -3594,7 +3694,7 @@ namespace ArchiMind
                                 str_op1 = count.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("ROL", str_res, operand2: str_op2, operand1: str_op1);
+                                UAL.positionnerIndicateurs("ROL", str_res, operand2hex: str_op2, operand1Hex: str_op1);
                                 // Check the new value of the MSB to determine the new value of the CF flag
 
                                 // Set the new value of the CF flag
@@ -3624,7 +3724,7 @@ namespace ArchiMind
                                 str_op1 = count.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("RCR", str_res, operand2: str_op2, operand1: str_op1);
+                                UAL.positionnerIndicateurs("RCR", str_res, operand2hex: str_op2, operand1Hex: str_op1);
                                 // Check the new value of the LSB to determine the new value of the CF flag
 
                                 // Set the new value of the CF flag
@@ -3666,7 +3766,7 @@ namespace ArchiMind
                                 str_op1 = count.ToString("X");
                                 destination = (ushort)(destination << count);
                                 str_res = destination.ToString("X");
-                                UAL.positionnerIndicateurs("RCL", str_res, operand2: str_op2, operand1: str_op1);
+                                UAL.positionnerIndicateurs("RCL", str_res, operand2hex: str_op2, operand1Hex: str_op1);
                                 // Check the new value of the LSB to determine the new value of the CF flag
                                 carryFlag = (destination & 0x8000) != 0;
                                 // Set the new value of the CF flag

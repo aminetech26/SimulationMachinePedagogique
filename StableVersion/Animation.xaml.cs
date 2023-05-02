@@ -139,11 +139,13 @@ namespace projet
 
 
 
-
+        private Animation animationPage;
 
         public Animation(string Reg1, string Reg2, string Reg3, string ccm, string Valdep, string memonique, string Format, string RegM, string dep, string destinaitr, string source, string NomReg1, string NomReg2, string NomReg3)
         {
             InitializeComponent();
+            animationPage = this;
+            JeuxInstruction.setContextOfAnimation(animationPage);
 
             // pour manupiler les parametre de la fonction executer_simulation_phase_a_phase
             List<Image> listeImages = new List<Image>();
