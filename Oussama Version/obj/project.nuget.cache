@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "fn47HgN27mWMF8w9RPywbL8docOH2zjkIXtPVw6ox2LKzBpoLhoR9FFZbe6Dpl68KYbX+2cHO3cyp43zF1OuEg==",
+  "dgSpecHash": "GlNAH5F06xVR35rTD8EKS3fSiDdh/GoIHgP2kg7yk7y1+xsCZZ3xFTx/020xmvGF2tuy1fWWwjfwLHpdiUU7xg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Bureau\\Oussama Version\\projet.csproj",
+  "projectFilePath": "C:\\Users\\TRETEC\\Music\\SimulationMachinePedagogique\\Oussama Version\\projet.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Admin\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
-    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+    "C:\\Users\\TRETEC\\.nuget\\packages\\materialdesigncolors\\2.1.1\\materialdesigncolors.2.1.1.nupkg.sha512",
+    "C:\\Users\\TRETEC\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\TRETEC\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
   ],
   "logs": []
 }

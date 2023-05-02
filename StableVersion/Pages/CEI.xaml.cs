@@ -25,6 +25,10 @@ namespace projet.Pages
         {
             InitializeComponent();
         }
+        private void GoToPage6(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page6.xaml", UriKind.RelativeOrAbsolute));
+        }
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {

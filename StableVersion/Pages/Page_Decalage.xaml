@@ -40,9 +40,11 @@
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Top" HorizontalAlignment="Center"
                        Foreground="White" x:Name="Text1" TextAlignment="Center"
                        ></TextBlock>
-            <Button x:Name="actualiser" Width="30" Height="30" HorizontalAlignment="Right"
-                    VerticalAlignment="Top" Margin="0 0 -90 0" Background="Blue"
-                    Click="Actualiser"/>
+            <Button x:Name="actualiser" BorderThickness="0"  Width="30" Height="30" HorizontalAlignment="Right"
+                    VerticalAlignment="Top" Margin="0 0 -90 0" Background="#4E719D"
+                    Click="Actualiser">
+                <Image Source="/Pages/images/Actualiser.png" />
+            </Button>
 
         </StackPanel>
 

@@ -166,7 +166,7 @@
         <!-- Panel 05 -->
 
         <Button
-            x:Name="Button5"
+            x:Name="Button5" Click="GoToPage6"
             Grid.Column="2"
             Grid.Row="3"
             Style="{DynamicResource RoundedButtonStyle}"

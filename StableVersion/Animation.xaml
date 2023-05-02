@@ -12,9 +12,12 @@
         Title="MainWindow" Height="680" Width="1300">
 
     <Window.Resources>
+        
         <DataGridLength x:Key="DataGridColumnWidth1">SizeToHeader</DataGridLength>
         <RotateTransform x:Key="VerticalTransform" Angle="-90" />
+       
     </Window.Resources>
+    
 
     <Grid Background="White" >
 
