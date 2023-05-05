@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:projet.Pages"
       xmlns:Menu="clr-namespace:projet.Utilities"
       mc:Ignorable="d" 
-      Height="600" Width="800" 
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="Exercices">
 
 

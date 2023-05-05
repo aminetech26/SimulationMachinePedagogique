@@ -105,6 +105,9 @@
     <Page Update="Pages\Premierpas.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Quizs_Exercices.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ProgrammePage.xaml">
       <SubType>Designer</SubType>
     </Page>

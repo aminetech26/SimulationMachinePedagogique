@@ -11,7 +11,6 @@
 
 
 
-
     <Grid Background="White" SizeChanged="Grid_SizeChanged">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="59*"/>
@@ -19,29 +18,12 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="40" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="60" ></RowDefinition>
             <RowDefinition Height="120" ></RowDefinition>
             <RowDefinition Height="80" ></RowDefinition>
         </Grid.RowDefinitions>
-
-
-        <!--<Image Grid.Row="0" Source="/Pages/retour.png" Height="35" Width="Auto" 
-               Margin="30 10" HorizontalAlignment="Left"  />-->
-
-        <Button Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Left"
-                VerticalAlignment="Bottom" Click="GoListQuiz" 
-                Margin="25,0,0,0" Grid.ColumnSpan="2" >
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Image Source="/Pages/images/retour.png" Stretch="Uniform"  />
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
 
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >

@@ -22,6 +22,19 @@ namespace projet.Pages
     public partial class Page1 : Page
     {
 
+        private static MainWindow contextofwindow;
+
+        public static void setcontex(MainWindow contex)
+        {
+            contextofwindow = contex;
+        }
+
+        public static void nchlhtmchi()
+        {
+            Frame frame = (Frame)contextofwindow.FindName("window");
+            frame.Content = null;
+        }
+
         public Page1()
         {
             InitializeComponent();
@@ -40,7 +53,11 @@ namespace projet.Pages
 
         private void toQuizPage(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
+            //NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
+
+            nchlhtmchi();
+            Frame frame = (Frame)contextofwindow.FindName("window");
+            frame.NavigationService.Navigate(new Uri("/Pages/Quiz.xaml", UriKind.Relative));
         }
 
         private void toHomePage(object sender, MouseButtonEventArgs e)
@@ -95,14 +112,12 @@ namespace projet.Pages
 
         private void Exmpl(object sender, RoutedEventArgs e)
         {
-            Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Cours.xaml", UriKind.RelativeOrAbsolute));
+
         }
 
         private void GoToProgrammePage(object sender, RoutedEventArgs e)
         {
-            //window.NavigationService.Navigate(new Uri("/ProgrammePage.xaml", UriKind.Relative));
-
-            //contentControl.Content = new ProgrammePage();
+            
         }
 
         private void Button_Fr_En_Click(object sender, RoutedEventArgs e)

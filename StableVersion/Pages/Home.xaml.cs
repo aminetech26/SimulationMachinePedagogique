@@ -73,12 +73,6 @@ namespace projet.Pages
         }
 
 
-        private void toCEIPage(object sender, MouseButtonEventArgs e)
-        {
-           NavigationService.Navigate(new Uri("pack://application:,,,/Pages/CEI.xaml", UriKind.RelativeOrAbsolute));
-            
-        }
-
         private void Exmpl(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Cours.xaml", UriKind.RelativeOrAbsolute));
