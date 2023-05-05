@@ -20,4 +20,25 @@
 
     </Style>
 
+
+    <Style x:Key="Text_Style1"
+           TargetType="TextBlock">
+
+        <Setter Property="FontFamily"
+                Value="Open Sans" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalAlignment"
+                Value="Left" />
+        <Setter Property="Foreground"
+                Value="White" />
+        <Setter Property="FontSize"
+                Value="20" />
+        <Setter Property="Margin"
+                Value="70,0,0,0" />
+        <Setter Property="FontWeight"
+                Value="Medium" />
+
+    </Style>
+
 </ResourceDictionary>

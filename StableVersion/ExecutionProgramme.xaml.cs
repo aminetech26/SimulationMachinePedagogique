@@ -83,11 +83,13 @@ namespace projet
             {
                 if (e.NewSize.Width >= 1000)
                 {
-                    //dataGrid1.Width = 350 ;
+                    dataGrid1.Height = 450 ;
+                    Grid_IND.Height = 450 ;
                 }
                 else
                 {
-                    //dataGrid1.Width = 250;
+                    Grid_IND.Height = 400 ;
+                    dataGrid1.Height = 400 ;
 
                 }
 

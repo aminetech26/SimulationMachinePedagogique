@@ -13,15 +13,28 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
+using System.Windows.Threading;
 
 namespace projet.Pages
 {
     /// <summary>
     /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class Home : Page
+    public partial class Home
     {
+        private static MainWindow contextofwindow;
+
+        public static void setcontex(MainWindow contex)
+        {
+            contextofwindow = contex;
+        }
+
+        public static void nchlhtmchi()
+        {
+            Frame frame = (Frame)contextofwindow.FindName("window");
+            frame.Content = null;
+        }
+
         public Home()
         {
             InitializeComponent();
@@ -73,8 +86,12 @@ namespace projet.Pages
 
         private void GoToProgrammePage(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/ProgrammePage.xaml", UriKind.Relative));
-            
+            //NavigationService.Navigate(new Uri("/ProgrammePage.xaml", UriKind.Relative));
+
+            nchlhtmchi();
+            Frame frame = (Frame)contextofwindow.FindName("window");
+            frame.NavigationService.Navigate(new Uri("/ProgrammePage.xaml", UriKind.Relative));
+
         }
 
         private void Button_Fr_En_Click(object sender, RoutedEventArgs e)

@@ -30,6 +30,7 @@ using Newtonsoft.Json;
 using System.Windows.Forms;
 using ComboBox = System.Windows.Controls.ComboBox;
 using Newtonsoft.Json.Schema;
+using System.Diagnostics;
 
 namespace projet
 {
@@ -38,6 +39,9 @@ namespace projet
     /// </summary>
     public sealed partial class ProgrammePage : Page
     {
+        static int Load_is_clicked = 0;
+
+        static int currentLineNumber = 1;
         List<Instruction> programInstructions = new List<Instruction>();
         public ProgrammePage()
         {
@@ -65,6 +69,7 @@ namespace projet
 
         private void AddInstruction_Click(object sender, RoutedEventArgs e)
         {
+            currentLineNumber = 0 ;
 
             Instruction_Ligne currentInstruction = (Instruction_Ligne)Grid_Inst.Children[Grid_Inst.Children.Count - 1];
             string? mnemonique = (currentInstruction.ComboBox2.SelectedItem != null) ? currentInstruction.ComboBox2.SelectedItem.ToString() : "";
@@ -73,7 +78,6 @@ namespace projet
             string? depl = (currentInstruction.ComboBox5.IsEnabled && currentInstruction.ComboBox5.SelectedItem != null) ? currentInstruction.ComboBox5.SelectedItem.ToString() : "";
             string? destinataire = (currentInstruction.ComboBox6.IsEnabled && currentInstruction.ComboBox6.SelectedItem != null) ? currentInstruction.ComboBox6.SelectedItem.ToString() : "";
             string? source = (currentInstruction.ComboBox7.IsEnabled && currentInstruction.ComboBox7.SelectedItem != null) ? currentInstruction.ComboBox7.SelectedItem.ToString() : "";
-            int currentLineNumber = 1;
             bool deplacement;
             bool mem;
             if (depl == "Avec deplacement")
@@ -92,6 +96,12 @@ namespace projet
             {
                 mem = false;
             }
+
+            foreach (UIElement element in Grid_Inst.Children)
+            {
+                currentLineNumber++;
+            }
+
             bool allChecked = true;
             foreach (UIElement element in Grid_Inst.Children)
             {
@@ -133,9 +143,14 @@ namespace projet
             if (!allChecked)
             {
                 System.Windows.MessageBox.Show("Veuillez sélectionner un élément dans toutes les listes déroulantes activées.");
+                if (currentLineNumber > 1)
+                {
+                    currentLineNumber--;
+                }
             }
             else
             {
+
                 Instruction instruction = new Instruction();
                 instruction = SetInstruction(mnemonique, format, destinataire, source, deplacement, mem);
                 programInstructions.Add(instruction);
@@ -145,6 +160,7 @@ namespace projet
                 Grid_Inst.Children.Add(instructionLigne);
                 Grid.SetRow(instructionLigne, currentLineNumber - 1);
                 Grid.SetColumn(instructionLigne, 1);
+                //currentLineNumber++;
                 var lineTextBlock = new TextBlock();
                 lineTextBlock.Text = currentLineNumber.ToString();
                 lineTextBlock.FontSize = 25;
@@ -179,10 +195,19 @@ namespace projet
             NavigationService.Navigate(new Uri("/PageProgramme3.xaml", UriKind.Relative));
         }
 
+
+
+
+
         private void GoBack_To_Home(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/Pages/Home.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Pages/Page1.xaml", UriKind.Relative));
         }
+
+
+
+
+
 
         public void SaveProgramToFile(string filename)
         {
@@ -207,9 +232,14 @@ namespace projet
             File.WriteAllText(filename, serializedData);
         }
 
+
+
         public void LoadProgramFromFile(string filePath)
         {
             int currentLineNumber = 1;
+            Load_is_clicked++ ;
+
+            if (Load_is_clicked == 1) { 
 
             //    string filePathJson = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\schema.json";
             //    string filePathArchimind = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\Program.archimind";
@@ -226,7 +256,7 @@ namespace projet
             {
                 // Handle deserialization errors
                 // ...
-                return;
+                return ;
             }
 
             Grid_Inst.Children.Clear();
@@ -281,6 +311,8 @@ namespace projet
                 {
                     mem = false;
                 }
+
+
                 Instruction instruction = new Instruction();
                 instruction = SetInstruction(mnemonique, format, destinataire, source, deplacement, mem);
                 programInstructions.Add(instruction);
@@ -309,7 +341,7 @@ namespace projet
                     Grid_InstructionsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
                 }
             }
-           
+            }
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)

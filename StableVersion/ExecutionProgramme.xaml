@@ -281,7 +281,7 @@
 
             <!-- Indicateurs -->
 
-            <Grid Grid.Column="3" >
+            <Grid Grid.Column="3" x:Name="Grid_IND" Width="Auto" Height="400" >
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*" />
@@ -296,13 +296,13 @@
                 </Grid.RowDefinitions>
                 
                 <TextBlock Grid.Row="0" Text="IND" 
-                           TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="5" Margin="0" 
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Open Sans" Padding="5" Margin="0" 
                            FontSize="20" FontWeight="SemiBold" Foreground="White"
                            ></TextBlock>
 
                 <StackPanel Grid.Row="1" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="Z" 
-                           TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
@@ -312,7 +312,7 @@
                 
                 <StackPanel Grid.Row="2" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="P" 
-                           TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
+                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
@@ -385,7 +385,7 @@
             <!-- Memoire -->
 
             <DataGrid x:Name="dataGrid1" Grid.Column="4" SelectionChanged="dataGrid1_SelectionChanged"
-                              Height="272" 
+                              Height="400" 
                               VerticalAlignment="Center" 
                               SelectionMode="Extended"
                               CanUserSortColumns="False" 

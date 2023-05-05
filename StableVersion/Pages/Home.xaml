@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="Home" Height="Auto" Width="Auto">
 
-    <Grid SizeChanged="Grid_SizeChanged">
+    <Grid SizeChanged="Grid_SizeChanged" >
         <Grid.Background>
             <LinearGradientBrush StartPoint="1,1"
                                       EndPoint="0,0">
@@ -73,7 +73,7 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0" >
-                <Button x:Name="Button1" Style="{StaticResource RoundedButtonStyle}"  
+                <Button x:Name="Button1" Style="{StaticResource RoundedButtonStyle2}"  
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         Height="64" Width="338" Margin="0,30,0,0" Click="GoToProgrammePage" >
 
@@ -89,7 +89,7 @@
 
             <Grid Grid.Column="1" >
                 <Button x:Name="Button2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Style = "{DynamicResource RoundedButtonStyle}" Height="64" 
+                        Style = "{DynamicResource RoundedButtonStyle2}" Height="64" 
                         Width="338" Margin="0,30,0,0" >
 
                     <StackPanel Orientation = "Horizontal" Width="336">
@@ -104,7 +104,7 @@
         </Grid>
 
         <Grid Grid.Row="3" HorizontalAlignment="Center"  VerticalAlignment="Center">
-            <Button x:Name="Button3" Style = "{DynamicResource RoundedButtonStyle}" 
+            <Button x:Name="Button3" Style = "{DynamicResource RoundedButtonStyle2}" 
                     Height="64" Width="338" HorizontalAlignment="Center"  Click="Exmpl">
 
                 <StackPanel Orientation = "Horizontal" Width="336">

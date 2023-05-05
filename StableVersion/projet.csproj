@@ -52,6 +52,9 @@
     <None Remove="Pages\images\accueil.png" />
     <None Remove="Pages\images\carre.png" />
     <None Remove="Pages\images\cei.png" />
+    <None Remove="Pages\images\cei2.png" />
+    <None Remove="Pages\images\cei3.png" />
+    <None Remove="Pages\images\cei4.png" />
     <None Remove="Pages\images\CEI\and.png" />
     <None Remove="Pages\images\CEI\branchement.png" />
     <None Remove="Pages\images\CEI\decalage.png" />
@@ -80,6 +83,7 @@
     <None Remove="Pages\images\Precedent1.png" />
     <None Remove="Pages\images\Q.png" />
     <None Remove="Pages\images\qst.png" />
+    <None Remove="Pages\images\qst1.png" />
     <None Remove="Pages\images\quiz.png" />
     <None Remove="Pages\images\RappelDuCours.png" />
     <None Remove="Pages\images\rectangle.png" />
@@ -146,6 +150,9 @@
     <Resource Include="Pages\images\accueil.png" />
     <Resource Include="Pages\images\carre.png" />
     <Resource Include="Pages\images\cei.png" />
+    <Resource Include="Pages\images\cei2.png" />
+    <Resource Include="Pages\images\cei3.png" />
+    <Resource Include="Pages\images\cei4.png" />
     <Resource Include="Pages\images\CEI\and.png" />
     <Resource Include="Pages\images\CEI\branchement.png" />
     <Resource Include="Pages\images\CEI\decalage.png" />
@@ -184,6 +191,7 @@
     <Resource Include="Pages\images\Precedent1.png" />
     <Resource Include="Pages\images\Q.png" />
     <Resource Include="Pages\images\qst.png" />
+    <Resource Include="Pages\images\qst1.png" />
     <Resource Include="Pages\images\quiz.png" />
     <Resource Include="Pages\images\RappelDuCours.png" />
     <Resource Include="Pages\images\rectangle.png" />

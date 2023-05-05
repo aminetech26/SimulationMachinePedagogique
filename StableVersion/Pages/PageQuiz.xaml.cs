@@ -20,10 +20,23 @@ namespace projet.Pages
     /// </summary>
     public partial class PageQuiz : Page
     {
+        private static MainWindow contextofwindow;
+
+        public static void setcontex(MainWindow contex)
+        {
+            contextofwindow = contex;
+        }
+
+        public static void nchlhtmchi()
+        {
+            Frame frame = (Frame)contextofwindow.FindName("window");
+            frame.Content = null;
+        }
+
         public PageQuiz()
         {
             InitializeComponent();
-            Text4.Visibility = Visibility.Collapsed;  
+            Text4.Visibility = Visibility.Collapsed;
             Text5.Visibility = Visibility.Collapsed;
             Image1.Visibility = Visibility.Collapsed;
             Image2.Visibility = Visibility.Collapsed;
@@ -32,7 +45,12 @@ namespace projet.Pages
 
         private void GoListQuiz(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
+            //NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
+
+            nchlhtmchi();
+            Frame frame = (Frame)contextofwindow.FindName("window");
+            frame.NavigationService.Navigate(new Uri("/Pages/Page1.xaml", UriKind.Relative));
+
         }
 
 

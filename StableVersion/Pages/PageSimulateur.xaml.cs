@@ -37,8 +37,8 @@ namespace projet.Pages
             if (e.NewSize.Width > 800)
             {
                 text.FontSize = 25;
-                txt1.FontSize = 18;
-                txt2.FontSize = 18;
+                txt1.FontSize = 17;
+                txt2.FontSize = 17;
                 img1.Width = 200;
                 img1.Height = 140;
                 img2.Width = 200;

@@ -9,7 +9,7 @@
                 Background="Transparent">
 
 
-    <Frame Name="window" NavigationUIVisibility="Hidden"  ></Frame>
+    <Frame Name="window" NavigationUIVisibility="Hidden" ></Frame>
 
 
 </Window>

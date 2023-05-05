@@ -29,10 +29,6 @@ namespace projet.Pages
         {
             this.NavigationService.GoBack();
         }
-
-        
-
-       
        
 
         private void Fermer(object sender, MouseButtonEventArgs e)
