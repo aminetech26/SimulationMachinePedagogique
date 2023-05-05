@@ -12,12 +12,12 @@
         Title="MainWindow" Height="680" Width="1300">
 
     <Window.Resources>
-        
+
         <DataGridLength x:Key="DataGridColumnWidth1">SizeToHeader</DataGridLength>
         <RotateTransform x:Key="VerticalTransform" Angle="-90" />
-       
+
     </Window.Resources>
-    
+
 
     <Grid Background="White" >
 
@@ -373,7 +373,7 @@
                                         <TextBox x:Name="RI" Text="" FontSize="30"
                                              Canvas.Left="76" Canvas.Top="8" 
                                              BorderThickness="0" BorderBrush="Transparent"
-                                            HorizontalAlignment="Center" VerticalAlignment="Top" 
+                                            HorizontalAlignment="Left" VerticalAlignment="Top" 
                                             Background="#D9D9D9" Width="109" RenderTransformOrigin="0.5,0.5">
 
                                         </TextBox>
@@ -888,7 +888,7 @@
                                                       Canvas.Left="10" Canvas.Top="9" 
                                                       BorderThickness="0" BorderBrush="Transparent"
                                                       HorizontalAlignment="Left" VerticalAlignment="Center" 
-                                                      Background="#D9D9D9" Width="55" RenderTransformOrigin="0.515,-0.069">
+                                                      Background="#D9D9D9" Width="55" RenderTransformOrigin="0.515,-0.069" >
 
                                             </TextBox>
                                         </Canvas>

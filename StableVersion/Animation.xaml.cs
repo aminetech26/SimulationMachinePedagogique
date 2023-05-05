@@ -146,6 +146,7 @@ namespace projet
             InitializeComponent();
             animationPage = this;
             JeuxInstruction.setContextOfAnimation(animationPage);
+         //   RI.TextChanged += RI_TextChanged; 
 
             // pour manupiler les parametre de la fonction executer_simulation_phase_a_phase
             List<Image> listeImages = new List<Image>();
@@ -1306,7 +1307,7 @@ namespace projet
             }
         }
 
-
+       
     }
    
 }

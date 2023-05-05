@@ -15,6 +15,7 @@ using System.Windows.Controls.Ribbon;
 using System.Security.Cryptography;
 using System.Windows.Media;
 using System.Windows.Shapes;
+using System.Windows.Navigation;
 
 namespace ArchiMind
 {
@@ -25,6 +26,13 @@ namespace ArchiMind
         public static void setContextOfAnimation(Animation animation)
         {
             contexOfAnimation = animation;
+        }  
+        public static void  setRiInFront(string contenueRi) 
+        {
+            
+                var ri = (TextBox)contexOfAnimation.FindName("RI");
+            
+                ri.Text = contenueRi; 
         }
         public static void AnimatIndicateur()
         {
@@ -118,13 +126,11 @@ namespace ArchiMind
         {
             myInt = value;
         }
-
         // Méthode statique pour récupérer l'entier stocké
         public static string GetInt()
         {
             return myInt;
         }
-
 
         static private string[] list_mem_dep = { "[BX+SI+XXXX]", "[BX+DI+XXXX]", "[BP+SI+XXXX]", "[BP+DI+XXXX]", "[SI+XXXX]", "[DI+XXXX]", "[BP+XXXX]", "[BX+XXXX]" };
         static private string[] list_mem_sansdep = { "[BX+SI]", "[BX+DI]", "[BP+SI]", "[BP+DI]", "[SI]", "[DI]", "[XXXX]", "[BX]" };
@@ -490,8 +496,6 @@ namespace ArchiMind
             }
             return binaire_val;
         }
-
-
         public string recherche_reg(string reg)
         {
             string reg_binaire = "";
@@ -513,6 +517,9 @@ namespace ArchiMind
             }
             return reg_binaire;
         }
+
+
+        //--------------------------------------------------------------------------------------------------------------------------//
         //cbn:remplir 01 fiha qlq details lzm ytbdlou -- meshi void string .. + deplval et tt rj3hum en binaire -- voir exemple lt7t.
         public string remplir_Reg_mem_imm16(string inst, string Reg_mem, bool ifdepl, string deplval, string imm16_val)
         {   // INST Reg16/mem16,imm16
@@ -556,7 +563,7 @@ namespace ArchiMind
             return instruction_binaire;
         }
         // methode dekhlelha les entrees te3 la pages hedik li 9bal simulation trj3lk instruction en binaire kima t7atha f la MC.
-        public string remplir_AX_imm16(string inst, string imm16_val)
+        public  string remplir_AX_imm16(string inst, string imm16_val)
         {   // INST AX,imm16 -- 
             // comment distingue le AX des autres registres ?
             // ca sera utile de verifier la valeur si elle est en 16bits + en hexa
@@ -621,7 +628,6 @@ namespace ArchiMind
             System.Console.WriteLine("instruction en binaire :" + instruction_binaire);
             return instruction_binaire;
         }
-        //-----------------------------------------------------------------------------------------------------------
         public string remplir_reg_mem_reg(string inst, string reg_mem, string reg, bool ifdepl, string deplval)
         {  // INST REG/MEM,REG
             intialize();
@@ -708,8 +714,6 @@ namespace ArchiMind
             Console.WriteLine("the instruction " + instruction_binaire);
             return instruction_binaire;
         }
-        //---------------------------------------------------------------------------------------------------------- 
-        //------------------- 
         public string remplir_reg_mem_cx(string inst, string Reg_mem, bool ifdepl, string deplval)
         {   // INST Reg16/mem16,CX
             string instruction_binaire = "";
@@ -781,7 +785,37 @@ namespace ArchiMind
             }
             return instruction_binaire;
         }
-        //------------------------------------------------------ partie execution ---------------------------------------------------
+        //------------------------------------------------------ partie execution ---------------------------------------------------//
+        public static string getInstructionInBinaire ( string inst ,string format ,  bool ifmem , string distinataire ,  string source ,bool ifdepl , string valDepl ,string valImm16 )
+        {
+            JeuxInstruction UseObjectMethode = new JeuxInstruction(); 
+            string instructionBinaire = ""; 
+            switch (format)
+            {
+                case "Reg16/Mem16,imm16":
+                    instructionBinaire = UseObjectMethode.remplir_Reg_mem_imm16(inst,distinataire,ifdepl,valDepl,valImm16 );
+                    break; 
+                case "AX,imm16":
+                    instructionBinaire =   UseObjectMethode.remplir_AX_imm16(inst,valImm16)          ;               
+                break;
+                case "Reg16/mem16,Reg16":
+                    instructionBinaire = UseObjectMethode.remplir_reg_mem_reg(inst, source, distinataire, ifdepl, valDepl);
+                break;
+                case "Reg16,Reg16/mem16":
+                    instructionBinaire = UseObjectMethode.remplir_reg_reg_mem(inst, distinataire, source, ifdepl, valDepl); 
+                break;
+                case "Reg16/mem16,CX":
+                    instructionBinaire = UseObjectMethode.remplir_reg_mem_cx(inst, distinataire, ifdepl, valDepl);
+                break;
+                case "mem16":
+                    instructionBinaire = UseObjectMethode.remplir_mem16(inst,distinataire,ifdepl,valDepl);
+                break; 
+            }
+            return instructionBinaire; 
+        }
+
+
+
         // methode correction instruction .. 
         // remplir mc -- ecrire_mc (instruction,taille,adresse debut);
 
@@ -1447,7 +1481,7 @@ namespace ArchiMind
         }
         public async static void executer_simulation_phase_a_phase(string mnemonique, string format, bool mem_b, String mem, bool ifdepl, string valdepl, string ccm, string source, string val1, string val2, string val3, List<System.Windows.Controls.Image> Images)
         {
-
+           // setRiInFront("00000");
             Case case_memoire = new Case();
             string result = "";
             //    if (mem_b)
@@ -1475,8 +1509,29 @@ namespace ArchiMind
             Animation.AnimateImage(Images[1], Images[4], -710, 8, -40, 1);
             Animation.AnimateImage(Images[2], Images[5], -710, 6, -40, 1);
             Ri.setRi(MC.getRim());
-            //bouton ou bien delay;
-            await Task.Delay(TimeSpan.FromSeconds(2));
+            bool skip = false ; 
+            if (format == "AX,imm16") {
+
+                setRiInFront(getInstructionInBinaire(mnemonique, format, mem_b, mem, source, ifdepl, valdepl,val2 ));
+                skip = true ;
+                    }
+            if ( format == "Reg16/Mem16,imm16" && ( mem_b == true )  )
+            {
+                setRiInFront(getInstructionInBinaire(mnemonique, format, mem_b, mem, source, ifdepl, valdepl, val3));
+                skip = true; 
+            }
+            if (format == "Reg16/Mem16,imm16" && (mem_b == false))
+            {
+                setRiInFront(getInstructionInBinaire(mnemonique, format, mem_b, mem, source, ifdepl, valdepl, val2));
+                skip = true; 
+            }
+            if (!skip)
+            {
+                setRiInFront(getInstructionInBinaire(mnemonique, format, mem_b, mem, source, ifdepl, valdepl, "0000"));
+            }
+
+                //bouton ou bien delay;
+                await Task.Delay(TimeSpan.FromSeconds(2));
             //page phase2;
             switch (format)
             {

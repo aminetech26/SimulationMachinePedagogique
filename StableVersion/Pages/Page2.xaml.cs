@@ -189,12 +189,12 @@ namespace projet.Pages
             string Forma; string deplace; bool ifdepl;
             string letter = Format.SelectedItem.ToString();
             string destinatair = "";
-            if ((letter != "AX,imd16") && (letter != "Reg16")) { destinatair = Destinataire.SelectedItem.ToString(); }
+            if ((letter != "AX,imm16") && (letter != "Reg16")) { destinatair = Destinataire.SelectedItem.ToString(); }
             string source = "XXXX";
             if (Source.SelectedItem != null) { source = Source.SelectedItem.ToString(); }
             string Registr = "";
-            if ((letter != "AX,imd16") && (letter != "Reg16")) { Registr = Reg.SelectedItem.ToString(); }
-            if ((Registr == " Registre ") || (letter == "AX,imd16") || (letter == "Reg16")) { deplace = "0000"; }
+            if ((letter != "AX,imm16") && (letter != "Reg16")) { Registr = Reg.SelectedItem.ToString(); }
+            if ((Registr == " Registre ") || (letter == "AX,imm16") || (letter == "Reg16")) { deplace = "0000"; }
             else { deplace = Dep.SelectedItem.ToString(); }
             if (deplace == "Avec deplacement") { ifdepl = true; }
             else { ifdepl = false; }
@@ -219,7 +219,7 @@ namespace projet.Pages
                 if (selectedItem.Content.ToString() == "ADD")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("AX,imd16");
+                    Format.Items.Add("AX,imm16");
                     Format.Items.Add("Reg16,Reg16/mem16");
                     Format.Items.Add("Reg16/mem16,Reg16");
                     Format.Items.Add("Reg16/Mem16,imm16");
@@ -229,7 +229,7 @@ namespace projet.Pages
                 else if (selectedItem.Content.ToString() == "SUB")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("AX,imd16");
+                    Format.Items.Add("AX,imm16");
                     Format.Items.Add("Reg16,Reg16/mem16");
                     Format.Items.Add("Reg16/mem16,Reg16");
                     Format.Items.Add("Reg16/Mem16,imm16");
@@ -269,7 +269,7 @@ namespace projet.Pages
             {
 
 
-                if (string.Compare(letter, "AX,imd16") == 0)
+                if (string.Compare(letter, "AX,imm16") == 0)
                 {
                     int columnIndex = Grid.GetColumn(stkDes);
                     if (columnIndex >= 0)
