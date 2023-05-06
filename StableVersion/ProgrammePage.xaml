@@ -27,7 +27,7 @@
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Image Source="/Pages/images/revenir.png" Height="25" Width="25" Stretch="Uniform"  />
+                            <Image Source="/Pages/images/revenir_blanc.png" Height="25" Width="25" Stretch="Uniform"  />
                         </Grid>
                     </ControlTemplate>
                 </Button.Template>

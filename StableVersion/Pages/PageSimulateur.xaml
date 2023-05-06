@@ -12,12 +12,22 @@
         <Grid.Background>
             <SolidColorBrush Color="#90CAF9" />
         </Grid.Background>
-        <StackPanel>
-            <TextBlock  Text="Découvrez l'architecture des ordinateurs de manière ludique grâce à la simulation graphique des instructions de la machine pédagogique MIASM et de l’Assembleur 80x86. Plongez dans le fonctionnement interne de l'ordinateur en temps réel et visualisez les actions de chaque instruction avec des graphiques détaillés et interactifs." 
-                        TextWrapping="Wrap" Foreground="White" Margin="100,100" FontSize="20" 
-                        FontWeight="Bold" Padding="7" FontFamily="Montserrat" x:Name="text"/>
-            <Border CornerRadius="12" Background="White" Margin="100,-20"
-            >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        
+        <TextBlock Grid.Row="0" Text="Découvrez l'architecture des ordinateurs de manière ludique grâce à la simulation graphique des instructions de la machine pédagogique MIASM et de l’Assembleur 80x86. Plongez dans le fonctionnement interne de l'ordinateur en temps réel et visualisez les actions de chaque instruction avec des graphiques détaillés et interactifs." 
+                        TextWrapping="Wrap" Foreground="White" Margin="75 50" FontSize="20" TextAlignment="Center" 
+                        FontWeight="SemiBold" Padding="10" FontFamily="Open Sans" x:Name="text"
+        />
+
+        
+        <Border Grid.Row="1" x:Name="Border" CornerRadius="12" Background="White" Margin="0 25 0 0" 
+                Width="650" Height="200" VerticalAlignment="Top" >
+            
                 <Grid>
                     <Grid.ColumnDefinitions>
                         
@@ -27,47 +37,44 @@
                         
                     </Grid.ColumnDefinitions>
                     <StackPanel Grid.Column="0">
-                        <Image x:Name="img1" Source="/Pages/images/simulation.png" Width="150" Height="120" Margin="5" />
-                        <Button x:Name="Button1" Height="43" Width="190"
-                Style="{StaticResource RoundedButtonStyle}"
-                Background="#DAF3FF"
-                Foreground="Black"
-                BorderBrush="#DAF3FF"
-                HorizontalAlignment="Center" Margin="10"
+                    <Image x:Name="img1" Source="/Pages/images/simulation.png" Width="Auto" Height="100" Margin="0 10" />
+                    <Button x:Name="Button1" Height="40" Width="200"
+                            Style="{StaticResource RoundedButtonStyle6}"
+                            Background="#DAF3FF"
+                            Foreground="Black"
+                            HorizontalAlignment="Center" Margin="0 10 0 0"
                 
                 >
-                            <TextBlock x:Name="txt1" Text="Simulateur de Miasm" FontFamily="Montserrat" FontSize="15" FontWeight="Normal" ></TextBlock>
+                        <TextBlock x:Name="txt1" Text="Simulateur de Miasm" FontFamily="Montserrat" FontSize="15" FontWeight="Normal" ></TextBlock>
 
-                        </Button>
-
-
-                    </StackPanel>
-                    <StackPanel Grid.Column="1">
-                        <Image HorizontalAlignment="Center" Source="/Pages/images/lINE 53.png" Height="160" Width="5" Margin="5" />
+                    </Button>
+                </StackPanel>
+                    
+                    
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <Image Source="/Pages/images/lINE 53.png" Height="160" Width="5" Margin="5" />
                     </StackPanel>
                     <StackPanel Grid.Column="2">
-                        <Image x:Name="img2" Source="/Pages/images/simulation.png" Width="150" Height="120" Margin="5" />
-                        <Button x:Name="Button2" Height="43" Width="190" Click="toCEIPage"
-                Style="{StaticResource RoundedButtonStyle}"
-                Background="#DAF3FF"
-                Foreground="Black"
-                BorderBrush="#DAF3FF"
-                HorizontalAlignment="Center" Margin="10"
-                
-                >
-                            <TextBlock x:Name="txt2" Text="Simulateur d'Assenbleur" FontFamily="Montserrat" FontSize="15" FontWeight="Normal" ></TextBlock>
+                        <Image x:Name="img2" Source="/Pages/images/simulation.png" Width="Auto" Height="100" Margin="0 10" />
+                    <Button x:Name="Button2" Height="40" Width="200" Click="toCEIPage"
+                            Style="{StaticResource RoundedButtonStyle6}"
+                            Background="#DAF3FF"
+                            Foreground="Black"
+                            HorizontalAlignment="Center" Margin="0 10 0 0"
+                        >
 
-                        </Button>
+                        <TextBlock x:Name="txt2" Text="Simulateur d'Assenbleur" FontFamily="Montserrat" FontSize="15" FontWeight="Normal" ></TextBlock>
 
+                    </Button>
+                </StackPanel>
 
-                    </StackPanel>
-
+                    
                 </Grid>
 
                 
 
             </Border>
-        </StackPanel>
+        
 
     </Grid>
 </Page>

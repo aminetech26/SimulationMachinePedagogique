@@ -34,25 +34,36 @@ namespace projet.Pages
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (e.NewSize.Width > 800)
+            if (e.NewSize.Width >= 1000)
             {
-                text.FontSize = 25;
+                text.FontSize = 23;
+                text.Margin = new Thickness(100,90,100,0);
                 txt1.FontSize = 17;
                 txt2.FontSize = 17;
-                img1.Width = 200;
-                img1.Height = 140;
-                img2.Width = 200;
-                img2.Height = 140;
+                img1.Height = 125;
+                img2.Height = 125;
+                Button1.Height = 45;
+                Button1.Width = 220;
+                Button2.Height = 45;
+                Button2.Width = 220;
+                Border.Height = 250;
+                Border.Width = 800;
             }
             else
             {
                 text.FontSize = 20;
+                text.Margin = new Thickness(75, 50, 75, 0);
                 txt1.FontSize = 15;
                 txt2.FontSize = 15;
-                img1.Width = 150;
-                img1.Height = 120;
-                img2.Width = 150;
-                img2.Height = 120;
+                img1.Height = 100;
+                img2.Height = 100;
+                Button1.Height = 40;
+                Button1.Width = 200;
+                Button2.Height = 40;
+                Button2.Width = 200;
+                Border.Height = 200 ;
+                Border.Width = 650 ;
+
 
             }
         }

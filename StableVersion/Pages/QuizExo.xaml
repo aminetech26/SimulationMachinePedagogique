@@ -113,7 +113,7 @@
 
             <StackPanel Grid.Row="0" Orientation="Horizontal" >
 
-                <ToggleButton Name="menu" Margin="10,15,0,0"
+                <ToggleButton Name="menu" Margin="10,20,0,0"
                           Background="Transparent" BorderBrush="Transparent"
                           Style="{StaticResource ButtonSimple}"
                           Checked="menu_Cheked"
@@ -170,7 +170,8 @@
                     </Viewbox>
                 </ToggleButton>
 
-                <ToggleButton Name="menu2" Margin="135,0,0,0"
+                
+                <ToggleButton Name="menu2" Margin="125,17,0,0"
                           Background="Transparent" BorderBrush="Transparent"
                           Style="{StaticResource ButtonSimple}"
                           Click="Exit_Quiz" Height="50" VerticalAlignment="Top" Grid.RowSpan="2">

@@ -137,7 +137,7 @@
             x:Name="Button4"
             Grid.Column="1"
             Grid.Row="3" Click="GoToDecalage"
-            Style="{DynamicResource RoundedButtonStyle}"
+            Style="{DynamicResource RoundedButtonStyle5}"
             Margin="15"
             >
 
@@ -159,7 +159,7 @@
             x:Name="Button5"
             Grid.Column="2"
             Grid.Row="3"
-            Style="{DynamicResource RoundedButtonStyle}"
+            Style="{DynamicResource RoundedButtonStyle5}"
             Margin="15"
             >
 
@@ -181,7 +181,7 @@
             x:Name="Button6"
             Grid.Column="3"
             Grid.Row="3"   Click="GoToEntreeSortie"
-            Style="{DynamicResource RoundedButtonStyle}"
+            Style="{DynamicResource RoundedButtonStyle5}"
             Margin="15"
             >
 

@@ -70,6 +70,7 @@
     <None Remove="Pages\images\code.png" />
     <None Remove="Pages\images\cryon.png" />
     <None Remove="Pages\images\ExercicesTypes.png" />
+    <None Remove="Pages\images\Explication.png" />
     <None Remove="Pages\images\false.png" />
     <None Remove="Pages\images\fermer.png" />
     <None Remove="Pages\images\Help.png" />
@@ -91,6 +92,7 @@
     <None Remove="Pages\images\rectangle.png" />
     <None Remove="Pages\images\retour.png" />
     <None Remove="Pages\images\revenir.png" />
+    <None Remove="Pages\images\revenir_blanc.png" />
     <None Remove="Pages\images\sel_inst.png" />
     <None Remove="Pages\images\simulation.png" />
     <None Remove="Pages\images\simulation1.png" />
@@ -171,6 +173,9 @@
     <Resource Include="Pages\images\code.png" />
     <Resource Include="Pages\images\cryon.png" />
     <Resource Include="Pages\images\ExercicesTypes.png" />
+    <Resource Include="Pages\images\Explication.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pages\images\false.png" />
     <Resource Include="Pages\images\fermer.png" />
     <Resource Include="Pages\images\Help.png" />
@@ -204,6 +209,9 @@
     <Resource Include="Pages\images\rectangle.png" />
     <Resource Include="Pages\images\retour.png" />
     <Resource Include="Pages\images\revenir.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pages\images\revenir_blanc.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Pages\images\sel_inst.png" />

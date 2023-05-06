@@ -179,7 +179,7 @@
                                                     Storyboard.TargetProperty="Color"
                                                     To="White"
                                                     From="#4E719D"
-                                                    Duration="0:0:2" />
+                                                    Duration="0:0:2.5" />
 
                                 </Storyboard>
                             </BeginStoryboard>
