@@ -27,11 +27,15 @@ namespace projet
     /// </summary>
     public partial class PageProgramme3
     {
-        public PageProgramme3()
+        private List<Instruction> programInst;
+
+        public PageProgramme3(List<Instruction> programInstructions)
         {
             InitializeComponent();
             suivant.IsEnabled= false;
             AX.Focus();
+            programInst = new List<Instruction>(programInstructions);
+
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
@@ -122,7 +126,9 @@ namespace projet
             //test
             MessageBox.Show("AX:"+Registre.getAx()+"BP:"+Registre.getBp());
             //navigate to execution page.
-            NavigationService.Navigate(new Uri("/ExecutionProgramme.xaml", UriKind.Relative));
+            ExecutionProgramme thirdPage = new ExecutionProgramme(programInst);
+            this.NavigationService.Navigate(thirdPage);
+         //   NavigationService.Navigate(new Uri("/ExecutionProgramme.xaml", UriKind.Relative));
         }
 
         private void Go_Back(object sender, RoutedEventArgs e)

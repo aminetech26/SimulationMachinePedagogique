@@ -23,12 +23,18 @@ namespace projet.Pages
         public PageQuiz()
         {
             InitializeComponent();
-            Text4.Visibility = Visibility.Collapsed;
+            Text4.Visibility = Visibility.Collapsed;  
             Text5.Visibility = Visibility.Collapsed;
             Image1.Visibility = Visibility.Collapsed;
             Image2.Visibility = Visibility.Collapsed;
             myGridExpl.Visibility = Visibility.Collapsed;
         }
+
+        private void GoListQuiz(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
+        }
+
 
         private void Suivant(object sender, RoutedEventArgs e)
         {

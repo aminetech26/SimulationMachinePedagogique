@@ -8,13 +8,14 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1028" SizeChanged="MainWindow_SizeChanged"
       Title="Page1"
+       
                >
 
     <Grid>
         <!-- window border // -->
         <Grid.Background>
             <LinearGradientBrush StartPoint="1,1"
-                                 EndPoint="0,0">
+                                                 EndPoint="0,0">
                 <GradientStop Color="#90CAF9" Offset="0" />
                 <GradientStop Color="#317AC7" Offset="0.75" />
             </LinearGradientBrush>
@@ -25,12 +26,12 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="228" />
-                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="auto" />
             </Grid.ColumnDefinitions>
 
             <!--// Navigation Panel //-->
 
-            <Grid Grid.Column="0" HorizontalAlignment="Center"  Width="228">
+            <Grid HorizontalAlignment="Left" Width="228">
                 <Border Background="#fff"/>
 
                 <Grid>
@@ -51,29 +52,28 @@
                                     VerticalAlignment="Center"
                                     Margin="0,-80,0,0">
 
-                            <Menu:Btn Style="{StaticResource BtnStyle}" PreviewMouseDown="toHomePage"
+                            <Menu:Btn Style="{StaticResource BtnStyle}"
                                       IsChecked="True"
                                       VerticalAlignment="Top">
-                                <Grid>
+                                <Grid >
                                     <Grid>
                                         <Image Style="{StaticResource Image_Style}" 
                                                 Source="/Pages/images/accueil.png" />
                                         <TextBlock Text="Accueil"
                                                    Style="{StaticResource Text_Style}"
-                                                   />
+                                                   PreviewMouseDown="toHomePage" />
                                     </Grid>
-
                                     <StackPanel  HorizontalAlignment="Center" 
                                                 VerticalAlignment="Bottom">
-                                        <Border  Height="1" Width="150"  
-                                                 Background="Black" Margin="0,0,0,-40" />
+                                        <Border  Height="5"  Width="200"  
+                                                 Background="#E0E0E0" Margin="0,0,0,-25" />
 
                                     </StackPanel>
                                 </Grid>
                             </Menu:Btn>
 
                             <Menu:Btn Style="{StaticResource BtnStyle}"
-                                      Margin="0,50,0,0" >
+                                      Margin="0,70,0,0" >
 
                                 <Grid>
                                     <Image Source="/Pages/images/siteweb.png"
@@ -83,57 +83,53 @@
                                 </Grid>
                             </Menu:Btn>
 
-                            <Menu:Btn Style="{StaticResource BtnStyle}" PreviewMouseDown="toSimulateurPage" >
-
+                            <Menu:Btn Style="{StaticResource BtnStyle}">
                                 <Grid>
-
-                                    <Image Source="/Pages/images/cei3.png"
-                                           Height="32" Width="32" HorizontalAlignment="Left" 
-                                           VerticalAlignment="Center" Margin="25 0 0 0" />
+                                    <Image Source="/Pages/images/cei.png"
+                                           Style="{StaticResource Image_Style}" />
                                     <TextBlock Text="C.E.I"
                                                Style="{StaticResource Text_Style}"
-                                               />
-
+                                               PreviewMouseDown="toSimulateurPage"/>
                                 </Grid>
-
                             </Menu:Btn>
 
-                            <Menu:Btn Style="{StaticResource BtnStyle}" PreviewMouseDown="toQuizPage" >
+                            <Menu:Btn Style="{StaticResource BtnStyle}">
                                 <Grid>
                                     <Image Source="/Pages/images/quiz.png"
                                            Style="{StaticResource Image_Style}" />
                                     <TextBlock Text="Quiz"
                                               Style="{StaticResource Text_Style}" 
-                                              />
+                                              PreviewMouseDown="toQuizPage"
+                                               />
                                 </Grid>
                             </Menu:Btn>
 
-                            <Menu:Btn Style="{StaticResource BtnStyle}" PreviewMouseDown="toPremierpasPage" >
+                            <Menu:Btn Style="{StaticResource BtnStyle}" >
                                 <Grid>
                                     <Image Source="/Pages/images/1pas.png"
                                             Style="{StaticResource Image_Style}" />
                                     <TextBlock Text="Premier Pas"
                                                Style="{StaticResource Text_Style}"
+                                               PreviewMouseDown="toPremierpasPage"
                                                />
                                 </Grid>
                             </Menu:Btn>
-
                         </StackPanel>
 
                         <Menu:Btn Style="{StaticResource BtnStyle}"                                          
                                   VerticalAlignment="Bottom"
                                   Margin="0,0,0,20" >
-                            <Grid PreviewMouseDown="Fermer" >
+                            <Grid>
                                 <StackPanel Height="30" HorizontalAlignment="Center" 
                                             VerticalAlignment="Top">
-                                    <Border  Height="1"  Width="150"  
-                                             Background="Black" Margin="0,-20,0,0" />
+                                    <Border  Height="5"  Width="200"  
+                                             Background="#E0E0E0" Margin="0,-25,0,0" />
                                 </StackPanel>
                                 <Image Source="/Pages/images/fermer.png"
                                        Style="{StaticResource Image_Style}" />
                                 <TextBlock Text="Fermer"
-                                           Style="{StaticResource Text_Style}" 
-                                           />
+                                            Style="{StaticResource Text_Style}" 
+                                           PreviewMouseDown="Fermer"/>
                             </Grid>
                         </Menu:Btn>
                     </Grid>
@@ -141,15 +137,11 @@
                 </Grid>
 
             </Grid>
-
         </Grid>
 
-        <!--///////////// Acceui ///////////////////////-->
-
-        <StackPanel HorizontalAlignment="Right" VerticalAlignment="Stretch">
-            <Frame Name="Main" Background="Transparent" NavigationUIVisibility="Hidden" />
+        <StackPanel  HorizontalAlignment="Right" VerticalAlignment="Stretch" >
+            <Frame Name="Main" Background="LightGray" NavigationUIVisibility="Hidden" />
         </StackPanel>
-
     </Grid>
 
 </Page>

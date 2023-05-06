@@ -31,6 +31,9 @@
     <Compile Update="Pages\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\InsArith.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Page1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -87,6 +90,9 @@
     <Page Update="Pages\Home.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\InsArith.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Page1.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -103,9 +109,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Premierpas.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\Quizs_Exercices.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ProgrammePage.xaml">

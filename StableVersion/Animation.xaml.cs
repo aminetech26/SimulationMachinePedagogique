@@ -34,28 +34,7 @@ namespace projet
         {
             InitializeComponent();
 
-            _animals = new List<Case>();
-            _animals.Add(new Case { ADR = "", Donnee = "" });
-            _animals.Add(new Case { ADR = "100h", Donnee = "8197h" });
-            _animals.Add(new Case { ADR = "101h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "102h", Donnee = "8197h" });
-            _animals.Add(new Case { ADR = "103h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "104h", Donnee = "8165h" });
-            _animals.Add(new Case { ADR = "105h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "106h", Donnee = "9765h" });
-            _animals.Add(new Case { ADR = "107h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "108h", Donnee = "9765h" });
-            _animals.Add(new Case { ADR = "109h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "110h", Donnee = "8765h" });
-            _animals.Add(new Case { ADR = "111h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "112h", Donnee = "8765h" });
-            _animals.Add(new Case { ADR = "113h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "100h", Donnee = "8165h" });
-            _animals.Add(new Case { ADR = "101h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "100h", Donnee = "8195h" });
-            _animals.Add(new Case { ADR = "101h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "100h", Donnee = "8195h" });
-            _animals.Add(new Case { ADR = "101h", Donnee = "0187h" });
+           
             dataGrid1.ItemsSource = _animals;
             // dataGrid1.SelectedIndex = 1;
 
@@ -117,30 +96,7 @@ namespace projet
         public Animation(string Reg1, string Reg2, string Reg3, string ccm, string Valdep, string memonique, string Format, string RegM, string dep, string destinaitr, string source) 
         {
             InitializeComponent();
-            _animals = new List<Case>();
-
-            _animals = new List<Case>();
-            _animals.Add(new Case { ADR = "", Donnee = "" });
-            _animals.Add(new Case { ADR = "100h", Donnee = "8197h" });
-            _animals.Add(new Case { ADR = "101h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "102h", Donnee = "8197h" });
-            _animals.Add(new Case { ADR = "103h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "104h", Donnee = "8165h" });
-            _animals.Add(new Case { ADR = "105h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "106h", Donnee = "9765h" });
-            _animals.Add(new Case { ADR = "107h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "108h", Donnee = "9765h" });
-            _animals.Add(new Case { ADR = "109h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "110h", Donnee = "8765h" });
-            _animals.Add(new Case { ADR = "111h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "112h", Donnee = "8765h" });
-            _animals.Add(new Case { ADR = "113h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "100h", Donnee = "8165h" });
-            _animals.Add(new Case { ADR = "101h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "100h", Donnee = "8195h" });
-            _animals.Add(new Case { ADR = "101h", Donnee = "0187h" });
-            _animals.Add(new Case { ADR = "100h", Donnee = "8195h" });
-            _animals.Add(new Case { ADR = "101h", Donnee = "0187h" });
+            
             dataGrid1.ItemsSource = _animals;
             // dataGrid1.SelectedIndex = 1;
 
@@ -497,17 +453,10 @@ namespace projet
                 // Get the selected row object
                 Case selectedPerson = dataGrid1.SelectedItem as Case;
 
-                // Display the selected person's name in a TextBox
-                txADR.Text = selectedPerson.ADR;
-                RIM.Text = selectedPerson.Donnee;
+                
             }
         }
 
 
-    }
-    public class Case
-    {
-        public string ADR { get; set; }
-        public string Donnee { get; set; }
     }
 }

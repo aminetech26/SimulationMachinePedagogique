@@ -4,8 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projet.Pages"
-      mc:Ignorable="d"
-      Height="Auto" Width="Auto"
+      mc:Ignorable="d" 
       Title="CEI">
 
 
@@ -13,7 +12,7 @@
 
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="75"/>
+            <ColumnDefinition Width="*"/>
             <ColumnDefinition x:Name="Column1" Width="225"/>
             <ColumnDefinition x:Name="Column2"  Width="225"/>
             <ColumnDefinition x:Name="Column3"  Width="225"/>
@@ -23,7 +22,7 @@
 
         <Grid.RowDefinitions>
 
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
             <RowDefinition x:Name="Row1" Height="225"/>
             <RowDefinition Height="*"/>
             <RowDefinition x:Name="Row2" Height="225"/>
@@ -36,8 +35,20 @@
 
         <!-- Panel 01 -->
         <Grid Grid.Row="0" Grid.Column="0" >
-            <Button x:Name="Button" Width="Auto" Height="40" HorizontalAlignment="Left" 
-                    Click="Go_Back" VerticalAlignment="Top" Margin="15 10 0 0" >
+            <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
+                    Click="Go_Back" VerticalAlignment="Top" Margin="10" >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="/Pages/images/revenir.png" Stretch="Uniform"  />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="4" >
+            <Button Visibility="Hidden" Margin="10" x:Name="Button11" Width="50" Height="30" HorizontalAlignment="Left" 
+                     VerticalAlignment="Top" >
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>

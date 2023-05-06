@@ -191,8 +191,8 @@ namespace projet
                 text = text + j.convertir_instruction_Lmnemonique(ins) + "  \n";
             }
             System.Windows.MessageBox.Show(text);
-
-            NavigationService.Navigate(new Uri("/PageProgramme3.xaml", UriKind.Relative));
+            PageProgramme3 secondPage = new PageProgramme3(programInstructions);
+            this.NavigationService.Navigate(secondPage);
         }
 
 

@@ -14,26 +14,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Media.Animation;
-using projet.Pages;
 
 namespace projet
 {
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindow mainpage;
-
         public MainWindow()
         {
             InitializeComponent();
-            mainpage = this ;
-            Home.setcontex(mainpage);
-            Quizs_Exercices.setcontex(mainpage);
-            Page1.setcontex(mainpage);
             window.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page1.xaml", UriKind.RelativeOrAbsolute));
+
+
         }
-
-
-
         public MainWindow(object c,string Reg1,string Reg2 ,string Reg3 ,string ccm ,string Valdep,string memonique,string Format,string RegM,string dep,string destinaitr,string source)
         {
 

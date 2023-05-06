@@ -13,10 +13,9 @@
         <Setter Property="Height"
                 Value="30" />
         <Setter Property="Width"
-                Value="Auto" />
+                Value="30" />
         <Setter Property="Margin"
                 Value="25,0,0,0" />
-        
 
     </Style>
 

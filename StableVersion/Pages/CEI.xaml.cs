@@ -30,7 +30,6 @@ namespace projet.Pages
         {
             if (e.NewSize.Width >= 1000)
             {
-                Button.Height= 50;
                 Button1.Margin = new Thickness(25);
                 Button2.Margin = new Thickness(25);
                 Button3.Margin = new Thickness(25);

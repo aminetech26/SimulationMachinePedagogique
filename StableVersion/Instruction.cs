@@ -93,6 +93,10 @@ namespace ArchiMind
             Console.Write(getSource() + " ");
             Console.Write(getValDepl() + " ");
         }
+
+
+
+
     }
 
 }

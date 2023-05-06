@@ -27,13 +27,23 @@ namespace projet.Pages
 
         private void BackQuiz(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quizs_Exercices.xaml", UriKind.RelativeOrAbsolute));
+            this.NavigationService.GoBack();
+        }
+
+        
+
+       
+       
+
+        private void Fermer(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
         }
 
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (e.NewSize.Width >= 1000)
+            if (e.NewSize.Width >= 1200)
             {
                 Text1.FontSize = 32;
                 Button1.Height = 64;
@@ -65,5 +75,15 @@ namespace projet.Pages
 
         }
 
+        private void BackCEI(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/CEI.xaml", UriKind.RelativeOrAbsolute));
+
+        }
+
+        private void BackHomeFromExo(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page1.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

@@ -21,26 +21,15 @@ namespace projet.Pages
     /// </summary>
     public partial class Page1 : Page
     {
-
-        private static MainWindow contextofwindow;
-
-        public static void setcontex(MainWindow contex)
-        {
-            contextofwindow = contex;
-        }
-
-        public static void nchlhtmchi()
-        {
-            Frame frame = (Frame)contextofwindow.FindName("window");
-            frame.Content = null;
-        }
-
         public Page1()
         {
             InitializeComponent();
             Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
 
+           
         }
+
+
 
 
         private void MainWindow_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -53,16 +42,12 @@ namespace projet.Pages
 
         private void toQuizPage(object sender, MouseButtonEventArgs e)
         {
-            //NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
-
-            nchlhtmchi();
-            Frame frame = (Frame)contextofwindow.FindName("window");
-            frame.NavigationService.Navigate(new Uri("/Pages/Quiz.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toHomePage(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page1.xaml", UriKind.RelativeOrAbsolute));
+            Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
         
         private void toSimulateurPage(object sender, MouseButtonEventArgs e)
@@ -79,8 +64,6 @@ namespace projet.Pages
         {
             Application.Current.Shutdown();
         }
-
-        /*************************************************************************************/
 
     }
 }
