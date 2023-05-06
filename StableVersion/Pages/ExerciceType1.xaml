@@ -1,0 +1,322 @@
+﻿<Page x:Class="projet.Pages.ExerciceType1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:projet.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="ExerciceType1"
+      xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid x:Name="Grid">
+                                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" 
+                                           Height="Auto" Fill="Transparent"/>
+                                <Border x:Name="Rectangle1" CornerRadius="10 0 0 10" HorizontalAlignment="Stretch" 
+                                        VerticalAlignment="Stretch" Width="Auto" Height="Auto" 
+                                        Background="{TemplateBinding Background}"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="Tag" Value="Horizontal">
+                                    <Setter TargetName="Rectangle1" Property="Width" Value="Auto"/>
+                                    <Setter TargetName="Rectangle1" Property="Height" Value="7"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+            <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+                <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                <Setter Property="Foreground" Value="Gray"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Width" Value="10"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <Grid x:Name="GridRoot" Width="10"  Background="{x:Null}" Margin="5">
+                                <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="False">
+                                    <Track.Thumb>
+                                        <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" 
+                                               Style="{DynamicResource ScrollThumbs}"/>
+                                    </Track.Thumb>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="False"/>
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="False"/>
+                                    </Track.DecreaseRepeatButton>
+                                </Track>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                                    <Setter Value="{DynamicResource ButtonSelectBrush}" 
+                                            TargetName="Thumb" Property="Background"/>
+                                </Trigger>
+                                <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
+                                    <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background"/>
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed"/>
+                                </Trigger>
+                                <Trigger Property="Orientation" Value="Horizontal">
+                                    <Setter TargetName="GridRoot" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Width" Value="Auto"/>
+                                    <Setter Property="Height" Value="12"/>
+                                    <Setter TargetName="Thumb" Property="Tag" Value="Horizontal"/>
+                                    <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand"/>
+                                    <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
+
+
+    <Grid Background="White" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="741*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="1*" ></RowDefinition>
+            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="3*" ></RowDefinition>
+            <RowDefinition Height="70" ></RowDefinition>
+            <RowDefinition Height="80" ></RowDefinition>
+        </Grid.RowDefinitions>
+
+
+        
+
+        <Button Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Left"
+                VerticalAlignment="Bottom" 
+                Margin="25,0,0,0" Grid.ColumnSpan="2" >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image Source="/Pages/images/retour.png" Stretch="Uniform"  />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+
+
+        <Grid Grid.Row="1" Grid.ColumnSpan="2" >
+
+            <TextBlock x:Name="Text1" Text="Exercice N° 1 :" FontFamily="Open Sans" FontSize="30" FontWeight="SemiBold" 
+                   Margin="75 10 0 20" />
+
+           
+           
+                 
+
+           
+
+           
+           
+
+        </Grid>
+        <Grid Grid.Row="2" Grid.ColumnSpan="2" >
+            <TextBlock x:Name="Enonce" Text="Enonce :" FontFamily="Montserrat" FontSize="28" 
+                   FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
+            <TextBlock  Visibility="Hidden" x:Name="Solution" Text="Solution :" FontFamily="Montserrat" FontSize="28" 
+                   FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
+
+
+        </Grid>
+        <Grid Grid.Row="3" Grid.Column="1" >
+            <Border x:Name="BorderEnonce"  CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="20" >
+
+                <Grid  >
+
+
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="2,0,10,0"  >
+
+
+                        
+
+                        <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#D3D3D3" Margin="20"
+                                   FontSize="18"   x:Name="Text5"   Padding="10"            
+                                  Text="Soit la table de 128 nombres entiers de type Word d’adresse TAB. Ecrire le programme
+assembleur qui range dans une table d’adresse symbolique TABNEG tous les nombres
+négatifs et dans une autre table d’adresse symbolique TABPOS tous les autres nombres
+(positifs ou nuls)." >
+                           
+                        </TextBlock>
+                            
+
+                       
+
+                    </ScrollViewer>
+
+
+
+
+                </Grid>
+            </Border>
+            <Border x:Name="BorderSolution"  Visibility="Hidden" CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="20" >
+
+                <Grid  >
+
+
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="2,0,10,0"  >
+                        <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#D3D3D3" Margin="20"
+                                   FontSize="18"      Padding="10"  >          
+                                 <Run Text=".model small"></Run>
+                                 <LineBreak/>
+                                <Run Text=".data"></Run>
+                                 <LineBreak/>
+                             <Run Text="TABPOS dw 128 dup ( ?)"></Run>
+                                 <LineBreak/>
+                             <Run Text="TABNEG dw 128 dup ( ?)"></Run>
+                                 <LineBreak/>
+                             <Run Text="TAB dw -15,45,257,-789,10,14,-78,79,45,0,14,12,13,-45,78,-78,-45"></Run>
+                                 <LineBreak/>
+                            <Run Text=".code"></Run>
+                                 <LineBreak/>
+                            <Run Text="Debut :"></Run>
+                                 <LineBreak/>
+                             <Run Text="MOV AX, @DATA"></Run>
+                                 <LineBreak/>
+                             <Run Text="MOV DS,AX"></Run>
+                                 <LineBreak/>
+                            <Run Text="MOV SI,0 ; index pour parcourir TABNEG"></Run>
+                                 <LineBreak/>
+                            <Run Text="MOV DI,0 ; index pour parcourir TABPOS"></Run>
+                                 <LineBreak/>
+                            <Run Text="MOV BX,0 ; index pour parcourir TABNEG"></Run>
+                                 <LineBreak/>
+                            <Run Text="MOV CX,128 ; la taille de TAB"></Run>
+                                 <LineBreak/>
+                            <Run Text="Repeter:"></Run>
+                                 <LineBreak/>
+                            <Run Text="MOV AX,TAB[BX]"></Run>
+                                 <LineBreak/>
+                            <Run Text="CMP AX,0 ; si TAB(BX) inf 0 alors"></Run>
+                                 <LineBreak/>
+                            <Run Text="JNL Sinon"></Run>
+                                 <LineBreak/>
+                            <Run Text="MOV TABNEG[SI],AX ; TABNEG(SI):=TAB(BX)"></Run>
+                                 <LineBreak/>
+                            <Run Text="ADD SI,2 ; SI :=SI+2"></Run>
+                                 <LineBreak/>
+                            <Run Text="JMP Fsi ; sinon"></Run>
+                                 <LineBreak/>
+                            <Run Text="Sinon : MOV TABPOS[DI],AX ; TABPOS(DI)=TAB(BX)"></Run>
+                                 <LineBreak/>
+                            <Run Text="ADD DI,2 ; DI:=DI+1"></Run>
+                                 <LineBreak/>
+                            <Run Text="Fsi : ADD BX,2 ; Fsi"></Run>
+                                 <LineBreak/>
+                            <Run Text="LOOP repeater ; CX:=CX-1"></Run>
+                                 <LineBreak/>
+                            <Run Text="MOV AH,4CH"></Run>
+                                 <LineBreak/>
+                            <Run Text="INT 21H"></Run>
+                                 <LineBreak/>
+                             <Run Text="END DEBUT"></Run>
+                                 <LineBreak/>
+
+                        </TextBlock>
+
+
+
+
+                    </ScrollViewer>
+
+
+
+
+                </Grid>
+            </Border>
+
+
+        </Grid>
+        <Grid Grid.Row="4" Grid.Column="1" Margin="0 0 450 0">
+        <Button  x:Name="AfficherLaSolution" Style="{StaticResource RoundedButtonStyle}" Height="45"
+                    Background="#90CAF9"
+                    Foreground="white"
+                    BorderBrush="#90CAF9"
+                    Margin="0 5 100 0"  
+                 Visibility="Visible"
+                 Click="Solut"
+                  
+                    >
+
+                <TextBlock Text="Afficher La Solution" TextAlignment="Center" Padding="7"
+                               FontFamily="Montserrat"
+                               FontSize="18" FontWeight="Normal"
+                               />
+               
+        </Button>
+        <Button x:Name="RevenirVersEnonce"  Style="{StaticResource RoundedButtonStyle}" Height="45"
+                    Background="#90CAF9"
+                    Foreground="white"
+                    BorderBrush="#90CAF9"
+                    Margin="0 5 100 0"  
+                 Visibility="Hidden"
+                Click="Enon"
+                  
+                    >
+
+                <TextBlock Text="Revenir vers l'enonce" TextAlignment="Center" Padding="7"
+                               FontFamily="Montserrat"
+                               FontSize="18" FontWeight="Normal"
+                               />
+
+            </Button>
+        </Grid>
+
+
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1"  >
+
+            <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
+                    Background="#90CAF9"
+                    Foreground="white"
+                    BorderBrush="#90CAF9"
+                    Margin="0 5 50 0"  x:Name="Button3" Click="Suivant"
+                    
+                    >
+
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
+                    <TextBlock Text="Suivant" TextAlignment="Center" Padding="7"
+                               FontFamily="Montserrat"
+                               FontSize="22" FontWeight="Normal"
+                               />
+                    <Image Source="/Pages/images/suivant.png" Height="15" Width="Auto" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+
+        </StackPanel>
+
+    </Grid>
+
+
+</Page>

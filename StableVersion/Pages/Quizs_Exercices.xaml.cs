@@ -54,6 +54,11 @@ namespace projet.Pages
             DisplayData1TextBlock1.Text = tab2[randomNumber];
 
         }
+        private void GoToExerciceTypeMenu(object sender, RoutedEventArgs e)
+        {
+
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/ExerciceTypeMenu.xaml", UriKind.RelativeOrAbsolute));
+        }
 
         private void toExoPage(object sender, MouseButtonEventArgs e)
         {

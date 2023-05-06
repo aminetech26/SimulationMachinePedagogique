@@ -51,6 +51,8 @@
     <None Remove="Pages\decalage.png" />
     <None Remove="Pages\images\1pas.png" />
     <None Remove="Pages\images\accueil.png" />
+    <None Remove="Pages\images\Actualiser.png" />
+    <None Remove="Pages\images\C.E.I page 1.png" />
     <None Remove="Pages\images\carre.png" />
     <None Remove="Pages\images\cei.png" />
     <None Remove="Pages\images\cei2.png" />
@@ -67,8 +69,11 @@
     <None Remove="Pages\images\CEI\transfert1.png" />
     <None Remove="Pages\images\CEI\xor.png" />
     <None Remove="Pages\images\checkmark.png" />
+    <None Remove="Pages\images\Choix-Simulation.png" />
     <None Remove="Pages\images\code.png" />
     <None Remove="Pages\images\cryon.png" />
+    <None Remove="Pages\images\enregistrer.png" />
+    <None Remove="Pages\images\Exemples deja prets.png" />
     <None Remove="Pages\images\ExercicesTypes.png" />
     <None Remove="Pages\images\false.png" />
     <None Remove="Pages\images\fermer.png" />
@@ -80,13 +85,22 @@
     <None Remove="Pages\images\ktab.png" />
     <None Remove="Pages\images\language.png" />
     <None Remove="Pages\images\Line 53.png" />
+    <None Remove="Pages\images\Page d%27acceuil.png" />
+    <None Remove="Pages\images\Page de simulation Instructions.png" />
+    <None Remove="Pages\images\Page de simulation [Programme].png" />
+    <None Remove="Pages\images\pencil1.png" />
     <None Remove="Pages\images\precedent.png" />
     <None Remove="Pages\images\Precedent1.png" />
+    <None Remove="Pages\images\Programme 1.png" />
+    <None Remove="Pages\images\Programme 2.png" />
     <None Remove="Pages\images\puce.png" />
     <None Remove="Pages\images\Q.png" />
     <None Remove="Pages\images\qst.png" />
     <None Remove="Pages\images\qst1.png" />
     <None Remove="Pages\images\quiz.png" />
+    <None Remove="Pages\images\Quiz_Page_2.png" />
+    <None Remove="Pages\images\Quiz_Page_Principal.png" />
+    <None Remove="Pages\images\Quiz_Page_Secondaire.png" />
     <None Remove="Pages\images\RappelDuCours.png" />
     <None Remove="Pages\images\rectangle.png" />
     <None Remove="Pages\images\retour.png" />
@@ -97,6 +111,7 @@
     <None Remove="Pages\images\siteweb.png" />
     <None Remove="Pages\images\suivant.png" />
     <None Remove="Pages\images\Suivant1.png" />
+    <None Remove="Pages\images\VectorRight.png" />
     <None Remove="Pages\input.png" />
     <None Remove="Pages\maths.png" />
     <None Remove="Pages\not.png" />
@@ -153,6 +168,8 @@
   <ItemGroup>
     <Resource Include="Pages\images\1pas.png" />
     <Resource Include="Pages\images\accueil.png" />
+    <Resource Include="Pages\images\Actualiser.png" />
+    <Resource Include="Pages\images\C.E.I page 1.png" />
     <Resource Include="Pages\images\carre.png" />
     <Resource Include="Pages\images\cei.png" />
     <Resource Include="Pages\images\cei2.png" />
@@ -170,6 +187,8 @@
     <Resource Include="Pages\images\checkmark.png" />
     <Resource Include="Pages\images\code.png" />
     <Resource Include="Pages\images\cryon.png" />
+    <Resource Include="Pages\images\enregistrer.png" />
+    <Resource Include="Pages\images\Exemples deja prets.png" />
     <Resource Include="Pages\images\ExercicesTypes.png" />
     <Resource Include="Pages\images\false.png" />
     <Resource Include="Pages\images\fermer.png" />
@@ -191,8 +210,14 @@
     <Resource Include="Pages\images\ktab.png" />
     <Resource Include="Pages\images\language.png" />
     <Resource Include="Pages\images\Line 53.png" />
+    <Resource Include="Pages\images\Page d'acceuil.png" />
+    <Resource Include="Pages\images\Page de simulation Instructions.png" />
+    <Resource Include="Pages\images\Page de simulation [Programme].png" />
+    <Resource Include="Pages\images\pencil1.png" />
     <Resource Include="Pages\images\precedent.png" />
     <Resource Include="Pages\images\Precedent1.png" />
+    <Resource Include="Pages\images\Programme 1.png" />
+    <Resource Include="Pages\images\Programme 2.png" />
     <Resource Include="Pages\images\puce.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -200,6 +225,9 @@
     <Resource Include="Pages\images\qst.png" />
     <Resource Include="Pages\images\qst1.png" />
     <Resource Include="Pages\images\quiz.png" />
+    <Resource Include="Pages\images\Quiz_Page_2.png" />
+    <Resource Include="Pages\images\Quiz_Page_Principal.png" />
+    <Resource Include="Pages\images\Quiz_Page_Secondaire.png" />
     <Resource Include="Pages\images\RappelDuCours.png" />
     <Resource Include="Pages\images\rectangle.png" />
     <Resource Include="Pages\images\retour.png" />
@@ -212,6 +240,7 @@
     <Resource Include="Pages\images\siteweb.png" />
     <Resource Include="Pages\images\suivant.png" />
     <Resource Include="Pages\images\Suivant1.png" />
+    <Resource Include="Pages\images\VectorRight.png" />
   </ItemGroup>
 
 </Project>

@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj": {}
+    "C:\\Users\\TRETEC\\Videos\\SimulationMachinePedagogique\\StableVersion\\projet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj": {
+    "C:\\Users\\TRETEC\\Videos\\SimulationMachinePedagogique\\StableVersion\\projet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj",
+        "projectUniqueName": "C:\\Users\\TRETEC\\Videos\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
         "projectName": "projet",
-        "projectPath": "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\obj\\",
+        "projectPath": "C:\\Users\\TRETEC\\Videos\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+        "packagesPath": "C:\\Users\\TRETEC\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\TRETEC\\Videos\\SimulationMachinePedagogique\\StableVersion\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\TRETEC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
