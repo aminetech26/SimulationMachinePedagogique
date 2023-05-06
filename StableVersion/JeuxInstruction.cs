@@ -93,7 +93,7 @@ namespace ArchiMind
 
              // l'intialisation des format de l'istruction MUL // index = 4
              mycouple = new CoupleCopFormat();
-             instruction=new Instruction("Reg16/mem16","11110111xx100xxx","100");  // the result will be saved in AX if it's in 16bit ... 
+             instruction=new Instruction("Reg16/Mem16","11110111xx100xxx","100");  // the result will be saved in AX if it's in 16bit ... 
              mycouple.addInstruction(instruction);                                 // if it's in 32 bit it'll be saved in DX:AX 
              detailInstruction.Add(mycouple);
 
@@ -104,7 +104,7 @@ namespace ArchiMind
          mycouple.addInstruction(instruction);
          instruction=new Instruction("Reg16/Mem16,Reg16","10001001xxxxxxxx");
          mycouple.addInstruction(instruction);
-         instruction=new Instruction("Reg16/Mem16,imm16","10100111xx000xxx","000");
+         instruction=new Instruction("Reg16/Mem16,imm16", "10100111xx000xxx","000"); //A7 1100 0000
          mycouple.addInstruction(instruction);
          instruction=new Instruction("Reg16,imm16","10101xxx");
          mycouple.addInstruction(instruction);
@@ -351,7 +351,6 @@ namespace ArchiMind
        
 
         public string recherche_reg(string reg){
-          reg = "BX";
           string reg_binaire="";
           int regvalue_decimal=0;
           Registers_enum myreg=(Registers_enum)Enum.Parse(typeof(Registers_enum),reg);
@@ -377,16 +376,16 @@ namespace ArchiMind
             myinstruction = recherche_instruction(detailInstruction.ElementAt(index_of_mnemonique), "Reg16/Mem16,imm16");
             instruction_binaire=myinstruction.getCop();
             Console.WriteLine(instruction_binaire);
-            if(Reg_mem[0].Equals("[")){
+            if(Reg_mem[0]=='['){
                if(ifdepl){
-                      mod_binaire="00";
+                      mod_binaire="10";
                       r_m_binaire=recherche_mem_depl(Reg_mem);
                       instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
                       instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
                       // j pas compris pourquoi tu traite l'instruction seul 
                       instruction_binaire=instruction_binaire+" "+HexStringToBinary(deplval);
                }else{
-                      mod_binaire="10";
+                      mod_binaire="00";
                       r_m_binaire=recherche_mem_sansdepl(Reg_mem);
                       instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);            
                       instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
@@ -397,7 +396,7 @@ namespace ArchiMind
               instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
               instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
             }
-          instruction_binaire=instruction_binaire+" "+HexStringToBinary(imm16_val);
+          instruction_binaire=instruction_binaire+HexStringToBinary(imm16_val);
            Console.WriteLine("the instruction "+instruction_binaire);
            return instruction_binaire;
         }  
@@ -411,7 +410,7 @@ namespace ArchiMind
             // il faut traiter le cas ou le format ne figure pas dans l'instruction 
             myinstruction = recherche_instruction(detailInstruction.ElementAt(index_of_mnemonique),"AX,imm16");
             instruction_binaire=myinstruction.getCop();
-            instruction_binaire=instruction_binaire+""+HexStringToBinary(imm16_val);
+            instruction_binaire=instruction_binaire+HexStringToBinary(imm16_val);
             Console.WriteLine("the instruction : "+instruction_binaire);
             return instruction_binaire;
         }   
@@ -470,34 +469,41 @@ namespace ArchiMind
                instruction_binaire=myinstruction.getCop();
                 reg_binaire=recherche_reg(reg);
                 /*result = original.Substring(0,start) + replacement + original.Substring(start + length);Console.WriteLine(result);*/
-                instruction_binaire=instruction_binaire.Substring(0,10)+reg_binaire+instruction_binaire.Substring(13);
+              //  instruction_binaire=instruction_binaire.Substring(0,10)+reg_binaire+instruction_binaire.Substring(13);
                 Console.WriteLine(instruction_binaire);
-            if (reg_mem[0].Equals("["))
+            if (reg_mem[0]=='[')
             {
                 if (ifdepl)
                 {
-                    mod_binaire = "00";
+                    mod_binaire = "10";
                     r_m_binaire = recherche_mem_depl(reg_mem);
-                    instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
-                    instruction_binaire = instruction_binaire.Replace("xx", mod_binaire);
-                    instruction_binaire = instruction_binaire + " " + HexStringToBinary(deplval);
+                    // instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
+                    //instruction_binaire = instruction_binaire.Replace("xx", mod_binaire);
+                    instruction_binaire = instruction_binaire.Substring(0, 10) + r_m_binaire + instruction_binaire.Substring(13);
+                    instruction_binaire = instruction_binaire.Substring(0, 8) + mod_binaire + instruction_binaire.Substring(10);
+                    instruction_binaire = instruction_binaire + HexStringToBinary(deplval);
                 }
                 else
                 {
-                    mod_binaire = "10";
+                    mod_binaire = "00";
                     r_m_binaire = recherche_mem_sansdepl(reg_mem);
-                    instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
-                    instruction_binaire = instruction_binaire.Replace("xx", mod_binaire);
+                    //instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
+                    //instruction_binaire = instruction_binaire.Replace("xx", mod_binaire);
+                    instruction_binaire = instruction_binaire.Substring(0, 10) + r_m_binaire + instruction_binaire.Substring(13);
+                    instruction_binaire = instruction_binaire.Substring(0, 8) + mod_binaire + instruction_binaire.Substring(10);
                 }
             }
             else
             {
                 mod_binaire = "11";
                 r_m_binaire = recherche_reg(reg_mem);
-                instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
-                instruction_binaire = instruction_binaire.Replace("xx", mod_binaire);
+                // instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
+                //instruction_binaire = instruction_binaire.Replace("xx", mod_binaire);
+                instruction_binaire = instruction_binaire.Substring(0, 10) + r_m_binaire + instruction_binaire.Substring(13);
+                instruction_binaire = instruction_binaire.Substring(0, 8) + mod_binaire + instruction_binaire.Substring(10);
             }
-          Console.WriteLine("the instruction "+instruction_binaire);
+            instruction_binaire = instruction_binaire.Replace("xxx", reg_binaire);
+            Console.WriteLine("the instruction "+instruction_binaire);
            return instruction_binaire;    
         }
         // this is INST Reg16 , Reg16/mem16 c
@@ -516,25 +522,26 @@ namespace ArchiMind
                 /*result = original.Substring(0,start) + replacement + original.Substring(start + length);Console.WriteLine(result);*/
                 instruction_binaire=instruction_binaire.Substring(0,10)+reg_binaire+instruction_binaire.Substring(13);
                 Console.WriteLine(instruction_binaire);
-               if(reg_mem[0].Equals("[")){
-               if(ifdepl){
-                      mod_binaire="00";
+               if(reg_mem[0]=='['){
+                    if(ifdepl){
+                      mod_binaire="10";
                       r_m_binaire=recherche_mem_depl(reg_mem);
                       instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
                       instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
-                      instruction_binaire=instruction_binaire+" "+HexStringToBinary(deplval);
-               }else{
-                      mod_binaire="10";
+                      instruction_binaire=instruction_binaire+HexStringToBinary(deplval);
+                     }else{
+                      mod_binaire="00";
                       r_m_binaire=recherche_mem_sansdepl(reg_mem);
                       instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);            
                       instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
-               }
-            }else{
+                        }
+               }else{
               mod_binaire="11";
               r_m_binaire=recherche_reg(reg_mem);
               instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
               instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
             }
+
           Console.WriteLine("the instruction "+instruction_binaire);
            return instruction_binaire;    
         }
@@ -547,18 +554,18 @@ namespace ArchiMind
             int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
             Instruction myinstruction= new Instruction(); 
             //Console.WriteLine(index_of_mnemonique);              
-            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"Reg16/mem16,CX");
+            myinstruction = recherche_instruction(detailInstruction.ElementAt(index_of_mnemonique), "Reg16/mem16,CX");
             instruction_binaire=myinstruction.getCop();
             Console.WriteLine(instruction_binaire);
-            if(Reg_mem[0].Equals("[")){
+            if(Reg_mem[0]=='['){
                if(ifdepl){
-                      mod_binaire="00";
+                      mod_binaire="10";
                       r_m_binaire=recherche_mem_depl(Reg_mem);
                       instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);
                       instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
-                      instruction_binaire=instruction_binaire+" "+HexStringToBinary(deplval);
+                      instruction_binaire=instruction_binaire+HexStringToBinary(deplval);
                }else{
-                      mod_binaire="10";
+                      mod_binaire="00";
                       r_m_binaire=recherche_mem_sansdepl(Reg_mem);
                       instruction_binaire=instruction_binaire.Replace("xxx",r_m_binaire);            
                       instruction_binaire=instruction_binaire.Replace("xx",mod_binaire);
@@ -577,7 +584,7 @@ namespace ArchiMind
         string mem_binaire=""; 
         int index_of_mnemonique =recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
         Instruction myinstruction = new Instruction();
-        myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique],"mem16");
+        myinstruction = recherche_instruction(detailInstruction.ElementAt(index_of_mnemonique), "mem16");
         instruction_binaire = myinstruction.getCop(); 
          // l'instruction jmp est un cas particulier  
         if (instruction_binaire.IndexOf('x')==13){
@@ -624,7 +631,7 @@ namespace ArchiMind
             string r_m_binaire;
             int index_of_mnemonique = recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
             Instruction myinstruction = new Instruction();
-            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique], "AX,imm16");
+            myinstruction = recherche_instruction(detailInstruction.ElementAt(index_of_mnemonique), "AX,imm16");
             instruction_binaire = myinstruction.getCop();
             r_m_binaire = recherche_reg(Reg16);
             instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
@@ -637,9 +644,8 @@ namespace ArchiMind
             string instruction_binaire;
             string r_m_binaire;
             int index_of_mnemonique = recherche_index_mnemonique(inst);
-            index_of_mnemonique = 2;// this will return the index of where i can have access to all the format and cop of "inst"
             Instruction myinstruction = new Instruction();
-            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique], "Reg16,imm16");
+            myinstruction = recherche_instruction(detailInstruction.ElementAt(index_of_mnemonique), "Reg16,imm16");
             instruction_binaire = myinstruction.getCop();
             r_m_binaire = recherche_reg(Reg16);
             instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
@@ -654,21 +660,21 @@ namespace ArchiMind
             string mod_binaire;
             int index_of_mnemonique = recherche_index_mnemonique(inst); // this will return the index of where i can have access to all the format and cop of "inst"
             Instruction myinstruction = new Instruction();
-            myinstruction = recherche_instruction((CoupleCopFormat)detailInstruction[index_of_mnemonique], "Reg16/Mem16");
+            myinstruction = recherche_instruction(detailInstruction.ElementAt(index_of_mnemonique), "Reg16/Mem16");
             instruction_binaire = myinstruction.getCop();
-            if (Reg_mem[0].Equals("["))
+            if (Reg_mem[0]=='[')
             {
                 if (ifdepl)
                 {
-                    mod_binaire = "00";
+                    mod_binaire = "10";
                     r_m_binaire = recherche_mem_depl(Reg_mem);
                     instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
                     instruction_binaire = instruction_binaire.Replace("xx", mod_binaire);
-                    instruction_binaire = instruction_binaire + " " + HexStringToBinary(deplval);//hna dert padleft 7eta l 12 bits brk pasq deplacement max 3 f l'hexa - memoire sghira
+                    instruction_binaire = instruction_binaire + HexStringToBinary(deplval);//hna dert padleft 7eta l 12 bits brk pasq deplacement max 3 f l'hexa - memoire sghira
                 }
                 else
                 {
-                    mod_binaire = "10";
+                    mod_binaire = "00";
                     r_m_binaire = recherche_mem_sansdepl(Reg_mem);
                     instruction_binaire = instruction_binaire.Replace("xxx", r_m_binaire);
                     instruction_binaire = instruction_binaire.Replace("xx", mod_binaire);
@@ -3301,7 +3307,7 @@ public static void executer_simulation_phase_a_phase(string type_exec, string mn
             switch (inst.getFormat())
             {
                 case "AX,imm16":
-                    binaryforme = remplir_AX_imm16(inst.getMnemonique(),"0000100010100000");
+                    binaryforme = remplir_AX_imm16(inst.getMnemonique(),inst.getSource());
                     break;
                 case "Reg16/Mem16,imm16":
                     binaryforme = remplir_Reg_mem_imm16(inst.getMnemonique(), inst.getDestination(), inst.getifdepl(), inst.getValDepl(), inst.getSource());
@@ -3310,7 +3316,7 @@ public static void executer_simulation_phase_a_phase(string type_exec, string mn
                     binaryforme = remplir_reg_mem_reg(inst.getMnemonique(), inst.getSource(), inst.getDestination(), inst.getifdepl(), inst.getValDepl());
                     break;
                 case "Reg16,Reg16/Mem16":
-                    binaryforme = remplir_reg_reg_mem(inst.getMnemonique(), inst.getDestination(), inst.getSource(), inst.getifdepl(), inst.getValDepl());
+                    binaryforme = remplir_reg_reg_mem(inst.getMnemonique(), inst.getSource(), inst.getDestination(),  inst.getifdepl(), inst.getValDepl());
                     break;
                 case "Reg16":
                     binaryforme = remplir_reg16(inst.getMnemonique(), inst.getDestination());
@@ -3350,12 +3356,27 @@ public static void executer_simulation_phase_a_phase(string type_exec, string mn
             return hexaforme;
         }
         //---------------------------------------------------------------------------------------------------------
-       
+        public static bool IsValidBinary(string binaryString)
+        {
+            foreach (char c in binaryString)
+            {
+                if (c != '0' && c != '1')
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
         public static string BinaryStringToHexString(string binaryString)
         {
             if (string.IsNullOrEmpty(binaryString))
             {
-                return string.Empty;
+                return "fargh";
+            }
+            if (!IsValidBinary(binaryString))
+            {
+                return "not binaire";
             }
 
             // Pad the binary string with zeroes to ensure its length is a multiple of 4

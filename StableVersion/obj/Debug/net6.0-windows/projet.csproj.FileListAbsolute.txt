@@ -1313,3 +1313,5 @@ C:\Users\abdrahman akhrib\OneDrive\Desktop\programme work space\SimulationMachin
 C:\Users\abdrahman akhrib\OneDrive\Desktop\programme work space\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\projet.pdb
 C:\Users\abdrahman akhrib\OneDrive\Desktop\programme work space\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\projet.genruntimeconfig.cache
 C:\Users\abdrahman akhrib\OneDrive\Desktop\programme work space\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ref\projet.dll
+C:\Users\Administrator\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Quizs_Exercices.g.cs
+C:\Users\Administrator\Music\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Quizs_Exercices.baml

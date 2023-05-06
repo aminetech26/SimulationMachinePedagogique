@@ -93,7 +93,7 @@ namespace projet
                     ComboBox3.ItemsSource = new List<string> { "Reg16", "Reg16/Mem16" };
                     break;
                 case "MUL":
-                    ComboBox3.ItemsSource = new List<string> { "Reg16" };
+                    ComboBox3.ItemsSource = new List<string> { "Reg16/Mem16" };
                     break;
                 
                 case "MOV":
