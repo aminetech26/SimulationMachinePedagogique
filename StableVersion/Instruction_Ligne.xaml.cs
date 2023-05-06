@@ -226,7 +226,7 @@ namespace projet
 
                         case "Reg16/Mem16,CX":
                             ComboBox6.ItemsSource = new List<string> { "AX", "BX", "DX", "BP", "SP", "SI", "DI" };
-                            ComboBox7.ItemsSource = new List<string> { "CX" };
+                            ComboBox7.IsEnabled= false;
                             break;
 
                         case "AX,Reg16":

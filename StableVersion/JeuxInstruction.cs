@@ -5,6 +5,7 @@ using System.Globalization;
 using System.IO;
 using System.Numerics;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace ArchiMind
 {
@@ -3122,26 +3123,26 @@ public static void executer_simulation_phase_a_phase(string type_exec, string mn
                     my_first_part = "AX";
                     break;
                 case "DX,AX":
-                case "DX,mem16":
+                case "DX,Mem16":
                     my_first_part = "DX";
                     break;
                 case "Reg16/Mem16,imm16":
-                case "Reg16/mem16":
-                case "Reg16/mem16,imm8":
-                case "Reg16/mem16,CX":
+                case "Reg16/Mem16":
+                case "Reg16/Mem16,CX":
+                case "Reg16/Mem16,Reg16":
                     my_first_part = case_reg_mem(instruction);
                     break;
-                case "Reg16,Reg16/mem16":
+                case "Reg16,Reg16/Mem16":
                 case "Reg16,imm16":
                 case "Reg16":
                     my_first_part = case_reg(instruction);
                     break;
-                case "mem16,DX":
-                case "mem16":
+                case "Mem16,DX":
+                case "Mem16":
                     my_first_part = case_mem(instruction);
                     break;
                 default:
-                    my_first_part = "error";
+                    my_first_part = "";
                     break;
             }
             return my_first_part;
@@ -3161,18 +3162,18 @@ public static void executer_simulation_phase_a_phase(string type_exec, string mn
         // -------------------------------------
         public string case_reg(Instruction instruction) // Inst reg, ....
         {
-            return instruction.getSource();
+            return instruction.getDestination();
         }
         //--------------------------------------
         public string case_mem(Instruction instruction)
         { // Inst mem, ....
             if (instruction.getifdepl())
             {
-                return instruction.getSource().Replace("XXXX", instruction.getValDepl());
+                return instruction.getDestination().Replace("DEP", instruction.getValDepl());
             }
             else
             {
-                return instruction.getSource();
+                return instruction.getDestination();
             }
         }
         //----------------------------------------------------------
@@ -3182,68 +3183,68 @@ public static void executer_simulation_phase_a_phase(string type_exec, string mn
             switch (instruction.getFormat())
             {
                 case "AX,DX":
-                case "mem16,DX":
+                case "Mem16,DX":
                     my_second_part = ",DX";
                     break;
                 case "DX,AX":
                     my_second_part = ",AX";
                     break;
-                case "Reg16/mem16,CX":
+                case "Reg16/Mem16,CX":
                     my_second_part = ",CX";
                     break;
-                case "Reg16,Reg16/mem16":
-                    my_second_part = "," + des_case_reg_mem(instruction);
+                case "Reg16,Reg16/Mem16":
+                    my_second_part = "," + src_case_reg_mem(instruction);
                     break;
-                case "DX,mem16":
-                    my_second_part = "," + des_case_mem(instruction);
+                case "DX,Mem16":
+                    my_second_part = "," + src_case_mem(instruction);
                     break;
-                case "Reg16/mem16":
+                case "Reg16/Mem16":
                 case "Reg16":
-                case "mem16":
+                case "Mem16":
                     my_second_part = "";
                     break;
                 case "AX,imm16":
                 case "Reg16/Mem16,imm16":
-                case "Reg16/mem16,imm8":
                 case "Reg16,imm16":
                     my_second_part = "," + instruction.getval_imm16();
                     break;
                 case "AX,Reg16":
-                    my_second_part = "," + des_case_reg(instruction);
+                case "Reg16/Mem16,Reg16":
+                    my_second_part = "," + src_case_reg(instruction);
                     break;
                 default:
-                    my_second_part = "error";
+                    my_second_part = "";
                     break;
             }
             return my_second_part;
         }
         // ----------------------------------------
-        public string des_case_reg_mem(Instruction instruction)
+        public string src_case_reg_mem(Instruction instruction)
         {
             if (instruction.getmem())
             {
-                return des_case_mem(instruction);
+                return src_case_mem(instruction);
             }
             else // case of register {AX,BX ...}
             {
-                return des_case_reg(instruction);
+                return src_case_reg(instruction);
             }
         }
         // -------------------------------------
-        public string des_case_reg(Instruction instruction) // Inst reg, ....
+        public string src_case_reg(Instruction instruction) // Inst reg, ....
         {
-            return instruction.getDestination();
+            return instruction.getSource();
         }
         //--------------------------------------
-        public string des_case_mem(Instruction instruction)
+        public string src_case_mem(Instruction instruction)
         { // Inst mem, ....
             if (instruction.getifdepl())
             {
-                return instruction.getDestination().Replace("XXXX", instruction.getValDepl());
+                return instruction.getSource().Replace("DEP", instruction.getValDepl());
             }
             else
             {
-                return instruction.getDestination();
+                return instruction.getSource();
             }
         }
 
