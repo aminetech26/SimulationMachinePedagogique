@@ -24,21 +24,22 @@ namespace projet.Pages
         public CEI()
         {
             InitializeComponent();
-            
-            
         }
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
             if (e.NewSize.Width >= 1000)
             {
-                Button1.Margin = new Thickness(25);
-                Button2.Margin = new Thickness(25);
-                Button3.Margin = new Thickness(25);
-                Button4.Margin = new Thickness(25);
-                Button5.Margin = new Thickness(25);
-                Button6.Margin = new Thickness(25);
-
+                
+                Column_button.Width = new GridLength(100);
+                Button.Margin = new Thickness(30, 20, 0, 0);
+                Button1.Margin = new Thickness(30);
+                Button2.Margin = new Thickness(30);
+                Button3.Margin = new Thickness(30);
+                Button4.Margin = new Thickness(30);
+                Button5.Margin = new Thickness(30);
+                Button6.Margin = new Thickness(30);
+                
                 Column1.Width = new GridLength(300);
                 Column2.Width = new GridLength(300);
                 Column3.Width = new GridLength(300);
@@ -49,12 +50,15 @@ namespace projet.Pages
             }
             else
             {
-                Button1.Margin = new Thickness(5);
-                Button2.Margin = new Thickness(5);
-                Button3.Margin = new Thickness(5);
-                Button4.Margin = new Thickness(5);
-                Button5.Margin = new Thickness(5);
-                Button6.Margin = new Thickness(5);
+
+                Column_button.Width = new GridLength(75) ;
+                Button.Margin = new Thickness(25,20,0,0);
+                Button1.Margin = new Thickness(15);
+                Button2.Margin = new Thickness(15);
+                Button3.Margin = new Thickness(15);
+                Button4.Margin = new Thickness(15);
+                Button5.Margin = new Thickness(15);
+                Button6.Margin = new Thickness(15);
 
                 Column1.Width = new GridLength(225);
                 Column2.Width = new GridLength(225);
@@ -64,7 +68,6 @@ namespace projet.Pages
                 Row2.Height = new GridLength(225);
 
             }
-           
 
         }
 
@@ -72,6 +75,26 @@ namespace projet.Pages
         private void GoToArith(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page2.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void GoToPage3(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page3.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageSimulateur.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void GoToEntreeSortie(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page_EntreeSortie.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void GoToDecalage(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page_Decalage.xaml", UriKind.RelativeOrAbsolute));
         }
 
     }

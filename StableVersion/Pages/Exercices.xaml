@@ -6,280 +6,92 @@
       xmlns:local="clr-namespace:projet.Pages"
       xmlns:Menu="clr-namespace:projet.Utilities"
       mc:Ignorable="d" 
-      Height="Auto" Width="Auto" 
+      d:DesignHeight="600" d:DesignWidth="800"
       Title="Exercices">
 
-    <Grid SizeChanged="Grid_SizeChanged" >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="228" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
 
-        <!--// Navigation Panel //-->
+    <Grid SizeChanged="Grid_SizeChanged" Background="#DAF3FF" >
 
-        <Grid HorizontalAlignment="Left" Width="228" Grid.Column="0">
-            <Border Background="#fff"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
 
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="80" />
-                    <RowDefinition Height="*" />
-                </Grid.RowDefinitions>
-
-                <Grid Grid.Row="0">
-
-                    <Image Width="70" 
-                                    HorizontalAlignment="Center" Margin="0,10,0,0"
-                                       VerticalAlignment="Center" Source="/Pages/images/intel.png"/>
-
-
-                </Grid>
-
-
-                <Grid Grid.Row="1">
-
-
-                    <StackPanel HorizontalAlignment="Center" Height="360" 
-                                            VerticalAlignment="Center"
-                                            Margin="0,-80,0,0">
-
-                        <Menu:Btn Style="{StaticResource BtnStyle}"
-                                          
-                                          VerticalAlignment="Top"  >
-                            <Grid >
-                                <Grid>
-
-                                    <Image
-                                                   Style="{StaticResource Image_Style}" 
-                                                    Source="/Pages/images/accueil.png" 
-                                                    
-                                                       />
-
-                                    <TextBlock Text="Accueil"
-                                               Style="{StaticResource Text_Style}"
-                                               PreviewMouseDown="BackHomeFromExo"        />
-
-
-                                </Grid>
-                                <StackPanel  HorizontalAlignment="Center" 
-                                                VerticalAlignment="Bottom">
-                                    <Border  Height="5"  Width="200"  
-                                                 Background="#E0E0E0" Margin="0,0,0,-25" />
-
-
-                                </StackPanel>
-                            </Grid>
-
-                        </Menu:Btn>
-
-
-
-
-
-                        <Menu:Btn Style="{StaticResource BtnStyle}"
-                                             
-                                              Margin="0,70,0,0">
-
-                            <Grid>
-
-                                <Image Source="/Pages/images/siteweb.png"
-                                                  Style="{StaticResource Image_Style}" />
-
-                                <TextBlock Text="Site Web"
-                                                       Style="{StaticResource Text_Style}" />
-
-                            </Grid>
-
-                        </Menu:Btn>
-
-                        <!--// Products //-->
-
-                        <Menu:Btn Style="{StaticResource BtnStyle}"
-                                              >
-
-                            <Grid>
-
-                                <Image Source="/Pages/images/cei.png"
-                                                   Style="{StaticResource Image_Style}" />
-
-                                <TextBlock Text="C.E.I"
-                                           Style="{StaticResource Text_Style}"
-                                           PreviewMouseDown="BackCEI"          />
-
-                            </Grid>
-
-                        </Menu:Btn>
-
-                        <!--// Orders //-->
-
-                        <Menu:Btn Style="{StaticResource BtnStyle}"
-                                  
-                                  IsChecked="True">
-
-                            <Grid>
-
-                                <Image Source="/Pages/images/quiz.png"
-                                       Style="{StaticResource Image_Style}" />
-
-                                <TextBlock Text="Quiz"
-                                           Style="{StaticResource Text_Style}" 
-                                          PreviewMouseDown="BackQuiz" />
-
-                            </Grid>
-
-                        </Menu:Btn>
-
-                        <!--// Transactions //-->
-
-                        <Menu:Btn Style="{StaticResource BtnStyle}"
-                                             >
-
-                            <Grid>
-
-                                <Image Source="/Pages/images/1pas.png"
-                                       Style="{StaticResource Image_Style}" />
-
-                                <TextBlock Text="Premier Pas"
-                                           Style="{StaticResource Text_Style}" />
-
-                            </Grid>
-
-                        </Menu:Btn>
-
-
-
-
-                    </StackPanel>
-
-
-
-                    <Menu:Btn Style="{StaticResource BtnStyle}"
-                                            
-                                           VerticalAlignment="Bottom"
-                                           Margin="0,0,0,20" >
-
+        <StackPanel Orientation="Horizontal" Width="Auto" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" >
+            <Button x:Name="Button" Width="27" Height="Auto" BorderThickness="0" HorizontalAlignment="Left"
+                        VerticalAlignment="Center" Margin="30 0 20 0" Click="BackQuiz" >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
                         <Grid>
-                            <StackPanel Height="30" HorizontalAlignment="Center" 
-                                                            VerticalAlignment="Top">
-                                <Border  Height="5"  Width="200"  
-                                                                    Background="#E0E0E0" Margin="0,-25,0,0" />
-
-
-                            </StackPanel>
-
-
-                            <Image Source="/Pages/images/fermer.png"
-                                   Style="{StaticResource Image_Style}" />
-
-                            <TextBlock Text="Fermer"
-                                       Style="{StaticResource Text_Style}" 
-                                       PreviewMouseDown="Fermer" />
-
+                            <Image Source="/Pages/images/revenir.png" Stretch="Uniform" />
                         </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <TextBlock x:Name="Text1" Text="Choisir le chapitre sur lequel vous voulez vous exercez !" FontStyle="Normal" 
+                           FontSize="20" FontWeight="Bold" Padding="30" FontFamily="Open Sans" 
+                           TextAlignment="Center" Foreground="#4E719D" Height="Auto" 
+                           HorizontalAlignment="Center" />
+        </StackPanel>
 
-                    </Menu:Btn>
+        <Grid Grid.Row="1" x:Name="exemples" Margin="0 10 0 0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
 
-
-
-
-
-                </Grid>
-
-
-
-
-            </Grid>
-
-
-
-
-        </Grid>
-
-        <Grid Grid.Column="1">
-
-            <StackPanel Background="#eeee" Grid.Column="0" >
-
-
-            </StackPanel>
-
-            <Grid>
-                <Grid.Background>
-                    <LinearGradientBrush StartPoint="1,1"
-                                         EndPoint="0,0">
-                        <GradientStop Color="#90CAF9" Offset="0" />
-                        <GradientStop Color="#90CAF9" Offset="0.75" />
-                    </LinearGradientBrush>
-                </Grid.Background>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="3*"/>
-                </Grid.RowDefinitions>
-                <StackPanel Orientation="Horizontal" Width="Auto" Margin="0 30 0 0">
-                    <Button Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Left"
-                        VerticalAlignment="Center" Click="BackQuiz"  >
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <Image Source="/Pages/images/revenir.png" Stretch="Uniform"  />
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
-                    <TextBlock x:Name="Text1" Text="Choisir le chapitre sur lequel vous voulez exercer !" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" TextAlignment="Center"  Foreground="#FFFFFF" Height="64" RenderTransformOrigin="0.5,0.734"  />
+            <Button x:Name="Button1" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="10" Grid.Row="0">
+                <StackPanel Orientation="Horizontal" Width="500" >
+                    <Image Source="/Pages/images/ktab.png" Height="Auto" Width="32" RenderTransformOrigin="0.5,10.20" Margin="22,0,0,0"/>
+                    <TextBlock Text="Chapitre 0 : MIASM" TextAlignment="Center" FontFamily="Open Sans"
+                                       FontSize="20" FontWeight="Normal" Width="Auto" Height="Auto"
+                                       Padding="10" Margin="20 0 0 0" />
                 </StackPanel>
-                <Grid Grid.Row="1" Grid.Column="1" Margin="30,10,30,10" >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                        <RowDefinition Height="auto"/>
-                    </Grid.RowDefinitions>
-                    <Button x:Name="Button1" Style="{DynamicResource RoundedButtonStyle}" Height="54" Width="520" Margin="20,10" 
-                        Grid.Row="0"  >
-                        <StackPanel Orientation="Horizontal" Width="520">
-                            <Image Source="/Pages/images/ktab.png" Height="58" Width="33" RenderTransformOrigin="0.5,10.20" Margin="22,0,-10,0"/>
-                            <TextBlock Text="CHAPITRE 0 : MIASM" TextAlignment="Left" FontFamily="Open Sans"
-                                       FontSize="18" FontWeight="Regular" Width="400" Height="54"
-                                       Padding="10" Margin="15 5 11 5" 
-                                   />
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="Button2" Style="{DynamicResource RoundedButtonStyle}" Height="54" Width="520" Margin="20,10" Grid.Row="1">
-                        <StackPanel Orientation="Horizontal" Width="520">
-                            <Image Source="/Pages/images/ktab.png" Height="58" Width="33" RenderTransformOrigin="0.5,10.20" Margin="22,0,-10,0"/>
-                            <TextBlock Text="CHAPITRE 1 : Présentation de la machine" TextAlignment="Left" FontFamily="Open Sans"
-                                       FontSize="18" FontWeight="Regular" Width="400" Height="54"
-                                       Padding="10" Margin="15 5 11 5" />
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="Button3" Style="{DynamicResource RoundedButtonStyle}" Height="54" Width="520" Margin="20,10" Grid.Row="2">
-                        <StackPanel Orientation="Horizontal" Width="520">
-                            <Image Source="/Pages/images/ktab.png" Height="58" Width="33" RenderTransformOrigin="0.5,10.20" Margin="22,0,-10,0"/>
-                            <TextBlock Text="CHAPITRE 2 : Presentatiom du language ASSEMBLEUR" TextAlignment="Left" FontFamily="Open Sans"
-                                       FontSize="18" FontWeight="Regular" Width="500" Height="54"
-                                       Padding="10" Margin="15 5 11 5" />
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="Button4" Style="{DynamicResource RoundedButtonStyle}" Height="54" Width="520" Margin="20,10" Grid.Row="3">
-                        <StackPanel Orientation="Horizontal" Width="520">
-                            <Image Source="/Pages/images/ktab.png" Height="58" Width="33" RenderTransformOrigin="0.5,10.20" Margin="22,0,-10,0"/>
-                            <TextBlock Text="CHAPITRE 3 : Marcos instructions" TextAlignment="Left" FontFamily="Open Sans"
-                                       FontSize="18" FontWeight="Regular" Width="500" Height="54"
-                                       Padding="10" Margin="15 5 11 5" />
-                        </StackPanel>
-                    </Button>
-                    <Button x:Name="Button5" Style="{DynamicResource RoundedButtonStyle}" Height="54" Width="520" Margin="20,10,20,30" Grid.Row="4">
-                        <StackPanel Orientation="Horizontal" Width="520">
-                            <Image Source="/Pages/images/ktab.png" Height="58" Width="33" RenderTransformOrigin="0.5,10.20" Margin="22,0,-10,0"/>
-                            <TextBlock Text="CHAPITRE 4 : Instructions étendues " TextAlignment="Left" FontFamily="Open Sans"
-                                       FontSize="18" FontWeight="Regular" Width="500" Height="54"
-                                       Padding="10" Margin="15 5 11 5" />
-                        </StackPanel>
-                    </Button>
-                </Grid>
-            </Grid>
+            </Button>
+
+            <Button x:Name="Button2" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="1">
+                <StackPanel Orientation="Horizontal" Width="500">
+                    <Image Source="/Pages/images/ktab.png" Height="Auto" Width="32" RenderTransformOrigin="0.5,10.20" Margin="22,0,0,0"/>
+                    <TextBlock Text="Chapitre 1 : Présentation de la machine" TextAlignment="Left" FontFamily="Open Sans"
+                                       FontSize="20" FontWeight="Normal" Width="Auto" Height="Auto"
+                                       Padding="10" Margin="20 0 0 0" />
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="Button3" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="2">
+                <StackPanel Orientation="Horizontal" Width="500">
+                    <Image Source="/Pages/images/ktab.png" Height="Auto" Width="32" RenderTransformOrigin="0.5,10.20" Margin="22,0,0,0"/>
+                    <TextBlock Text="Chapitre 2 : Présentation du langage Assembleur" TextAlignment="Left" FontFamily="Open Sans"
+                                       FontSize="20" FontWeight="Normal" Width="Auto" Height="Auto"
+                                       Padding="10" Margin="20 0 0 0" />
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="Button4" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="3">
+                <StackPanel Orientation="Horizontal" Width="500">
+                    <Image Source="/Pages/images/ktab.png" Height="Auto" Width="32" RenderTransformOrigin="0.5,10.20" Margin="22,0,0,0"/>
+                    <TextBlock Text="Chapitre 3 : Macros instructions" TextAlignment="Left" FontFamily="Open Sans"
+                                       FontSize="20" FontWeight="Normal" Width="Auto" Height="Auto"
+                                       Padding="10" Margin="20 0 0 0" />
+                </StackPanel>
+            </Button>
+
+            <Button x:Name="Button5" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="4">
+                <StackPanel Orientation="Horizontal" Width="500">
+                    <Image Source="/Pages/images/ktab.png" Height="Auto" Width="32" RenderTransformOrigin="0.5,10.20" Margin="22,0,0,0"/>
+                    <TextBlock Text="Chapitre 4 : Instructions étendues" TextAlignment="Left" FontFamily="Open Sans"
+                                       FontSize="20" FontWeight="Normal" Width="Auto" Height="Auto"
+                                       Padding="10" Margin="20 0 0 0" />
+                </StackPanel>
+            </Button>
 
         </Grid>
+
+
     </Grid>
+
+
 </Page>

@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="projet.Instruction_Ligne"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:projet"
+             d:DesignHeight="60" d:DesignWidth="400">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="0.5*" />
+        </Grid.ColumnDefinitions>
+
+        
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Categorie" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="0" x:Name="ComboBox1" SelectionChanged="ComboBox1_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Mnemonique" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="1" x:Name="ComboBox2" SelectionChanged="ComboBox2_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Format" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="2" x:Name="ComboBox3" SelectionChanged="ComboBox3_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="3" Text="Reg/M" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="3" x:Name="ComboBox4" SelectionChanged="ComboBox4_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="4" Text="Dep" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="4" x:Name="ComboBox5" SelectionChanged="ComboBox5_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        
+        <TextBlock Grid.Row="0" Grid.Column="5" Text="Destinataire" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <ComboBox 
+            Grid.Row="1" Grid.Column="5" x:Name="ComboBox6" SelectionChanged="ComboBox6_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+
+
+        <TextBlock Grid.Row="0" Grid.Column="6" x:Name="Source" Text="Source" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <TextBlock Grid.Row="0" Grid.Column="6" Visibility="Hidden" x:Name="Text_Val_imm16" Text="Val_imm16" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        
+        <ComboBox 
+            Grid.Row="1" Grid.Column="6" x:Name="ComboBox7" SelectionChanged="ComboBox7_SelectionChanged"
+            Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
+            Background="White" Foreground="Black"
+            />
+        <TextBox Visibility="Hidden" Grid.Row="1" Grid.Column="6" x:Name="Val_imm16" HorizontalAlignment="Center" 
+                 VerticalAlignment="Center" TextAlignment="Center" Padding="10" FontSize="20" Background="White"
+                 Foreground="Black" MinWidth="100" MaxLength="4" Style="{StaticResource RoundedTextBox}" Height="55"
+                 ></TextBox>
+
+
+        <TextBlock Grid.Row="0" Grid.Column="7" Visibility="Hidden" x:Name="Text_Val_Dep" Text="Val_Dep" FontSize="19"
+                   FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
+                   HorizontalAlignment="Center" Foreground="White" Margin="0" />
+        <TextBox Visibility="Hidden" Grid.Row="1" Grid.Column="7" x:Name="Val_Dep" HorizontalAlignment="Center" 
+                 VerticalAlignment="Center" TextAlignment="Center" Padding="10" FontSize="20" Background="White"
+                 Foreground="Black" Width="75" MaxLength="3" Style="{StaticResource RoundedTextBox}" Height="55"
+                 ></TextBox>
+        
+        
+        
+    </Grid>
+</UserControl>

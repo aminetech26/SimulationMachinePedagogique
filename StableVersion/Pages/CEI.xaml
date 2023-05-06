@@ -4,15 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:projet.Pages"
-      mc:Ignorable="d" 
+      mc:Ignorable="d"
+      Height="Auto" Width="Auto"
       Title="CEI">
 
 
-    <Grid x:Name="ContentContainer" Background="#E0E0E0" SizeChanged="Grid_SizeChanged">
+    <Grid x:Name="ContentContainer" Background="#DAF3FF" SizeChanged="Grid_SizeChanged">
 
         <Grid.ColumnDefinitions>
 
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition x:Name="Column_button" Width="75"/>
             <ColumnDefinition x:Name="Column1" Width="225"/>
             <ColumnDefinition x:Name="Column2"  Width="225"/>
             <ColumnDefinition x:Name="Column3"  Width="225"/>
@@ -22,7 +23,7 @@
 
         <Grid.RowDefinitions>
 
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="55"/>
             <RowDefinition x:Name="Row1" Height="225"/>
             <RowDefinition Height="*"/>
             <RowDefinition x:Name="Row2" Height="225"/>
@@ -34,25 +35,37 @@
 
 
         <!-- Panel 01 -->
-
+        <Grid Grid.Row="0" Grid.Column="0" >
+            <Button x:Name="Button" Width="Auto" Height="30" HorizontalAlignment="Left" 
+                    Click="Go_Back" VerticalAlignment="Top" Margin="25 20 0 0" >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="/Pages/images/revenir.png" Stretch="Uniform"  />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+        
         <Button
             x:Name="Button1"
             Grid.Column="1"
             Grid.Row="1"
-            Style="{DynamicResource RoundedButtonStyle}"
-            Margin="5"
+            Style="{DynamicResource RoundedButtonStyle5}"
+            Margin="15"
             >
 
             <StackPanel Height="Auto" Width="Auto" >
 
                 <Image Source="/Pages/images/CEI/transfert1.png" Width="Auto"
-                       Height="125" Margin="8"  />
+                       Height="117" Margin="7"  />
 
                 <TextBlock Text="Instructions de transfert" 
                            TextWrapping="Wrap" 
                            TextAlignment="Center" 
                            FontFamily="Montserrat" 
-                           FontSize="28" FontWeight="Normal" />
+                           FontSize="25" FontWeight="Regular" />
                 <TextBlock />
 
             </StackPanel>
@@ -65,20 +78,20 @@
             x:Name="Button2"
             Grid.Column="2"
             Grid.Row="1"    Click="GoToArith"
-            Style="{DynamicResource RoundedButtonStyle}"
-            Margin="5"
+            Style="{DynamicResource RoundedButtonStyle5}"
+            Margin="15"
             >
 
             <StackPanel Height="Auto" Width="Auto" >
 
                 <Image Source="/Pages/images/CEI/maths.png"
-                       Width="Auto" Height="130" Margin="5"  />
+                       Width="Auto" Height="120" Margin="3"  />
 
                 <TextBlock Text="Instructions arithmetiques" 
                            TextWrapping="Wrap" 
                            TextAlignment="Center" 
                            FontFamily="Montserrat" 
-                           FontSize="28" FontWeight="Normal" />
+                           FontSize="25" FontWeight="Normal" />
                 <TextBlock />
 
             </StackPanel>
@@ -88,16 +101,17 @@
         <!-- Panel 03 -->
 
         <Button
+            Click="GoToPage3"
             x:Name="Button3"
             Grid.Column="3"
             Grid.Row="1"
-            Style="{DynamicResource RoundedButtonStyle}"
-            Margin="5"
+            Style="{DynamicResource RoundedButtonStyle5}"
+            Margin="15"
             >
 
             <StackPanel Height="Auto" Width="Auto" >
 
-                <Canvas Margin="7" Height="125" Width="125" >
+                <Canvas Margin="3" Height="120" Width="140" >
 
                     <Image Canvas.Left="0" Source="/Pages/images/CEI/not.png" Width="Auto" Height="60" Margin="3"  />
                     <Image Canvas.Right="0" Source="/Pages/images/CEI/and.png" Width="Auto" Height="60" Margin="3"  />
@@ -109,7 +123,7 @@
                 <TextBlock Text="Instructions logiques" TextWrapping="Wrap" 
                            TextAlignment="Center" 
                            FontFamily="Montserrat" 
-                           FontSize="28" FontWeight="Normal" />
+                           FontSize="25" FontWeight="Normal" />
                 <TextBlock />
 
 
@@ -122,17 +136,17 @@
         <Button
             x:Name="Button4"
             Grid.Column="1"
-            Grid.Row="3"
+            Grid.Row="3" Click="GoToDecalage"
             Style="{DynamicResource RoundedButtonStyle}"
-            Margin="5"
+            Margin="15"
             >
 
             <StackPanel Height="Auto" Width="Auto" >
 
-                <Image Source="/Pages/images/CEI/decalage.png" Width="Auto" Height="130" Margin="5"  />
+                <Image Source="/Pages/images/CEI/decalage.png" Width="Auto" Height="120" Margin="3"  />
 
                 <TextBlock Text="Instructions de décalage" TextWrapping="Wrap" TextAlignment="Center" 
-                           FontFamily="Montserrat" FontSize="28" FontWeight="Normal" />
+                           FontFamily="Montserrat" FontSize="25" FontWeight="Normal" />
                 <TextBlock />
 
             </StackPanel>
@@ -146,15 +160,15 @@
             Grid.Column="2"
             Grid.Row="3"
             Style="{DynamicResource RoundedButtonStyle}"
-            Margin="5"
+            Margin="15"
             >
 
             <StackPanel Height="Auto" Width="Auto" >
 
-                <Image Source="/Pages/images/CEI/branchement.png" Width="Auto" Height="130" Margin="5"  />
+                <Image Source="/Pages/images/CEI/branchement.png" Width="Auto" Height="120" Margin="3"  />
 
                 <TextBlock Text="Instructions de branchement" TextWrapping="Wrap" TextAlignment="Center" 
-                           FontFamily="Montserrat" FontSize="28" FontWeight="Normal" />
+                           FontFamily="Montserrat" FontSize="25" FontWeight="Normal" />
                 <TextBlock />
 
             </StackPanel>
@@ -166,20 +180,20 @@
         <Button
             x:Name="Button6"
             Grid.Column="3"
-            Grid.Row="3"
+            Grid.Row="3"   Click="GoToEntreeSortie"
             Style="{DynamicResource RoundedButtonStyle}"
-            Margin="5"
+            Margin="15"
             >
 
             <StackPanel Height="Auto" Width="Auto" >
 
-                <StackPanel Margin="10" Orientation="Horizontal" HorizontalAlignment="Center" Height="118" >
-                    <Image Source="/Pages/images/CEI/input.png" Width="85" Height="85" Margin="0 0 5 0"  />
-                    <Image Source="/Pages/images/CEI/output.png" Width="85" Height="85" Margin="5 0 0 0"  />
+                <StackPanel Margin="5" Orientation="Horizontal" HorizontalAlignment="Center" Height="110" >
+                    <Image Source="/Pages/images/CEI/input.png" Width="Auto" Height="80" Margin="0 0 10 0"  />
+                    <Image Source="/Pages/images/CEI/output.png" Width="Auto" Height="80" Margin="10 0 0 0"  />
                 </StackPanel>
 
                 <TextBlock Text="Instructions d'entrée sortie" TextWrapping="Wrap" TextAlignment="Center" 
-                           FontFamily="Montserrat" FontSize="28" FontWeight="Normal" />
+                           FontFamily="Montserrat" FontSize="25" FontWeight="Normal" />
                 <TextBlock />
 
             </StackPanel>

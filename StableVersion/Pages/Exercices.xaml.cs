@@ -27,63 +27,49 @@ namespace projet.Pages
 
         private void BackQuiz(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.GoBack();
-        }
-
-        
-
-       
-       
-
-        private void Fermer(object sender, MouseButtonEventArgs e)
-        {
-            Application.Current.Shutdown();
+            this.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quizs_Exercices.xaml", UriKind.RelativeOrAbsolute));
         }
 
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (e.NewSize.Width >= 1200)
+            if (e.NewSize.Width >= 1000)
             {
-                Text1.FontSize = 32;
-                Button1.Height = 64;
-                Button1.Width = 650;
-                Button2.Height = 64;
-                Button2.Width = 650;
-                Button3.Height = 64;
-                Button3.Width = 650;
-                Button4.Height = 64;
-                Button4.Width = 650;
-                Button5.Height = 64;
-                Button5.Width = 650;
+                Text1.FontSize = 25;
+                Button.Width = 30;
+                Button.Margin = new Thickness(-100, 0, 100, 0);
+                exemples.Margin = new Thickness(0, 50, 0, 0);
+                Button1.Height = 60;
+                Button1.Width = 620;
+                Button2.Height = 60;
+                Button2.Width = 620;
+                Button3.Height = 60;
+                Button3.Width = 620;
+                Button4.Height = 60;
+                Button4.Width = 620;
+                Button5.Height = 60;
+                Button5.Width = 620;
             }
             else
             {
-                Text1.FontSize = 22;
-                Button1.Height = 54;
+                Text1.FontSize = 20;
+                Button.Width = 27;
+                Button.Margin = new Thickness(30, 0, 20, 0);
+                exemples.Margin = new Thickness(0, 10, 0, 0);
+                Button1.Height = 50;
                 Button1.Width = 520;
-                Button2.Height = 54;
+                Button2.Height = 50;
                 Button2.Width = 520;
-                Button3.Height = 54;
+                Button3.Height = 50;
                 Button3.Width = 520;
-                Button4.Height = 54;
+                Button4.Height = 50;
                 Button4.Width = 520;
-                Button5.Height = 54;
+                Button5.Height = 50;
                 Button5.Width = 520;
 
             }
 
         }
 
-        private void BackCEI(object sender, MouseButtonEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/CEI.xaml", UriKind.RelativeOrAbsolute));
-
-        }
-
-        private void BackHomeFromExo(object sender, MouseButtonEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page1.xaml", UriKind.RelativeOrAbsolute));
-        }
     }
 }

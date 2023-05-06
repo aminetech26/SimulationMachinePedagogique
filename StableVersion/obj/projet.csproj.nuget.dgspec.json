@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj",
         "projectName": "projet",
-        "projectPath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\projet.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\obj\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Bureau\\StableVersion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,18 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Ark.Tools.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[4.9.2, )"
+            },
+            "AvalonEdit": {
+              "target": "Package",
+              "version": "[6.3.0.90, )"
+            },
+            "MaterialDesignColors": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.7.1, )"

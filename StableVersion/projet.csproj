@@ -8,9 +8,42 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\CEI.png" />
-    <None Remove="Images\picture.jpg" />
-    <None Remove="Images\Vanamo_Logo.png" />
+    <None Remove="Fonts\Montserrat.ttf" />
+    <None Remove="images\Arrow 1.png" />
+    <None Remove="images\CEI.png" />
+    <None Remove="images\CO.png" />
+    <None Remove="images\commencer.png" />
+    <None Remove="images\DECODEUR%282%29.png" />
+    <None Remove="images\Ellipse 2.png" />
+    <None Remove="images\Frame 35.png" />
+    <None Remove="images\Group 101.png" />
+    <None Remove="images\Group 102.png" />
+    <None Remove="images\Group 104%281%29.png" />
+    <None Remove="images\Group 104%283%29.png" />
+    <None Remove="images\Group 104.png" />
+    <None Remove="images\Group 105%281%29.png" />
+    <None Remove="images\Group 105.png" />
+    <None Remove="images\Group 109.png" />
+    <None Remove="images\Group 110.png" />
+    <None Remove="images\Group 115.png" />
+    <None Remove="images\Group 46.png" />
+    <None Remove="images\Group 76.png" />
+    <None Remove="images\Group 77.png" />
+    <None Remove="images\Group 91.png" />
+    <None Remove="images\Group 93.png" />
+    <None Remove="images\Group 98.png" />
+    <None Remove="images\Group100.png" />
+    <None Remove="images\Line 12.png" />
+    <None Remove="images\Line 13.png" />
+    <None Remove="images\Line 39.png" />
+    <None Remove="images\phase a phase.png" />
+    <None Remove="images\picture.jpg" />
+    <None Remove="images\RAM.png" />
+    <None Remove="images\RAM1.png" />
+    <None Remove="images\recommencer.png" />
+    <None Remove="images\retoursvg.svg" />
+    <None Remove="images\Subtract.png" />
+    <None Remove="images\Vanamo_Logo.png" />
     <None Remove="intel.png" />
     <None Remove="Pages\and.png" />
     <None Remove="Pages\branchement.png" />
@@ -20,6 +53,9 @@
     <None Remove="Pages\images\accueil.png" />
     <None Remove="Pages\images\carre.png" />
     <None Remove="Pages\images\cei.png" />
+    <None Remove="Pages\images\cei2.png" />
+    <None Remove="Pages\images\cei3.png" />
+    <None Remove="Pages\images\cei4.png" />
     <None Remove="Pages\images\CEI\and.png" />
     <None Remove="Pages\images\CEI\branchement.png" />
     <None Remove="Pages\images\CEI\decalage.png" />
@@ -36,22 +72,31 @@
     <None Remove="Pages\images\ExercicesTypes.png" />
     <None Remove="Pages\images\false.png" />
     <None Remove="Pages\images\fermer.png" />
+    <None Remove="Pages\images\Help.png" />
     <None Remove="Pages\images\Home\cpu1.png" />
     <None Remove="Pages\images\Home\dossier.png" />
     <None Remove="Pages\images\Home\plus.png" />
     <None Remove="Pages\images\intel.png" />
     <None Remove="Pages\images\ktab.png" />
+    <None Remove="Pages\images\language.png" />
+    <None Remove="Pages\images\Line 53.png" />
     <None Remove="Pages\images\precedent.png" />
+    <None Remove="Pages\images\Precedent1.png" />
+    <None Remove="Pages\images\puce.png" />
     <None Remove="Pages\images\Q.png" />
     <None Remove="Pages\images\qst.png" />
+    <None Remove="Pages\images\qst1.png" />
     <None Remove="Pages\images\quiz.png" />
     <None Remove="Pages\images\RappelDuCours.png" />
     <None Remove="Pages\images\rectangle.png" />
     <None Remove="Pages\images\retour.png" />
     <None Remove="Pages\images\revenir.png" />
+    <None Remove="Pages\images\sel_inst.png" />
+    <None Remove="Pages\images\simulation.png" />
     <None Remove="Pages\images\simulation1.png" />
     <None Remove="Pages\images\siteweb.png" />
     <None Remove="Pages\images\suivant.png" />
+    <None Remove="Pages\images\Suivant1.png" />
     <None Remove="Pages\input.png" />
     <None Remove="Pages\maths.png" />
     <None Remove="Pages\not.png" />
@@ -68,10 +113,50 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Montserrat.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="images\Arrow 1.png" />
+    <Resource Include="images\CO.png" />
+    <Resource Include="images\commencer.png" />
+    <Resource Include="images\DECODEUR(2).png" />
+    <Resource Include="images\Ellipse 2.png" />
+    <Resource Include="images\Frame 35.png" />
+    <Resource Include="images\Group 101.png" />
+    <Resource Include="images\Group 102.png" />
+    <Resource Include="images\Group 104(1).png" />
+    <Resource Include="images\Group 104(3).png" />
+    <Resource Include="images\Group 104.png" />
+    <Resource Include="images\Group 105(1).png" />
+    <Resource Include="images\Group 105.png" />
+    <Resource Include="images\Group 109.png" />
+    <Resource Include="images\Group 110.png" />
+    <Resource Include="images\Group 115.png" />
+    <Resource Include="images\Group 46.png" />
+    <Resource Include="images\Group 76.png" />
+    <Resource Include="images\Group 77.png" />
+    <Resource Include="images\Group 91.png" />
+    <Resource Include="images\Group 93.png" />
+    <Resource Include="images\Group 98.png" />
+    <Resource Include="images\Group100.png" />
+    <Resource Include="images\Line 12.png" />
+    <Resource Include="images\Line 13.png" />
+    <Resource Include="images\Line 39.png" />
+    <Resource Include="images\phase a phase.png" />
+    <Resource Include="images\RAM.png" />
+    <Resource Include="images\RAM1.png" />
+    <Resource Include="images\recommencer.png" />
+    <Resource Include="images\retoursvg.svg" />
+    <Resource Include="images\Subtract.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Pages\images\1pas.png" />
     <Resource Include="Pages\images\accueil.png" />
     <Resource Include="Pages\images\carre.png" />
     <Resource Include="Pages\images\cei.png" />
+    <Resource Include="Pages\images\cei2.png" />
+    <Resource Include="Pages\images\cei3.png" />
     <Resource Include="Pages\images\CEI\and.png" />
     <Resource Include="Pages\images\CEI\branchement.png" />
     <Resource Include="Pages\images\CEI\decalage.png" />
@@ -88,10 +173,14 @@
     <Resource Include="Pages\images\ExercicesTypes.png" />
     <Resource Include="Pages\images\false.png" />
     <Resource Include="Pages\images\fermer.png" />
+    <Resource Include="Pages\images\Help.png" />
     <Resource Include="Pages\images\Home\dossier.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Ark.Tools.NewtonsoftJson" Version="4.9.2" />
+    <PackageReference Include="AvalonEdit" Version="6.3.0.90" />
+    <PackageReference Include="MaterialDesignColors" Version="2.1.2" />
     <PackageReference Include="MaterialDesignThemes" Version="4.7.1" />
   </ItemGroup>
 
@@ -100,17 +189,29 @@
     <Resource Include="Pages\images\Home\plus.png" />
     <Resource Include="Pages\images\intel.png" />
     <Resource Include="Pages\images\ktab.png" />
+    <Resource Include="Pages\images\language.png" />
+    <Resource Include="Pages\images\Line 53.png" />
     <Resource Include="Pages\images\precedent.png" />
+    <Resource Include="Pages\images\Precedent1.png" />
+    <Resource Include="Pages\images\puce.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pages\images\Q.png" />
     <Resource Include="Pages\images\qst.png" />
+    <Resource Include="Pages\images\qst1.png" />
     <Resource Include="Pages\images\quiz.png" />
     <Resource Include="Pages\images\RappelDuCours.png" />
     <Resource Include="Pages\images\rectangle.png" />
     <Resource Include="Pages\images\retour.png" />
-    <Resource Include="Pages\images\revenir.png" />
+    <Resource Include="Pages\images\revenir.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pages\images\sel_inst.png" />
+    <Resource Include="Pages\images\simulation.png" />
     <Resource Include="Pages\images\simulation1.png" />
     <Resource Include="Pages\images\siteweb.png" />
     <Resource Include="Pages\images\suivant.png" />
+    <Resource Include="Pages\images\Suivant1.png" />
   </ItemGroup>
 
 </Project>

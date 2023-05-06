@@ -8,180 +8,659 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1028"
       Title="QuizExo">
+    
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate>
+                            <Grid x:Name="Grid" Margin="-3,25,0,-25" >
+                                <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" 
+                                           Height="Auto" Fill="Transparent"/>
+                                <Border x:Name="Rectangle1" CornerRadius="25" HorizontalAlignment="Stretch" 
+                                        VerticalAlignment="Stretch" Width="Auto" Height="Auto" 
+                                        Background="{TemplateBinding Background}"/>
+                            </Grid>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="Tag" Value="Horizontal">
+                                    <Setter TargetName="Rectangle1" Property="Width" Value="Auto"/>
+                                    <Setter TargetName="Rectangle1" Property="Height" Value="7"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+
+            <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
+                <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+                <Setter Property="Foreground" Value="#4E719D"/>
+                <Setter Property="Background" Value="White"/>
+                <Setter Property="Width" Value="10"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ScrollBar}">
+                            <Grid x:Name="GridRoot" Width="10"  Background="{x:Null}" Margin="5">
+                                <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="False">
+                                    <Track.Thumb>
+                                        <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" 
+                                               Style="{DynamicResource ScrollThumbs}"/>
+                                    </Track.Thumb>
+                                    <Track.IncreaseRepeatButton>
+                                        <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="False"/>
+                                    </Track.IncreaseRepeatButton>
+                                    <Track.DecreaseRepeatButton>
+                                        <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="False"/>
+                                    </Track.DecreaseRepeatButton>
+                                </Track>
+                            </Grid>
+
+                            <ControlTemplate.Triggers>
+                                <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
+                                    <Setter Value="{DynamicResource ButtonSelectBrush}" 
+                                            TargetName="Thumb" Property="Background"/>
+                                </Trigger>
+                                <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
+                                    <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background"/>
+                                </Trigger>
+
+                                <Trigger Property="IsEnabled" Value="false">
+                                    <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed"/>
+                                </Trigger>
+                                <Trigger Property="Orientation" Value="Horizontal">
+                                    <Setter TargetName="GridRoot" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter TargetName="PART_Track" Property="LayoutTransform">
+                                        <Setter.Value>
+                                            <RotateTransform Angle="-90"/>
+                                        </Setter.Value>
+                                    </Setter>
+                                    <Setter Property="Width" Value="Auto"/>
+                                    <Setter Property="Height" Value="12"/>
+                                    <Setter TargetName="Thumb" Property="Tag" Value="Horizontal"/>
+                                    <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand"/>
+                                    <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
 
     <Grid Background="White" Width="auto" Height="auto">
 
-
         <Grid.ColumnDefinitions>
-            <ColumnDefinition  Width="auto"/>
+            <ColumnDefinition  Width="Auto"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Grid Name="slider" Grid.Column="0" Width="60" Margin="0,0,6,0" >
+        <Grid Name="slider" Grid.Column="0" Width="60" Margin="0,0,5,0" >
             <Grid.Background>
-                <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
-                    <LinearGradientBrush.GradientStops>
-                        <GradientStop Offset="0.1"  Color="#81C784" />
-                        <GradientStop Offset="1"   Color="#00E17C"/>
-                    </LinearGradientBrush.GradientStops>
-                </LinearGradientBrush>
+                <SolidColorBrush Color="#90CAF9" />
             </Grid.Background>
 
             <Grid.RowDefinitions>
-                <RowDefinition  Height="auto"/>
+                <RowDefinition  Height="100"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <ToggleButton Name="menu" Grid.Row="0" Margin="0,10,0,0"
+            <StackPanel Grid.Row="0" Orientation="Horizontal" >
+
+                <ToggleButton Name="menu" Margin="10,15,0,0"
                           Background="Transparent" BorderBrush="Transparent"
                           Style="{StaticResource ButtonSimple}"
                           Checked="menu_Cheked"
-                          Unchecked="menu_Uncheked" Height="40" VerticalAlignment="Top" Grid.RowSpan="2">
-                <ToggleButton.Triggers>
+                          Unchecked="menu_Uncheked" Height="50" VerticalAlignment="Top" Grid.RowSpan="2">
+                    <ToggleButton.Triggers>
 
-                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
 
-                        <BeginStoryboard>
+                            <BeginStoryboard>
 
-                            <Storyboard x:Name="HideStackPanel">
+                                <Storyboard x:Name="HideStackPanel">
 
-                                <DoubleAnimation
+                                    <DoubleAnimation
                                                 Storyboard.TargetName="slider"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
-                                                From="228" To="60"
-                                                Duration="0:0:0.3"/>
+                                                From="230" To="60"
+                                                Duration="0:0:0.5"/>
 
-                            </Storyboard>
+                                </Storyboard>
 
-                        </BeginStoryboard>
+                            </BeginStoryboard>
 
-                    </EventTrigger>
+                        </EventTrigger>
 
-                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+                        <EventTrigger RoutedEvent="ToggleButton.Checked">
 
-                        <BeginStoryboard>
+                            <BeginStoryboard>
 
-                            <Storyboard x:Name="ShowStackPanel">
+                                <Storyboard x:Name="ShowStackPanel">
 
-                                <DoubleAnimation
+                                    <DoubleAnimation
                                                 Storyboard.TargetName="slider"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
-                                                From="60" To="228"
-                                                Duration="0:0:0.15"/>
+                                                From="60" To="230"
+                                                Duration="0:0:0.5"/>
 
-                            </Storyboard>
+                                </Storyboard>
 
-                        </BeginStoryboard>
+                            </BeginStoryboard>
 
-                    </EventTrigger>
+                        </EventTrigger>
 
-                </ToggleButton.Triggers>
-                <Viewbox Width="36" Height="30" VerticalAlignment="Center"  RenderTransformOrigin="0.54,1.622" Stretch="Fill" >
+                    </ToggleButton.Triggers>
+                    <Viewbox Width="40" Height="35" VerticalAlignment="Center"  RenderTransformOrigin="0.54,1.622" Stretch="Fill" >
 
-                    <Path x:Name="menuIcon" 
+                        <Path x:Name="menuIcon" 
                         Fill="#fff"
                         Data="{DynamicResource MENU_ICON}"                  
                         VerticalAlignment="Top"
-                    />
+                        />
 
-                </Viewbox>
-            </ToggleButton>
+                    </Viewbox>
+                </ToggleButton>
 
-            <StackPanel Name="navBar" Margin="10,50" Grid.Row="1">
+                <ToggleButton Name="menu2" Margin="135,0,0,0"
+                          Background="Transparent" BorderBrush="Transparent"
+                          Style="{StaticResource ButtonSimple}"
+                          Click="Exit_Quiz" Height="50" VerticalAlignment="Top" Grid.RowSpan="2">
+                    
+                    <Viewbox Width="40" Height="40" VerticalAlignment="Center"  RenderTransformOrigin="0.54,1.622" Stretch="Fill" >
 
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="True"
-                          VerticalAlignment="Top"  >
-                    <Grid >
-                        <Grid>
-                            <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                            <TextBlock Text="Quiz N№ 1" Style="{StaticResource Text_Style}" PreviewMouseDown="toQuiz1" />
-                        </Grid>
-                        <StackPanel  HorizontalAlignment="Center" 
-                                     VerticalAlignment="Top">
-                            <Border  Height="5"  Width="200"  
-                                     Background="#E0E0E0" Margin="0,-30,0,0" />
+                        <Path x:Name="menuIcon2" 
+                        Fill="#fff"
+                        Data="{DynamicResource EXIT_ICON}" 
+                        VerticalAlignment="Center"
+                        />
 
-                        </StackPanel>
-                    </Grid>
+                    </Viewbox>
+                </ToggleButton>
 
-                </Menu:Btn>
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="False"
-                          VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" Margin="25,0,0,8" VerticalAlignment="Bottom" />
-                        <TextBlock Text="Quiz N№ 2" Style="{StaticResource Text_Style}"  />
-                    </Grid>
-
-                </Menu:Btn>
-
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="False"
-                          VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 3" Style="{StaticResource Text_Style}" />
-                    </Grid>
-
-                </Menu:Btn>
-
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="False"
-                          VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 4" Style="{StaticResource Text_Style}"/>
-                    </Grid>
-
-                </Menu:Btn>
-
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="False"
-                          VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 5" Style="{StaticResource Text_Style}"/>
-                    </Grid>
-
-                </Menu:Btn>
-
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="False"
-                          VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 6" Style="{StaticResource Text_Style}"/>
-                    </Grid>
-
-                </Menu:Btn>
-
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="False"
-                          VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 7" Style="{StaticResource Text_Style}"/>
-                    </Grid>
-
-                </Menu:Btn>
-
-                <Menu:Btn Style="{StaticResource BtnStyle1}"
-                          IsChecked="False"
-                          VerticalAlignment="Top"  >
-                    <Grid>
-                        <Image Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
-                        <TextBlock Text="Quiz N№ 8" Style="{StaticResource Text_Style}"/>
-                    </Grid>
-
-                </Menu:Btn>
 
             </StackPanel>
+           
+            <ScrollViewer VerticalScrollBarVisibility="Visible" CanContentScroll="True" Grid.Row="1">
+                <StackPanel Margin="10,55" Grid.Row="1">
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz1" Click="Btn_Click"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid >
+                            <Grid>
+                                <Image x:Name="Quiz_White" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                                <TextBlock x:Name="Text_White" Text="Quiz № 1" Style="{StaticResource Text_Style1}" />
+                            </Grid>
+                        </Grid>
+
+                    </Menu:Btn>
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz2" Click="Btn_Click2"
+                          IsChecked="True"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White2" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White2" Text="Quiz № 2" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz3" Click="Btn_Click3"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White3" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White3" Text="Quiz № 3" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz4" Click="Btn_Click4"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White4" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White4" Text="Quiz № 4" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz5" Click="Btn_Click5"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White5" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White5" Text="Quiz № 5" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz6" Click="Btn_Click6"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White6" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White6" Text="Quiz № 6" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz7" Click="Btn_Click7"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White7" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White7" Text="Quiz № 7" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz8" Click="Btn_Click8"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White8" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White8" Text="Quiz № 8" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz9" Click="Btn_Click9"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White9" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White9" Text="Quiz № 9" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz10" Click="Btn_Click10"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White10" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White10" Text="Quiz № 10" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz11" Click="Btn_Click11"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White11" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White11" Text="Quiz № 11" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz12" Click="Btn_Click12"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White12" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White12" Text="Quiz № 12" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz13" Click="Btn_Click13"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White13" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White13" Text="Quiz № 13" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz14" Click="Btn_Click14"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White14" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White14" Text="Quiz № 14" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz15" Click="Btn_Click15"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White15" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White15" Text="Quiz № 15" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz16" Click="Btn_Click16"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White16" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White16" Text="Quiz № 16" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz17" Click="Btn_Click17"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White17" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White17" Text="Quiz № 17" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz18" Click="Btn_Click18"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White18" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White18" Text="Quiz № 18" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz19" Click="Btn_Click19"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White19" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White19" Text="Quiz № 19" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz20" Click="Btn_Click20"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White20" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White20" Text="Quiz № 20" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz21" Click="Btn_Click21"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White21" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White21" Text="Quiz № 21" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz22" Click="Btn_Click22"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White22" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White22" Text="Quiz № 22" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz23" Click="Btn_Click23"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White23" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White23" Text="Quiz № 23" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz24" Click="Btn_Click24"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White24" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White24" Text="Quiz № 24" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz25" Click="Btn_Click25"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White25" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White25" Text="Quiz № 25" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz26" Click="Btn_Click26"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White26" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White26" Text="Quiz № 26" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz27" Click="Btn_Click27"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White27" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White27" Text="Quiz № 27" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz28" Click="Btn_Click28"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White28" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White28" Text="Quiz № 28" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz29" Click="Btn_Click29"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White29" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White29" Text="Quiz № 29" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz30" Click="Btn_Click30"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White30" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White30" Text="Quiz № 30" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz31" Click="Btn_Click31"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White31" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White31" Text="Quiz № 31" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz32" Click="Btn_Click32"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White32" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White32" Text="Quiz № 32" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz33" Click="Btn_Click33"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White33" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White33" Text="Quiz № 33" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz34" Click="Btn_Click34"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White34" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White34" Text="Quiz № 34" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz35" Click="Btn_Click35"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White35" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White35" Text="Quiz № 35" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz36" Click="Btn_Click36"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White36" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White36" Text="Quiz № 36" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz37" Click="Btn_Click37"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White37" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White37" Text="Quiz № 37" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz38" Click="Btn_Click38"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White38" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White38" Text="Quiz № 38" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz39" Click="Btn_Click39"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White39" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White39" Text="Quiz № 39" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz40" Click="Btn_Click40"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White40" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White40" Text="Quiz № 40" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz41" Click="Btn_Click41"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White41" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White41" Text="Quiz № 41" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz42" Click="Btn_Click42"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White42" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White42" Text="Quiz № 42" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz43" Click="Btn_Click43"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White43" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White43" Text="Quiz № 43" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz44" Click="Btn_Click44"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White44" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White44" Text="Quiz № 44" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz45" Click="Btn_Click45"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White45" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White45" Text="Quiz № 45" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+
+                    <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz46" Click="Btn_Click46"
+                          IsChecked="False"
+                          VerticalAlignment="Top"  >
+                        <Grid>
+                            <Image x:Name="Quiz_White46" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
+                            <TextBlock x:Name="Text_White46" Text="Quiz № 46" Style="{StaticResource Text_Style1}" />
+                        </Grid>
+
+                    </Menu:Btn>
+                </StackPanel>
+            </ScrollViewer>
 
         </Grid>
-        <Grid  Grid.Column="1"  VerticalAlignment="Stretch">
+        
+        <Grid Grid.Column="1"  VerticalAlignment="Stretch">
             <Frame Name="_PageContent"  NavigationUIVisibility="Hidden" />
         </Grid>
     </Grid>

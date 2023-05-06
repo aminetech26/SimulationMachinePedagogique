@@ -8,12 +8,14 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="Home" Height="Auto" Width="Auto">
 
-    <Grid SizeChanged="Grid_SizeChanged">
+
+        <Grid SizeChanged="Grid_SizeChanged" >
+            
         <Grid.Background>
             <LinearGradientBrush StartPoint="1,1"
                                       EndPoint="0,0">
-                <GradientStop Color="#90CAF9" Offset="0" />
-                <GradientStop Color="#317AC7" Offset="0.75" />
+                <GradientStop Color="#7CF6FD" Offset="-0.25" />
+                <GradientStop Color="#2F88FF" Offset="0.75" />
             </LinearGradientBrush>
         </Grid.Background>
 
@@ -25,17 +27,42 @@
         </Grid.RowDefinitions>
 
 
-        <TextBlock Grid.Row="0" x:Name="Text1" Text="ArchiMind" 
+        <Button Grid.Column="0" x:Name="Button_Fr_En" Width="Auto" Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Top"
+                     Margin="0 25 25 0" MouseEnter="Button_Fr_En_Click" MouseLeave="Button_Fr_En_MouseLeave" >
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Image Source="/Pages/images/language.png" Height="25" Width="25" Stretch="Uniform"  />
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Grid Background="White" x:Name="Grid_Language" Grid.Column="0" Height="45" Width="80" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,55,7,0" >
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="FR   Francais" FontSize="13" FontWeight="SemiBold" TextAlignment="Center" Foreground="#4E719D" ></TextBlock>
+            <Rectangle Grid.Row="1" Height="1" Width="80" Fill="#4E719D" Margin="0" />
+            <TextBlock Grid.Row="2" Text="EN   Englais" FontSize="13" FontWeight="SemiBold" TextAlignment="Center" Foreground="#4E719D" ></TextBlock>
+
+        </Grid>
+
+        <TextBlock Grid.Row="0" x:Name="Text1" Text="ArchiMind"
                    TextAlignment="Center" TextWrapping="Wrap" 
-                   VerticalAlignment="Top" HorizontalAlignment="Center" 
-                   FontStyle="Normal" FontFamily="Montserrat" FontSize="64" 
-                   FontWeight="Bold" Foreground="White" Margin="0,71,0,0"  />
+                   VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   FontStyle="Normal" FontFamily="Montserrat" FontSize="58" 
+                   FontWeight="Regular" Foreground="White" Margin="0,100,0,0"  />
 
         <TextBlock Grid.Row="1" x:Name="Text2" TextWrapping="Wrap"
-                   FontFamily="Inter" FontWeight="Thin" FontSize="32" 
+                   FontFamily="Inter" FontWeight="Light" FontSize="24" 
                    Text="Apprenez à assembler avec passion avec ArchiMind : le logiciel qui vous permet de découvrir l'architecture informatique en toute simplicité !" 
-                   VerticalAlignment="Top" HorizontalAlignment="Center" 
-                   TextAlignment="Center" Foreground="White" Margin="0,30,0,0" Width="678" />
+                   VerticalAlignment="Center" HorizontalAlignment="Center" 
+                   TextAlignment="Center" Foreground="White" Margin="0 25" Width="500"/>
 
 
         <Grid Grid.Row="2">
@@ -47,50 +74,54 @@
 
             </Grid.ColumnDefinitions>
 
-            <Grid Grid.Column="0" >
-                <Button x:Name="Button1" Style="{StaticResource RoundedButtonStyle}"  
-                        HorizontalAlignment="Center" VerticalAlignment="Center" 
-                        Height="64" Width="338" Margin="0,30,0,0"  >
+            <Grid Grid.Column="0" HorizontalAlignment="Right" Margin="20 0" >
+                <Button x:Name="Button1" Style="{StaticResource RoundedButtonStyle3}"  
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Height="50" Width="300" Margin="0" Click="GoToProgrammePage" >
 
-                    <StackPanel Orientation="Horizontal" Width="336" >
-                        <Image Source="/Pages/images/Home/plus.png" Height="22.75" Width="22.75"  
-                               Margin="24.12 20 0 20" />
-                        <TextBlock Text="Créer un programme" TextAlignment="Center" FontFamily="Open Sans"
-                                   FontSize="24" FontWeight="Regular" Width="250" Height="54"
-                                   Padding="10" Margin="15 5 11 5" />
+                    <StackPanel x:Name="STP1" Orientation="Horizontal" HorizontalAlignment="Center" Height="50" Width="300" >
+                        <Image x:Name="ADD" Source="/Pages/images/Home/plus.png" Height="Auto" Width="22"  
+                               Margin="25 0 0 0" />
+                        <TextBlock Text="Créer un programme" x:Name="text00" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Open Sans"
+                                   FontSize="19" FontWeight="Regular" Width="Auto" Height="Auto"
+                                   Padding="10" Margin="15 0 0 0" />
                     </StackPanel>
+                    
                 </Button>
             </Grid>
 
-            <Grid Grid.Column="1" >
-                <Button x:Name="Button2" HorizontalAlignment="Center" VerticalAlignment="Center"
-                        Style = "{DynamicResource RoundedButtonStyle}" Height="64" 
-                        Width="338" Margin="0,30,0,0" >
+            <Grid Grid.Column="1" HorizontalAlignment="Left" Margin="20 0"  >
+                <Button x:Name="Button2" Style="{StaticResource RoundedButtonStyle3}"  
+                        HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Height="50" Width="300" Margin="0">
 
-                    <StackPanel Orientation = "Horizontal" Width="336">
-                        <Image Source = "/Pages/images/Home/dossier.png" Height="25" Width="25"  
-                               Margin="24.12 15 0 15"/>
-                        <TextBlock Text = "Ouvrir un programme" TextAlignment="Center" Height="54"
-                                  FontFamily="Open Sans" FontSize="24" FontWeight="Regular" 
-                                  Width="250" Padding="10" Margin="15 5 11 5" />
+                    <StackPanel x:Name="STP2" HorizontalAlignment="Center" Orientation="Horizontal" Width="300" >
+                        <Image x:Name="FOLDER" Source="/Pages/images/Home/dossier.png" Height="Auto" Width="22"  
+                               Margin="25 0 0 0" />
+                        <TextBlock Text="Ouvrir un programme" x:Name="text01" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Open Sans"
+                                   FontSize="19" FontWeight="Regular" Width="Auto" Height="Auto"
+                                   Padding="10" Margin="15 0 0 0" />
                     </StackPanel>
+
                 </Button>
             </Grid>
+            
         </Grid>
 
-        <Grid Grid.Row="3" HorizontalAlignment="Center"  VerticalAlignment="Center">
-            <Button x:Name="Button3" Style = "{DynamicResource RoundedButtonStyle}" 
-                    Height="64" Width="338" HorizontalAlignment="Center"  Click="Exmpl">
+        <Grid Grid.Row="3" >
+            <Button x:Name="Button3" Style="{StaticResource RoundedButtonStyle3}" Click="Exmpl"
+                        HorizontalAlignment="Center" VerticalAlignment="Top"
+                        Height="47" Width="300" Margin="0">
 
-                <StackPanel Orientation = "Horizontal" Width="336">
-                    <Image Source = "/Pages/images/Home/cpu1.png" Height="40" Width="40"  
-                           Margin="24 10 0 10"/>
-                    <TextBlock Text = "Simuler des exemples" TextAlignment="Center" 
-                               FontFamily="Open Sans"  FontSize="24" FontWeight="Regular" 
-                               Width="250" Height="54" Padding="10" Margin="15 5 11 5" />
+                <StackPanel x:Name="STP3" HorizontalAlignment="Center" Orientation="Horizontal" Width="300" >
+                    <Image x:Name="CPU" Source="/Pages/images/puce.png" Height="Auto" Width="25"  
+                               Margin="25 0 0 0" />
+                    <TextBlock Text="Simuler des exemples" x:Name="text02" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Open Sans"
+                                   FontSize="19" FontWeight="Regular" Width="Auto" Height="Auto"
+                                   Padding="10" Margin="15 0 0 0" />
                 </StackPanel>
-            </Button>
 
+            </Button>
         </Grid>
 
 

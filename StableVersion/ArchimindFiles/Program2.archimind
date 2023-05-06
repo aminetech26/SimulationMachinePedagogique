@@ -1,0 +1,38 @@
+[
+  {
+    "ComboBox1": "Transfert",
+    "ComboBox2": "MOV",
+    "ComboBox3": "Reg16/Mem16,imm16",
+    "ComboBox4": "Memoire",
+    "ComboBox5": "Avec deplacement",
+    "ComboBox6": "[BP+SI+DEP]",
+    "ComboBox7": ""
+  },
+  {
+    "ComboBox1": "Arithmetique",
+    "ComboBox2": "SUB",
+    "ComboBox3": "AX,imm16",
+    "ComboBox4": "Registre",
+    "ComboBox5": "",
+    "ComboBox6": "AX",
+    "ComboBox7": ""
+  },
+  {
+    "ComboBox1": "Branchement",
+    "ComboBox2": "LOOP",
+    "ComboBox3": "Mem16",
+    "ComboBox4": "Memoire",
+    "ComboBox5": "Avec deplacement",
+    "ComboBox6": "[BX+SI+DEP]",
+    "ComboBox7": ""
+  },
+  {
+    "ComboBox1": "",
+    "ComboBox2": "",
+    "ComboBox3": "",
+    "ComboBox4": "",
+    "ComboBox5": "",
+    "ComboBox6": "",
+    "ComboBox7": ""
+  }
+]

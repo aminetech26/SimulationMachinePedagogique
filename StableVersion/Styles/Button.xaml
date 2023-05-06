@@ -17,26 +17,28 @@
                 <ControlTemplate TargetType="RadioButton">
 
                     <Border x:Name="border"
-                            Height="50"
-                            Width="180"
+                            Height="45"
+                            Width="175"
                             BorderThickness="0"
+                            CornerRadius="12"
+                            Margin="0 5"
                             >
 
                         <Border.Background>
                             <SolidColorBrush x:Name="BorderBackground"
-                                             Color="#fff" />
+                                             Color="White" />
                         </Border.Background>
 
                         <Grid>
 
                             <Border x:Name="Indicator"
-                                    Height="35"
-                                    Width="4"
+                                    Height="32"
+                                    Width="5"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    Background="#000"
+                                    Background="Black"
                                     Visibility="Collapsed"
-                                    CornerRadius="2"
+                                    CornerRadius="7"
                                     />
 
                             <ContentPresenter />
@@ -109,6 +111,8 @@
 
     </Style>
 
+    
+    
     <Style x:Key="BtnStyle1"
            TargetType="RadioButton">
 
@@ -126,25 +130,27 @@
 
                     <Border x:Name="border"
                             Height="50"
-                            Width="180"
+                            Width="185"
                             BorderThickness="0"
+                            CornerRadius="20"
+                            Margin="0 3"
                             >
 
                         <Border.Background>
                             <SolidColorBrush x:Name="BorderBackground"
-                                             Color="#81C784" />
+                                             Color="Transparent"/>
                         </Border.Background>
 
                         <Grid>
 
                             <Border x:Name="Indicator"
                                     Height="35"
-                                    Width="4"
+                                    Width="7"
                                     HorizontalAlignment="Left"
                                     VerticalAlignment="Center"
-                                    Background="#000"
+                                    Background="#4E719D"
                                     Visibility="Collapsed"
-                                    CornerRadius="2"
+                                    CornerRadius="10"
                                     />
 
                             <ContentPresenter />
@@ -171,9 +177,9 @@
                                 <Storyboard>
                                     <ColorAnimation Storyboard.TargetName="BorderBackground"
                                                     Storyboard.TargetProperty="Color"
-                                                    From="#81C784"
-                                                    To="#fff"
-                                                    Duration="0:0:0.3" />
+                                                    To="White"
+                                                    From="#4E719D"
+                                                    Duration="0:0:2" />
 
                                 </Storyboard>
                             </BeginStoryboard>
@@ -187,9 +193,9 @@
                                 <Storyboard>
                                     <ColorAnimation Storyboard.TargetName="BorderBackground"
                                                     Storyboard.TargetProperty="Color"
-                                                    From="#fff"
-                                                    To="#81C784"
-                                                    Duration="0:0:0.3" />
+                                                    From="White"
+                                                    To="Transparent"
+                                                    Duration="0:0:0" />
                                 </Storyboard>
                             </BeginStoryboard>
 
@@ -200,7 +206,7 @@
 
                             <Setter Property="Background"
                                     TargetName="border"
-                                    Value="#fff" />
+                                    Value="white"/>
 
                             <Setter Property="Visibility"
                                     TargetName="Indicator"

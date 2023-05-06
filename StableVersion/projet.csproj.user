@@ -7,6 +7,18 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Animation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ExecutionProgramme.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Instruction_Ligne.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="PageProgramme3.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\CEI.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,9 +31,6 @@
     <Compile Update="Pages\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\InsArith.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\Page1.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -31,10 +40,16 @@
     <Compile Update="Pages\PageQuiz2.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\Quiz.xaml.cs">
+    <Compile Update="Pages\Page_Decalage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\QuizExo.xaml.cs">
+    <Compile Update="Pages\Page_EntreeSortie.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Premierpas.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ProgrammePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Splash_screen.xaml.cs">
@@ -42,10 +57,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Images\Icons.xaml">
+    <Page Update="Animation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ExecutionProgramme.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="images\Icons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Instruction_Ligne.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PageProgramme3.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\CEI.xaml">
@@ -60,9 +87,6 @@
     <Page Update="Pages\Home.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\InsArith.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Pages\Page1.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -72,10 +96,19 @@
     <Page Update="Pages\PageQuiz2.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\Quiz.xaml">
+    <Page Update="Pages\Page_Decalage.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Pages\QuizExo.xaml">
+    <Page Update="Pages\Page_EntreeSortie.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Premierpas.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Quizs_Exercices.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ProgrammePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Splash_screen.xaml">
