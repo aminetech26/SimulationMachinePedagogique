@@ -5,16 +5,16 @@ namespace ArchiMind
 {
      public class Instruction
     {
-        private string format;
-        private string cop;
-        private string champ_notused;
-        private string mnemonique;
-        private bool mem; //mem ou reg
-        private string destination;
-        private string source;
-        private bool ifdepl;
-        private string valdep;
-        private string val_imm16;
+        private string format = "";
+        private string cop = "";
+        private string champ_notused = "";
+        private string mnemonique = "";
+        private bool mem = false; //mem ou reg
+        private string destination = "";
+        private string source = "";
+        private bool ifdepl =false ;
+        private string valdep = "";
+        private string val_imm16 = "";
 
         public void setFormat (string format) { this.format = format; }
         public void setCop (string cop) { this.cop= cop; }
