@@ -94,7 +94,102 @@
         </Setter>
     </Style>
 
+    <!-- Rounded Button 3 (HOME BUTTONS) -->
 
+    <Style TargetType="Button" x:Key="RoundedButtonStyle3">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border x:Name="ButtonBorder" CornerRadius="30" 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="#7CF6FD"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Margin="0,0,0,0" 
+                                Padding="0,0,0,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="2" 
+                                                  BlurRadius="20" 
+                                                  Opacity="1" 
+                                                  Color="Black" />
+                            </Border.Effect>
+                        </Border>
+                        <Border CornerRadius="20" 
+                                Background="{x:Null}" 
+                                BorderBrush="{x:Null}" 
+                                BorderThickness="5" 
+                                Margin="5,5,5,5">
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="#DAF3FF" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="Transparent" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="ButtonBorder" Property="Effect" Value="{x:Null}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <!-- Rounded Button 4 (Exemples) -->
+
+    <Style TargetType="Button" x:Key="RoundedButtonStyle4">
+        <Setter Property="Background" Value="White" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border x:Name="ButtonBorder" CornerRadius="27" 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="#DAF3FF"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Margin="0,0,0,0" 
+                                Padding="0,0,0,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="3" 
+                                                  BlurRadius="50" 
+                                                  Opacity="0.75"
+                                                  Color="Black" />
+                            </Border.Effect>
+                        </Border>
+                        <Border CornerRadius="20" 
+                                Background="{x:Null}" 
+                                BorderBrush="{x:Null}" 
+                                BorderThickness="5" 
+                                Margin="5,5,5,5">
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="#DAF3FF" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="Transparent" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="ButtonBorder" Property="Effect" Value="{x:Null}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!--**************************************************************-->
+    
+    
     <Style x:Key="RoundedTextBox" TargetType="{x:Type TextBox}">
         <Setter Property="OverridesDefaultStyle" Value="True" />
         <Setter Property="Template">

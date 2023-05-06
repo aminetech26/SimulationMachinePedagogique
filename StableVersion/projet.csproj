@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Montserrat.ttf" />
     <None Remove="images\Arrow 1.png" />
     <None Remove="images\CEI.png" />
     <None Remove="images\CO.png" />
@@ -81,6 +82,7 @@
     <None Remove="Pages\images\Line 53.png" />
     <None Remove="Pages\images\precedent.png" />
     <None Remove="Pages\images\Precedent1.png" />
+    <None Remove="Pages\images\puce.png" />
     <None Remove="Pages\images\Q.png" />
     <None Remove="Pages\images\qst.png" />
     <None Remove="Pages\images\qst1.png" />
@@ -111,6 +113,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Fonts\Montserrat.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="images\Arrow 1.png" />
     <Resource Include="images\CO.png" />
     <Resource Include="images\commencer.png" />
@@ -152,7 +157,6 @@
     <Resource Include="Pages\images\cei.png" />
     <Resource Include="Pages\images\cei2.png" />
     <Resource Include="Pages\images\cei3.png" />
-    <Resource Include="Pages\images\cei4.png" />
     <Resource Include="Pages\images\CEI\and.png" />
     <Resource Include="Pages\images\CEI\branchement.png" />
     <Resource Include="Pages\images\CEI\decalage.png" />
@@ -189,6 +193,9 @@
     <Resource Include="Pages\images\Line 53.png" />
     <Resource Include="Pages\images\precedent.png" />
     <Resource Include="Pages\images\Precedent1.png" />
+    <Resource Include="Pages\images\puce.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pages\images\Q.png" />
     <Resource Include="Pages\images\qst.png" />
     <Resource Include="Pages\images\qst1.png" />
@@ -196,7 +203,9 @@
     <Resource Include="Pages\images\RappelDuCours.png" />
     <Resource Include="Pages\images\rectangle.png" />
     <Resource Include="Pages\images\retour.png" />
-    <Resource Include="Pages\images\revenir.png" />
+    <Resource Include="Pages\images\revenir.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pages\images\sel_inst.png" />
     <Resource Include="Pages\images\simulation.png" />
     <Resource Include="Pages\images\simulation1.png" />

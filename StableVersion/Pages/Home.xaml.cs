@@ -47,25 +47,33 @@ namespace projet.Pages
         {
             if (e.NewSize.Width >= 1000)
             {
-                Text1.FontSize = 75;
-                Text2.FontSize = 40;
-                Button1.Width = 380;
-                Button2.Width = 380;
-                Button3.Width = 380;
-                Button1.Height = 75;
-                Button2.Height = 75;
-                Button3.Height = 75;
+                Text1.FontSize = 65;
+                Text2.FontSize = 30;
+                Text2.Width = 600;
+                Button1.Width = 350;
+                Button2.Width = 350;
+                Button3.Width = 350;
+                Button1.Height = 65;
+                Button2.Height = 65;
+                Button3.Height = 65;
+                text00.FontSize = 22;
+                text01.FontSize = 22;
+                text02.FontSize = 22;
             }
             else
             {
-                Text1.FontSize = 64;
-                Text2.FontSize = 32;
-                Button1.Width = 338;
-                Button2.Width = 338;
-                Button3.Width = 338;
-                Button1.Height = 64;
-                Button2.Height = 64;
-                Button3.Height = 64;
+                Text1.FontSize = 56;
+                Text2.Width = 500;
+                Text2.FontSize = 24;
+                Button1.Width = 300;
+                Button2.Width = 300;
+                Button3.Width = 300;
+                Button1.Height = 50;
+                Button2.Height = 50;
+                Button3.Height = 50;
+                text00.FontSize = 19;
+                text01.FontSize = 19;
+                text02.FontSize = 19;
 
             }
 

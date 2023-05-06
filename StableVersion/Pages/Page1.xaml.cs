@@ -39,7 +39,7 @@ namespace projet.Pages
         {
             InitializeComponent();
             Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
-            Grid_Language.Visibility = Visibility.Hidden;
+
         }
 
 
@@ -81,55 +81,6 @@ namespace projet.Pages
         }
 
         /*************************************************************************************/
-
-        private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            if (e.NewSize.Width >= 1000)
-            {
-                Text1.FontSize = 75;
-                Text2.FontSize = 40;
-                Button1.Width = 380;
-                Button2.Width = 380;
-                Button3.Width = 380;
-                Button1.Height = 75;
-                Button2.Height = 75;
-                Button3.Height = 75;
-            }
-            else
-            {
-                Text1.FontSize = 64;
-                Text2.FontSize = 32;
-                Button1.Width = 338;
-                Button2.Width = 338;
-                Button3.Width = 338;
-                Button1.Height = 64;
-                Button2.Height = 64;
-                Button3.Height = 64;
-
-            }
-
-        }
-
-        private void Exmpl(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void GoToProgrammePage(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Button_Fr_En_Click(object sender, RoutedEventArgs e)
-        {
-            Grid_Language.Visibility = Visibility.Visible;
-        }
-
-        private void Button_Fr_En_MouseLeave(object sender, MouseEventArgs e)
-        {
-            Grid_Language.Visibility = Visibility.Hidden;
-        }
-
 
     }
 }
