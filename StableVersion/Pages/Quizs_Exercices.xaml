@@ -51,7 +51,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Button x:Name="Button1" Style="{DynamicResource RoundedButtonStyle2}" Height="220" Width="210" Margin="20,10" 
-                        PreviewMouseDown="toExoPage" >
+                        PreviewMouseDown="GoToExerciceTypeMenu" >
                 <StackPanel  Width="200" Height="220" >
                     <Grid Margin="0 15 0 7" >
                         <Image Source="/Pages/images/ExercicesTypes.png" Height="45" Width="Auto" Margin="-20 10 0 20" />
