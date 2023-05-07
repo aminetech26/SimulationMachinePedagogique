@@ -102,67 +102,39 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
             <RowDefinition Height="1*" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="3*" ></RowDefinition>
             <RowDefinition Height="70" ></RowDefinition>
             <RowDefinition Height="80" ></RowDefinition>
         </Grid.RowDefinitions>
-
-
-        
-
-        <Button Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Left"
-                VerticalAlignment="Bottom" 
-                Margin="25,0,0,0" Grid.ColumnSpan="2" >
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Image Source="/Pages/images/retour.png" Stretch="Uniform"  />
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
-
+                                  
 
         <Grid Grid.Row="1" Grid.ColumnSpan="2" >
 
             <TextBlock x:Name="Text1" Text="Exercice N° 1 :" FontFamily="Open Sans" FontSize="30" FontWeight="SemiBold" 
-                   Margin="75 10 0 20" />
-
-           
-           
-                 
-
-           
-
-           
-           
+                       Margin="75 10 0 20" 
+            />
 
         </Grid>
         <Grid Grid.Row="2" Grid.ColumnSpan="2" >
             <TextBlock x:Name="Enonce" Text="Enonce :" FontFamily="Montserrat" FontSize="28" 
-                   FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
+                   FontWeight="Thin" Margin="75 0 0 0" VerticalAlignment="Center" FontStyle="Italic" />
             <TextBlock  Visibility="Hidden" x:Name="Solution" Text="Solution :" FontFamily="Montserrat" FontSize="28" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
 
 
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1" >
-            <Border x:Name="BorderEnonce"  CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="20" >
+            <Border x:Name="BorderEnonce"  Height="Auto" CornerRadius="12" Background="#D3D3D3" Grid.Row="2" Margin="0 15 30 10" >
 
                 <Grid  >
 
-
                     <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="2,0,10,0"  >
 
-
-                        
-
                         <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#D3D3D3" Margin="20"
-                                   FontSize="18"   x:Name="Text5"   Padding="10"            
+                                   FontSize="19"   x:Name="Text5"   Padding="10"            
                                   Text="Soit la table de 128 nombres entiers de type Word d’adresse TAB. Ecrire le programme
 assembleur qui range dans une table d’adresse symbolique TABNEG tous les nombres
 négatifs et dans une autre table d’adresse symbolique TABPOS tous les autres nombres
@@ -180,7 +152,7 @@ négatifs et dans une autre table d’adresse symbolique TABPOS tous les autres 
 
                 </Grid>
             </Border>
-            <Border x:Name="BorderSolution"  Visibility="Hidden" CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="20" >
+            <Border x:Name="BorderSolution"  Visibility="Hidden" CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="0 15 30 10" >
 
                 <Grid  >
 
@@ -256,36 +228,36 @@ négatifs et dans une autre table d’adresse symbolique TABPOS tous les autres 
                 </Grid>
             </Border>
 
-
         </Grid>
-        <Grid Grid.Row="4" Grid.Column="1" Margin="0 0 450 0">
-        <Button  x:Name="AfficherLaSolution" Style="{StaticResource RoundedButtonStyle}" Height="45"
+        
+        <Grid Grid.Row="4" Grid.Column="1" Margin="0 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" >
+        <Button  x:Name="AfficherLaSolution" Style="{StaticResource RoundedButtonStyle6}" Height="45" Width="Auto"
                     Background="#90CAF9"
                     Foreground="white"
                     BorderBrush="#90CAF9"
-                    Margin="0 5 100 0"  
-                 Visibility="Visible"
-                 Click="Solut"
-                  
-                    >
+                    Margin="0 0 0 0"  
+                    Visibility="Visible"
+                    Click="Solut"
+        >
 
-                <TextBlock Text="Afficher La Solution" TextAlignment="Center" Padding="7"
+                <TextBlock Text="Afficher La Solution" TextAlignment="Center" Padding="10"
                                FontFamily="Montserrat"
                                FontSize="18" FontWeight="Normal"
-                               />
+                />
                
         </Button>
-        <Button x:Name="RevenirVersEnonce"  Style="{StaticResource RoundedButtonStyle}" Height="45"
+            
+        <Button x:Name="RevenirVersEnonce"  Style="{StaticResource RoundedButtonStyle6}" Height="45" Width="Auto"
                     Background="#90CAF9"
                     Foreground="white"
                     BorderBrush="#90CAF9"
-                    Margin="0 5 100 0"  
-                 Visibility="Hidden"
-                Click="Enon"
+                    Margin="0 0 0 0"  
+                    Visibility="Hidden"
+                    Click="Enon"
                   
                     >
 
-                <TextBlock Text="Revenir vers l'enonce" TextAlignment="Center" Padding="7"
+                <TextBlock Text="Revenir vers l'enonce" TextAlignment="Center" Padding="10"
                                FontFamily="Montserrat"
                                FontSize="18" FontWeight="Normal"
                                />
@@ -297,7 +269,7 @@ négatifs et dans une autre table d’adresse symbolique TABPOS tous les autres 
 
         <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1"  >
 
-            <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
+            <Button Style="{StaticResource RoundedButtonStyle6}" Height="55" Width="155"
                     Background="#90CAF9"
                     Foreground="white"
                     BorderBrush="#90CAF9"

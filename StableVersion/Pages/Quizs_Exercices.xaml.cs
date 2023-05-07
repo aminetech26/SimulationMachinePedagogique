@@ -56,8 +56,11 @@ namespace projet.Pages
         }
         private void GoToExerciceTypeMenu(object sender, RoutedEventArgs e)
         {
+            nchlhtmchi();
+            Frame frame = (Frame)contextofwindow.FindName("window");
+            frame.NavigationService.Navigate(new Uri("/Pages/ExerciceTypeMenu.xaml", UriKind.Relative));
 
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/ExerciceTypeMenu.xaml", UriKind.RelativeOrAbsolute));
+            //NavigationService.Navigate(new Uri("pack://application:,,,/Pages/ExerciceTypeMenu.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toExoPage(object sender, MouseButtonEventArgs e)

@@ -30,10 +30,6 @@ namespace projet.Pages
             myGridExpl.Visibility = Visibility.Collapsed;
         }
 
-        private void GoListQuiz(object sender, RoutedEventArgs e)
-        {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Quiz.xaml", UriKind.RelativeOrAbsolute));
-        }
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {

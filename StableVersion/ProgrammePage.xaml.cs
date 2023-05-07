@@ -202,7 +202,7 @@ namespace projet
             }
             System.Windows.MessageBox.Show(text);
 
-            NavigationService.Navigate(new Uri("/PageProgramme3.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("/Pages/Creerprogramme.xaml", UriKind.Relative));
         }
 
 

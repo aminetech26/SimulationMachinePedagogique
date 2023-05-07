@@ -37,7 +37,7 @@ namespace projet.Pages
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
-            if (e.NewSize.Width >= 1200)
+            if (e.NewSize.Width >= 1000)
             {
                 Text1.FontSize = 45;
                 Text2.FontSize = 32;

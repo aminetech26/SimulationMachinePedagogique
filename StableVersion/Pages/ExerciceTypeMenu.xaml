@@ -8,6 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="1028"
       Title="ExerciceTypeMenu">
+    
     <Page.Resources>
         <ResourceDictionary>
             <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
@@ -101,82 +102,99 @@
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
 
-        <Grid Name="slider" Grid.Column="0" Width="60" Margin="0,0,6,0" >
+        <Grid Name="slider" Grid.Column="0" Width="60" Margin="0,0,5,0" >
             <Grid.Background>
-                <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
-                    <LinearGradientBrush.GradientStops>
-                        <GradientStop Offset="0.1"  Color="#90CAF9" />
-                        <GradientStop Offset="1"   Color="#90CAF9"/>
-                    </LinearGradientBrush.GradientStops>
-                </LinearGradientBrush>
+                <SolidColorBrush Color="#90CAF9" />
             </Grid.Background>
 
             <Grid.RowDefinitions>
-                <RowDefinition  Height="55"/>
+                <RowDefinition  Height="100"/>
                 <RowDefinition />
             </Grid.RowDefinitions>
 
-            <ToggleButton Name="menu" Grid.Row="0" Margin="0,10,0,0"
+            <StackPanel Grid.Row="0" Orientation="Horizontal" >
+
+                <ToggleButton Name="menu" Margin="12,20,0,0"
                           Background="Transparent" BorderBrush="Transparent"
                           Style="{StaticResource ButtonSimple}"
                           Checked="menu_Cheked"
-                          Unchecked="menu_Uncheked" Height="40" VerticalAlignment="Top" Grid.RowSpan="2">
-                <ToggleButton.Triggers>
+                          Unchecked="menu_Uncheked" Height="50" VerticalAlignment="Top" Grid.RowSpan="2">
+                    <ToggleButton.Triggers>
 
-                    <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
 
-                        <BeginStoryboard>
+                            <BeginStoryboard>
 
-                            <Storyboard x:Name="HideStackPanel">
+                                <Storyboard x:Name="HideStackPanel">
 
-                                <DoubleAnimation
+                                    <DoubleAnimation
                                                 Storyboard.TargetName="slider"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
-                                                From="228" To="60"
-                                                Duration="0:0:0.3"/>
+                                                From="225" To="60"
+                                                Duration="0:0:0.5"/>
 
-                            </Storyboard>
+                                </Storyboard>
 
-                        </BeginStoryboard>
+                            </BeginStoryboard>
 
-                    </EventTrigger>
+                        </EventTrigger>
 
-                    <EventTrigger RoutedEvent="ToggleButton.Checked">
+                        <EventTrigger RoutedEvent="ToggleButton.Checked">
 
-                        <BeginStoryboard>
+                            <BeginStoryboard>
 
-                            <Storyboard x:Name="ShowStackPanel">
+                                <Storyboard x:Name="ShowStackPanel">
 
-                                <DoubleAnimation
+                                    <DoubleAnimation
                                                 Storyboard.TargetName="slider"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
-                                                From="60" To="228"
-                                                Duration="0:0:0.15"/>
+                                                From="60" To="225"
+                                                Duration="0:0:0.5"/>
 
-                            </Storyboard>
+                                </Storyboard>
 
-                        </BeginStoryboard>
+                            </BeginStoryboard>
 
-                    </EventTrigger>
+                        </EventTrigger>
 
-                </ToggleButton.Triggers>
-                <Viewbox Width="36" Height="30" VerticalAlignment="Center"  RenderTransformOrigin="0.54,1.622" Stretch="Fill" >
+                    </ToggleButton.Triggers>
+                    <Viewbox Width="40" Height="35" VerticalAlignment="Center"  RenderTransformOrigin="0.54,1.622" Stretch="Fill" >
 
-                    <Path x:Name="menuIcon" 
+                        <Path x:Name="menuIcon" 
                         Fill="#fff"
                         Data="{DynamicResource MENU_ICON}"                  
                         VerticalAlignment="Top"
-                    />
+                        />
 
-                </Viewbox>
-            </ToggleButton>
+                    </Viewbox>
+                </ToggleButton>
 
-         
+
+                <ToggleButton Name="menu2" Margin="120,12,0,0"
+                          Background="Transparent" BorderBrush="Transparent"
+                          Style="{StaticResource ButtonSimple}"
+                          Click="Exit_Quiz" Height="50" VerticalAlignment="Top" Grid.RowSpan="2">
+
+                    <Viewbox Width="40" Height="40" VerticalAlignment="Center"  RenderTransformOrigin="0.54,1.622" Stretch="Fill" >
+
+                        <Path x:Name="menuIcon2" 
+                        Fill="#fff"
+                        Data="{DynamicResource EXIT_ICON}" 
+                        VerticalAlignment="Center"
+                        />
+
+                    </Viewbox>
+                </ToggleButton>
+
+
+            </StackPanel>
+
             <ScrollViewer x:Name="scrll" VerticalScrollBarVisibility="Hidden" CanContentScroll="True" Grid.Row="1">
                 <StackPanel Margin="10,55" Grid.Row="1">
-                    <Menu:Btn Style="{StaticResource BtnStyle2}"
+                    
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="True" Click="MonBouton_Click"
                           VerticalAlignment="Top" x:Name="btn1" Visibility="Hidden"  >
                         <Grid >
@@ -188,9 +206,10 @@
                         </Grid>
 
                     </Menu:Btn>
-                    <Menu:Btn Style="{StaticResource BtnStyle2}"
-                          IsChecked="True" Click="MonBouton2_Click"
-                          VerticalAlignment="Top"   x:Name="btn2" Visibility="Hidden" >
+                    
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
+                          IsChecked="False" Click="MonBouton2_Click"
+                          VerticalAlignment="Top"  x:Name="btn2" Visibility="Hidden" >
                         <Grid>
                             <Image x:Name="img2" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" Margin="25,0,0,8" VerticalAlignment="Bottom" />
                             <TextBlock x:Name="txt2" Text="Exercice № 2" Style="{StaticResource Text_Style2}"  />
@@ -198,7 +217,7 @@
 
                     </Menu:Btn>
 
-                    <Menu:Btn Style="{StaticResource BtnStyle2}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False" Click="MonBouton3_Click"
                           VerticalAlignment="Top"   x:Name="btn3" Visibility="Hidden" >
                         <Grid>
@@ -208,7 +227,7 @@
 
                     </Menu:Btn>
 
-                    <Menu:Btn Style="{StaticResource BtnStyle2}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False" Click="MonBouton4_Click"
                           VerticalAlignment="Top"   x:Name="btn4" Visibility="Hidden" >
                         <Grid>
@@ -218,7 +237,7 @@
 
                     </Menu:Btn>
 
-                    <Menu:Btn Style="{StaticResource BtnStyle2}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False" Click="MonBouton5_Click"
                           VerticalAlignment="Top"  x:Name="btn5" Visibility="Hidden"  >
                         <Grid>
@@ -228,9 +247,9 @@
 
                     </Menu:Btn>
 
-                    <Menu:Btn Style="{StaticResource BtnStyle2}"
+                    <Menu:Btn Style="{StaticResource BtnStyle1}"
                           IsChecked="False" Click="MonBouton6_Click"
-                          VerticalAlignment="Top"   x:Name="btn6" Visibility="Hidden" >
+                          VerticalAlignment="Top"  x:Name="btn6" Visibility="Hidden" >
                         <Grid>
                             <Image x:Name="img6" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
                             <TextBlock x:Name="txt6" Text="Exercice № 6" Style="{StaticResource Text_Style2}"  />
@@ -238,19 +257,11 @@
 
                     </Menu:Btn>
 
-                    
-
-                  
-
-                   
-
-
-
-
                 </StackPanel>
             </ScrollViewer>
 
         </Grid>
+        
         <Grid  Grid.Column="1"  VerticalAlignment="Stretch">
             <Frame Name="_PageContent"  NavigationUIVisibility="Hidden" />
         </Grid>

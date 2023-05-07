@@ -119,7 +119,7 @@
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <Image Source="/Pages/images/revenir.png" Stretch="Uniform"  />
+                                <Image Source="/Pages/images/revenir_blanc.png" Stretch="Uniform"  />
                             </Grid>
                         </ControlTemplate>
                     </Button.Template>
@@ -127,12 +127,12 @@
 
             </Grid>
             <Grid Grid.Column="1">
-                <TextBlock x:Name="Text1" Text="Creer un programme" FontStyle="Normal" FontSize="22" FontWeight="SemiBold" Padding="18" HorizontalAlignment="Center"  FontFamily="Montserrat" 
-                            TextAlignment="Center"  Foreground="#FFFFFF" Height="64" RenderTransformOrigin="0.5,0.734"/>
+                <TextBlock x:Name="Text1" Text="Creer un programme" FontStyle="Normal" FontSize="23" FontWeight="SemiBold" Padding="18" HorizontalAlignment="Center"  FontFamily="Montserrat" 
+                            TextAlignment="Center"  Foreground="#FFFFFF" Height="Auto" RenderTransformOrigin="0.5,0.734" VerticalAlignment="Center" />
             </Grid>
             <Grid Grid.Column="2">
                 <Button  Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Center"
-                        VerticalAlignment="Center" Click="GoBackHome"  >
+                        VerticalAlignment="Center" Click="GoToProgramme3"  >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>

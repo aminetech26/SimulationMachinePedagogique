@@ -28,7 +28,7 @@
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
 
-            <TextBlock x:Name="Text1" Text="Quiz N° 1 :" FontFamily="Open Sans" FontSize="30" FontWeight="SemiBold" 
+            <TextBlock x:Name="Text1" Text="Quiz N° 1 :" FontFamily="Open Sans" FontSize="35" FontWeight="SemiBold" 
                    Margin="75 0 0 0" />
 
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 

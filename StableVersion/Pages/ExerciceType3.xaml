@@ -102,7 +102,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="30" ></RowDefinition>
             <RowDefinition Height="1*" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="3*" ></RowDefinition>
@@ -110,20 +110,6 @@
             <RowDefinition Height="80" ></RowDefinition>
         </Grid.RowDefinitions>
 
-
-
-
-        <Button Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Left"
-                VerticalAlignment="Bottom" 
-                Margin="25,0,0,0" Grid.ColumnSpan="2" >
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Image Source="/Pages/images/retour.png" Stretch="Uniform"  />
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
 
 
 
@@ -151,7 +137,7 @@
 
         </Grid>
         <Grid Grid.Row="3" Grid.Column="1" >
-            <Border x:Name="BorderEnonce"  CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="20" >
+            <Border x:Name="BorderEnonce"  CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="0 15 30 10" >
 
                 <Grid  >
 
@@ -186,7 +172,7 @@
 
                 </Grid>
             </Border>
-            <Border x:Name="BorderSolution"  Visibility="Hidden" CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="20" >
+            <Border x:Name="BorderSolution"  Visibility="Hidden" CornerRadius="12" Background="#D3D3D3"   Grid.Row="2" Margin="0 15 30 10" >
 
                 <Grid  >
 
@@ -228,34 +214,35 @@
 
 
         </Grid>
-        <Grid Grid.Row="4" Grid.Column="1" Margin="0 0 450 0">
-            <Button  x:Name="AfficherLaSolution" Style="{StaticResource RoundedButtonStyle}" Height="45"
+
+        <Grid Grid.Row="4" Grid.Column="1" Margin="0 0 0 0" VerticalAlignment="Center" HorizontalAlignment="Left" >
+            <Button  x:Name="AfficherLaSolution" Style="{StaticResource RoundedButtonStyle6}" Height="45" Width="Auto"
                     Background="#90CAF9"
                     Foreground="white"
                     BorderBrush="#90CAF9"
-                    Margin="0 5 100 0"  
-                 Visibility="Visible"
-                 Click="Solut"
-                  
-                    >
+                    Margin="0 0 0 0"  
+                    Visibility="Visible"
+                    Click="Solut"
+        >
 
-                <TextBlock Text="Afficher La Solution" TextAlignment="Center" Padding="7"
+                <TextBlock Text="Afficher La Solution" TextAlignment="Center" Padding="10"
                                FontFamily="Montserrat"
                                FontSize="18" FontWeight="Normal"
-                               />
+                />
 
             </Button>
-            <Button x:Name="RevenirVersEnonce"  Style="{StaticResource RoundedButtonStyle}" Height="45"
+
+            <Button x:Name="RevenirVersEnonce"  Style="{StaticResource RoundedButtonStyle6}" Height="45" Width="Auto"
                     Background="#90CAF9"
                     Foreground="white"
                     BorderBrush="#90CAF9"
-                    Margin="0 5 100 0"  
-                 Visibility="Hidden"
-                Click="Enon"
+                    Margin="0 0 0 0"  
+                    Visibility="Hidden"
+                    Click="Enon"
                   
                     >
 
-                <TextBlock Text="Revenir vers l'enonce" TextAlignment="Center" Padding="7"
+                <TextBlock Text="Revenir vers l'enonce" TextAlignment="Center" Padding="10"
                                FontFamily="Montserrat"
                                FontSize="18" FontWeight="Normal"
                                />
@@ -264,10 +251,9 @@
         </Grid>
 
 
-
         <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Grid.Column="1"  >
 
-            <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
+            <Button Style="{StaticResource RoundedButtonStyle6}" Height="55" Width="155"
                     Background="#E0E0E0"
                     Foreground="Black"
                     BorderBrush="#E0E0E0"
@@ -283,7 +269,7 @@
                 </StackPanel>
             </Button>
 
-            <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
+            <Button Style="{StaticResource RoundedButtonStyle6}" Height="55" Width="155"
                     Background="#90CAF9"
                     Foreground="white"
                     BorderBrush="#90CAF9"

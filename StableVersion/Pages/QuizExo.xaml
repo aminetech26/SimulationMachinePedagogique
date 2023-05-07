@@ -113,7 +113,7 @@
 
             <StackPanel Grid.Row="0" Orientation="Horizontal" >
 
-                <ToggleButton Name="menu" Margin="10,20,0,0"
+                <ToggleButton Name="menu" Margin="12,20,0,0"
                           Background="Transparent" BorderBrush="Transparent"
                           Style="{StaticResource ButtonSimple}"
                           Checked="menu_Cheked"
@@ -130,7 +130,7 @@
                                                 Storyboard.TargetName="slider"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
-                                                From="230" To="60"
+                                                From="225" To="60"
                                                 Duration="0:0:0.5"/>
 
                                 </Storyboard>
@@ -149,7 +149,7 @@
                                                 Storyboard.TargetName="slider"
                                                 Storyboard.TargetProperty="Width"
                                                 BeginTime="0:0:0"
-                                                From="60" To="230"
+                                                From="60" To="225"
                                                 Duration="0:0:0.5"/>
 
                                 </Storyboard>
@@ -171,7 +171,7 @@
                 </ToggleButton>
 
                 
-                <ToggleButton Name="menu2" Margin="125,17,0,0"
+                <ToggleButton Name="menu2" Margin="120,12,0,0"
                           Background="Transparent" BorderBrush="Transparent"
                           Style="{StaticResource ButtonSimple}"
                           Click="Exit_Quiz" Height="50" VerticalAlignment="Top" Grid.RowSpan="2">
@@ -189,11 +189,11 @@
 
 
             </StackPanel>
-           
-            <ScrollViewer VerticalScrollBarVisibility="Visible" CanContentScroll="True" Grid.Row="1">
+
+            <ScrollViewer x:Name="scrll" VerticalScrollBarVisibility="Visible" CanContentScroll="True" Grid.Row="1">
                 <StackPanel Margin="10,55" Grid.Row="1">
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz1" Click="Btn_Click"
-                          IsChecked="True"
+                          IsChecked="True" x:Name="Btn1"
                           VerticalAlignment="Top"  >
                         <Grid >
                             <Grid>
@@ -204,7 +204,7 @@
 
                     </Menu:Btn>
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz2" Click="Btn_Click2"
-                          IsChecked="True"
+                          IsChecked="False" x:Name="Btn2"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White2" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -214,7 +214,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz3" Click="Btn_Click3"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn3"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White3" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -224,7 +224,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz4" Click="Btn_Click4"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn4"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White4" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -234,7 +234,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz5" Click="Btn_Click5"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn5"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White5" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -244,7 +244,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz6" Click="Btn_Click6"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn6"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White6" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -255,7 +255,7 @@
 
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz7" Click="Btn_Click7"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn7"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White7" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -266,7 +266,7 @@
 
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz8" Click="Btn_Click8"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn8"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White8" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -277,7 +277,7 @@
 
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz9" Click="Btn_Click9"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn9"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White9" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -288,7 +288,7 @@
 
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz10" Click="Btn_Click10"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn10"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White10" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -298,7 +298,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz11" Click="Btn_Click11"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn11"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White11" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -308,7 +308,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz12" Click="Btn_Click12"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn12"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White12" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -318,7 +318,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz13" Click="Btn_Click13"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn13"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White13" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -328,7 +328,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz14" Click="Btn_Click14"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn14"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White14" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -338,7 +338,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz15" Click="Btn_Click15"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn15"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White15" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -348,7 +348,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz16" Click="Btn_Click16"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn16"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White16" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -358,7 +358,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz17" Click="Btn_Click17"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn17"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White17" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -368,7 +368,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz18" Click="Btn_Click18"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn18"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White18" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -378,7 +378,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz19" Click="Btn_Click19"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn19"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White19" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -388,7 +388,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz20" Click="Btn_Click20"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn20"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White20" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -398,7 +398,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz21" Click="Btn_Click21"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn21"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White21" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -408,7 +408,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz22" Click="Btn_Click22"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn22"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White22" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -418,7 +418,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz23" Click="Btn_Click23"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn23"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White23" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -428,7 +428,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz24" Click="Btn_Click24"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn24"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White24" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -438,7 +438,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz25" Click="Btn_Click25"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn25"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White25" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -448,7 +448,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz26" Click="Btn_Click26"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn26"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White26" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -458,7 +458,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz27" Click="Btn_Click27"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn27"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White27" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -468,7 +468,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz28" Click="Btn_Click28"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn28"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White28" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -478,7 +478,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz29" Click="Btn_Click29"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn29"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White29" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -488,7 +488,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz30" Click="Btn_Click30"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn30"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White30" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -498,7 +498,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz31" Click="Btn_Click31"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn31"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White31" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -508,7 +508,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz32" Click="Btn_Click32"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn32"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White32" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -518,7 +518,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz33" Click="Btn_Click33"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn33"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White33" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -528,7 +528,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz34" Click="Btn_Click34"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn34"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White34" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -538,7 +538,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz35" Click="Btn_Click35"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn35"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White35" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -548,7 +548,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz36" Click="Btn_Click36"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn36"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White36" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -558,7 +558,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz37" Click="Btn_Click37"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn37"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White37" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -568,7 +568,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz38" Click="Btn_Click38"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn38"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White38" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -578,7 +578,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz39" Click="Btn_Click39"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn39"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White39" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -588,7 +588,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz40" Click="Btn_Click40"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn40"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White40" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -598,7 +598,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz41" Click="Btn_Click41"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn41"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White41" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -608,7 +608,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz42" Click="Btn_Click42"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn42"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White42" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -618,7 +618,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz43" Click="Btn_Click43"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn43"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White43" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -628,7 +628,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz44" Click="Btn_Click44"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn44"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White44" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -638,7 +638,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz45" Click="Btn_Click45"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn45"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White45" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />
@@ -648,7 +648,7 @@
                     </Menu:Btn>
 
                     <Menu:Btn Style="{StaticResource BtnStyle1}" PreviewMouseDown="toQuiz46" Click="Btn_Click46"
-                          IsChecked="False"
+                          IsChecked="False" x:Name="Btn46"
                           VerticalAlignment="Top"  >
                         <Grid>
                             <Image x:Name="Quiz_White46" Style="{StaticResource Image_Style}" Source="/Pages/images/qst.png" />

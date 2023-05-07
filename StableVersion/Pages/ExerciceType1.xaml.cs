@@ -24,10 +24,12 @@ namespace projet.Pages
         {
             InitializeComponent();
         }
+
         private void Suivant(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/ExerciceType2.xaml", UriKind.RelativeOrAbsolute));
         }
+        
         private void Solut(object sender, RoutedEventArgs e)
         {
             BorderSolution.Visibility = Visibility.Visible;

@@ -24,10 +24,17 @@ namespace projet.Pages
         {
             InitializeComponent();
         }
+        
         private void GoBackHome(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("/ProgrammePage.xaml", UriKind.RelativeOrAbsolute));
         }
+        
+        private void GoToProgramme3(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/PageProgramme3.xaml", UriKind.RelativeOrAbsolute));
+        }
+
         private void Hexadecimal(object sender, RoutedEventArgs e)
         {
            BorderHexadecimal.Visibility = Visibility.Visible;

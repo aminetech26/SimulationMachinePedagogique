@@ -28,7 +28,54 @@ namespace projet.Pages
             InitializeComponent();
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz.xaml", UriKind.RelativeOrAbsolute));
             menu.Cursor = Cursors.Hand;
-            //navBar.Opacity = 0;
+
+            Btn1.Visibility = Visibility.Collapsed;
+            Btn2.Visibility = Visibility.Collapsed;
+            Btn3.Visibility = Visibility.Collapsed;
+            Btn4.Visibility = Visibility.Collapsed;
+            Btn5.Visibility = Visibility.Collapsed;
+            Btn6.Visibility = Visibility.Collapsed;
+            Btn7.Visibility = Visibility.Collapsed;
+            Btn8.Visibility = Visibility.Collapsed;
+            Btn9.Visibility = Visibility.Collapsed;
+            Btn10.Visibility = Visibility.Collapsed;
+            Btn11.Visibility = Visibility.Collapsed;
+            Btn12.Visibility = Visibility.Collapsed;
+            Btn13.Visibility = Visibility.Collapsed;
+            Btn14.Visibility = Visibility.Collapsed;
+            Btn15.Visibility = Visibility.Collapsed;
+            Btn16.Visibility = Visibility.Collapsed;
+            Btn17.Visibility = Visibility.Collapsed;
+            Btn18.Visibility = Visibility.Collapsed;
+            Btn19.Visibility = Visibility.Collapsed;
+            Btn20.Visibility = Visibility.Collapsed;
+            Btn21.Visibility = Visibility.Collapsed;
+            Btn22.Visibility = Visibility.Collapsed;
+            Btn23.Visibility = Visibility.Collapsed;
+            Btn24.Visibility = Visibility.Collapsed;
+            Btn25.Visibility = Visibility.Collapsed;
+            Btn26.Visibility = Visibility.Collapsed;
+            Btn27.Visibility = Visibility.Collapsed;
+            Btn28.Visibility = Visibility.Collapsed;
+            Btn29.Visibility = Visibility.Collapsed;
+            Btn30.Visibility = Visibility.Collapsed;
+            Btn31.Visibility = Visibility.Collapsed;
+            Btn32.Visibility = Visibility.Collapsed;
+            Btn33.Visibility = Visibility.Collapsed;
+            Btn34.Visibility = Visibility.Collapsed;
+            Btn35.Visibility = Visibility.Collapsed;
+            Btn36.Visibility = Visibility.Collapsed;
+            Btn37.Visibility = Visibility.Collapsed;
+            Btn38.Visibility = Visibility.Collapsed;
+            Btn39.Visibility = Visibility.Collapsed;
+            Btn40.Visibility = Visibility.Collapsed;
+            Btn41.Visibility = Visibility.Collapsed;
+            Btn42.Visibility = Visibility.Collapsed;
+            Btn43.Visibility = Visibility.Collapsed;
+            Btn44.Visibility = Visibility.Collapsed;
+            Btn45.Visibility = Visibility.Collapsed;
+            Btn46.Visibility = Visibility.Collapsed;
+
 
         }
 
@@ -37,24 +84,122 @@ namespace projet.Pages
             _PageContent.IsHitTestVisible = true;
             _PageContent.Effect = null;
 
-            menu2.Visibility = Visibility.Hidden;
+            Btn1.Visibility = Visibility.Collapsed;
+            Btn2.Visibility = Visibility.Collapsed;
+            Btn3.Visibility = Visibility.Collapsed;
+            Btn4.Visibility = Visibility.Collapsed;
+            Btn5.Visibility = Visibility.Collapsed;
+            Btn6.Visibility = Visibility.Collapsed;
+            Btn7.Visibility = Visibility.Collapsed;
+            Btn8.Visibility = Visibility.Collapsed;
+            Btn9.Visibility = Visibility.Collapsed;
+            Btn10.Visibility = Visibility.Collapsed;
+            Btn11.Visibility = Visibility.Collapsed;
+            Btn12.Visibility = Visibility.Collapsed;
+            Btn13.Visibility = Visibility.Collapsed;
+            Btn14.Visibility = Visibility.Collapsed;
+            Btn15.Visibility = Visibility.Collapsed;
+            Btn16.Visibility = Visibility.Collapsed;
+            Btn17.Visibility = Visibility.Collapsed;
+            Btn18.Visibility = Visibility.Collapsed;
+            Btn19.Visibility = Visibility.Collapsed;
+            Btn20.Visibility = Visibility.Collapsed;
+            Btn21.Visibility = Visibility.Collapsed;
+            Btn22.Visibility = Visibility.Collapsed;
+            Btn23.Visibility = Visibility.Collapsed;
+            Btn24.Visibility = Visibility.Collapsed;
+            Btn25.Visibility = Visibility.Collapsed;
+            Btn26.Visibility = Visibility.Collapsed;
+            Btn27.Visibility = Visibility.Collapsed;
+            Btn28.Visibility = Visibility.Collapsed;
+            Btn29.Visibility = Visibility.Collapsed;
+            Btn30.Visibility = Visibility.Collapsed;
+            Btn31.Visibility = Visibility.Collapsed;
+            Btn32.Visibility = Visibility.Collapsed;
+            Btn33.Visibility = Visibility.Collapsed;
+            Btn34.Visibility = Visibility.Collapsed;
+            Btn35.Visibility = Visibility.Collapsed;
+            Btn36.Visibility = Visibility.Collapsed;
+            Btn37.Visibility = Visibility.Collapsed;
+            Btn38.Visibility = Visibility.Collapsed;
+            Btn39.Visibility = Visibility.Collapsed;
+            Btn40.Visibility = Visibility.Collapsed;
+            Btn41.Visibility = Visibility.Collapsed;
+            Btn42.Visibility = Visibility.Collapsed;
+            Btn43.Visibility = Visibility.Collapsed;
+            Btn44.Visibility = Visibility.Collapsed;
+            Btn45.Visibility = Visibility.Collapsed;
+            Btn46.Visibility = Visibility.Collapsed;
+
+            scrll.Visibility = Visibility.Collapsed;
+
+            menu.Visibility = Visibility.Visible;
             menuIcon.SetResourceReference(System.Windows.Shapes.Path.DataProperty, "MENU_ICON");
-            menu.Margin = new Thickness(10, 20, 0, 0);
+            menu.Margin = new Thickness(12, 20, 0, 0);
             menu.HorizontalAlignment = HorizontalAlignment.Center;
-            //navBar.Opacity = 0;
+            
 
         }
 
         private void menu_Cheked(object sender, RoutedEventArgs e)
         {
-            menu2.Visibility = Visibility.Visible;
-            menuIcon.SetResourceReference(System.Windows.Shapes.Path.DataProperty, "MENU_ICON");
+
+            Btn1.Visibility = Visibility.Visible;
+            Btn2.Visibility = Visibility.Visible;
+            Btn3.Visibility = Visibility.Visible;
+            Btn4.Visibility = Visibility.Visible;
+            Btn5.Visibility = Visibility.Visible;
+            Btn6.Visibility = Visibility.Visible;
+            Btn7.Visibility = Visibility.Visible;
+            Btn8.Visibility = Visibility.Visible;
+            Btn9.Visibility = Visibility.Visible;
+            Btn10.Visibility = Visibility.Visible;
+            Btn11.Visibility = Visibility.Visible;
+            Btn12.Visibility = Visibility.Visible;
+            Btn13.Visibility = Visibility.Visible;
+            Btn14.Visibility = Visibility.Visible;
+            Btn15.Visibility = Visibility.Visible;
+            Btn16.Visibility = Visibility.Visible;
+            Btn17.Visibility = Visibility.Visible;
+            Btn18.Visibility = Visibility.Visible;
+            Btn19.Visibility = Visibility.Visible;
+            Btn20.Visibility = Visibility.Visible;
+            Btn21.Visibility = Visibility.Visible;
+            Btn22.Visibility = Visibility.Visible;
+            Btn23.Visibility = Visibility.Visible;
+            Btn24.Visibility = Visibility.Visible;
+            Btn25.Visibility = Visibility.Visible;
+            Btn26.Visibility = Visibility.Visible;
+            Btn27.Visibility = Visibility.Visible;
+            Btn28.Visibility = Visibility.Visible;
+            Btn29.Visibility = Visibility.Visible;
+            Btn30.Visibility = Visibility.Visible;
+            Btn31.Visibility = Visibility.Visible;
+            Btn32.Visibility = Visibility.Visible;
+            Btn33.Visibility = Visibility.Visible;
+            Btn34.Visibility = Visibility.Visible;
+            Btn35.Visibility = Visibility.Visible;
+            Btn36.Visibility = Visibility.Visible;
+            Btn37.Visibility = Visibility.Visible;
+            Btn38.Visibility = Visibility.Visible;
+            Btn39.Visibility = Visibility.Visible;
+            Btn40.Visibility = Visibility.Visible;
+            Btn41.Visibility = Visibility.Visible;
+            Btn42.Visibility = Visibility.Visible;
+            Btn43.Visibility = Visibility.Visible;
+            Btn44.Visibility = Visibility.Visible;
+            Btn45.Visibility = Visibility.Visible;
+            Btn46.Visibility = Visibility.Visible;
+
+            scrll.Visibility = Visibility.Visible;
 
             _PageContent.IsHitTestVisible = false;
             _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
-            menu.Margin = new Thickness(10, 20, 0, 0);
-            //menu.HorizontalAlignment = HorizontalAlignment.Right;
-            //navBar.Opacity = 1;
+
+            menu2.Visibility = Visibility.Visible;
+            menuIcon.SetResourceReference(System.Windows.Shapes.Path.DataProperty, "MENU_ICON");
+
+            menu.Margin = new Thickness(12, 20, 0, 0);
 
         }
 
@@ -299,313 +444,313 @@ namespace projet.Pages
 
         private void toQuiz1(object sender, MouseButtonEventArgs e)
         {
-            //_PageContent.IsHitTestVisible = true;
-            //_PageContent.Effect = null;
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            //_PageContent.IsHitTestVisible = false;
+            //_PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
 
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz2(object sender, MouseButtonEventArgs e)
         {
-            //_PageContent.IsHitTestVisible = true;
-            //_PageContent.Effect = null;
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            //_PageContent.IsHitTestVisible = false;
+            //_PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz2.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz3(object sender, MouseButtonEventArgs e)
         {
-            //_PageContent.IsHitTestVisible = true;
-            //_PageContent.Effect = null;
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            //_PageContent.IsHitTestVisible = false;
+            //_PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz3.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz4(object sender, MouseButtonEventArgs e)
         {
-            //_PageContent.IsHitTestVisible = true;
-            //_PageContent.Effect = null;
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            //_PageContent.IsHitTestVisible = false;
+            //_PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz4.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz5(object sender, MouseButtonEventArgs e)
         {
-            //_PageContent.IsHitTestVisible = true;
-            //_PageContent.Effect = null;
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            //_PageContent.IsHitTestVisible = false;
+            //_PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz5.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz6(object sender, MouseButtonEventArgs e)
         {
-            //_PageContent.IsHitTestVisible = true;
-            //_PageContent.Effect = null;
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
+            //_PageContent.IsHitTestVisible = false;
+            //_PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz6.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz7(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz7.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz8(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz8.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz9(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz9.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz10(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz10.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz11(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz11.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz12(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz12.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz13(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz13.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz14(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz14.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz15(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz15.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz16(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz16.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz17(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz17.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz18(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz18.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz19(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz19.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz20(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz10.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz21(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz21.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz22(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz22.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void toQuiz23(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz23.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz24(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz24.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz25(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz25.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz26(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz26.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz27(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz27.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz28(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz28.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz29(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz29.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz30(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz30.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz31(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz31.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz32(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz32.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz33(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz33.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz34(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz34.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz35(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz35.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz36(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz36.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz37(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz37.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz38(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz38.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz39(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz39.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz40(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz40.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz41(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz41.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz42(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz42.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz43(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz43.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz44(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz44.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz45(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz25.xaml", UriKind.RelativeOrAbsolute));
         }
         private void toQuiz46(object sender, MouseButtonEventArgs e)
         {
-            _PageContent.IsHitTestVisible = false;
-            _PageContent.Effect = new BlurEffect() { Radius = 30, KernelType = KernelType.Gaussian };
+            _PageContent.IsHitTestVisible = true;
+            _PageContent.Effect = null;
             _PageContent.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageQuiz46.xaml", UriKind.RelativeOrAbsolute));
         }
     }
