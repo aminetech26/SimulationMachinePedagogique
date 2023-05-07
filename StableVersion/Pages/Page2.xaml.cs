@@ -1,4 +1,6 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using ArchiMind;
+using MaterialDesignThemes.Wpf;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,9 +28,15 @@ namespace projet.Pages
     /// </summary>
     public partial class Page2 : Page
     {
+
+        private Page2 mainpage;
+        
+
         public Page2()
         {
             InitializeComponent();
+            mainpage = this;
+            Animation.setcontext(mainpage);
 
         }
 
@@ -59,7 +67,7 @@ namespace projet.Pages
                 TextBox1.Width = 150;
                 TextBox2.Width = 150;
                 TextBox3.Width = 150;
-                Inst.Width= 275;
+                Inst.Width = 275;
                 Inst.Height = 60;
                 Inst.FontSize = 25;
                 Inst_En_Hexa.Width = 275;
@@ -118,16 +126,48 @@ namespace projet.Pages
         }
 
 
+
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            if (textBox.Text.Length > 4)
+            bool allValid = true;
+            foreach (var tb in FindVisualChildren<TextBox>(this))
             {
-                textBox.Text = textBox.Text.Substring(0, 4);
-                textBox.CaretIndex = 4;
+                string input = tb.Text.Trim();
+                TextBox? textBox = sender as TextBox;
+                textBox.CaretIndex = textBox.Text.Length;
+                if (!Regex.IsMatch(input, @"^[0-9A-Fa-f]{4}$"))
+                {
+                    tb.ToolTip = "Entrer 4 caracteres en hexa";
+                    tb.Background = Brushes.Red;
+                    allValid = false;
+                }
+                else
+                {
+                    tb.ToolTip = null;
+                    tb.Background = Brushes.White;
+                }
             }
         }
 
+        private IEnumerable<T> FindVisualChildren<T>(DependencyObject parent) where T : DependencyObject
+        {
+            if (parent != null)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+                {
+                    DependencyObject child = VisualTreeHelper.GetChild(parent, i);
+                    if (child != null && child is T)
+                    {
+                        yield return (T)child;
+                    }
+
+                    foreach (T childOfChild in FindVisualChildren<T>(child))
+                    {
+                        yield return childOfChild;
+                    }
+                }
+            }
+        }
 
         private void TextBox2_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -166,13 +206,79 @@ namespace projet.Pages
             }
         }
 
+        private void TextBox4_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TextBox4.Text == "XXXX")
+            {
+                TextBox4.Text = "";
+                TextBox4.Foreground = Brushes.Black;
+            }
+        }
+
+        private void TextBox4_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBox4.Text))
+            {
+                TextBox4.Text = "XXXX";
+                TextBox4.Foreground = Brushes.Gray;
+            }
+        }
+
+
+        private void TextBox5_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TextBox5.Text == "XXXX")
+            {
+                TextBox5.Text = "";
+                TextBox5.Foreground = Brushes.Black;
+            }
+        }
+
+        private void TextBox5_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBox5.Text))
+            {
+                TextBox5.Text = "XXXX";
+                TextBox5.Foreground = Brushes.Gray;
+            }
+        }
+
+
+
         public void convertButton_Click(object sender, RoutedEventArgs e)
         {
             string hexString = TextBox1.Text;
+            string hexString2 = TextBox2.Text;
+            string hexString3 = TextBox3.Text;
+            string hexString4 = TextBox4.Text;
+            string hexString5 = TextBox5.Text;
             string moule = "^[0-9A-Fa-f]+$";
             Regex regex = new Regex(moule);
 
-            if (!regex.IsMatch(hexString))
+
+            
+
+            if (!regex.IsMatch(hexString) && (hexString != "XXXX"))
+            {
+                MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
+                return;
+            }
+            if (!regex.IsMatch(hexString2) && (hexString2 != "XXXX"))
+            {
+                MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
+                return;
+            }
+            if (!regex.IsMatch(hexString3) && (hexString3 != "XXXX"))
+            {
+                MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
+                return;
+            }
+            if (!regex.IsMatch(hexString4) && (hexString4 != "XXXX"))
+            {
+                MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
+                return;
+            }
+            if (!regex.IsMatch(hexString5) && (hexString5 != "XXXX"))
             {
                 MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
                 return;
@@ -180,25 +286,39 @@ namespace projet.Pages
 
             //int decimalValue = Convert.ToInt32(hexString, 16);
             //MessageBox.Show("La valeur décimale correspondante est : " + decimalValue.ToString());
-            string Registr;
-            string deplace;
-            string destinatair;
-            string source;
-            string Forma;
-            ComboBoxItem? selectedItem = Instruction.SelectedItem as ComboBoxItem;
-            string letter = Format.SelectedItem.ToString();
-            ComboBoxItem? selectedItem2 = Reg.SelectedItem as ComboBoxItem; if (selectedItem2 == null) { Registr = "0000"; } else { Registr = selectedItem2.ToString(); }
-            ComboBoxItem? selectedItem3 = Dep.SelectedItem as ComboBoxItem; if (selectedItem3 == null) { deplace = "0000"; } else { deplace = selectedItem3.ToString(); }
-            ComboBoxItem? selectedItem4 = Destinataire.SelectedItem as ComboBoxItem; if (selectedItem4 == null) { destinatair = "0000"; } else { destinatair = selectedItem4.ToString(); }
-            ComboBoxItem? selectedItem5 = Source.SelectedItem as ComboBoxItem; if (selectedItem5 == null) { source = "0000"; } else { source = selectedItem5.ToString(); }
+            ComboBoxItem selectedItem = Instruction.SelectedItem as ComboBoxItem;
+            if (selectedItem == null) { MessageBox.Show("ERREUR!!!, CHOISER UNE INSTRUCTION ");return; }
+            string Forma; string deplace; bool ifdepl;
+            string letter="";
+           
+            if (Format.SelectedItem.ToString() == "") { MessageBox.Show("ERREUR!!!, CHOISER UNE FORMAT "); return; }
+            else { letter = Format.SelectedItem.ToString(); }
+            string destinatair = "";
+            if ((letter != "AX,imd16") && (letter != "Reg16")) { destinatair = Destinataire.SelectedItem.ToString(); }
+            string source = "XXXX";
+            if (Source.SelectedItem != null) { source = Source.SelectedItem.ToString(); }
+            string Registr = "";
+            if ((letter != "AX,imd16") && (letter != "Reg16")) { Registr = Reg.SelectedItem.ToString(); }
+            if ((Registr == " Registre ") || (letter == "AX,imd16") || (letter == "Reg16")) { deplace = "0000"; }
+            else { deplace = Dep.SelectedItem.ToString(); }
+            if (deplace == "Avec deplacement") { ifdepl = true; }
+            else { ifdepl = false; }
+            JeuxInstruction instruction = new JeuxInstruction();
 
-            MainWindow wind = new MainWindow(sender,TextBox1.Text,TextBox2.Text,TextBox3.Text,TextBox5.Text,TextBox4.Text, selectedItem.Content.ToString(), letter,Registr ,deplace,destinatair ,source);
-            
+
+            MainWindow wind = new MainWindow(sender, TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox5.Text, TextBox4.Text, selectedItem.Content.ToString(), letter, Registr, "0000", destinatair, source, champ1.Text, champ2.Text, champ3.Text);
+
         }
 
+        public void convertButton_Click1(object sender, RoutedEventArgs e)
+        {
+            Animation main = new Animation();
+            main.ShowDialog();
+        }
 
-        private void componentComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)    
-            // cette methode pour changer format 
+        public static int r = 1;
+
+        private void componentComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e) // cette methode pour changer format 
         {
             // Get the selected combo box item
             ComboBoxItem selectedItem = Instruction.SelectedItem as ComboBoxItem;
@@ -211,55 +331,57 @@ namespace projet.Pages
                 if (selectedItem.Content.ToString() == "ADD")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("AX , Imd");
-                    Format.Items.Add("Reg , Reg/M");
-                    Format.Items.Add("Reg/M , Reg");
-                    Format.Items.Add("Reg/M , Imd");
+                    Format.Items.Add("AX,imd16");
+                    Format.Items.Add("Reg16,Reg16/mem16");
+                    Format.Items.Add("Reg16/mem16,Reg16");
+                    Format.Items.Add("Reg16/Mem16,imm16");
                     //if (Format.SelectedIndex == 1) { Format.SelectedItem = "AX , Imd"; }
 
                 }
                 else if (selectedItem.Content.ToString() == "SUB")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("AX , Imd");
-                    Format.Items.Add("Reg , Reg/M");
-                    Format.Items.Add("Reg/M , Reg");
-                    Format.Items.Add("Reg/M , Imd");
+                    Format.Items.Add("AX,imd16");
+                    Format.Items.Add("Reg16,Reg16/mem16");
+                    Format.Items.Add("Reg16/mem16,Reg16");
+                    Format.Items.Add("Reg16/Mem16,imm16");
 
                 }
                 else if (selectedItem.Content.ToString() == "INC")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add(" Reg ");
-                    Format.Items.Add(" Reg/M ");
+                    Format.Items.Add("Reg16");
+                    Format.Items.Add("Reg16/mem16");
                 }
                 else if (selectedItem.Content.ToString() == "DEC")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add(" Reg ");
-                    Format.Items.Add(" Reg/M ");
+                    Format.Items.Add("Reg16");
+                    Format.Items.Add("Reg16/mem16");
                 }
                 else if (selectedItem.Content.ToString() == "MUL")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add(" Reg/M ");
+                    Format.Items.Add("Reg16/mem16");
+                    r = 0;
                 }
             }
-            
+
 
         }
-        
         private void componentFormat_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+            ComboBoxItem selectedItem = Format.SelectedItem as ComboBoxItem;
+
             string letter = Format.SelectedItem.ToString();
-           
+
             // Show the components for the selected option
             if (letter != null)
             {
 
 
-                if (string.Compare(letter, "AX , Imd") == 0)
+                if (string.Compare(letter, "AX,imd16") == 0)
                 {
                     int columnIndex = Grid.GetColumn(stkDes);
                     if (columnIndex >= 0)
@@ -267,7 +389,7 @@ namespace projet.Pages
                         StackPanel1.Children.Remove(stkDes);
                     }
 
-                    
+
                     int columnIndex1 = Grid.GetColumn(stkSrc);
                     if (columnIndex1 >= 0)
                     {
@@ -310,7 +432,7 @@ namespace projet.Pages
 
 
                 }
-                else if ((string.Compare(letter, "Reg , Reg/M") == 0) || (string.Compare(letter, "Reg/M , Reg") == 0))
+                else if ((string.Compare(letter, "Reg16,Reg16/mem16") == 0) || (string.Compare(letter, "Reg16/mem16,Reg16") == 0))
                 {
                     if (!StackPanel1.Children.Contains(stkDes))
                     {
@@ -339,7 +461,7 @@ namespace projet.Pages
 
 
                 }
-                else if (string.Compare(letter, "Reg/M , Imd") == 0)
+                else if (string.Compare(letter, "Reg16/Mem16,imm16") == 0)
                 {
 
                     if (!StackPanel1.Children.Contains(stkDep))
@@ -361,7 +483,7 @@ namespace projet.Pages
                     }
 
                 }
-                else if (letter == " Reg/M ")
+                else if (letter == "Reg16/mem16")
                 {
                     int columnIndex = Grid.GetColumn(stkSrc);
                     if (columnIndex >= 0)
@@ -370,14 +492,13 @@ namespace projet.Pages
                     }
                     txtDes.Text = "Source";
                 }
-                else if (letter == " Reg ")
+                else if (letter == "Reg16")
                 {
                     int columnIndex = Grid.GetColumn(stkDes);
                     if (columnIndex >= 0)
                     {
                         StackPanel1.Children.Remove(stkDes);
                     }
-
                     int columnIndex2 = Grid.GetColumn(stkDep);
 
                     // Check if the column index is greater than or equal to zero
@@ -386,7 +507,6 @@ namespace projet.Pages
                         // StackPanel1.ColumnDefinitions.RemoveAt(2);
                         StackPanel1.Children.Remove(stkDep);
                     }
-
                     int columnIndex3 = Grid.GetColumn(stkReg);
                     if (columnIndex3 >= 0)
                     {
@@ -416,14 +536,14 @@ namespace projet.Pages
                         stc_2.Children.Remove(TextBox3);
                     }
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("BX");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
                 }
             }
             Instruction.IsEnabled = false;
@@ -438,11 +558,11 @@ namespace projet.Pages
 
         private void componentReg_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            ComboBoxItem? selectedItem = Reg.SelectedItem as ComboBoxItem;
+            ComboBoxItem selectedItem = Reg.SelectedItem as ComboBoxItem;
 
             string letter = Reg.SelectedItem.ToString();
             string letter2 = Format.SelectedItem.ToString();
-            
+
 
             if (letter != null)
             {
@@ -454,47 +574,47 @@ namespace projet.Pages
                         StackPanel1.Children.Remove(stkDep);
                     }
                     Destinataire.Items.Clear();
-                    Destinataire.Items.Add(" AX ");
-                    Destinataire.Items.Add(" CX ");
-                    Destinataire.Items.Add(" DX ");
-                    Destinataire.Items.Add(" BX ");
-                    Destinataire.Items.Add(" SP ");
-                    Destinataire.Items.Add(" BP ");
-                    Destinataire.Items.Add(" SI ");
-                    Destinataire.Items.Add(" DI ");
+                    if (r == 1) { Destinataire.Items.Add("AX"); }
+                    Destinataire.Items.Add("CX");
+                    Destinataire.Items.Add("DX");
+                    Destinataire.Items.Add("BX");
+                    Destinataire.Items.Add("SP");
+                    Destinataire.Items.Add("BP");
+                    Destinataire.Items.Add("SI");
+                    Destinataire.Items.Add("DI");
                 }
                 if (string.Compare(letter, " Memoire ") == 0)
                 {
                     //if (!StackPanel1.Children.Contains(stkDep))
-                    //
+                    //{
                     //    StackPanel1.ColumnDefinitions.Add(new ColumnDefinition());
                     //    Grid.SetColumn(stkDep, 3);
                     //    StackPanel1.Children.Add(stkDep);
                     //}
 
-                    if (letter2 == "Reg/M , Reg")
+                    if (letter2 == "Reg16/mem16,Reg16")
                     {
                         Source.Items.Clear();
-                        Source.Items.Add(" AX ");
-                        Source.Items.Add(" BX ");
-                        Source.Items.Add(" CX ");
-                        Source.Items.Add(" DX ");
-                        Source.Items.Add(" SI ");
-                        Source.Items.Add(" DI ");
-                        Source.Items.Add(" SP ");
-                        Source.Items.Add(" BP ");
+                        Source.Items.Add("AX");
+                        Source.Items.Add("BX");
+                        Source.Items.Add("CX");
+                        Source.Items.Add("DX");
+                        Source.Items.Add("SI");
+                        Source.Items.Add("DI");
+                        Source.Items.Add("SP");
+                        Source.Items.Add("BP");
                     }
-                    if (letter2 == "Reg , Reg/M")
+                    if (letter2 == "Reg16,Reg16/mem16")
                     {
                         Destinataire.Items.Clear();
-                        Destinataire.Items.Add(" AX ");
-                        Destinataire.Items.Add(" CX ");
-                        Destinataire.Items.Add(" DX ");
-                        Destinataire.Items.Add(" BX ");
-                        Destinataire.Items.Add(" SP ");
-                        Destinataire.Items.Add(" BP ");
-                        Destinataire.Items.Add(" SI ");
-                        Destinataire.Items.Add(" DI ");
+                        Destinataire.Items.Add("AX");
+                        Destinataire.Items.Add("CX");
+                        Destinataire.Items.Add("DX");
+                        Destinataire.Items.Add("BX");
+                        Destinataire.Items.Add("SP");
+                        Destinataire.Items.Add("BP");
+                        Destinataire.Items.Add("SI");
+                        Destinataire.Items.Add("DI");
                     }
 
                 }
@@ -513,7 +633,7 @@ namespace projet.Pages
             string letter1 = Format.SelectedItem.ToString();
             string letter2 = Reg.SelectedItem.ToString();
 
-            if ((letter != null) && ((letter1 == "Reg/M , Reg") || (letter1 == "Reg/M , Imd") || (letter1 == " Reg/M ")))
+            if ((letter != null) && ((letter1 == "Reg16/mem16,Reg16") || (letter1 == "Reg16/Mem16,imm16") || (letter1 == "Reg16/mem16")))
             {
                 if (string.Compare(letter, "Avec deplacement") == 0)
                 {
@@ -542,7 +662,7 @@ namespace projet.Pages
 
 
             }
-            else if ((letter != null) && (letter1 == "Reg , Reg/M"))
+            else if ((letter != null) && (letter1 == "Reg16,Reg16/mem16"))
             {
                 if (string.Compare(letter, "Avec deplacement") == 0)
                 {
@@ -577,6 +697,8 @@ namespace projet.Pages
 
 
 
+
+
         private void componentDes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             string letter1 = Destinataire.SelectedItem.ToString();
@@ -589,97 +711,97 @@ namespace projet.Pages
             {
                 letter3 = Reg.SelectedItem.ToString();
                 Reg.IsEnabled = false;
-                if ((string.Compare(letter1, " AX ") == 0) && (letter3 == " Registre "))
+                if ((string.Compare(letter1, "AX") == 0) && (letter3 == " Registre "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    Source.Items.Add("BX");
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
 
                 }
-                if ((string.Compare(letter1, " BX ") == 0) && (string.Compare(letter3, " Registre ") == 0))
+                if ((string.Compare(letter1, "BX") == 0) && (string.Compare(letter3, " Registre ") == 0))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
-                if ((string.Compare(letter1, " CX ") == 0) && (string.Compare(letter3, " Registre ") == 0))
+                if ((string.Compare(letter1, "CX") == 0) && (string.Compare(letter3, " Registre ") == 0))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("BX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
-                if ((string.Compare(letter1, " DX ") == 0) && (string.Compare(letter3, " Registre ") == 0))
+                if ((string.Compare(letter1, "DX") == 0) && (string.Compare(letter3, " Registre ") == 0))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("BX");
+                    Source.Items.Add("CX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
-                if ((string.Compare(letter1, " SI ") == 0) && (string.Compare(letter3, " Registre ") == 0))
+                if ((string.Compare(letter1, "SI") == 0) && (string.Compare(letter3, " Registre ") == 0))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("BX");
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
-                if ((string.Compare(letter1, " DI ") == 0) && (string.Compare(letter3, " Registre ") == 0))
+                if ((string.Compare(letter1, "DI") == 0) && (string.Compare(letter3, " Registre ") == 0))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("BX");
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
-                if ((string.Compare(letter1, " SP ") == 0) && (string.Compare(letter3, " Registre ") == 0))
+                if ((string.Compare(letter1, "SP") == 0) && (string.Compare(letter3, " Registre ") == 0))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("BX");
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("BP");
                 }
-                if ((string.Compare(letter1, " BP ") == 0) && (string.Compare(letter3, " Registre ") == 0))
+                if ((string.Compare(letter1, "BP") == 0) && (string.Compare(letter3, " Registre ") == 0))
                 {
 
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("BX");
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
                 }
-                if ((string.Compare(letter1, " DI ") == 0) && (letter3 == " Memoire "))
+                if ((string.Compare(letter1, "DI") == 0) && (letter3 == " Memoire "))
                 {
                     string letter4 = Dep.SelectedItem.ToString();
                     if (string.Compare(letter4, "Avec deplacement") == 0)
@@ -701,7 +823,7 @@ namespace projet.Pages
                         Source.Items.Add("[BX]");
                     }
                 }
-                if ((string.Compare(letter1, " SI ") == 0) && (letter3 == " Memoire "))
+                if ((string.Compare(letter1, "SI") == 0) && (letter3 == " Memoire "))
                 {
                     string letter4 = Dep.SelectedItem.ToString();
                     if (string.Compare(letter4, "Avec deplacement") == 0)
@@ -723,7 +845,7 @@ namespace projet.Pages
                         Source.Items.Add("[BX]");
                     }
                 }
-                if ((string.Compare(letter1, " BX ") == 0) && (letter3 == " Memoire "))
+                if ((string.Compare(letter1, "BX") == 0) && (letter3 == " Memoire "))
                 {
                     string letter4 = Dep.SelectedItem.ToString();
                     if (string.Compare(letter4, "Avec deplacement") == 0)
@@ -745,7 +867,7 @@ namespace projet.Pages
                         Source.Items.Add("[Dep16]");
                     }
                 }
-                if ((string.Compare(letter1, " BX ") == 0) && (letter3 == " Memoire "))
+                if ((string.Compare(letter1, "BX") == 0) && (letter3 == " Memoire "))
                 {
                     string letter4 = Dep.SelectedItem.ToString();
                     if (string.Compare(letter4, "Avec deplacement") == 0)
@@ -767,7 +889,7 @@ namespace projet.Pages
                         Source.Items.Add("[Dep16]");
                     }
                 }
-                if ((string.Compare(letter1, " BP ") == 0) && (letter3 == " Memoire "))
+                if ((string.Compare(letter1, "BP") == 0) && (letter3 == " Memoire "))
                 {
                     string letter4 = Dep.SelectedItem.ToString();
                     if (string.Compare(letter4, "Avec deplacement") == 0)
@@ -793,89 +915,89 @@ namespace projet.Pages
                 if (((string.Compare(letter1, "[BX+SI+DEP]") == 0) || (letter1 == "[BX+SI]")) && (letter3 == " Memoire "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
                 if (((string.Compare(letter1, "[BX+DI+DEP]") == 0) || (letter1 == "[BX+DI]")) && (letter3 == " Memoire "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
                 if (((string.Compare(letter1, "[BP+DI+DEP]") == 0) || (letter1 == "[BP+DI]")) && (letter3 == " Memoire "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BX ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BX");
                 }
                 if (((string.Compare(letter1, "[BP+SI+DEP]") == 0) || (letter1 == "[BP+SI]")) && (letter3 == " Memoire "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BX ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BX");
                 }
                 if (((string.Compare(letter1, "[BX+DEP]") == 0) || (letter1 == "[BX]")) && (letter3 == " Memoire "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
                 if (((string.Compare(letter1, "[SI+DEP]") == 0) || (letter1 == "[SI]")) && (letter3 == " Memoire "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("BX");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
                 if (((string.Compare(letter1, "[DI+DEP]") == 0) || (letter1 == "[DI]")) && (letter3 == " Memoire "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" SP ");
-                    Source.Items.Add(" BP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("BX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("SP");
+                    Source.Items.Add("BP");
                 }
                 if ((string.Compare(letter1, "[BP+DEP]") == 0) && (letter3 == " Memoire "))
                 {
                     Source.Items.Clear();
-                    Source.Items.Add(" AX ");
-                    Source.Items.Add(" CX ");
-                    Source.Items.Add(" DX ");
-                    Source.Items.Add(" BX ");
-                    Source.Items.Add(" SI ");
-                    Source.Items.Add(" DI ");
-                    Source.Items.Add(" SP ");
+                    if (r == 1) { Source.Items.Add("AX"); }
+                    Source.Items.Add("CX");
+                    Source.Items.Add("DX");
+                    Source.Items.Add("BX");
+                    Source.Items.Add("SI");
+                    Source.Items.Add("DI");
+                    Source.Items.Add("SP");
                 }
 
-                if ((letter2 == "Reg/M , Imd") || (letter2 == " Reg/M "))
+                if ((letter2 == "Reg16/Mem16,imm16") || (letter2 == "Reg16/mem16"))
                 {
                     if (letter3 == " Memoire ")
                     {
@@ -1055,24 +1177,23 @@ namespace projet.Pages
 
 
                 }
-                if (letter2 == " Reg/M ")
+                if (letter2 == "Reg16/mem16")
                 {
-                    int columnIndex = Grid.GetColumn(grid_dep);
-                    if (columnIndex >= 0)
-                    {
-                        Grid5.Children.Remove(grid_dep);
-                    }
-                    int columnIndex1 = Grid.GetColumn(grid_ccm);
-                    if (columnIndex1 >= 0)
-                    {
-                        Grid5.Children.Remove(grid_ccm);
-                    }
+
+
                     int columnIndex2 = Grid.GetColumn(stc_3);
                     if (columnIndex2 >= 0)
                     {
                         stc_3.Children.Remove(champ3);
                         stc_3.Children.Remove(TextBox3);
                     }
+
+                }
+                if ((letter2 == "Reg16/mem16") && (r == 0))
+                {
+                    stc_3.Children.Add(champ3);
+                    stc_3.Children.Add(TextBox3);
+                    champ3.Text = "AX";
                 }
             }
             Destinataire.IsEnabled = false;
@@ -1091,10 +1212,10 @@ namespace projet.Pages
 
             if (Source.SelectedItem.ToString() != null)
             {
-                if ((letter1 == "Reg , Reg/M") || (letter1 == "Reg/M , Reg"))
+                if ((letter1 == "Reg16,Reg16/mem16") || (letter1 == "Reg16/mem16,Reg16"))
                 {
                     letter2 = Reg.SelectedItem.ToString(); ;
-                    if (letter1 == "Reg/M , Reg") { letter4 = Destinataire.SelectedItem.ToString(); letter3 = Source.SelectedItem.ToString(); }
+                    if (letter1 == "Reg16/mem16,Reg16") { letter4 = Destinataire.SelectedItem.ToString(); letter3 = Source.SelectedItem.ToString(); }
                     else { letter3 = Destinataire.SelectedItem.ToString(); letter4 = Source.SelectedItem.ToString(); }
                     if (letter2 == " Memoire ")
                     {
@@ -1273,7 +1394,7 @@ namespace projet.Pages
                         champ1.Text = Destinataire.SelectedItem.ToString();
                     }
                 }
-                if (letter1 == " Reg ")
+                if (letter1 == "Reg16")
                 {
                     int columnIndex2 = Grid.GetColumn(stc_3);
                     if (columnIndex2 >= 0)
@@ -1283,6 +1404,7 @@ namespace projet.Pages
                     }
                     champ1.Text = Source.SelectedItem.ToString();
                 }
+
             }
 
 
@@ -1292,9 +1414,8 @@ namespace projet.Pages
 
         private void Actualiser(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page3.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page5.xaml", UriKind.RelativeOrAbsolute));
         }
-
     }
 
 }

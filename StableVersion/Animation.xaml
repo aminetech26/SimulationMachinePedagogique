@@ -12,87 +12,6 @@
         Title="MainWindow" Height="680" Width="1300">
 
     <Window.Resources>
-        <Style x:Key="ScrollThumbs" TargetType="{x:Type Thumb}">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Grid x:Name="Grid">
-                            <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" 
-                                           Height="Auto" Fill="Transparent"/>
-                            <Border x:Name="Rectangle1" CornerRadius="10 0 0 10" HorizontalAlignment="Stretch" 
-                                        VerticalAlignment="Stretch" Width="Auto" Height="Auto" 
-                                        Background="{TemplateBinding Background}"/>
-                        </Grid>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="Tag" Value="Horizontal">
-                                <Setter TargetName="Rectangle1" Property="Width" Value="Auto"/>
-                                <Setter TargetName="Rectangle1" Property="Height" Value="7"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-
-        <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
-            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-            <Setter Property="Foreground" Value="Gray"/>
-            <Setter Property="Background" Value="White"/>
-            <Setter Property="Width" Value="10"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ScrollBar}">
-                        <Grid x:Name="GridRoot" Width="10"  Background="{x:Null}" Margin="5">
-                            <Track x:Name="PART_Track" Grid.Row="0" IsDirectionReversed="true" Focusable="False">
-                                <Track.Thumb>
-                                    <Thumb x:Name="Thumb" Background="{TemplateBinding Foreground}" 
-                                               Style="{DynamicResource ScrollThumbs}"/>
-                                </Track.Thumb>
-                                <Track.IncreaseRepeatButton>
-                                    <RepeatButton x:Name="PageUp" Command="ScrollBar.PageDownCommand" Opacity="0" Focusable="False"/>
-                                </Track.IncreaseRepeatButton>
-                                <Track.DecreaseRepeatButton>
-                                    <RepeatButton x:Name="PageDown" Command="ScrollBar.PageUpCommand" Opacity="0" Focusable="False"/>
-                                </Track.DecreaseRepeatButton>
-                            </Track>
-                        </Grid>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger SourceName="Thumb" Property="IsMouseOver" Value="true">
-                                <Setter Value="{DynamicResource ButtonSelectBrush}" 
-                                            TargetName="Thumb" Property="Background"/>
-                            </Trigger>
-                            <Trigger SourceName="Thumb" Property="IsDragging" Value="true">
-                                <Setter Value="{DynamicResource DarkBrush}" TargetName="Thumb" Property="Background"/>
-                            </Trigger>
-
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter TargetName="Thumb" Property="Visibility" Value="Collapsed"/>
-                            </Trigger>
-                            <Trigger Property="Orientation" Value="Horizontal">
-                                <Setter TargetName="GridRoot" Property="LayoutTransform">
-                                    <Setter.Value>
-                                        <RotateTransform Angle="-90"/>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter TargetName="PART_Track" Property="LayoutTransform">
-                                    <Setter.Value>
-                                        <RotateTransform Angle="-90"/>
-                                    </Setter.Value>
-                                </Setter>
-                                <Setter Property="Width" Value="Auto"/>
-                                <Setter Property="Height" Value="12"/>
-                                <Setter TargetName="Thumb" Property="Tag" Value="Horizontal"/>
-                                <Setter TargetName="PageDown" Property="Command" Value="ScrollBar.PageLeftCommand"/>
-                                <Setter TargetName="PageUp" Property="Command" Value="ScrollBar.PageRightCommand"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
         <DataGridLength x:Key="DataGridColumnWidth1">SizeToHeader</DataGridLength>
         <RotateTransform x:Key="VerticalTransform" Angle="-90" />
     </Window.Resources>
@@ -231,7 +150,7 @@
                               CanUserResizeColumns="False" 
                               CanUserReorderColumns="False"     
                               MinColumnWidth="140"
-                              RowHeaderWidth="0"
+                              RowHeaderWidth="0" IsReadOnly="False"
                              SelectionUnit="FullRow" Canvas.Left="66" Canvas.Top="68" Width="301" HorizontalAlignment="Left" 
                             >
                             <DataGrid.RowStyle>
@@ -347,6 +266,15 @@
                         <Image Source="/images/Group 93.png" HorizontalAlignment="Left" Width="49" Margin="152,112,0,21" RenderTransformOrigin="0.238,0.524"/>
                         <Image Source="/images/Arrow 1.png" Margin="112,26,214,153" RenderTransformOrigin="0.453,0.529"/>
                         <Canvas >
+                            <Image x:Name="myImag60e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag61e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag62e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
                             <Image x:Name="myImag9e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
                         </Canvas>
                         <Canvas >
@@ -355,6 +283,46 @@
                         <Canvas >
                             <Image x:Name="myImag11e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="108" />
                         </Canvas>
+
+                        <Canvas >
+                            <Image x:Name="AdrCo"  Source="/Ellipse 5.png" Visibility="Collapsed" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="108" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="AdrCo1"  Source="/Ellipse 5.png" Visibility="Collapsed" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="108" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="AdrCo2"  Source="/Ellipse 5.png" Visibility="Collapsed" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="108" />
+                        </Canvas>
+
+                        <Canvas >
+                            <Image x:Name="myImag48e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag49e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag50e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Center" VerticalAlignment="Top" Canvas.Left="148" Canvas.Top="102" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag33e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag34e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="myImag35e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="AdrUal6" Visibility="Collapsed" Source="/Ellipse 5.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="AdrUal7" Visibility="Collapsed" Source="/Ellipse 5.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                        <Canvas >
+                            <Image x:Name="AdrUal8" Visibility="Collapsed" Source="/Ellipse 5.png" Width="50" Height="50"  RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" Canvas.Left="247" Canvas.Top="190" />
+                        </Canvas>
+                        <TextBlock Height="auto" Width="auto" TextWrapping="Wrap" FontSize="20" Visibility="Collapsed"
+                                           Text="" Background="Beige"  x:Name="phase3" />
                     </Grid>
                     <Grid Grid.Row="1" Margin="0,0,50,0">
                         <Grid.ColumnDefinitions>
@@ -406,6 +374,7 @@
                                     <TextBlock Text="SEQUENCEUR" FontSize="25" FontWeight="SemiBold"
                                                Canvas.Left="52" Canvas.Top="82" />
                                 </Canvas>
+                                
                             </Grid>
                             <Grid Margin="0,172,0,-19" Grid.RowSpan="2">
                                 <Grid.RowDefinitions>
@@ -442,8 +411,10 @@
                                          Width="97" RenderTransformOrigin="0.517,0.578" Margin="0,53,0,0" Grid.RowSpan="2" />
 
                             </Grid>
+                           
                         </Grid>
-
+                        <TextBlock Height="auto" Width="auto" TextWrapping="Wrap" FontSize="20" Visibility="Collapsed"
+                                           Text="" Background="Beige"  x:Name="phase2" Margin="-23,0,0,0"/>
                     </Grid>
 
                 </Grid>
@@ -595,7 +566,7 @@
                                 <RowDefinition Height="3*"/>
                             </Grid.RowDefinitions>
                             <Grid Grid.Row="0">
-                                <TextBlock Text="AX" FontSize="25" FontWeight="SemiBold"
+                                <TextBlock x:Name="Box1Name" Text="AX" FontSize="25" FontWeight="SemiBold"
                                            HorizontalAlignment="Center" VerticalAlignment="Bottom">
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
@@ -610,7 +581,7 @@
                                 </TextBlock>
                             </Grid>
                             <Grid Grid.Row="1">
-                                <Rectangle Height="45" Width="160" RadiusX="15"
+                                <Rectangle Height="45" Width="160" RadiusX="15" x:Name="Rec1"
                                            RadiusY="15" Fill="#D9D9D9">
                                     <Rectangle.Style>
                                         <Style TargetType="Rectangle">
@@ -642,8 +613,12 @@
 
                             </Grid>
                             <Grid Grid.Row="2">
-                                <TextBlock Text="BX" FontSize="25" FontWeight="SemiBold"
-                                           HorizontalAlignment="Center" VerticalAlignment="Bottom">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="69*"/>
+                                    <ColumnDefinition Width="148*"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock x:Name="Box2Name" Text="BX" FontSize="25" FontWeight="SemiBold"
+                                           HorizontalAlignment="Left" VerticalAlignment="Bottom" Grid.Column="1" Margin="39,0,0,0">
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
                                             <Setter Property="Visibility" Value="Collapsed" />
@@ -657,7 +632,7 @@
                                 </TextBlock>
                             </Grid>
                             <Grid Grid.Row="3">
-                                <Rectangle Height="45" Width="160" RadiusX="15"
+                                <Rectangle Height="45" Width="160" RadiusX="15" x:Name="Rec2"
                                            RadiusY="15" Fill="#D9D9D9">
                                     <Rectangle.Style>
                                         <Style TargetType="Rectangle">
@@ -688,7 +663,7 @@
                                 </TextBox>
                             </Grid>
                             <Grid Grid.Row="4">
-                                <TextBlock Text="CX" FontSize="25" FontWeight="SemiBold"
+                                <TextBlock x:Name="Box3Name" Text="CX" FontSize="25" FontWeight="SemiBold"
                                            HorizontalAlignment="Center" VerticalAlignment="Bottom">
                                     <TextBlock.Style>
                                         <Style TargetType="{x:Type TextBlock}">
@@ -703,7 +678,7 @@
                                 </TextBlock>
                             </Grid>
                             <Grid Grid.Row="5">
-                                <Rectangle Height="45" Width="160" RadiusX="15"
+                                <Rectangle Height="45" Width="160" RadiusX="15" x:Name="Rec3"
                                            RadiusY="15" Fill="#D9D9D9">
                                     <Rectangle.Style>
                                         <Style TargetType="Rectangle">
@@ -860,7 +835,7 @@
                                                    VerticalAlignment="Center"/>
                                     </Grid>
                                     <Grid Grid.Row="1"  >
-                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="Z" 
+                                        <Rectangle Height="15" Width="30" Fill="#D9D9D9" x:Name="Z"
                                                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                     </Grid>
                                     <Grid Grid.Row="2">
@@ -900,12 +875,14 @@
                                     <RowDefinition Height="*" />
                                 </Grid.RowDefinitions>
                                 <Grid Grid.Row="0">
+                                    
                                     <Canvas Margin="0,0,0,0">
                                         <Image Source="/images/Group 102.png" HorizontalAlignment="Center"
                                                VerticalAlignment="Center" Canvas.Left="25" Canvas.Top="3"/>
                                         <TextBlock Text="U A L" FontSize="25" FontWeight="SemiBold" Canvas.Left="79" Canvas.Top="39" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.461,1.108"
-                                                   />
+                                                   x:Name="UAL"/>
                                     </Canvas>
+                                    
                                 </Grid>
                                 <Grid Grid.Row="1" Margin="0,0,0,10">
                                     <Grid.ColumnDefinitions>
@@ -941,15 +918,22 @@
                                         </Canvas>
 
                                     </Grid>
+                                    
                                 </Grid>
-
+                                
                             </Grid>
+                            
                         </Grid>
+                        
                     </Grid>
+                    <TextBlock x:Name="phase1" Height="auto" Width="auto" Background="Beige"
+                                   TextWrapping="Wrap" FontSize="20" Visibility="Collapsed"
+                                   Text="Phase 1: Recherche de l'instruction à traiter. Le CO contient l'adresse de l'instruction suivante du programme. Cette valeur est placée sur le bus d'adresses par l'unité de commande qui émet un ordre de lecture.Au bout d'un certain temps (temps d'accès à la mémoire), le contenu de la case mémoire sélectionnée est disponible sur le bus des données. L'instruction est stockée dans RI."/>
+
                 </Grid>
-
+                
             </Grid>
-
+            
         </Grid>
 
 
@@ -980,7 +964,25 @@
                 <Image x:Name="myImage2" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-51" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Canvas >
-                <Image x:Name="myImag2e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-703" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <Image x:Name="myImag30e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag31e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-73" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag32e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-51" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag53e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag51e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag52e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-154" Canvas.Top="-99" RenderTransformOrigin="0.477,0.557" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag2e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-703" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Canvas >
                 <Image x:Name="myImag1e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-703" Canvas.Top="0" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -1004,25 +1006,133 @@
                 <Image x:Name="myImag7e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Canvas>
             <Canvas >
+                <Image x:Name="myImag39e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag40e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag41e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
+            </Canvas>
+            <Canvas >
                 <Image x:Name="myImag8e" Visibility="Collapsed" Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1019" Canvas.Top="3" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Center" />
             </Canvas>
             <Canvas >
                 <Image x:Name="myImag12e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Canvas >
+                <Image x:Name="myImag73e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag74e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag75e"  Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
                 <Image x:Name="myImag13e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="AdrUal3" Visibility="Collapsed"  Source="/Ellipse 5.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="AdrUal4" Visibility="Collapsed"  Source="/Ellipse 5.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="AdrUal5" Visibility="Collapsed"  Source="/Ellipse 5.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Canvas >
                 <Image x:Name="myImag14e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Canvas >
+                <Image x:Name="myImag66e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag67e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag68e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag54e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag55e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag56e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag36e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag37e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag38e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1162" Canvas.Top="5" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag57e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag58e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag59e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag70e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag71e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag72e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
                 <Image x:Name="myImag15e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="AdrUal" Visibility="Collapsed"  Source="/Ellipse 5.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="AdrUal1" Visibility="Collapsed"  Source="/Ellipse 5.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="AdrUal2" Visibility="Collapsed"  Source="/Ellipse 5.png" Width="50" Height="50" Canvas.Left="-975" Canvas.Top="-297" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag46e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-539" Canvas.Top="4" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag47e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-539" Canvas.Top="4" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag45e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-539" Canvas.Top="4" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Canvas >
                 <Image x:Name="myImag16e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Canvas >
                 <Image x:Name="myImag17e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-995" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag63e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag64e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag65e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag42e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag43e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag44e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-985" Canvas.Top="-299" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
             <Canvas >
                 <Image x:Name="myImag18e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
@@ -1041,6 +1151,15 @@
             </Canvas>
             <Canvas >
                 <Image x:Name="myImag23e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag24e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-157" Canvas.Top="11" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag25e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
+            </Canvas>
+            <Canvas >
+                <Image x:Name="myImag26e" Visibility="Collapsed"  Source="/images/Ellipse 2.png" Width="50" Height="50" Canvas.Left="-1208" Canvas.Top="-476" RenderTransformOrigin="0.53,0.58" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </Canvas>
 
         </Canvas>

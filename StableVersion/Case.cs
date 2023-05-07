@@ -8,20 +8,25 @@ using System.Threading.Tasks;
 namespace ArchiMind
 {
     internal class Case
-    {  
-      private string? adr ; 
-      private string? contenue ; 
-      public void setAdr(string adr){
-        this.adr = adr ; 
-      } 
-      public string getAdr(){ 
-        return this.adr; 
-      }
-      public string getContenu(){
-        return this.contenue ; 
-      } 
-      public void setContenu(string contenue){
-        this.contenue = contenue ; 
-      }
+    {
+        public string ADR { get; set; }
+        public string Donnee { get; set; }
+
+        public void setAdr(string adr)
+        {
+            this.ADR = adr;
+        }
+        public string getAdr()
+        {
+            return this.ADR;
+        }
+        public string getContenu()
+        {
+            return this.Donnee;
+        }
+        public void setContenu(string contenue)
+        {
+            this.Donnee = contenue;
+        }
     }
 }

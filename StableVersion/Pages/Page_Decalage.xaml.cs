@@ -1,4 +1,5 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using ArchiMind;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,9 +28,12 @@ namespace projet.Pages
     /// </summary>
     public partial class Page_Decalage : Page
     {
+        private  Page_Decalage mainpage;
         public Page_Decalage()
         {
             InitializeComponent();
+            mainpage = this;
+            Animation.setcontext(mainpage);
         }
 
 
@@ -122,15 +126,45 @@ namespace projet.Pages
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            TextBox textBox = (TextBox)sender;
-            if (textBox.Text.Length > 4)
+            bool allValid = true;
+            foreach (var tb in FindVisualChildren<TextBox>(this))
             {
-                textBox.Text = textBox.Text.Substring(0, 4);
-                textBox.CaretIndex = 4;
+                string input = tb.Text.Trim();
+                TextBox? textBox = sender as TextBox;
+                textBox.CaretIndex = textBox.Text.Length;
+                if (!Regex.IsMatch(input, @"^[0-9A-Fa-f]{4}$"))
+                {
+                    tb.ToolTip = "Entrer 4 caracteres en hexa";
+                    tb.Background = Brushes.Red;
+                    allValid = false;
+                }
+                else
+                {
+                    tb.ToolTip = null;
+                    tb.Background = Brushes.White;
+                }
             }
         }
 
+        private IEnumerable<T> FindVisualChildren<T>(DependencyObject parent) where T : DependencyObject
+        {
+            if (parent != null)
+            {
+                for (int i = 0; i < VisualTreeHelper.GetChildrenCount(parent); i++)
+                {
+                    DependencyObject child = VisualTreeHelper.GetChild(parent, i);
+                    if (child != null && child is T)
+                    {
+                        yield return (T)child;
+                    }
 
+                    foreach (T childOfChild in FindVisualChildren<T>(child))
+                    {
+                        yield return childOfChild;
+                    }
+                }
+            }
+        }
 
         private void TextBox2_GotFocus(object sender, RoutedEventArgs e)
         {
@@ -169,34 +203,111 @@ namespace projet.Pages
             }
         }
 
+        private void TextBox4_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TextBox4.Text == "XXXX")
+            {
+                TextBox4.Text = "";
+                TextBox4.Foreground = Brushes.Black;
+            }
+        }
+
+        private void TextBox4_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBox4.Text))
+            {
+                TextBox4.Text = "XXXX";
+                TextBox4.Foreground = Brushes.Gray;
+            }
+        }
+
+
+        private void TextBox5_GotFocus(object sender, RoutedEventArgs e)
+        {
+            if (TextBox5.Text == "XXXX")
+            {
+                TextBox5.Text = "";
+                TextBox5.Foreground = Brushes.Black;
+            }
+        }
+
+        private void TextBox5_LostFocus(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(TextBox5.Text))
+            {
+                TextBox5.Text = "XXXX";
+                TextBox5.Foreground = Brushes.Gray;
+            }
+        }
+
+
+
         public void convertButton_Click(object sender, RoutedEventArgs e)
         {
             string hexString = TextBox1.Text;
+            string hexString2 = TextBox2.Text;
+            string hexString3 = TextBox3.Text;
+            string hexString4 = TextBox4.Text;
+            string hexString5 = TextBox5.Text;
             string moule = "^[0-9A-Fa-f]+$";
             Regex regex = new Regex(moule);
 
-            if (!regex.IsMatch(hexString))
+
+
+
+            if (!regex.IsMatch(hexString) && (hexString != "XXXX"))
+            {
+                MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
+                return;
+            }
+            if (!regex.IsMatch(hexString2) && (hexString2 != "XXXX"))
+            {
+                MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
+                return;
+            }
+            if (!regex.IsMatch(hexString3) && (hexString3 != "XXXX"))
+            {
+                MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
+                return;
+            }
+            if (!regex.IsMatch(hexString4) && (hexString4 != "XXXX"))
+            {
+                MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
+                return;
+            }
+            if (!regex.IsMatch(hexString5) && (hexString5 != "XXXX"))
             {
                 MessageBox.Show("Le texte saisi n'est pas en hexadécimal.");
                 return;
             }
 
-            //int decimalValue = Convert.ToInt32(hexString, 16);
-            //MessageBox.Show("La valeur décimale correspondante est : " + decimalValue.ToString());
-            string Registr;
-            string deplace;
-            string destinatair;
-            string source;
-            string Forma;
-            ComboBoxItem? selectedItem = Instruction.SelectedItem as ComboBoxItem;
-            string letter = Format.SelectedItem.ToString();
-            ComboBoxItem? selectedItem2 = Reg.SelectedItem as ComboBoxItem; if (selectedItem2 == null) { Registr = "0000"; } else { Registr = selectedItem2.ToString(); }
-            ComboBoxItem? selectedItem3 = Dep.SelectedItem as ComboBoxItem; if (selectedItem3 == null) { deplace = "0000"; } else { deplace = selectedItem3.ToString(); }
-            ComboBoxItem? selectedItem4 = Destinataire.SelectedItem as ComboBoxItem; if (selectedItem4 == null) { destinatair = "0000"; } else { destinatair = selectedItem4.ToString(); }
-            ComboBoxItem? selectedItem5 = Source.SelectedItem as ComboBoxItem; if (selectedItem5 == null) { source = "0000"; } else { source = selectedItem5.ToString(); }
+            ComboBoxItem selectedItem = Instruction.SelectedItem as ComboBoxItem;
+            if (selectedItem == null) { MessageBox.Show("ERREUR!!!, CHOISER UNE INSTRUCTION "); return; }
+            string Forma; string deplace; bool ifdepl;
+            string letter = "";
 
-            MainWindow wind = new MainWindow(sender, TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox5.Text, TextBox4.Text, selectedItem.Content.ToString(), letter, Registr, deplace, destinatair, source);
+            if (Format.SelectedItem.ToString() == "") { MessageBox.Show("ERREUR!!!, CHOISER UNE FORMAT "); return; }
+            else { letter = Format.SelectedItem.ToString(); }
+            string destinatair = "";
+            if ((letter != "AX,imd16") && (letter != "Reg16")) { destinatair = Source.SelectedItem.ToString(); }
+            string source = "XXXX";
+            if (Source.SelectedItem != null) { source = Source.SelectedItem.ToString(); }
+            string Registr = "";
+            if ((letter != "AX,imd16") && (letter != "Reg16")) { Registr = Reg.SelectedItem.ToString(); }
+            if ((Registr == " Registre ") || (letter == "AX,imd16") || (letter == "Reg16")) { deplace = "0000"; }
+            else { deplace = Dep.SelectedItem.ToString(); }
+            if (deplace == "Avec deplacement") { ifdepl = true; }
+            else { ifdepl = false; }
+            JeuxInstruction instruction = new JeuxInstruction();
+            MainWindow wind = new MainWindow(sender, TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox5.Text, TextBox4.Text, selectedItem.Content.ToString(), letter, Registr, "0000", destinatair, source, champ1.Text, champ2.Text, champ3.Text);
 
+        }
+
+
+        public void convertButton_Click1(object sender, RoutedEventArgs e)
+        {
+            Animation main = new Animation();
+            main.ShowDialog();
         }
 
 
@@ -213,52 +324,52 @@ namespace projet.Pages
                 if (selectedItem.Content.ToString() == "SHL")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("Reg/M , Imd16");
-                    Format.Items.Add("Reg/M , CX");
+                    Format.Items.Add("Reg16/Mem16,imm16");
+                    Format.Items.Add("Reg16/Mem16,CX");
 
                 }
                 else if (selectedItem.Content.ToString() == "SHR")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("Reg/M , Imd16");
-                    Format.Items.Add("Reg/M , CX");
+                    Format.Items.Add("Reg16/Mem16,imm16");
+                    Format.Items.Add("Reg16/Mem16,CX");
 
                 }
                 else if (selectedItem.Content.ToString() == "SAL")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("Reg/M , Imd16");
-                    Format.Items.Add("Reg/M , CX");
+                    Format.Items.Add("Reg16/Mem16,imm16");
+                    Format.Items.Add("Reg16/Mem16,CX");
                 }
                 else if (selectedItem.Content.ToString() == "SAR")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("Reg/M , Imd16");
-                    Format.Items.Add("Reg/M , CX");
+                    Format.Items.Add("Reg16/Mem16,imm16");
+                    Format.Items.Add("Reg16/Mem16,CX");
                 }
                 else if (selectedItem.Content.ToString() == "ROR")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("Reg/M , Imd16");
-                    Format.Items.Add("Reg/M , CX");
+                    Format.Items.Add("Reg16/Mem16,imm16");
+                    Format.Items.Add("Reg16/Mem16,CX");
                 }
                 else if (selectedItem.Content.ToString() == "ROL")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("Reg/M , Imd16");
-                    Format.Items.Add("Reg/M , CX");
+                    Format.Items.Add("Reg16/Mem16,imm16");
+                    Format.Items.Add("Reg16/Mem16,CX");
                 }
                 else if (selectedItem.Content.ToString() == "RCR")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("Reg/M , Imd16");
-                    Format.Items.Add("Reg/M , CX");
+                    Format.Items.Add("Reg16/Mem16,imm16");
+                    Format.Items.Add("Reg16/Mem16,CX");
                 }
                 else if (selectedItem.Content.ToString() == "RCX")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("Reg/M , Imd16");
-                    Format.Items.Add("Reg/M , CX");
+                    Format.Items.Add("Reg16/Mem16,imm16");
+                    Format.Items.Add("Reg16/Mem16,CX");
                 }
 
             }
@@ -278,7 +389,7 @@ namespace projet.Pages
             if (letter != null)
             {
 
-                if (string.Compare(letter, "Reg/M , Imd16") == 0)
+                if (string.Compare(letter, "Reg16/Mem16,imm16") == 0)
                 {
                     int columnIndex = Grid.GetColumn(stkDes);
                     if (columnIndex >= 0)
@@ -286,18 +397,13 @@ namespace projet.Pages
                         StackPanel1.Children.Remove(stkDes);
                     }
 
-                    int columnIndex5 = Grid.GetColumn(grid_ccm);
-                    if (columnIndex5 >= 0)
-                    {
-                        Grid5.Children.Remove(grid_ccm);
-                    }
 
                     champ3.Text = "Imd16(n decalage) :";
 
                 }
 
 
-                if (string.Compare(letter, "Reg/M , CX") == 0)
+                if (string.Compare(letter, "Reg16/Mem16,CX") == 0)
                 {
                     int columnIndex = Grid.GetColumn(stkDes);
                     if (columnIndex >= 0)
@@ -305,12 +411,7 @@ namespace projet.Pages
                         StackPanel1.Children.Remove(stkDes);
                     }
 
-                    int columnIndex5 = Grid.GetColumn(grid_ccm);
-                    if (columnIndex5 >= 0)
-                    {
-                        Grid5.Children.Remove(grid_ccm);
-                    }
-
+                 
                     champ3.Text = "CX :";
                 }
 
@@ -431,7 +532,7 @@ namespace projet.Pages
             string letter1 = Format.SelectedItem.ToString();
             string letter2 = Reg.SelectedItem.ToString();
             string letter4 = Source.SelectedItem.ToString();
-            string letter5 = Dep.SelectedItem.ToString();
+            string letter5 ;
             
 
 
@@ -439,7 +540,7 @@ namespace projet.Pages
             {
                     if (string.Compare(letter2, " Memoire ") == 0)
                     {
-
+                        letter5 = Dep.SelectedItem.ToString();
                         if (letter5 == "Sans deplacement")
                         {
                             int columnIndex = Grid.GetColumn(grid_dep);

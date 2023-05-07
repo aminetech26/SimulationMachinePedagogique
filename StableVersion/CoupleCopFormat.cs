@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Numerics;
 using System.Collections;
+using System.Windows.Documents;
+using System.Collections.Generic;
 
 namespace ArchiMind
 {    
      
      internal class CoupleCopFormat
     {  
-        public ArrayList listInstruction = new ArrayList (); 
+        public List<Instruction> listInstruction = new List<Instruction>();
         public void addInstruction (Instruction s ) {
             listInstruction.Add(s); 
         }  
@@ -18,7 +20,7 @@ namespace ArchiMind
                 element.afficheInstruction();
             }
         }   
-        public ArrayList getListInstruction(){
+        public List<Instruction> getListInstruction(){
             return listInstruction ; 
         }
               

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ArchiMind;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,15 @@ namespace projet.Pages
     /// </summary>
     public partial class Creerprogramme : Page
     {
-        public Creerprogramme()
+        private List<Instruction> programInst;
+
+        public Creerprogramme(List<Instruction> programInstructions)
         {
             InitializeComponent();
+            programInst = new List<Instruction>(programInstructions);
+
         }
-        
+
         private void GoBackHome(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/ProgrammePage.xaml", UriKind.RelativeOrAbsolute));
@@ -32,12 +37,14 @@ namespace projet.Pages
         
         private void GoToProgramme3(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("/PageProgramme3.xaml", UriKind.RelativeOrAbsolute));
+            PageProgramme3 thirdPage = new PageProgramme3(programInst);
+            this.NavigationService.Navigate(thirdPage);
+            //NavigationService.Navigate(new Uri("/PageProgramme3.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void Hexadecimal(object sender, RoutedEventArgs e)
         {
-           BorderHexadecimal.Visibility = Visibility.Visible;
+            BorderHexadecimal.Visibility = Visibility.Visible;
             BorderMnemonique.Visibility = Visibility.Collapsed;
         }
 

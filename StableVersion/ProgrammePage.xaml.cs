@@ -31,6 +31,7 @@ using System.Windows.Forms;
 using ComboBox = System.Windows.Controls.ComboBox;
 using Newtonsoft.Json.Schema;
 using System.Diagnostics;
+using projet.Pages;
 
 namespace projet
 {
@@ -201,8 +202,8 @@ namespace projet
                 text = text + j.convertir_instruction_Lmnemonique(ins) + "  \n";
             }
             System.Windows.MessageBox.Show(text);
-
-            NavigationService.Navigate(new Uri("/Pages/Creerprogramme.xaml", UriKind.Relative));
+            Creerprogramme secondPage = new Creerprogramme(programInstructions);
+            this.NavigationService.Navigate(secondPage);
         }
 
 

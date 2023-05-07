@@ -190,8 +190,8 @@
 
                     <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
                              TextAlignment="Center" GotFocus="RemoveHintText" LostFocus="AddHintText"
-                             Text="XXXX" x:Name="TextBox1" TextWrapping="NoWrap" FontSize="23" 
-                             Style="{StaticResource RoundedTextBox}" TextChanged="TextBox_TextChanged"
+                             Text="XXXX" x:Name="TextBox1" TextWrapping="NoWrap" FontSize="23"  
+                             Style="{StaticResource RoundedTextBox}" TextChanged="TextBox_TextChanged" MaxLength="4"
                              >
 
                     </TextBox>
@@ -208,7 +208,7 @@
 
                     <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
                              TextAlignment="Center" GotFocus="TextBox2_GotFocus" LostFocus="TextBox2_LostFocus"
-                             Text="XXXX" x:Name="TextBox2" TextWrapping="NoWrap" FontSize="23" 
+                             Text="XXXX" x:Name="TextBox2" TextWrapping="NoWrap" FontSize="23" MaxLength="4"
                              Style="{StaticResource RoundedTextBox}" TextChanged="TextBox_TextChanged"
                              />
 
@@ -224,7 +224,7 @@
                     <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
                              TextAlignment="Center" x:Name="TextBox3" TextWrapping="NoWrap" FontSize="23"
                              Style="{StaticResource RoundedTextBox}" Text="XXXX"  TextChanged="TextBox_TextChanged"
-                             GotFocus="deplac_GotFocus" LostFocus="deplac_LostFocus" 
+                             GotFocus="deplac_GotFocus" LostFocus="deplac_LostFocus" MaxLength="4"
                              />
 
                 </StackPanel>
@@ -250,7 +250,7 @@
                     <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
                              TextAlignment="Center" x:Name="TextBox4" TextWrapping="NoWrap" FontSize="23"
                              Style="{StaticResource RoundedTextBox}" Text="XXXX"  TextChanged="TextBox_TextChanged"
-                             GotFocus="deplac_GotFocus" LostFocus="deplac_LostFocus" 
+                             GotFocus="TextBox4_GotFocus" LostFocus="TextBox4_LostFocus" MaxLength="4"
                              />
 
                 </StackPanel>
@@ -266,7 +266,7 @@
                     <TextBox Background="White" Height="50" Width="100" Padding="7" Foreground="Gray"
                              TextAlignment="Center" x:Name="TextBox5" TextWrapping="NoWrap" FontSize="23"
                              Style="{StaticResource RoundedTextBox}" Text="XXXX"  TextChanged="TextBox_TextChanged"
-                             GotFocus="deplac_GotFocus" LostFocus="deplac_LostFocus" 
+                             GotFocus="TextBox5_GotFocus" LostFocus="TextBox5_LostFocus" MaxLength="4"
                              />
 
                 </StackPanel>
@@ -283,7 +283,7 @@
                 <Button x:Name="Button_simuler" Height="75" Width="300"
                 Style="{StaticResource RoundedButtonStyle}"
                 Foreground="White" Click="convertButton_Click"
-                BorderBrush="#4E719D"
+                BorderBrush="#4E719D" Visibility="Collapsed"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Margin="20"
@@ -295,7 +295,25 @@
                     <TextBlock Text="Simuler Maintenant" FontFamily="Montserrat" FontSize="24" FontWeight="SemiBold" ></TextBlock>
 
                 </Button>
-               
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <Button x:Name="Button_simuler1" Height="75" Width="300"
+                Style="{StaticResource RoundedButtonStyle}"
+                Foreground="White" Click="convertButton_Click1"
+                BorderBrush="#4E719D" 
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="20"
+                >
+                    <Button.Background>
+                        <SolidColorBrush Color="#81C784" Opacity="0.6"/>
+                    </Button.Background>
+
+                    <TextBlock Text="Simuler Maintenant" FontFamily="Montserrat" FontSize="24" FontWeight="SemiBold" ></TextBlock>
+
+                </Button>
+
             </Grid>
             <Grid Grid.Column="0">
                 <Grid.RowDefinitions>

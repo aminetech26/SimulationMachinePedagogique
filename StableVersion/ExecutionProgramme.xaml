@@ -6,7 +6,8 @@
       xmlns:local="clr-namespace:projet"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
-      Title="ExecutionProgramme">
+      Title="ExecutionProgramme"
+      >
 
     <Grid Background="#90CAF9" SizeChanged="Grid_SizeChanged" >
         <Grid.RowDefinitions>
@@ -62,7 +63,7 @@
             </Grid>
 
         </Grid>
-        
+
         <Grid Grid.Row="1" Margin="0,0,0,0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -73,7 +74,7 @@
             </Grid.ColumnDefinitions>
 
             <!-- First 4 elements -->
-            
+
             <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type TextBox}">
@@ -118,7 +119,7 @@
                         </TextBox>
                     </StackPanel>
                 </Border>
-                
+
                 <Border Background="White" Margin="0 15" Width="165" Height="50" CornerRadius="13" Padding="2">
                     <StackPanel Orientation="Horizontal" Margin="10 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
                         <TextBlock Text="CX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
@@ -128,7 +129,7 @@
                         </TextBox>
                     </StackPanel>
                 </Border>
-                
+
                 <Border Background="White" Margin="0 15" Width="165" Height="50" CornerRadius="13" Padding="2">
                     <StackPanel Orientation="Horizontal" Margin="10 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
                         <TextBlock Text="DX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
@@ -142,7 +143,7 @@
             </StackPanel>
 
             <!-- Second 4 elements -->
-            
+
             <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type TextBox}">
@@ -281,7 +282,7 @@
 
             <!-- Indicateurs -->
 
-            <Grid Grid.Column="3" x:Name="Grid_IND" Width="Auto" Height="400" >
+            <Grid Grid.Column="3" Margin="0,11,0,74" >
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*" />
@@ -294,128 +295,133 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                
+
                 <TextBlock Grid.Row="0" Text="IND" 
-                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Open Sans" Padding="5" Margin="0" 
+                           TextAlignment="Center" VerticalAlignment="Top" FontFamily="Open Sans" Padding="5" Margin="0,4,0,0" 
                            FontSize="20" FontWeight="SemiBold" Foreground="White"
                            ></TextBlock>
 
                 <StackPanel Grid.Row="1" Orientation="Horizontal" >
-                    <TextBlock Grid.Row="0" Text="Z" 
-                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
+                    <TextBlock Grid.Row="0" Text="Z"
+                           TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_Z" Margin="3" Width="20" Height="20" Background="#7CF6FD" ></Grid>
+                    <Grid x:Name="IND_Z" Margin="3" Width="20" Height="20" Background="White" >
+                        
+                    </Grid>
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="2" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="P" 
-                           TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
+                           TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_P" Margin="3" Width="20" Height="20" Background="#7CF6FD" ></Grid>
+                    <Grid x:Name="IND_P" Margin="3" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="3" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="I " 
                            TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_I" Margin="3" Width="20" Height="20" Background="#7CF6FD" ></Grid>
+                    <Grid x:Name="IND_I" Margin="3" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="4" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="D" 
                            TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_D" Margin="3" Width="20" Height="20" Background="#7CF6FD" ></Grid>
+                    <Grid x:Name="IND_D" Margin="3" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="5" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="R" 
                            TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_R" Margin="3" Width="20" Height="20" Background="#7CF6FD" ></Grid>
+                    <Grid x:Name="IND_R" Margin="3" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="6" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="A" 
                            TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_A" Margin="3" Width="20" Height="20" Background="#7CF6FD" ></Grid>
+                    <Grid x:Name="IND_A" Margin="3" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="7" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="S" 
                            TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_S" Margin="3" Width="20" Height="20" Background="#7CF6FD" ></Grid>
+                    <Grid x:Name="IND_S" Margin="3" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="8" Orientation="Horizontal" >
                     <TextBlock Grid.Row="0" Text="T" 
                            TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_T" Margin="3" Width="20" Height="20" Background="#7CF6FD" ></Grid>
+                    <Grid x:Name="IND_T" Margin="3" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
 
             </Grid>
-            
-            <!-- Memoire -->
 
-            <DataGrid x:Name="dataGrid1" Grid.Column="4" SelectionChanged="dataGrid1_SelectionChanged"
-                              Height="400" 
-                              VerticalAlignment="Center" 
-                              SelectionMode="Extended"
-                              CanUserSortColumns="False" 
-                              CanUserResizeColumns="False" 
-                              CanUserReorderColumns="false"     
-                              MinColumnWidth="140"
-                              RowHeaderWidth="0"
-                              SelectionUnit="FullRow" Width="300" HorizontalAlignment="Center"
-                              ScrollViewer.IsDeferredScrollingEnabled="True"             
-                      >
-
+            <!-- Mnemonique -->
+            <DataGrid Grid.Column="4" Name="dataGrid1" AutoGenerateColumns="False" Margin="0,85,0,78">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*" Header="Liste des instructions " />
+                </DataGrid.Columns>
                 <DataGrid.RowStyle>
-                    <Style TargetType="{x:Type DataGridRow}">
-                        <Setter Property="Background" Value="#D9D9D9"/>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="DataGridRow">
+                                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                SnapsToDevicePixels="True">
+                                        <ContentPresenter Margin="10"  VerticalAlignment="Center" HorizontalAlignment="Left" Content="{Binding InstructionMnemonique}" />
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
                         <Style.Triggers>
-                            <Trigger Property="AlternationIndex" Value="1">
+                            <Trigger Property="IsSelected" Value="True">
                                 <Setter Property="Background" Value="Blue"/>
+                                <Setter Property="Foreground" Value="White"/>
                             </Trigger>
                         </Style.Triggers>
                     </Style>
                 </DataGrid.RowStyle>
-
-                <DataGrid.CellStyle>
-                    <Style TargetType="{x:Type DataGridCell}">
-                        <Setter Property="FontSize" Value="23" />
-                        <Setter Property="IsHitTestVisible" Value="False" />
+                <DataGrid.ColumnHeaderStyle>
+                    <Style TargetType="DataGridColumnHeader">
+                        <Setter Property="HorizontalContentAlignment" Value="Center" />
                     </Style>
-                </DataGrid.CellStyle>
-
+                </DataGrid.ColumnHeaderStyle>
             </DataGrid>
+
+
+
+
 
 
         </Grid>

@@ -1,4 +1,5 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using ArchiMind;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,9 +27,12 @@ namespace projet.Pages
     /// </summary>
     public partial class Page_EntreeSortie : Page
     {
+        private Page_EntreeSortie mainpage;
         public Page_EntreeSortie()
         {
             InitializeComponent();
+            mainpage = this;
+            Animation.setcontext(mainpage);
         }
 
 
@@ -36,6 +40,7 @@ namespace projet.Pages
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/CEI.xaml", UriKind.RelativeOrAbsolute));
         }
+
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
@@ -167,7 +172,6 @@ namespace projet.Pages
                 TextBox3.Foreground = Brushes.Black;
             }
         }
-
         public void convertButton_Click(object sender, RoutedEventArgs e)
         {
             string hexString = TextBox1.Text;
@@ -182,20 +186,31 @@ namespace projet.Pages
 
             //int decimalValue = Convert.ToInt32(hexString, 16);
             //MessageBox.Show("La valeur décimale correspondante est : " + decimalValue.ToString());
-            string Registr;
-            string deplace;
-            string destinatair;
-            string source;
-            string Forma;
-            ComboBoxItem? selectedItem = Instruction.SelectedItem as ComboBoxItem;
+            ComboBoxItem selectedItem = Instruction.SelectedItem as ComboBoxItem;
+
+            string Forma; string deplace; bool ifdepl;
             string letter = Format.SelectedItem.ToString();
-            ComboBoxItem? selectedItem2 = Reg.SelectedItem as ComboBoxItem; if (selectedItem2 == null) { Registr = "0000"; } else { Registr = selectedItem2.ToString(); }
-            ComboBoxItem? selectedItem3 = Dep.SelectedItem as ComboBoxItem; if (selectedItem3 == null) { deplace = "0000"; } else { deplace = selectedItem3.ToString(); }
-            ComboBoxItem? selectedItem4 = Destinataire.SelectedItem as ComboBoxItem; if (selectedItem4 == null) { destinatair = "0000"; } else { destinatair = selectedItem4.ToString(); }
-            ComboBoxItem? selectedItem5 = Source.SelectedItem as ComboBoxItem; if (selectedItem5 == null) { source = "0000"; } else { source = selectedItem5.ToString(); }
+            string destinatair = "";
+            if ((letter != "AX,imd16") && (letter != "Reg16")&&(letter!="AX,DX")) { destinatair = Destinataire.SelectedItem.ToString(); }
+            string source = "XXXX";
+            if (Source.SelectedItem != null) { source = Source.SelectedItem.ToString(); }
+            string Registr = "";
+            if ((letter != "AX,imd16") && (letter != "Reg16") && (letter != "AX,DX")) { Registr = Reg.SelectedItem.ToString(); }
+            if ((Registr == " Registre ") || (letter == "AX,imd16") || (letter == "Reg16")|| (letter == "AX,DX")) { deplace = "0000"; }
+            else { deplace = Dep.SelectedItem.ToString(); }
+            if (deplace == "Avec deplacement") { ifdepl = true; }
+            else { ifdepl = false; }
+            JeuxInstruction instruction = new JeuxInstruction();
 
-            MainWindow wind = new MainWindow(sender, TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox5.Text, TextBox4.Text, selectedItem.Content.ToString(), letter, Registr, deplace, destinatair, source);
 
+            MainWindow wind = new MainWindow(sender, TextBox1.Text, TextBox2.Text, TextBox3.Text, TextBox5.Text, TextBox4.Text, selectedItem.Content.ToString(), letter, Registr, "0000", destinatair, source, champ1.Text, champ2.Text, champ3.Text);
+
+        }
+        string i;
+        public void convertButton_Click1(object sender, RoutedEventArgs e)
+        {
+            Animation main = new Animation();
+            main.ShowDialog();
         }
 
 
@@ -213,13 +228,13 @@ namespace projet.Pages
                 if (selectedItem.Content.ToString() == "IN")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("AX , DX");
+                    Format.Items.Add("AX,DX");
 
                 }
                 else if (selectedItem.Content.ToString() == "OUT")
                 {
                     Format.Items.Clear();
-                    Format.Items.Add("DX , AX");
+                    Format.Items.Add("DX,Mem16");
 
                 }
                 else if (selectedItem.Content.ToString() == "INSW")
@@ -245,7 +260,7 @@ namespace projet.Pages
             if (letter != null)
             {
 
-                if (string.Compare(letter,"AX , DX") == 0)
+                if (string.Compare(letter, "AX,DX") == 0)
                 {
                     int columnIndex2 = Grid.GetColumn(stkDep);
 
@@ -262,6 +277,12 @@ namespace projet.Pages
                         // StackPanel1.ColumnDefinitions.RemoveAt(3);
                         StackPanel1.Children.Remove(stkReg);
                     }
+                    int columnIndex6 = Grid.GetColumn(stkDes);
+                    if (columnIndex6 >= 0)
+                    {
+                        // StackPanel1.ColumnDefinitions.RemoveAt(3);
+                        StackPanel1.Children.Remove(stkDes);
+                    }
 
                     int columnIndex4 = Grid.GetColumn(grid_dep);
                     if (columnIndex4 >= 0)
@@ -275,22 +296,26 @@ namespace projet.Pages
                         Grid5.Children.Remove(grid_ccm);
                     }
 
-                    int columnIndex6 = Grid.GetColumn(stc_3);
-                    if (columnIndex5 >= 0)
+                    int columnIndex7 = Grid.GetColumn(stc_3);
+                    if (columnIndex7 >= 0)
                     {
                         StackPanel2.Children.Remove(stc_3);
                     }
+                    int columnIndex8 = Grid.GetColumn(stc_2);
+                    if (columnIndex8 >= 0)
+                    {
+                        StackPanel2.Children.Remove(stc_2);
+                    }
 
-                    champ1.Text = "AX :";
-                    champ2.Text = "DX :";
+                    champ1.Text = "Valeur Entrer :";
+              
 
-                    Destinataire.Items.Clear();
-                    Destinataire.Items.Add("AX");
+            
                     Source.Items.Clear();
                     Source.Items.Add("DX");
 
                 } 
-                if (string.Compare(letter, "DX , AX") == 0)
+                if (string.Compare(letter, "DX, AX") == 0)
                 {
                         int columnIndex2 = Grid.GetColumn(stkDep);
 
@@ -468,6 +493,6 @@ namespace projet.Pages
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page_EntreeSortie.xaml", UriKind.RelativeOrAbsolute));
         }
 
-
+       
     }
 }
