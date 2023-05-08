@@ -97,5 +97,14 @@ namespace projet.Pages
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page_Decalage.xaml", UriKind.RelativeOrAbsolute));
         }
 
+        private void GoToTransfert(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Transfert.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void GoToBranchement(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Branchement.xaml", UriKind.RelativeOrAbsolute));
+        }
     }
 }

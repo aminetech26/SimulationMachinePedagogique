@@ -288,7 +288,7 @@ namespace projet.Pages
             string source = "XXXX";
             if (Source.SelectedItem != null) { source = Source.SelectedItem.ToString(); }
             string Registr = "";
-            if ((letter != "AX,imd16") && (letter != "Reg16")&& (letter !="Mem16" ) ){ Registr = Reg.SelectedItem.ToString(); }
+            if ((letter != "AX,imd16") && (letter != "Reg16")&& (letter !="mem16" ) ){ Registr = Reg.SelectedItem.ToString(); }
             if ((Registr == " Registre ") || (letter == "AX,imd16") || (letter == "Reg16")) { deplace = "0000"; }
             else { deplace = Dep.SelectedItem.ToString(); }
             if (deplace == "Avec deplacement") { ifdepl = true; }
@@ -358,6 +358,7 @@ namespace projet.Pages
                     Format.Items.Add("Reg16/mem16,imm16");
 
                 }
+                
             }
 
 
@@ -406,17 +407,17 @@ namespace projet.Pages
                     //{
                     //    Grid5.Children.Remove(grid_dep);
                     //}
-                    int columnIndex5 = Grid.GetColumn(grid_ccm);
-                    if (columnIndex5 >= 0)
-                    {
-                        Grid5.Children.Remove(grid_ccm);
-                    }
-                    int columnIndex6 = Grid.GetColumn(stc_2);
-                    if (columnIndex6 >= 0)
-                    {
-                        stc_2.Children.Remove(champ2);
-                        stc_2.Children.Remove(TextBox2);
-                    }
+                    //int columnIndex5 = Grid.GetColumn(grid_ccm);
+                    //if (columnIndex5 >= 0)
+                    //{
+                    //    Grid5.Children.Remove(grid_ccm);
+                    //}
+                    //int columnIndex6 = Grid.GetColumn(stc_2);
+                    //if (columnIndex6 >= 0)
+                    //{
+                    //    stc_2.Children.Remove(champ2);
+                    //    stc_2.Children.Remove(TextBox2);
+                    //}
 
                     champ1.Text = "AX:";
                     champ3.Text = "imm16:";
@@ -537,7 +538,7 @@ namespace projet.Pages
                 //    Source.Items.Add(" DI ");
                 //}
             }
-            //Instruction.IsEnabled = false;
+            Instruction.IsEnabled = false;
             Reg.Items.Clear();
             Reg.Items.Add(" Registre ");
             Reg.Items.Add(" Memoire ");
@@ -1194,8 +1195,9 @@ namespace projet.Pages
             }
             else if (letter2 == "mem16")
             {
-                string letter6 = Instruction.SelectedItem.ToString();
-                letter5 = Dep.SelectedItem.ToString();
+                ComboBoxItem selectedItem = Instruction.SelectedItem as ComboBoxItem;
+                string letter6 = selectedItem.Content.ToString();
+                    letter5 = Dep.SelectedItem.ToString();
                 if (letter6 == "JMP")
                 {
                     if (letter5 == "Sans deplacement")
@@ -2042,9 +2044,9 @@ namespace projet.Pages
 
         private void Actualiser(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page2.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/branchement1.xaml", UriKind.RelativeOrAbsolute));
         }
 
-
+        
     }
 }

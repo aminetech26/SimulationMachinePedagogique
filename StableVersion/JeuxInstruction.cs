@@ -1496,7 +1496,7 @@ namespace ArchiMind
                     break;
             }
             // animation (UAL,registre,donne );
-            UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
+            UAL.positionnerIndicateurs(mnemonique, result, r, r1);
             if (Animation.btnclick == true) { Phase3(mnemonique, format, RegM); await Task.Delay(10000); }
             Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);

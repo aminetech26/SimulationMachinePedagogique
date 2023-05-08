@@ -50,7 +50,7 @@
         
         <Button
             x:Name="Button1"
-            Grid.Column="1"
+            Grid.Column="1" Click="GoToTransfert"
             Grid.Row="1"
             Style="{DynamicResource RoundedButtonStyle5}"
             Margin="15"
@@ -157,7 +157,7 @@
 
         <Button
             x:Name="Button5"
-            Grid.Column="2"
+            Grid.Column="2"   Click="GoToBranchement"
             Grid.Row="3"
             Style="{DynamicResource RoundedButtonStyle5}"
             Margin="15"

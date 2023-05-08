@@ -44,7 +44,7 @@
                     VerticalAlignment="Top" Margin="0 0 -90 0" Background="#4E719D"
                     Click="Actualiser"
                     >
-                <Image Source="/Pages/Actualiser.png" />
+                <Image Source="/Pages/Images/Actualiser.png" />
 
             </Button>
 
