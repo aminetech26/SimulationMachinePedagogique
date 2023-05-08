@@ -327,6 +327,53 @@
     </Style>
 
 
+    <!-- Rounded Button 9 ( Premiers Pas ) -->
+
+    <Style TargetType="Button" x:Key="RoundedButtonStyle9">
+        <Setter Property="Background" Value="#DAF3FF" />
+        <Setter Property="Foreground" Value="Black" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+                        <Border x:Name="ButtonBorder" CornerRadius="15" 
+                                Background="{TemplateBinding Background}" 
+                                BorderBrush="Black"
+                                BorderThickness="1"
+                                Margin="0,0,0,0" 
+                                Padding="0,0,0,0">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                            <Border.Effect>
+                                <DropShadowEffect ShadowDepth="0" 
+                                                  BlurRadius="20" 
+                                                  Opacity="0.75"
+                                                  Color="DarkSlateGray" />
+                            </Border.Effect>
+                        </Border>
+                        <Border CornerRadius="20" 
+                                Background="{x:Null}" 
+                                BorderBrush="{x:Null}" 
+                                BorderThickness="5" 
+                                Margin="5,5,5,5">
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="White" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="Transparent" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="False">
+                            <Setter TargetName="ButtonBorder" Property="Effect" Value="{x:Null}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
     <!-- Rounded Button 8 ( Page Programme 2 ) -->
 
     <Style TargetType="Button" x:Key="RoundedButtonStyle8">

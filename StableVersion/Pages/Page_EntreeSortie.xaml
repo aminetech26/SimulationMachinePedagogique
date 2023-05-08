@@ -342,7 +342,7 @@
                     <Grid Grid.Column="1">
                         <TextBlock Background="White" Height="50" Width="150" Padding="7" Foreground="Gray"
                                    TextAlignment="Center" x:Name="Inst_En_Hexa" TextWrapping="NoWrap" HorizontalAlignment="Center"
-                                   FontSize="22"   />
+                                   FontSize="22" />
                     </Grid>
                     <Grid Grid.Column="0">
                         <TextBlock Text="En hexa :" FontSize="25"
@@ -350,21 +350,6 @@
                                     Foreground="White" x:Name="Text4" />
                     </Grid>
                 </Grid>
-
-                <!--<StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                       
-                       
-                        <TextBlock Background="White" Height="50" Width="200" Padding="7" Foreground="Gray"
-                                   TextAlignment="Center" x:Name="Inst" TextWrapping="NoWrap" HorizontalAlignment="Right"
-                                   FontSize="22"  Margin="20"  />
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal">
-                       
-
-
-                    </StackPanel>-->
-                <!--</StackPanel>-->
 
             </Grid>
 

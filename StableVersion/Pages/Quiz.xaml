@@ -42,7 +42,6 @@
                                     Margin="0,-80,0,0">
 
                         <Menu:Btn Style="{StaticResource BtnStyle}" PreviewMouseDown="toHomePage"
-                                      IsChecked="True"
                                       VerticalAlignment="Top">
                             <Grid>
                                 <Grid>
@@ -83,7 +82,7 @@
                             </Grid>
                         </Menu:Btn>
 
-                        <Menu:Btn Style="{StaticResource BtnStyle}" PreviewMouseDown="toQuizPage" >
+                        <Menu:Btn Style="{StaticResource BtnStyle}" PreviewMouseDown="toQuizPage" IsChecked="True">
                             <Grid>
                                 <Image Source="/Pages/images/quiz.png"
                                            Style="{StaticResource Image_Style}" />

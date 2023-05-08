@@ -68,6 +68,20 @@ namespace projet
             return new_instruction;
         }
 
+        private static int number_inst;
+
+        public static void Set_number_inst(int valeur)
+        {
+            number_inst = valeur;
+        }
+        
+        public static int Get_number_inst()
+        {
+            return number_inst ;
+        }
+
+
+
         private void AddInstruction_Click(object sender, RoutedEventArgs e)
         {
             currentLineNumber = 0 ;
@@ -151,6 +165,7 @@ namespace projet
                     }
                 }
             }
+
             if (!allChecked)
             {
                 System.Windows.MessageBox.Show("Veuillez sélectionner un élément dans toutes les listes déroulantes activées.");
@@ -204,9 +219,10 @@ namespace projet
             System.Windows.MessageBox.Show(text);
             Creerprogramme secondPage = new Creerprogramme(programInstructions);
             this.NavigationService.Navigate(secondPage);
+
+            Set_number_inst(currentLineNumber);
+
         }
-
-
 
 
 
@@ -214,10 +230,6 @@ namespace projet
         {
             NavigationService.Navigate(new Uri("/Pages/Page1.xaml", UriKind.Relative));
         }
-
-
-
-
 
 
         public void SaveProgramToFile(string filename)
@@ -247,7 +259,7 @@ namespace projet
 
         public void LoadProgramFromFile(string filePath)
         {
-            int currentLineNumber = 1;
+             currentLineNumber = 1;
 
                 //    string filePathJson = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\schema.json";
                 //    string filePathArchimind = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\Program.archimind";
@@ -349,6 +361,7 @@ namespace projet
                     Grid_InstructionsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
                 }
             }
+
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)

@@ -27,15 +27,16 @@
                 </Border>
 
 
-                <Canvas Height="50" Width="500" Margin="5" >
+                <Canvas Height="75" Width="500" Margin="5" >
 
-                    <Button  x:Name="btn1" Canvas.Left="10" Style="{StaticResource PremierPasbutton}" Height="Auto" Width="Auto"
+                    <Button  x:Name="btn1" Canvas.Left="10" Style="{DynamicResource MaterialDesignFlatAccentButton}" Height="Auto" Width="Auto"
                     Background="#E0E0E0"
                     Foreground="Black"
                     BorderBrush="#E0E0E0"
                     Margin="0 5 20 0" 
                    
                     >Annuler</Button>
+                    
                     <Button Canvas.Right="75" Click="BackToPremierpas12" >
                         <Image x:Name="image2" Source="/Pages/images/Precedent1.png" ></Image>
                     </Button>

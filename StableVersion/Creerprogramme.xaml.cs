@@ -52,6 +52,43 @@ namespace projet.Pages
         {
             BorderHexadecimal.Visibility = Visibility.Collapsed;
             BorderMnemonique.Visibility = Visibility.Visible;
+
+            int i = ProgrammePage.Get_number_inst();
+
+            for (int f = 0; f < i; f++)
+            {
+                RowDefinition row = new RowDefinition();
+                Grid_Mnem.RowDefinitions.Add(row);
+            }
+
+            for (int o = 0; o < 2; o++)
+            {
+                ColumnDefinition col = new ColumnDefinition();
+                Grid_Mnem.ColumnDefinitions.Add(col);
+            }
+
+            // add some elements to the grid
+            JeuxInstruction j = new JeuxInstruction();
+            string text = "";
+            int k = 0;
+            foreach (Instruction ins in programInst)
+            {
+                text = j.convertir_instruction_Lmnemonique(ins) + "  \n";
+            
+                TextBlock line = new TextBlock();
+                line.Text = text;
+                Grid.SetRow(line, k);
+                Grid.SetColumn(line, 2);
+                Grid_Mnem.Children.Add(line);
+                TextBlock nb = new TextBlock();
+                nb.Text = k.ToString();
+                Grid.SetRow(nb, k);
+                Grid.SetColumn(nb, 0);
+                Grid_Mnem.Children.Add(nb);
+                k++;
+            }
+           
+
         }
 
 
