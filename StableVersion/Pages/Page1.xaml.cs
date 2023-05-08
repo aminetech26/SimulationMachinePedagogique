@@ -62,7 +62,7 @@ namespace projet.Pages
 
         private void toHomePage(object sender, MouseButtonEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page1.xaml", UriKind.RelativeOrAbsolute));
+            Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
         
         private void toSimulateurPage(object sender, MouseButtonEventArgs e)

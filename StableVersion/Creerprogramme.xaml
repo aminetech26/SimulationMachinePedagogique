@@ -6,7 +6,6 @@
       xmlns:local="clr-namespace:projet.Pages"
       xmlns:Menu="clr-namespace:projet.Utilities"
       mc:Ignorable="d"
-      Height="600" Width="1028"
       Title="Creerprogramme">
 
     <Page.Resources>
@@ -18,7 +17,7 @@
                             <Grid x:Name="Grid">
                                 <Rectangle HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" 
                                            Height="Auto" Fill="Transparent"/>
-                                <Border x:Name="Rectangle1" CornerRadius="10 0 0 10" HorizontalAlignment="Stretch" 
+                                <Border x:Name="Rectangle1" CornerRadius="10 10 10 10" HorizontalAlignment="Stretch" 
                                         VerticalAlignment="Stretch" Width="Auto" Height="Auto" 
                                         Background="{TemplateBinding Background}"/>
                             </Grid>
@@ -36,9 +35,9 @@
            
             <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
                 <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-                <Setter Property="Foreground" Value="#4E719D"/>
+                <Setter Property="Foreground" Value="#D9D9D9"/>
                 <Setter Property="Background" Value="White"/>
-                <Setter Property="Width" Value="10"/>
+                <Setter Property="Width" Value="30"/>
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="{x:Type ScrollBar}">
@@ -94,44 +93,36 @@
         </ResourceDictionary>
     </Page.Resources>
 
-    <Grid >
-                <Grid.Background>
-                    <LinearGradientBrush StartPoint="1,1"
-                                         EndPoint="0,0">
-                        <GradientStop Color="#90CAF9" Offset="0" />
-                        <GradientStop Color="#90CAF9" Offset="0.75" />
-                    </LinearGradientBrush>
-                </Grid.Background>
-                <Grid.RowDefinitions>
+    <Grid Background="#90CAF9" >
+        
+        <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                     <RowDefinition Height="*"/>
-            <RowDefinition Height="4.17*"/>
-                </Grid.RowDefinitions>
+                    <RowDefinition Height="4.17*"/>
+        </Grid.RowDefinitions>
+
+        
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="9*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
+
             <Grid Grid.Column="0">
-                <Button x:Name="Button" Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Center"
-                        VerticalAlignment="Center" Click="GoBackHome"  >
-                    <Button.Template>
-                        <ControlTemplate TargetType="Button">
-                            <Grid>
-                                <Image Source="/Pages/images/revenir_blanc.png" Stretch="Uniform"  />
-                            </Grid>
-                        </ControlTemplate>
-                    </Button.Template>
+                <Button x:Name="Button" Grid.Column="0" Width="Auto" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"
+                     Margin="30 10 0 0" Click="GoBackHome" Background="Transparent" BorderBrush="#90CAF9" BorderThickness="0" >
+                    <Image Source="/Pages/images/revenir_blanc.png" />
                 </Button>
 
             </Grid>
             <Grid Grid.Column="1">
-                <TextBlock x:Name="Text1" Text="Creer un programme" FontStyle="Normal" FontSize="23" FontWeight="SemiBold" Padding="18" HorizontalAlignment="Center"  FontFamily="Montserrat" 
-                            TextAlignment="Center"  Foreground="#FFFFFF" Height="Auto" RenderTransformOrigin="0.5,0.734" VerticalAlignment="Center" />
+                <TextBlock x:Name="Text1" Text="Creer un programme" FontStyle="Normal" FontSize="24" FontWeight="SemiBold" Padding="20" HorizontalAlignment="Center"  FontFamily="Montserrat" 
+                            TextAlignment="Center" Margin="0 12 0 0" Foreground="#FFFFFF" Height="Auto" RenderTransformOrigin="0.5,0.734" VerticalAlignment="Center" />
             </Grid>
             <Grid Grid.Column="2">
-                <Button  Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Center"
+
+                <Button  Width="Auto" Height="24" BorderThickness="0" HorizontalAlignment="Center"
                         VerticalAlignment="Center" Click="GoToProgramme3"  >
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
@@ -144,54 +135,46 @@
 
             </Grid>
 
-
         </Grid>
 
-       
-        <Grid Grid.Row="1" Margin="200 0">
+        <Grid Grid.Row="1" >
            
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="Button1" Style="{DynamicResource Creeprogrammebutton}"  Height="45" Width="Auto" Margin="20 10 0 10" BorderThickness="0" Click="Hexadecimal"
-                        Grid.Row="0"  >
-                <Button.Background>
-                    <SolidColorBrush Color="#DAF3FF" Opacity="0.6"/>
-                </Button.Background>
-               
-                   
-                    <TextBlock Text="Hexadecimal" TextAlignment="Center" FontFamily="Open Sans" 
-                                       FontSize="18" FontWeight="Regular" 
-                                       Padding="10" Margin="0 5 0 5" 
-                                   />
-               
-                
-            </Button>
-            <Button x:Name="Button2" Style="{DynamicResource Creeprogrammebutton}"  Height="45" Width="Auto" Margin="0 10 0 10" BorderThickness="0"
-                        Grid.Row="0" Grid.Column="1" Click="Mnemonique" >
-                <Button.Background>
-                    <SolidColorBrush Color="#DAF3FF" Opacity="0.6"/>
-                </Button.Background>
-               
-                    <TextBlock Text="Mnemonique" TextAlignment="Center" FontFamily="Open Sans" 
-                                       FontSize="18" FontWeight="Regular" 
-                                       Padding="10" Margin="0 5 0 5" 
-                                   />
-                
+
+            <Button x:Name="Button1" Style="{StaticResource RoundedButtonStyle8}"  Height="40" Width="Auto" 
+                    Margin="10 0" Click="Hexadecimal" Grid.Column="1" VerticalAlignment="Center" >
+
+                <TextBlock Text="Hexadecimal" TextAlignment="Center" FontFamily="Open Sans" 
+                                       FontSize="18" FontWeight="Regular"
+                                       Padding="0" Margin="0" 
+                />
 
             </Button>
-            <Button x:Name="Button3" Style="{DynamicResource Creeprogrammebutton}"  Height="45" Width="Auto" Margin="0 10 0 10" BorderThickness="0"
-                        Grid.Row="0" Grid.Column="2"  >
-                <Button.Background>
-                    <SolidColorBrush Color="#DAF3FF" Opacity="0.6"/>
-                </Button.Background>
-                <StackPanel Orientation="Horizontal" Width="200">
-                    <Image Source="/Pages/images/enregistrer.png" Height="58" Width="33" RenderTransformOrigin="0.5,10.20" Margin="22,0,-10,0"/>
-                    <TextBlock Text="Sauvegarder" TextAlignment="Left" FontFamily="Open Sans" 
+
+            <Button x:Name="Button2" Style="{StaticResource RoundedButtonStyle8}"  Height="40" Width="Auto" 
+                    Margin="10 0" Click="Mnemonique" Grid.Column="2" VerticalAlignment="Center" >
+
+                <TextBlock Text="Mnemonique" TextAlignment="Center" FontFamily="Open Sans" 
                                        FontSize="18" FontWeight="Regular" 
-                                       Padding="10" Margin="15 5 11 5" 
+                                       Padding="0" Margin="0 5 0 5" 
+                />
+
+            </Button>
+            
+            <Button x:Name="Button3" Style="{StaticResource RoundedButtonStyle8}"  Height="40" Width="Auto" 
+                    Margin="10 0" Click="Hexadecimal" Grid.Column="3" VerticalAlignment="Center" >
+
+                <StackPanel Orientation="Horizontal" Width="200" Height="Auto" >
+                    <Image Source="/Pages/images/enregistrer.png" Height="Auto" Width="30" Margin="15 0 10 0"/>
+                    <TextBlock Text="Sauvegarder" TextAlignment="Center" FontFamily="Open Sans" 
+                                       FontSize="18" FontWeight="Regular" VerticalAlignment="Center"
+                                       Padding="0" Margin="0" 
                                    />
                 </StackPanel>
 
@@ -200,15 +183,12 @@
 
         </Grid>
      
-        <Border x:Name="BorderHexadecimal" CornerRadius="12" Background="White" Margin="70 10 70 60" Grid.Row="2" >
+        <Border x:Name="BorderHexadecimal" CornerRadius="20" Background="White" Margin="70 10 70 25" Grid.Row="2" >
 
-            <Grid  >
-
-
-                <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="2,0,10,0"  >
-                    <!--<ScrollBar Style="{DynamicResource PART_VerticalScrollBar"}"-->
+            <Grid >
 
 
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0"  >
 
                     <StackPanel>
                         <Grid Margin="15 10 15 0">
@@ -222,7 +202,7 @@
 
                             </Grid>
                             <Grid Grid.Column="1">
-                                <TextBlock  Background="White" Text="FDC5"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Montserrat" 
+                                <TextBlock  Background="White" Text="FDC5_Hexadecimal"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Montserrat" 
                            TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5"   >
 
                                 </TextBlock>
@@ -422,15 +402,12 @@
 
             </Grid>
         </Border>
-        <Border x:Name="BorderMnemonique" CornerRadius="12" Background="White" Margin="70 10 70 60" Grid.Row="2" >
+        
+        <Border x:Name="BorderMnemonique" CornerRadius="20" Background="White" Margin="70 10 70 25" Grid.Row="2" >
 
-            <Grid  >
+            <Grid>
 
-
-                <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="2,0,10,0"  >
-                    <!--<ScrollBar Style="{DynamicResource PART_VerticalScrollBar"}"-->
-
-
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0"  >
 
                     <StackPanel>
                         <Grid Margin="15 10 15 0">
@@ -439,12 +416,12 @@
                                 <ColumnDefinition Width="7*"/>
                             </Grid.ColumnDefinitions>
                             <Grid Grid.Column="0">
-                                <TextBlock  Text="2" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
+                                <TextBlock  Text="1" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
+                                            TextAlignment="Center"  Foreground="#4E719D" Height="64" />
 
                             </Grid>
                             <Grid Grid.Column="1">
-                                <TextBlock  Background="White" Text="FDC5"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Montserrat" 
+                                <TextBlock  Background="White" Text="FDC5_Mnemonique"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Montserrat" 
                            TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5"   >
 
                                 </TextBlock>

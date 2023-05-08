@@ -34,7 +34,7 @@
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Grid>
-                                <Image Source="/Pages/images/revenir.png" Height="25" Width="25" Stretch="Uniform"  />
+                                <Image Source="/Pages/images/revenir_blanc.png" Height="25" Width="25" Stretch="Uniform"  />
                             </Grid>
                         </ControlTemplate>
                     </Button.Template>
@@ -339,7 +339,7 @@
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_D" Margin="3" Width="20" Height="20" Background="White" ></Grid>
+                    <Grid x:Name="IND_D" Margin="2" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
 
@@ -367,9 +367,9 @@
                     <TextBlock Grid.Row="0" Text="S" 
                            TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="0" Margin="5" 
                            FontSize="18" FontWeight="Bold" Foreground="White"
-                           ></TextBlock>
+                    ></TextBlock>
 
-                    <Grid x:Name="IND_S" Margin="3" Width="20" Height="20" Background="White" ></Grid>
+                    <Grid x:Name="IND_S" Margin="5" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
 
@@ -379,7 +379,7 @@
                            FontSize="18" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
 
-                    <Grid x:Name="IND_T" Margin="3" Width="20" Height="20" Background="White" ></Grid>
+                    <Grid x:Name="IND_T" Margin="5" Width="20" Height="20" Background="White" ></Grid>
 
                 </StackPanel>
 

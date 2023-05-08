@@ -74,6 +74,7 @@ namespace projet
                 }
             }
         }
+
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             foreach (var control in Reg_Grid.Children)
@@ -100,6 +101,7 @@ namespace projet
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             bool allValid = true;
+
             foreach (var tb in FindVisualChildren<TextBox>(this))
             {
                 string input = tb.Text.Trim();
@@ -145,5 +147,69 @@ namespace projet
             this.NavigationService.GoBack();
         }
 
+        private void containerGridElement_SizeChanged(object sender, SizeChangedEventArgs e)
+        {
+            if (e.NewSize.Width >= 1200)
+            {
+                text.FontSize = 27;
+                Border_AX.Width = 250;
+                Border_AX.Height = 50;
+                Border_AX.Margin = new Thickness(0,25,0,25);
+                Border_BX.Width = 250;
+                Border_BX.Height = 50;
+                Border_BX.Margin = new Thickness(0,25,0,25);
+                Border_CX.Width = 250;
+                Border_CX.Height = 50;
+                Border_CX.Margin = new Thickness(0,25,0,25);
+                Border_DX.Width = 250;
+                Border_DX.Height = 50;
+                Border_DX.Margin = new Thickness(0,25,0,25);
+                Border_SI.Width = 250;
+                Border_SI.Height = 50;
+                Border_SI.Margin = new Thickness(0,25,0,25);
+                Border_DI.Width = 250;
+                Border_DI.Height = 50;
+                Border_DI.Margin = new Thickness(0,25,0,25);
+                Border_BP.Width = 250;
+                Border_BP.Height = 50;
+                Border_BP.Margin = new Thickness(0,25,0,25);
+                Border_SP.Width = 250;
+                Border_SP.Height = 50;
+                Border_SP.Margin = new Thickness(0,25,0,25);
+                suivant.Width = 250;
+                suivant.Height = 65;
+            }
+            else
+            {
+                text.FontSize= 23 ;
+                Border_AX.Width = 200 ;
+                Border_AX.Height = 45 ;
+                Border_AX.Margin = new Thickness(0 ,12 ,0 ,12);
+                Border_BX.Width = 200 ;
+                Border_BX.Height = 45 ;
+                Border_BX.Margin = new Thickness(0 ,12 ,0 ,12);
+                Border_CX.Width = 200 ;
+                Border_CX.Height = 45 ;
+                Border_CX.Margin = new Thickness(0 ,12 ,0 ,12);
+                Border_DX.Width = 200 ;
+                Border_DX.Height = 45 ;
+                Border_DX.Margin = new Thickness(0 ,12 ,0 ,12);
+                Border_SI.Width = 200 ;
+                Border_SI.Height = 45 ;
+                Border_SI.Margin = new Thickness(0 ,12 ,0 ,12);
+                Border_DI.Width = 200 ;
+                Border_DI.Height = 45 ;
+                Border_DI.Margin = new Thickness(0 ,12 ,0 ,12);
+                Border_BP.Width = 200 ;
+                Border_BP.Height = 45 ;
+                Border_BP.Margin = new Thickness(0 ,12 ,0 ,12);
+                Border_SP.Width = 200 ;
+                Border_SP.Height = 45 ;
+                Border_SP.Margin = new Thickness(0 ,12 ,0 ,12);
+                suivant.Width = 215 ;
+                suivant.Height = 50 ;
+            }
+
+        }
     }
 }

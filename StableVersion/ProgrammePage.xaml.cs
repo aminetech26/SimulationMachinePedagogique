@@ -40,7 +40,7 @@ namespace projet
     /// </summary>
     public sealed partial class ProgrammePage : Page
     {
-        static int Load_is_clicked = 0;
+        //static int Load_is_clicked = 0;
 
         static int currentLineNumber = 1;
         List<Instruction> programInstructions = new List<Instruction>();
@@ -248,15 +248,12 @@ namespace projet
         public void LoadProgramFromFile(string filePath)
         {
             int currentLineNumber = 1;
-            Load_is_clicked++ ;
 
-            if (Load_is_clicked == 1) { 
+                //    string filePathJson = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\schema.json";
+                //    string filePathArchimind = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\Program.archimind";
 
-            //    string filePathJson = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\schema.json";
-            //    string filePathArchimind = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\Program.archimind";
-
-            //Load the JSON data from the .archimind file and deserialize it
-            string serializedData = File.ReadAllText(filePath);
+                //Load the JSON data from the .archimind file and deserialize it
+                string serializedData = File.ReadAllText(filePath);
             List<Dictionary<string, string>> programData0 = JsonConvert.DeserializeObject<List<Dictionary<string, string>>>(serializedData);
             List<Dictionary<string, string>> programData;
             try
@@ -351,7 +348,6 @@ namespace projet
                 {
                     Grid_InstructionsScrollViewer.VerticalScrollBarVisibility = ScrollBarVisibility.Visible;
                 }
-            }
             }
         }
 

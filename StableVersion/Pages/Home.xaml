@@ -28,7 +28,7 @@
 
 
         <Button Grid.Column="0" x:Name="Button_Fr_En" Width="Auto" Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Top"
-                     Margin="0 25 25 0" MouseEnter="Button_Fr_En_Click" MouseLeave="Button_Fr_En_MouseLeave" >
+                     Margin="0 25 25 0" Click="Button_Fr_En_Click" MouseLeave="Button_Fr_En_MouseLeave" >
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Grid>

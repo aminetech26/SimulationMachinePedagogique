@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Ellipse 5.png" />
     <None Remove="Fonts\Montserrat.ttf" />
     <None Remove="images\Arrow 1.png" />
     <None Remove="images\CEI.png" />
@@ -52,6 +53,7 @@
     <None Remove="Pages\images\1pas.png" />
     <None Remove="Pages\images\accueil.png" />
     <None Remove="Pages\images\Actualiser.png" />
+    <None Remove="Pages\images\add.png" />
     <None Remove="Pages\images\C.E.I page 1.png" />
     <None Remove="Pages\images\carre.png" />
     <None Remove="Pages\images\cei.png" />
@@ -107,6 +109,7 @@
     <None Remove="Pages\images\retour.png" />
     <None Remove="Pages\images\revenir.png" />
     <None Remove="Pages\images\revenir_blanc.png" />
+    <None Remove="Pages\images\save.png" />
     <None Remove="Pages\images\sel_inst.png" />
     <None Remove="Pages\images\simulation.png" />
     <None Remove="Pages\images\simulation1.png" />
@@ -130,6 +133,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Ellipse 5.png" />
     <Resource Include="Fonts\Montserrat.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -171,6 +175,9 @@
     <Resource Include="Pages\images\1pas.png" />
     <Resource Include="Pages\images\accueil.png" />
     <Resource Include="Pages\images\Actualiser.png" />
+    <Resource Include="Pages\images\add.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pages\images\C.E.I page 1.png" />
     <Resource Include="Pages\images\carre.png" />
     <Resource Include="Pages\images\cei.png" />
@@ -240,6 +247,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Pages\images\revenir_blanc.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pages\images\save.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Pages\images\sel_inst.png" />

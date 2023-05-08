@@ -63,7 +63,7 @@
                             HorizontalAlignment="Center" Margin="0 10 0 0"
                         >
 
-                        <TextBlock x:Name="txt2" Text="Simulateur d'Assenbleur" FontFamily="Montserrat" FontSize="15" FontWeight="Normal" ></TextBlock>
+                        <TextBlock x:Name="txt2" Text="Simulateur d'Assembleur" FontFamily="Montserrat" FontSize="15" FontWeight="Normal" ></TextBlock>
 
                     </Button>
                 </StackPanel>
