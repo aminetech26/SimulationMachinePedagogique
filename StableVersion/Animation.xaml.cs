@@ -226,7 +226,7 @@ namespace projet
                 MC.mc.Add(new Case { ADR = "102", Donnee = "0000" });
             }
 
-            if (((Format == "Reg16/mem16,Reg16") && (RegM == " Memoire "))|| ((Format == "Reg16/mem16") && (RegM == " Memoire "))&& (memonique == "MUL"))
+            if (((Format == "Reg16/mem16,Reg16") && (RegM == " Memoire ")))
             {
                 
                 MC.mc.Add(new Case { ADR = "100", Donnee = "0005" });
@@ -239,6 +239,28 @@ namespace projet
 
                 int adr = Convert.ToInt32(Reg3, 16) + Convert.ToInt32(Valdep, 16) + Convert.ToInt32(r2, 16) - Convert.ToInt32(i, 16); 
                for (int j = 0;j < adr; j++) 
+                {
+                    MC.mc.Add(new Case { ADR = i, Donnee = "0000" });
+                    int entier = Convert.ToInt32(i, 16) + 1;
+                    i = entier.ToString("X3");
+                }
+                MC.mc.Add(new Case { ADR = i, Donnee = ccm });
+
+            }
+
+            if ( ((Format == "Reg16/mem16") && (RegM == " Memoire ")) && (memonique == "MUL"))
+            {
+
+                MC.mc.Add(new Case { ADR = "100", Donnee = "0005" });
+                MC.mc.Add(new Case { ADR = "101", Donnee = Reg1 });
+                MC.mc.Add(new Case { ADR = "102", Donnee = "0000" });
+                MC.mc.Add(new Case { ADR = "103", Donnee = "0000" });
+                i = "104"; string r2 = Reg2;
+                if (Reg2 == "XXXX") { r2 = "0000"; }
+                if (Valdep == "XXXX") { Valdep = "0000"; }
+
+                int adr = Convert.ToInt32(Reg1, 16) + Convert.ToInt32(Valdep, 16) + Convert.ToInt32(r2, 16) - Convert.ToInt32(i, 16);
+                for (int j = 0; j < adr; j++)
                 {
                     MC.mc.Add(new Case { ADR = i, Donnee = "0000" });
                     int entier = Convert.ToInt32(i, 16) + 1;

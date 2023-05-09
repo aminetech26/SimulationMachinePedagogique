@@ -38,6 +38,16 @@ namespace ArchiMind
         {
             TextBlock text = (TextBlock)_jeuxInstruction.FindName("phase1");
             text.Visibility = Visibility.Visible;
+
+            text.Text = "Phase1  ( rechercher l’instruction à traiter )" + Environment.NewLine +
+                "Mettre le contenu du CO dans le registre RAM  : " + Environment.NewLine +
+                "RAM = (CO) " + Environment.NewLine +
+                "Commande de lecture à partir de la mémoire : Lect " + Environment.NewLine +
+                "RI = (RIM) " + Environment.NewLine +
+                "Analyse et décodage";
+
+
+
         }
 
 

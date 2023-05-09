@@ -131,7 +131,7 @@
 
             <!-- Phase à phase  -->
 
-            <Button Grid.Column="1" Style="{StaticResource RoundedButtonStyle}" Height="Auto" Width="Auto"
+            <Button Grid.Column="1" Style="{StaticResource RoundedButtonStyle6}" Height="Auto" Width="Auto"
                     Background="#DAF3FF"
                     Foreground="Black"
                     BorderBrush="#DAF3FF"
@@ -150,7 +150,7 @@
 
             <!-- Commencer  -->
 
-            <Button Grid.Column="2" Style="{StaticResource RoundedButtonStyle}" Height="50" Width="Auto"
+            <Button Grid.Column="2" Style="{StaticResource RoundedButtonStyle6}" Height="50" Width="Auto"
                     Background="#DAF3FF"
                     Foreground="Black"
                     BorderBrush="#DAF3FF"
@@ -169,7 +169,7 @@
 
             <!-- Recommencer  -->
 
-            <Button Grid.Column="3" Style="{StaticResource RoundedButtonStyle}" Height="50" Width="Auto"
+            <Button Grid.Column="3" Style="{StaticResource RoundedButtonStyle6}" Height="50" Width="Auto"
                     Background="#DAF3FF"
                     Foreground="Black"
                     BorderBrush="#DAF3FF"
@@ -179,7 +179,7 @@
                     >
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
-                    <Image Source="/images/recommencer.png" Height="Auto" Width="Auto" />
+                    <Image Source="/images/recommencer.png" Height="45" Width="Auto" />
                     <TextBlock Text="Recommencer" TextAlignment="Center" VerticalAlignment="Center"
                                HorizontalAlignment="Center" FontFamily="Open Sans" Padding="7"
                                FontSize="20" FontWeight="Normal"
@@ -1016,9 +1016,9 @@
                         
                     </Grid>
                     <TextBlock x:Name="phase1" Height="auto" Width="auto" Background="Beige"
-                                   TextWrapping="Wrap" FontSize="20" Visibility="Collapsed"
-                                   Text="Phase 1: Recherche de l'instruction à traiter. Le CO contient l'adresse de l'instruction suivante du programme. Cette valeur est placée sur le bus d'adresses par l'unité de commande qui émet un ordre de lecture.Au bout d'un certain temps (temps d'accès à la mémoire), le contenu de la case mémoire sélectionnée est disponible sur le bus des données. L'instruction est stockée dans RI."/>
+                                   TextWrapping="Wrap" FontSize="18" Visibility="Collapsed"
 
+                               Text="" />
                 </Grid>
                 
             </Grid>

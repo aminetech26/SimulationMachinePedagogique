@@ -696,3 +696,13 @@ C:\Users\TRETEC\Desktop\FinalVersion\SimulationMachinePedagogique\StableVersion\
 C:\Users\TRETEC\Desktop\FinalVersion\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page6.baml
 C:\Users\TRETEC\Desktop\FinalVersion\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Decalage1.g.cs
 C:\Users\TRETEC\Desktop\FinalVersion\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Decalage1.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Branchement1.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Decalage1.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page6.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\PageEntree_Sortie1.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Premierspas13.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Branchement1.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Decalage1.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page6.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\PageEntree_Sortie1.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Premierspas13.baml

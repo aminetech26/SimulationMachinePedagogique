@@ -286,15 +286,15 @@
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="1">
                 <Button x:Name="Button_simuler" Height="75" Width="300"
-                Style="{StaticResource RoundedButtonStyle}"
-                Foreground="White" Click="convertButton_Click"
+                Style="{StaticResource RoundedButtonStyle4}"
+                Foreground="#4E719D" Click="convertButton_Click"
                 BorderBrush="#4E719D"
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 Margin="20"
                 >
                     <Button.Background>
-                        <SolidColorBrush Color="#81C784" Opacity="0.6"/>
+                        <SolidColorBrush Color="#DAF3FF"/>
                     </Button.Background>
 
                     <TextBlock Text="Simuler Maintenant" FontFamily="Montserrat" FontSize="24" FontWeight="SemiBold" ></TextBlock>

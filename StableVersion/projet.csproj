@@ -89,6 +89,7 @@
     <None Remove="Pages\images\ktab.png" />
     <None Remove="Pages\images\language.png" />
     <None Remove="Pages\images\Line 53.png" />
+    <None Remove="Pages\images\logo.png" />
     <None Remove="Pages\images\Page d%27acceuil.png" />
     <None Remove="Pages\images\Page de simulation Instructions.png" />
     <None Remove="Pages\images\Page de simulation [Programme].png" />
@@ -227,6 +228,7 @@
     <Resource Include="Pages\images\ktab.png" />
     <Resource Include="Pages\images\language.png" />
     <Resource Include="Pages\images\Line 53.png" />
+    <Resource Include="Pages\images\logo.png" />
     <Resource Include="Pages\images\Page d'acceuil.png" />
     <Resource Include="Pages\images\Page de simulation Instructions.png" />
     <Resource Include="Pages\images\Page de simulation [Programme].png" />
