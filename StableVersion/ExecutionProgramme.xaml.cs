@@ -246,6 +246,8 @@ namespace projet
         {
             return (c >= '0' && c <= '9') || (c >= 'a' && c <= 'f') || (c >= 'A' && c <= 'F');
         }
+        
+        
         internal static List<Case> casesToFill(List<Instruction> programInstructions)
         {
             List<Case> casesToFill = new List<Case>();

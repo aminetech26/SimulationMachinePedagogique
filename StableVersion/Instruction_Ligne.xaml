@@ -81,7 +81,7 @@
         <TextBlock Grid.Row="0" Grid.Column="6" x:Name="Source" Text="Source" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
-        <TextBlock Grid.Row="0" Grid.Column="6" Visibility="Hidden" x:Name="Text_Val_imm16" Text="Val_imm16" FontSize="19"
+        <TextBlock Grid.Row="0" Grid.Column="6" Visibility="Hidden" x:Name="TextVal0" Text="Val Imm" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
         
@@ -90,16 +90,18 @@
             Style="{DynamicResource MaterialDesignOutlinedComboBox}" Margin="5"
             Background="White" Foreground="Black"
             />
-        <TextBox Visibility="Hidden" Grid.Row="1" Grid.Column="6" x:Name="Val_imm16" HorizontalAlignment="Center" 
+        <TextBox Visibility="Hidden" Grid.Row="1" Grid.Column="6" x:Name="Val0" HorizontalAlignment="Center" 
                  VerticalAlignment="Center" TextAlignment="Center" Padding="10" FontSize="20" Background="White"
                  Foreground="Black" MinWidth="100" MaxLength="4" Style="{StaticResource RoundedTextBox}" Height="55"
                  ></TextBox>
+        <!--Immediat Val0-->
 
 
-        <TextBlock Grid.Row="0" Grid.Column="7" Visibility="Hidden" x:Name="Text_Val_Dep" Text="Val_Dep" FontSize="19"
+        <TextBlock Grid.Row="0" Grid.Column="7" Visibility="Hidden" x:Name="TextVal1" Text="Val Dep" FontSize="19"
                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" 
                    HorizontalAlignment="Center" Foreground="White" Margin="0" />
-        <TextBox Visibility="Hidden" Grid.Row="1" Grid.Column="7" x:Name="Val_Dep" HorizontalAlignment="Center" 
+        <!--Depl Val1-->
+        <TextBox Visibility="Hidden" Grid.Row="1" Grid.Column="7" x:Name="Val1" HorizontalAlignment="Center" 
                  VerticalAlignment="Center" TextAlignment="Center" Padding="10" FontSize="20" Background="White"
                  Foreground="Black" Width="75" MaxLength="3" Style="{StaticResource RoundedTextBox}" Height="55"
                  ></TextBox>

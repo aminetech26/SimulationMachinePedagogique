@@ -74,7 +74,8 @@ namespace ArchiMind
             this.cop = cop;
             this.champ_notused=champ_notused;
         }  
-        public Instruction(string mnemonique, string format, string destination, string source, bool mem=true, bool ifdepl=true, string valdep=""){
+        public Instruction(string mnemonique, string format, string destination, string source, bool mem=true, bool ifdepl=true, string valdep="",string val_imm16="")
+        {
             this.format=format;
             this.mnemonique = mnemonique;
             this.mem = mem;
@@ -82,16 +83,21 @@ namespace ArchiMind
             this.source = source;
             this.ifdepl = ifdepl;
             this.valdep = valdep;
+            this.val_imm16 = val_imm16;
         }
 
 
-        public void afficheInstruction()
+        public string afficheInstruction()
         {
-            Console.Write(getMnemonique()+" ");
-            Console.Write(getFormat() + " ");
-            Console.Write(getDestination() + " ");
-            Console.Write(getSource() + " ");
-            Console.Write(getValDepl() + " ");
+            string result = 
+            "Mnemo : "+getMnemonique()+" "+
+            "Format : " +getFormat() + " "+
+            "Destination : "+getDestination() + " "+
+            "Source : " + getSource() + " "+
+            "Val dep : " + getValDepl() + " "+
+            "Val Imm : " + getval_imm16() + " \n";
+            return result;
+
         }
 
 

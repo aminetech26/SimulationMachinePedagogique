@@ -237,7 +237,7 @@ namespace projet
                 if (Reg2 == "XXXX") { r2 = "0000"; } 
                 if (Valdep=="XXXX") { Valdep = "0000"; }
 
-                int adr = Convert.ToInt32(Reg1, 16) + Convert.ToInt32(Valdep, 16) + Convert.ToInt32(r2, 16) - Convert.ToInt32(i, 16); 
+                int adr = Convert.ToInt32(Reg3, 16) + Convert.ToInt32(Valdep, 16) + Convert.ToInt32(r2, 16) - Convert.ToInt32(i, 16); 
                for (int j = 0;j < adr; j++) 
                 {
                     MC.mc.Add(new Case { ADR = i, Donnee = "0000" });

@@ -8,7 +8,7 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="Page5">
 
-    <Grid Background="#4E719D" SizeChanged="Grid_SizeChanged" >
+    <Grid Background="#90CAF9" SizeChanged="Grid_SizeChanged" >
 
         <Grid.RowDefinitions>
             <RowDefinition Height="10*" />
@@ -20,16 +20,25 @@
             <RowDefinition Height="180*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" >
-            <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
-                    Click="Go_Back" VerticalAlignment="Top" Margin="20" >
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" >
+
+            <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" BorderBrush="Transparent"
+                    Click="Go_Back" VerticalAlignment="Top" Margin="30 0" >
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
-                            <Image Source="/Pages/images/revenir.png" Stretch="Uniform"  />
+                            <Image Source="/Pages/images/revenir_blanc.png" Stretch="Uniform"  />
                         </Grid>
                     </ControlTemplate>
                 </Button.Template>
+            </Button>
+
+            <Button x:Name="actualiser" Width="30" Height="30" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Margin="625 0 0 0" Background="Transparent"  BorderBrush="Transparent"
+                    Click="Actualiser" BorderThickness="0" >
+
+                <Image Source="/Pages/images/Actualiser.png" />
+
             </Button>
 
         </StackPanel>
@@ -40,9 +49,6 @@
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Top" HorizontalAlignment="Center"
                        Foreground="White" x:Name="Text1" TextAlignment="Center"
                        ></TextBlock>
-            <Button x:Name="actualiser" Width="30" Height="30" HorizontalAlignment="Right"
-                    VerticalAlignment="Top" Margin="0 0 -90 0" Background="Blue"
-                    Click="Actualiser"/>
 
         </StackPanel>
 

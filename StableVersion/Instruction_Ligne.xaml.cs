@@ -47,10 +47,10 @@ namespace projet
             string? selectedItem = ComboBox1.SelectedItem as string;
             ComboBox2.IsEnabled = true;
 
-            Text_Val_Dep.Visibility = Visibility.Hidden;
-            Val_Dep.Visibility = Visibility.Hidden;
-            Text_Val_imm16.Visibility = Visibility.Hidden;
-            Val_imm16.Visibility = Visibility.Hidden;
+            TextVal1.Visibility = Visibility.Hidden;
+            Val1.Visibility = Visibility.Hidden;
+            TextVal0.Visibility = Visibility.Hidden;
+            Val0.Visibility = Visibility.Hidden;
             Source.Visibility = Visibility.Visible;
             ComboBox7.Visibility = Visibility.Visible;
 
@@ -89,10 +89,10 @@ namespace projet
             string? selectedItem = ComboBox2.SelectedItem as string;
             ComboBox3.IsEnabled = true;
 
-            Text_Val_Dep.Visibility = Visibility.Hidden;
-            Val_Dep.Visibility = Visibility.Hidden;
-            Text_Val_imm16.Visibility = Visibility.Hidden;
-            Val_imm16.Visibility = Visibility.Hidden;
+            TextVal1.Visibility = Visibility.Hidden;
+            Val1.Visibility = Visibility.Hidden;
+            TextVal0.Visibility = Visibility.Hidden;
+            Val0.Visibility = Visibility.Hidden;
             Source.Visibility = Visibility.Visible;
             ComboBox7.Visibility = Visibility.Visible;
 
@@ -178,10 +178,10 @@ namespace projet
             string? selectedItem = ComboBox3.SelectedItem as string;
             ComboBox4.IsEnabled = true;
 
-            Text_Val_Dep.Visibility = Visibility.Hidden;
-            Val_Dep.Visibility = Visibility.Hidden;
-            Text_Val_imm16.Visibility = Visibility.Hidden;
-            Val_imm16.Visibility = Visibility.Hidden;
+            Val1.Visibility = Visibility.Hidden;
+            TextVal1.Visibility = Visibility.Hidden;
+            TextVal0.Visibility = Visibility.Hidden;
+            Val0.Visibility = Visibility.Hidden;
             Source.Visibility = Visibility.Visible;
             ComboBox7.Visibility = Visibility.Visible;
 
@@ -224,10 +224,10 @@ namespace projet
             string? selectedItem = ComboBox4.SelectedItem as string;
             string? selectedItem_Format = ComboBox3.SelectedItem as string;
 
-            Text_Val_Dep.Visibility = Visibility.Hidden;
-            Val_Dep.Visibility = Visibility.Hidden;
-            Text_Val_imm16.Visibility = Visibility.Hidden;
-            Val_imm16.Visibility = Visibility.Hidden;
+            TextVal1.Visibility = Visibility.Hidden;
+            Val1.Visibility = Visibility.Hidden;
+            TextVal0.Visibility = Visibility.Hidden;
+            Val0.Visibility = Visibility.Hidden;
             Source.Visibility = Visibility.Visible;
             ComboBox7.Visibility = Visibility.Visible;
 
@@ -300,18 +300,18 @@ namespace projet
             string? selectedItem_Format = ComboBox3.SelectedItem as string;
             ComboBox6.IsEnabled = true;
 
-            Text_Val_Dep.Visibility = Visibility.Hidden;
-            Val_Dep.Visibility = Visibility.Hidden;
-            Text_Val_imm16.Visibility = Visibility.Hidden;
-            Val_imm16.Visibility = Visibility.Hidden;
-
+            TextVal1.Visibility = Visibility.Hidden;
+            Val1.Visibility = Visibility.Hidden;
+            TextVal0.Visibility = Visibility.Hidden;
+            Val0.Visibility = Visibility.Hidden;
+            Source.Visibility = Visibility.Visible;
             // Update the content of ComboBox6 based on the selected item in ComboBox5
             switch (selectedItem)
             {
                 case "Avec deplacement":
 
-                    Text_Val_Dep.Visibility = Visibility.Visible ;
-                    Val_Dep.Visibility = Visibility.Visible ;
+                    TextVal1.Visibility = Visibility.Visible ;
+                    Val1.Visibility = Visibility.Visible ;
 
                     switch (selectedItem_Format)
                     {
@@ -444,9 +444,9 @@ namespace projet
                             ComboBox7.IsEnabled = false;
                             
                             ComboBox7.Visibility = Visibility.Hidden ;
-                            Val_imm16.Visibility = Visibility.Visible ;
+                            Val0.Visibility = Visibility.Visible ;
                             Source.Visibility = Visibility.Hidden ;
-                            Text_Val_imm16.Visibility = Visibility.Visible ;
+                            TextVal0.Visibility = Visibility.Visible ;
 
                             break;
 
@@ -489,9 +489,9 @@ namespace projet
                             ComboBox7.IsEnabled = false;
 
                             ComboBox7.Visibility = Visibility.Hidden;
-                            Val_imm16.Visibility = Visibility.Visible;
+                            Val0.Visibility = Visibility.Visible;
                             Source.Visibility = Visibility.Hidden;
-                            Text_Val_imm16.Visibility = Visibility.Visible;
+                            TextVal0.Visibility = Visibility.Visible;
 
                             break;
 
@@ -533,9 +533,9 @@ namespace projet
                             ComboBox7.IsEnabled = false;
 
                             ComboBox7.Visibility = Visibility.Hidden;
-                            Val_imm16.Visibility = Visibility.Visible;
+                            Val0.Visibility = Visibility.Visible;
                             Source.Visibility = Visibility.Hidden;
-                            Text_Val_imm16.Visibility = Visibility.Visible;
+                            TextVal0.Visibility = Visibility.Visible;
 
                             break;
 
@@ -573,9 +573,9 @@ namespace projet
                             ComboBox7.IsEnabled = false;
 
                             ComboBox7.Visibility = Visibility.Hidden;
-                            Val_imm16.Visibility = Visibility.Visible;
+                            Val0.Visibility = Visibility.Visible;
                             Source.Visibility = Visibility.Hidden;
-                            Text_Val_imm16.Visibility = Visibility.Visible;
+                            TextVal0.Visibility = Visibility.Visible;
                             break;
 
                         case "DX,AX":
@@ -616,9 +616,9 @@ namespace projet
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
                             ComboBox7.Visibility = Visibility.Hidden;
-                            Val_imm16.Visibility = Visibility.Visible;
+                            Val0.Visibility = Visibility.Visible;
                             Source.Visibility = Visibility.Hidden;
-                            Text_Val_imm16.Visibility = Visibility.Visible;
+                            TextVal0.Visibility = Visibility.Visible;
                             break;
 
                         case "Reg16":
@@ -658,9 +658,9 @@ namespace projet
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
                             ComboBox7.Visibility = Visibility.Hidden;
-                            Val_imm16.Visibility = Visibility.Visible;
+                            Val0.Visibility = Visibility.Visible;
                             Source.Visibility = Visibility.Hidden;
-                            Text_Val_imm16.Visibility = Visibility.Visible;
+                            TextVal0.Visibility = Visibility.Visible;
                             break;
 
                         case "Reg16":
@@ -699,9 +699,9 @@ namespace projet
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
                             ComboBox7.Visibility = Visibility.Hidden;
-                            Val_imm16.Visibility = Visibility.Visible;
+                            Val0.Visibility = Visibility.Visible;
                             Source.Visibility = Visibility.Hidden;
-                            Text_Val_imm16.Visibility = Visibility.Visible;
+                            TextVal0.Visibility = Visibility.Visible;
                             break;
 
                         case "Reg16":
@@ -740,9 +740,9 @@ namespace projet
                             ComboBox7.ItemsSource = null;
                             ComboBox7.IsEnabled = false;
                             ComboBox7.Visibility = Visibility.Hidden;
-                            Val_imm16.Visibility = Visibility.Visible;
+                            Val0.Visibility = Visibility.Visible;
                             Source.Visibility = Visibility.Hidden;
-                            Text_Val_imm16.Visibility = Visibility.Visible;
+                            TextVal0.Visibility = Visibility.Visible;
                             break;
 
                         case "Reg16":
@@ -768,14 +768,18 @@ namespace projet
                             ComboBox7.IsEnabled = false;
                             ComboBox7.ItemsSource = null;
                             ComboBox7.Visibility = Visibility.Hidden;
-                            Val_imm16.Visibility = Visibility.Visible;
+                            Val0.Visibility = Visibility.Visible;
                             Source.Visibility = Visibility.Hidden;
-                            Text_Val_imm16.Visibility = Visibility.Visible;
+                            TextVal0.Visibility = Visibility.Visible;
                             break;
 
                         case "Mem16":
                             ComboBox7.IsEnabled = false;
                             ComboBox7.ItemsSource = null;
+                            break;
+
+                        case "Reg16/Mem16,Reg16":
+                            ComboBox7.IsEnabled = true;
                             break;
 }
                     break;

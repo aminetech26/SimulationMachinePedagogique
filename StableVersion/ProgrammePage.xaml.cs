@@ -32,6 +32,7 @@ using ComboBox = System.Windows.Controls.ComboBox;
 using Newtonsoft.Json.Schema;
 using System.Diagnostics;
 using projet.Pages;
+using TextBox = System.Windows.Controls.TextBox;
 
 namespace projet
 {
@@ -62,23 +63,37 @@ namespace projet
 
 
 
-        private Instruction SetInstruction(string mnemonique, string format, string destination, string source, bool mem = true, bool ifdepl = true, string valdep = "")
+        private Instruction SetInstruction(string mnemonique, string format, string destination, string source, bool mem, bool ifdepl, string valdep,string val_imm16)
         {
-            Instruction new_instruction = new Instruction(mnemonique, format, destination, source, mem = true, ifdepl = true, valdep = "");
+            Instruction new_instruction = new Instruction(mnemonique, format, destination, source, mem, ifdepl, valdep,val_imm16);
             return new_instruction;
         }
+
+        private static int number_inst;
+
+        public static void Set_number_inst(int valeur)
+        {
+            number_inst = valeur;
+        }
+
+        public static int Get_number_inst()
+        {
+            return number_inst;
+        }
+        
 
         private void AddInstruction_Click(object sender, RoutedEventArgs e)
         {
             currentLineNumber = 0 ;
-
             Instruction_Ligne currentInstruction = (Instruction_Ligne)Grid_Inst.Children[Grid_Inst.Children.Count - 1];
             string? mnemonique = (currentInstruction.ComboBox2.SelectedItem != null) ? currentInstruction.ComboBox2.SelectedItem.ToString() : "";
             string? format = (currentInstruction.ComboBox3.SelectedItem != null) ? currentInstruction.ComboBox3.SelectedItem.ToString() : "";
             string? reg_m = (currentInstruction.ComboBox4.IsEnabled && currentInstruction.ComboBox4.SelectedItem != null) ? currentInstruction.ComboBox4.SelectedItem.ToString() : "";
             string? depl = (currentInstruction.ComboBox5.IsEnabled && currentInstruction.ComboBox5.SelectedItem != null) ? currentInstruction.ComboBox5.SelectedItem.ToString() : "";
             string? destinataire = (currentInstruction.ComboBox6.IsEnabled && currentInstruction.ComboBox6.SelectedItem != null) ? currentInstruction.ComboBox6.SelectedItem.ToString() : "";
-            string? source = (currentInstruction.ComboBox7.IsEnabled && currentInstruction.ComboBox7.SelectedItem != null) ? currentInstruction.ComboBox7.SelectedItem.ToString() : "";
+            string? source = (currentInstruction.ComboBox7.IsEnabled && (currentInstruction.ComboBox7.Visibility == Visibility.Visible) && currentInstruction.ComboBox7.SelectedItem != null) ? currentInstruction.ComboBox7.SelectedItem.ToString() : "";
+            string? valdep = ((currentInstruction.Val1.Visibility== Visibility.Visible) && currentInstruction.Val1 != null) ? currentInstruction.Val1.ToString() : "";
+            string? val_imm16 = currentInstruction.Val0 is TextBox textBox ? textBox.Text : "";
             bool deplacement;
             bool mem;
             if (depl == "Avec deplacement")
@@ -139,12 +154,12 @@ namespace projet
                         allChecked = false;
                         break;
                     }
-                    if (ins.Val_Dep.IsVisible && ins.Val_Dep.Text.Length == 0)
+                    if (ins.Val1.IsVisible && ins.Val1.Text.Length == 0)
                     {
                         allChecked = false;
                         break;
                     }
-                    if (ins.Val_imm16.IsVisible && ins.Val_imm16.Text.Length == 0)
+                    if (ins.Val0.IsVisible && ins.Val0.Text.Length == 0)
                     {
                         allChecked = false;
                         break;
@@ -163,7 +178,7 @@ namespace projet
             {
 
                 Instruction instruction = new Instruction();
-                instruction = SetInstruction(mnemonique, format, destinataire, source, deplacement, mem);
+                instruction = SetInstruction(mnemonique, format, destinataire, source,  mem, deplacement, valdep,val_imm16);
                 programInstructions.Add(instruction);
                 currentLineNumber++;
                 var instructionLigne = new Instruction_Ligne();
@@ -204,6 +219,9 @@ namespace projet
             System.Windows.MessageBox.Show(text);
             Creerprogramme secondPage = new Creerprogramme(programInstructions);
             this.NavigationService.Navigate(secondPage);
+
+            Set_number_inst(currentLineNumber);
+
         }
 
 
@@ -234,9 +252,14 @@ namespace projet
                     {
                         instructionData.Add($"ComboBox{i}", comboBox.SelectedValue?.ToString() ?? "");
                     }
+                    if (i <= 2)
+                    {
+                        if (userControl.FindName($"Val{i-1}") is TextBox textBox)
+                        {
+                            instructionData.Add($"Val{i-1}", textBox.Text.ToString() ?? "");
+                        }
+                    }
                 }
-
-
                 programData.Add(instructionData);
             }
             string serializedData = JsonConvert.SerializeObject(programData, Formatting.Indented);
@@ -287,11 +310,25 @@ namespace projet
                         }
                         //test  System.Windows.MessageBox.Show(comboBoxValue);
                     }
+                    if (j <= 2)
+                    {
+                        if (programData[i].TryGetValue($"Val{j-1}", out string textBoxValue))
+                        {
+                            TextBox? textBox = newInstruction.FindName($"Val{j-1}") as TextBox;
+                            if (textBox != null)
+                            {
+                                textBox.Loaded += (sender, e) =>
+                                {
+                                    textBox.Text = textBoxValue ?? "";
+                                };
+                            }
+                            //test  System.Windows.MessageBox.Show(comboBoxValue);
+                        }
+                    }
                     else
                     {
                         //tsema raw yrecupiri  System.Windows.MessageBox.Show("VALUE NOT RETRIEVED");
                     }
-                    
 
                 }
                 programData[i].TryGetValue($"ComboBox{2}", out string mnemonique);
@@ -300,7 +337,8 @@ namespace projet
                 programData[i].TryGetValue($"ComboBox{5}", out string depl);
                 programData[i].TryGetValue($"ComboBox{6}", out string destinataire);
                 programData[i].TryGetValue($"ComboBox{7}", out string source);
-
+                programData[i].TryGetValue($"Val{1}", out string Val1);
+                programData[i].TryGetValue($"Val{0}", out string Val0);
                 bool deplacement;
                 bool mem;
                 if (depl == "Avec deplacement")
@@ -322,7 +360,7 @@ namespace projet
 
 
                 Instruction instruction = new Instruction();
-                instruction = SetInstruction(mnemonique, format, destinataire, source, deplacement, mem);
+                instruction = SetInstruction(mnemonique, format, destinataire, source, deplacement, mem,Val1,Val0);
                 programInstructions.Add(instruction);
                 //currentLineNumber++;
                 Grid_Inst.RowDefinitions.Add(new RowDefinition() { Height = GridLength.Auto });
