@@ -28,6 +28,7 @@ namespace projet.Pages
     public partial class PageEntree_Sortie1 : Page
     {
         private PageEntree_Sortie1 mainpage;
+
         public PageEntree_Sortie1()
         {
             InitializeComponent();
@@ -64,10 +65,6 @@ namespace projet.Pages
                 TextBox1.Width = 150;
                 TextBox2.Width = 150;
                 TextBox3.Width = 150;
-                Inst.Width = 275;
-                Inst.Height = 60;
-                Inst.FontSize = 25;
-                Inst_En_Hexa.Width = 275;
                 Inst_En_Hexa.Height = 60;
                 Inst_En_Hexa.FontSize = 25;
                 Button_simuler.Height = 90;
@@ -93,10 +90,6 @@ namespace projet.Pages
                 TextBox1.Width = 100;
                 TextBox2.Width = 100;
                 TextBox3.Width = 100;
-                Inst.Width = 150;
-                Inst.Height = 50;
-                Inst.FontSize = 22;
-                Inst_En_Hexa.Width = 150;
                 Inst_En_Hexa.Height = 50;
                 Inst_En_Hexa.FontSize = 22;
                 Button_simuler.Height = 75;

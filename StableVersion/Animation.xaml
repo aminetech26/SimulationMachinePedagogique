@@ -108,7 +108,7 @@
         </Grid.RowDefinitions>
 
         <!-- the first grid  -->
-        <Grid Grid.Row="0" Background="#E0E0E0" >
+        <Grid Grid.Row="0" Background="#DAF3FF" >
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -117,18 +117,24 @@
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" Width="Auto" Height="Auto" BorderBrush="#E0E0E0"
-                VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_retour_Click">
-
-
+            <Button x:Name="Button" Width="40" Height="Auto" BorderThickness="0" HorizontalAlignment="Center"
+                        VerticalAlignment="Center"  Click="Button_retour_Click" >
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Image Source="/Pages/images/revenir.png" Stretch="Uniform" />
+                        </Grid>
+                    </ControlTemplate>
+                </Button.Template>
             </Button>
+
 
             <!-- Phase à phase  -->
 
             <Button Grid.Column="1" Style="{StaticResource RoundedButtonStyle}" Height="Auto" Width="Auto"
-                    Background="#E0E0E0"
+                    Background="#DAF3FF"
                     Foreground="Black"
-                    BorderBrush="#E0E0E0"
+                    BorderBrush="#DAF3FF"
                     Click="Button_Etape_Click"
                     HorizontalAlignment="Stretch"
                     >
@@ -144,16 +150,16 @@
 
             <!-- Commencer  -->
 
-            <Button Grid.Column="2" Style="{StaticResource RoundedButtonStyle}" Height="Auto" Width="Auto"
-                    Background="#E0E0E0"
+            <Button Grid.Column="2" Style="{StaticResource RoundedButtonStyle}" Height="50" Width="Auto"
+                    Background="#DAF3FF"
                     Foreground="Black"
-                    BorderBrush="#E0E0E0"
+                    BorderBrush="#DAF3FF"
                     Click="Button_commencer_Click"
                     HorizontalAlignment="Stretch"
                     >
 
                 <StackPanel Orientation="Horizontal" VerticalAlignment="Center" >
-                    <Image Source="/images/commencer.png" Height="Auto" Width="Auto" />
+                    <Image Source="/Pages/images/commencer.png" Height="Auto" Width="Auto" />
                     <TextBlock Text="Commencer" TextAlignment="Center" VerticalAlignment="Center"
                                HorizontalAlignment="Center" FontFamily="Open Sans" Padding="7"
                                FontSize="20" FontWeight="Normal"
@@ -163,10 +169,11 @@
 
             <!-- Recommencer  -->
 
-            <Button Grid.Column="3" Style="{StaticResource RoundedButtonStyle}" Height="Auto" Width="Auto"
-                    Background="#E0E0E0"
+            <Button Grid.Column="3" Style="{StaticResource RoundedButtonStyle}" Height="50" Width="Auto"
+                    Background="#DAF3FF"
                     Foreground="Black"
-                    BorderBrush="#E0E0E0"
+                    BorderBrush="#DAF3FF"
+                    BorderThickness="0"
                     Click="Button_recommencer_Click"
                     HorizontalAlignment="Stretch"
                     >

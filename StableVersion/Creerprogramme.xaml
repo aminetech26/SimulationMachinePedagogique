@@ -368,9 +368,10 @@
                                 </TextBlock>
 
                             </Grid>
-
-
                         </Grid>
+                        
+                        
+                        
                         <Grid Margin="15 0 15 15">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>
@@ -409,8 +410,7 @@
 
                 <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0"  >
 
-                    <Grid VerticalAlignment="Top" HorizontalAlignment="Center" x:Name="Grid_Mnem" >
-
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="Grid_Mnem" Margin="35 20 0 0" >
 
                     </Grid>
                 </ScrollViewer>

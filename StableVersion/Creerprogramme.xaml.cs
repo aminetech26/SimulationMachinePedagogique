@@ -77,11 +77,32 @@ namespace projet.Pages
             
                 TextBlock line = new TextBlock();
                 line.Text = text;
+
+                line.FontSize = 22;
+                line.FontWeight = FontWeights.DemiBold;
+                line.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7A7A7A"));
+                line.FontFamily = new FontFamily("Montserrat");
+                line.TextAlignment = TextAlignment.Center;
+                line.Margin = new Thickness(0, 10, 0, 10);
+                line.Height = Double.NaN;
+                line.Width = 250 ;
+
+
                 Grid.SetRow(line, k);
                 Grid.SetColumn(line, 2);
                 Grid_Mnem.Children.Add(line);
                 TextBlock nb = new TextBlock();
                 nb.Text = k.ToString();
+
+                nb.FontSize = 22;
+                nb.FontWeight = FontWeights.Bold;
+                nb.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#4E719D"));
+                nb.FontFamily = new FontFamily("Montserrat");
+                nb.TextAlignment = TextAlignment.Center;
+                nb.Margin = new Thickness(20, 10, 20, 10);
+                nb.Height = Double.NaN;
+                nb.Width = Double.NaN;
+
                 Grid.SetRow(nb, k);
                 Grid.SetColumn(nb, 0);
                 Grid_Mnem.Children.Add(nb);

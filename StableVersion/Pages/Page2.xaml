@@ -21,9 +21,10 @@
             <RowDefinition Height="180*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" >
-            <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" 
-                    Click="Go_Back" VerticalAlignment="Top" Margin="20" >
+        <StackPanel Grid.Row="1" VerticalAlignment="Center" Orientation="Horizontal" >
+            
+            <Button x:Name="Button" Width="50" Height="30" HorizontalAlignment="Left" BorderBrush="Transparent"
+                    Click="Go_Back" VerticalAlignment="Top" Margin="30 0" >
                 <Button.Template>
                     <ControlTemplate TargetType="Button">
                         <Grid>
@@ -32,7 +33,15 @@
                     </ControlTemplate>
                 </Button.Template>
             </Button>
-           
+
+            <Button x:Name="actualiser" Width="30" Height="30" HorizontalAlignment="Center"
+                    VerticalAlignment="Center" Margin="625 0 0 0" Background="Transparent"  BorderBrush="Transparent"
+                    Click="Actualiser" BorderThickness="0" >
+
+                <Image Source="/Pages/images/Home/Actualiser.png" />
+
+            </Button>
+
         </StackPanel>
 
         <StackPanel  Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" >
@@ -41,14 +50,6 @@
                        FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Top" HorizontalAlignment="Center"
                        Foreground="White" x:Name="Text1" TextAlignment="Center"
                        ></TextBlock>
-            <Button x:Name="actualiser" Width="30" Height="30" HorizontalAlignment="Right"
-                    VerticalAlignment="Top" Margin="0 0 -90 0" Background="Transparent"  BorderBrush="Transparent"
-                    Click="Actualiser" BorderThickness="0" >
-
-                <Image Source="/Pages/images/actualiser.png" />
-
-            </Button>
-
         </StackPanel>
 
         <Grid Grid.Row="3" x:Name="StackPanel1" VerticalAlignment="Center" HorizontalAlignment="Center"  >
@@ -326,9 +327,9 @@
                                    FontFamily="Montserrat" FontWeight="Thin" VerticalAlignment="Center" HorizontalAlignment="Center"
                                    Foreground="White" x:Name="Text4" />
                     </Grid>
-                    
-                        <Border Background="White" CornerRadius="15" >
-                            <TextBlock Background="White" Text="1235" Height="50" Width="150" Padding="10" Foreground="Black"
+
+                    <Border Background="White" CornerRadius="15" x:Name="Border_En_Hexa" >
+                            <TextBlock Background="White" Height="50" Width="150" Padding="10" Foreground="Black"
                                    TextAlignment="Center" x:Name="Inst_En_Hexa" TextWrapping="NoWrap" HorizontalAlignment="Center"
                                    FontSize="22"   />
                         </Border>

@@ -11,18 +11,18 @@
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
                     <Grid>
-                        <Border x:Name="ButtonBorder" CornerRadius="10" 
-                                Background="{TemplateBinding Background}" 
-                                BorderBrush="{TemplateBinding BorderBrush}" 
+                        <Border x:Name="ButtonBorder" CornerRadius="20" 
+                                Background="#DAF3FF" 
+                                BorderBrush="#DAF3FF" 
                                 BorderThickness="{TemplateBinding BorderThickness}" 
                                 Margin="0,0,0,0" 
                                 Padding="0,0,0,0">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <Border.Effect>
-                                <DropShadowEffect ShadowDepth="5" 
-                                                  BlurRadius="10" 
-                                                  Opacity="0.8" 
-                                                  Color="Gray" />
+                                <DropShadowEffect ShadowDepth="0" 
+                                                  BlurRadius="20" 
+                                                  Opacity="0.75" 
+                                                  Color="DarkOliveGreen" />
                             </Border.Effect>
                         </Border>
                         <Border CornerRadius="20" 
@@ -34,10 +34,10 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="#FCF9B9" />
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="#90CAF9" />
                         </Trigger>
                         <Trigger Property="IsPressed" Value="True">
-                            <Setter TargetName="ButtonBorder" Property="Background" Value="#FFB347" />
+                            <Setter TargetName="ButtonBorder" Property="Background" Value="Transparent" />
                         </Trigger>
                         <Trigger Property="IsMouseOver" Value="False">
                             <Setter TargetName="ButtonBorder" Property="Effect" Value="{x:Null}" />
@@ -432,7 +432,7 @@
                     <Grid>
                         <Border x:Name="border" 
                             CornerRadius="10" 
-                            BorderBrush="White" 
+                            BorderBrush="#4E719D" 
                             BorderThickness="1" 
                             Background="{TemplateBinding Background}" />
                         <ScrollViewer Margin="0" 
@@ -451,18 +451,19 @@
                         <Trigger Property="IsMouseOver" Value="True">
                             <Setter TargetName="border" 
                                 Property="BorderBrush" 
-                                Value="Black" />
+                                Value="#90CAF9" />
                         </Trigger>
                         <Trigger Property="IsKeyboardFocused" Value="True">
                             <Setter TargetName="border" 
                                 Property="BorderBrush" 
-                                Value="Gold" />
+                                Value="#90CAF9" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style TargetType="Button" x:Key="Creeprogrammebutton">
         <Setter Property="Background" Value="White" />
         <Setter Property="Foreground" Value="Black" />
@@ -478,7 +479,7 @@
                                 Padding="0,0,0,0">
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             <Border.Effect>
-                                <DropShadowEffect ShadowDepth="5" 
+                                <DropShadowEffect ShadowDepth="0" 
                                                   BlurRadius="10" 
                                                   Opacity="0.8" 
                                                   Color="Gray" />
@@ -506,6 +507,8 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    
     <Style TargetType="Button" x:Key="PremierPasbutton">
         <Setter Property="Background" Value="White" />
         <Setter Property="Foreground" Value="Black" />

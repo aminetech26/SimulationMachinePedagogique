@@ -74,6 +74,7 @@
     <None Remove="Pages\images\checkmark.png" />
     <None Remove="Pages\images\Choix-Simulation.png" />
     <None Remove="Pages\images\code.png" />
+    <None Remove="Pages\images\commencer.png" />
     <None Remove="Pages\images\cryon.png" />
     <None Remove="Pages\images\enregistrer.png" />
     <None Remove="Pages\images\Exemples deja prets.png" />
@@ -82,6 +83,7 @@
     <None Remove="Pages\images\false.png" />
     <None Remove="Pages\images\fermer.png" />
     <None Remove="Pages\images\Help.png" />
+    <None Remove="Pages\images\Home\Actualiser.png" />
     <None Remove="Pages\images\Home\cpu1.png" />
     <None Remove="Pages\images\Home\dossier.png" />
     <None Remove="Pages\images\Home\plus.png" />
@@ -176,7 +178,9 @@
   <ItemGroup>
     <Resource Include="Pages\images\1pas.png" />
     <Resource Include="Pages\images\accueil.png" />
-    <Resource Include="Pages\images\Actualiser.png" />
+    <Resource Include="Pages\images\Actualiser.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pages\images\add.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -197,6 +201,9 @@
     <Resource Include="Pages\images\CEI\xor.png" />
     <Resource Include="Pages\images\checkmark.png" />
     <Resource Include="Pages\images\code.png" />
+    <Resource Include="Pages\images\commencer.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Pages\images\cryon.png" />
     <Resource Include="Pages\images\enregistrer.png" />
     <Resource Include="Pages\images\Exemples deja prets.png" />
@@ -207,6 +214,7 @@
     <Resource Include="Pages\images\false.png" />
     <Resource Include="Pages\images\fermer.png" />
     <Resource Include="Pages\images\Help.png" />
+    <Resource Include="Pages\images\Home\Actualiser.png" />
     <Resource Include="Pages\images\Home\dossier.png" />
   </ItemGroup>
 
