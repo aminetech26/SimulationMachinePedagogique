@@ -48,6 +48,7 @@
     <None Remove="intel.png" />
     <None Remove="Pages\and.png" />
     <None Remove="Pages\branchement.png" />
+    <None Remove="Pages\Choix-Simulation.png" />
     <None Remove="Pages\cpu1.png" />
     <None Remove="Pages\decalage.png" />
     <None Remove="Pages\images\1pas.png" />
@@ -96,6 +97,8 @@
     <None Remove="Pages\images\Precedent1.png" />
     <None Remove="Pages\images\Programme 1.png" />
     <None Remove="Pages\images\Programme 2.png" />
+    <None Remove="Pages\images\Programme 3.png" />
+    <None Remove="Pages\images\Programme 4.png" />
     <None Remove="Pages\images\puce.png" />
     <None Remove="Pages\images\Q.png" />
     <None Remove="Pages\images\qst.png" />
@@ -122,6 +125,7 @@
     <None Remove="Pages\not.png" />
     <None Remove="Pages\or.png" />
     <None Remove="Pages\output.png" />
+    <None Remove="Pages\Programme 4.png" />
     <None Remove="Pages\transfert1.png" />
     <None Remove="Pages\xor.png" />
     <None Remove="Vector%281%29.png" />
@@ -169,6 +173,7 @@
     <Resource Include="images\recommencer.png" />
     <Resource Include="images\retoursvg.svg" />
     <Resource Include="images\Subtract.png" />
+    <Resource Include="Pages\Choix-Simulation.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -230,6 +235,7 @@
     <Resource Include="Pages\images\Precedent1.png" />
     <Resource Include="Pages\images\Programme 1.png" />
     <Resource Include="Pages\images\Programme 2.png" />
+    <Resource Include="Pages\images\Programme 3.png" />
     <Resource Include="Pages\images\puce.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -259,6 +265,7 @@
     <Resource Include="Pages\images\suivant.png" />
     <Resource Include="Pages\images\Suivant1.png" />
     <Resource Include="Pages\images\VectorRight.png" />
+    <Resource Include="Pages\Programme 4.png" />
   </ItemGroup>
 
 </Project>

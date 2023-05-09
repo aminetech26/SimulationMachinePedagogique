@@ -34,10 +34,11 @@
             </Button>
 
             <Button x:Name="actualiser" Width="30" Height="30" HorizontalAlignment="Center"
-                    VerticalAlignment="Center" Margin="625 0 0 0" Background="Transparent"  BorderBrush="Transparent"
+                    VerticalAlignment="Center" Margin="625 0 0 0" Background="White"  BorderBrush="Blue"
                     Click="Actualiser" BorderThickness="0" >
+                <TextBlock Text="AC" FontWeight="Bold"/>
 
-                <Image Source="/Pages/images/Actualiser.png" />
+                <!--<Image Source="/Pages/images/Actualiser.png" />-->
 
             </Button>
 

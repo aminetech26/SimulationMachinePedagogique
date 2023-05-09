@@ -25,6 +25,9 @@
     <Compile Update="Pages\Cours.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Pages\Decalage1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\Home.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -32,6 +35,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\Page2.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\Page6.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Pages\PageQuiz2.xaml.cs">
@@ -78,6 +84,9 @@
     <Page Update="Pages\Cours.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Pages\Decalage1.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\Home.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -85,6 +94,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\Page2.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\Page6.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\PageQuiz2.xaml">

@@ -10,9 +10,9 @@
 
     <Grid Background="#E0E0E0" SizeChanged="Grid_SizeChanged">
 
-        
 
-            <Border x:Name="grid" CornerRadius="15" BorderBrush="Black" BorderThickness="1" Height="525" Width="675" Background="#FFFFFF" >
+
+        <Border x:Name="grid" CornerRadius="15" BorderBrush="Black" BorderThickness="1" Height="525" Width="675" Background="#FFFFFF" >
 
             <StackPanel x:Name="stackpanel"  Height="525" Width="675" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
@@ -27,21 +27,21 @@
                 </Border>
 
 
-                <Canvas Height="75" Width="500" Margin="5" >
+                <Canvas Height="50" Width="500" Margin="5" >
 
-                    <Button  x:Name="btn1" Canvas.Left="10" Style="{DynamicResource MaterialDesignFlatAccentButton}" Height="Auto" Width="Auto"
+                    <Button  x:Name="btn1" Canvas.Left="10" Style="{StaticResource PremierPasbutton}" Height="31" Width="76"
                     Background="#E0E0E0"
-                    Foreground="Black"
-                    BorderBrush="#E0E0E0"
-                    Margin="0 5 20 0" 
+                    Foreground="Black" Click="GoBack"
+                    BorderBrush="#E0E0E0" Canvas.Top="5" HorizontalAlignment="Left" VerticalAlignment="Center" 
                    
                     >Annuler</Button>
-                    
-                    <Button Canvas.Right="75" Click="BackToPremierpas12" >
-                        <Image x:Name="image2" Source="/Pages/images/Precedent1.png" ></Image>
+                    <Button x:Name="btn5" Canvas.Right="75" Click="BackToPremierpas12"  Style="{StaticResource MonBouton}" Background="#D3D3D3" Width="30" Height="33" >
+
+                        <Image x:Name="image2" Source="/Pages/images/Precedent1.png"   ></Image>
                     </Button>
-                    <Button  Canvas.Right="10" Click="GoToPremierpas2" >
-                        <Image x:Name="image3" Source="/Pages/images/Suivant1.png" ></Image>
+
+                    <Button x:Name="btn6"   Canvas.Right="10" Click="GoToPremierpas2" Style="{StaticResource MonBouton}" Background="#D3D3D3" Width="30" Height="33"  >
+                        <Image x:Name="image3" Source="/Pages/images/Suivant1.png"   ></Image>
                     </Button>
 
                 </Canvas>
@@ -50,7 +50,7 @@
             </StackPanel>
         </Border>
 
-        
+
 
     </Grid>
 </Page>

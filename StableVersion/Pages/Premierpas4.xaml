@@ -16,9 +16,9 @@
 
             <StackPanel x:Name="stackpanel" Height="525" Width="675" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-                <TextBlock x:Name="text1" TextAlignment="Center" Text="Page des exemples deja prets" FontSize="19" Margin="0 20 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" ></TextBlock>
+                <TextBlock x:Name="text1" TextAlignment="Center" Text="Page d'execution du programme" FontSize="19" Margin="0 20 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" ></TextBlock>
 
-                <Image x:Name="image1"  Source="/Pages/images/Exemples deja prets.png" Width="375" Height="Auto" Margin="20" ></Image>
+                <Image x:Name="image1"  Source="/Pages/Programme 4.png" Width="375" Height="Auto" Margin="20" ></Image>
 
                 <Border x:Name="grid2" CornerRadius="3" BorderThickness="1" BorderBrush="#6F6D6D" Width="520" Background="#F7F7F7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" >
                     <TextBlock x:Name="text2" Text="Cette page vous permet de specifier toutes les informations concernant l’instruction que vous voulez simuler a savoir sa mnemoniuqe, son format, les operandes et puis de remplir les champs des operandes impliques dans votre instruction. une fois terminer, le code operation de votre instruction apparait en hexa et vous pouvez simuler en cliquant sur Simuler Maintenant." 
@@ -27,12 +27,16 @@
                 </Border>
                 <Canvas Height="50" Width="500" Margin="5" >
 
-                    <Button x:Name="btn1" Canvas.Left="10" Width="85" Height="30" Click="Go_Back" >Annuler
-                    </Button>
-                    <Button Canvas.Right="75" Click="BackToPremierpas3" >
+                    <Button  x:Name="btn1" Canvas.Left="10" Style="{StaticResource PremierPasbutton}" Height="31" Width="76"
+                    Background="#E0E0E0" Click="GoBack"
+                    Foreground="Black"
+                    BorderBrush="#E0E0E0" Canvas.Top="5" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   
+                    >Annuler</Button>
+                    <Button x:Name="btn5" Canvas.Right="75" Click="BackToPremierpas3" Style="{StaticResource MonBouton}" Background="#D3D3D3" Width="30" Height="33">
                         <Image x:Name="image2" Source="/Pages/images/Precedent1.png" ></Image>
                     </Button>
-                    <Button Canvas.Right="10" Click="GoToPremierpas5" >
+                    <Button x:Name="btn6" Canvas.Right="10" Click="GoToPremierpas5" Style="{StaticResource MonBouton}" Background="#D3D3D3" Width="30" Height="33" >
                         <Image x:Name="image3" Source="/Pages/images/Suivant1.png" ></Image>
                     </Button>
 

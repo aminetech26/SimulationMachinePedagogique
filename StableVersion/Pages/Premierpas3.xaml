@@ -28,12 +28,16 @@
 
                 <Canvas Height="50" Width="500" Margin="5" >
 
-                    <Button  x:Name="btn1" Canvas.Left="10" Width="85" Height="30" Background="Gray"  Click="Go_Back" >Annuler
-                    </Button>
-                    <Button Canvas.Right="75" Click="BackToPremierpas2" >
+                    <Button  x:Name="btn1" Canvas.Left="10" Style="{StaticResource PremierPasbutton}" Height="31" Width="76"
+                    Background="#E0E0E0" Click="GoBack"
+                    Foreground="Black"
+                    BorderBrush="#E0E0E0" Canvas.Top="5" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                   
+                    >Annuler</Button>
+                    <Button x:Name="btn5" Canvas.Right="75" Click="BackToPremierpas2" Style="{StaticResource MonBouton}" Background="#D3D3D3" Width="30" Height="33" >
                         <Image x:Name="image2" Source="/Pages/images/Precedent1.png" ></Image>
                     </Button>
-                    <Button Canvas.Right="10" Click="GoToPremierpas4" >
+                    <Button x:Name="btn6" Canvas.Right="10" Click="GoToPremierpas4" Style="{StaticResource MonBouton}" Background="#D3D3D3" Width="30" Height="33" >
                         <Image x:Name="image3" Source="/Pages/images/Suivant1.png" ></Image>
                     </Button>
 

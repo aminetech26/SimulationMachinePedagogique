@@ -1373,7 +1373,7 @@ namespace projet.Pages
 
         private void Actualiser(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages6.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page6.xaml", UriKind.RelativeOrAbsolute));
         }
 
 

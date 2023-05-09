@@ -1,4 +1,5 @@
-﻿using System;
+﻿using projet.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -37,13 +38,17 @@ namespace projet.Pages
                 text2.FontSize = 16;
                 text2.Width = 600;
                 grid2.Width = 620;
-                image1.Width =750;
+                image1.Width = 750;
                 image1.Height = 250;
                 image2.Width = 30;
                 image2.Height = 40;
                 image3.Width = 30;
                 image3.Height = 40;
                 btn1.Width = 100;
+                btn5.Width = 35;
+                btn6.Width = 35;
+                btn5.Height = 40;
+                btn6.Height = 40;
 
             }
             else
@@ -64,6 +69,10 @@ namespace projet.Pages
                 image3.Width = 17;
                 image3.Height = 31;
                 btn1.Width = 60;
+                btn5.Width = 30;
+                btn6.Width = 30;
+                btn5.Height = 33;
+                btn6.Height = 33;
 
             }
         }
@@ -76,9 +85,10 @@ namespace projet.Pages
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas12.xaml", UriKind.RelativeOrAbsolute));
         }
-        private void Go_Back(object sender, RoutedEventArgs e)
+        private void GoBack(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
+      
     }
 }
