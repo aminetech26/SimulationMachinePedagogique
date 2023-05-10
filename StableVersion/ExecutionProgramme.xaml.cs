@@ -27,7 +27,7 @@ namespace projet
     /// </summary>
     public partial class ExecutionProgramme : Page
     {
-        private static ExecutionProgramme instance;
+        public static ExecutionProgramme instance;
         public static List<Instruction> programInst;
         public ExecutionProgramme(List<Instruction> programInstructions)
         {
@@ -64,8 +64,10 @@ namespace projet
             RAM.Text = "0100";
             MessageBox.Show("before");
 
-            executer_simulation_phase_a_phase("ADD", "AX,imm16", false, "", false, "", "", "AX", "0100", "", "");
-
+            foreach(Instruction ins in programInst)
+            {
+                executer_simulation_phase_a_phase(ins.getMnemonique(), ins.getFormat(), ins.getmem(), ins.getDestination(), ins.getifdepl(), ins.getValDepl(), "", ins.getSource(), "", "", "");
+            }
         }
         public class Inst_Mnemo
         {
@@ -792,9 +794,10 @@ namespace projet
             TextBox BP = (TextBox)instance.FindName("BP");
             TextBox SP = (TextBox)instance.FindName("SP");
 
-            ContenuCaseMemoirePopUp cont = new ContenuCaseMemoirePopUp();
-            cont.adresse.Text = "0100";
-            cont.ShowDialog();
+            //ContenuCaseMemoirePopUp cont = new ContenuCaseMemoirePopUp();
+            //cont.adresse.Text = "0100";
+            //cont.ShowDialog();
+            //string test = cont.userInputTextBox.Text;
             Case case_memoire = new Case();
             string result = "";
             //    if (mem_b)
@@ -2778,6 +2781,10 @@ namespace projet
             }
 
         }
+
+       
+
+
 
 
         //------------------------------------------------------------------------------------------

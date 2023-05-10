@@ -243,7 +243,7 @@
                     <StackPanel Orientation="Horizontal" Margin="10 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
                         <TextBlock Text="CO :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox IsReadOnly="True" x:Name="CO" Margin="3 0 0 5" Padding="5" TextAlignment="Center"
-                                 Height="30" MaxLength="4"
+                                 Height="30" MaxLength="4" 
                                  >
                         </TextBox>
                     </StackPanel>
@@ -263,7 +263,7 @@
                     <StackPanel Orientation="Horizontal" Margin="10 0 0 0" Height="45" VerticalAlignment="Center" HorizontalAlignment="Left" >
                         <TextBlock Text="RIM :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox IsReadOnly="True" x:Name="RIM" Margin="3 0 0 5" Padding="5" TextAlignment="Center"
-                                 Height="30" MaxLength="4"
+                                 Height="30" MaxLength="4" 
                                  >
                         </TextBox>
                     </StackPanel>
