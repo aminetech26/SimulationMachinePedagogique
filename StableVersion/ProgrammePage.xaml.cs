@@ -92,7 +92,7 @@ namespace projet
             string? depl = (currentInstruction.ComboBox5.IsEnabled && currentInstruction.ComboBox5.SelectedItem != null) ? currentInstruction.ComboBox5.SelectedItem.ToString() : "";
             string? destinataire = (currentInstruction.ComboBox6.IsEnabled && currentInstruction.ComboBox6.SelectedItem != null) ? currentInstruction.ComboBox6.SelectedItem.ToString() : "";
             string? source = (currentInstruction.ComboBox7.IsEnabled && (currentInstruction.ComboBox7.Visibility == Visibility.Visible) && currentInstruction.ComboBox7.SelectedItem != null) ? currentInstruction.ComboBox7.SelectedItem.ToString() : "";
-            string? valdep = ((currentInstruction.Val1.Visibility== Visibility.Visible) && currentInstruction.Val1 != null) ? currentInstruction.Val1.ToString() : "";
+            string? val_dep = currentInstruction.Val1 is TextBox textBox1 ? textBox1.Text : "";
             string? val_imm16 = currentInstruction.Val0 is TextBox textBox ? textBox.Text : "";
             bool deplacement;
             bool mem;
@@ -178,7 +178,7 @@ namespace projet
             {
 
                 Instruction instruction = new Instruction();
-                instruction = SetInstruction(mnemonique, format, destinataire, source,  mem, deplacement, valdep,val_imm16);
+                instruction = SetInstruction(mnemonique, format, destinataire, source,  mem, deplacement, val_dep,val_imm16);
                 programInstructions.Add(instruction);
                 currentLineNumber++;
                 var instructionLigne = new Instruction_Ligne();

@@ -706,3 +706,11 @@ C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVers
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page6.baml
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\PageEntree_Sortie1.baml
 C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Premierspas13.baml
+C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Decalage1.g.cs
+C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page6.g.cs
+C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Premierspas13.g.cs
+C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Decalage1.baml
+C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Page6.baml
+C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Premierspas13.baml
+C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ContenuCaseMemoirePopUp.g.cs
+C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ContenuCaseMemoirePopUp.baml

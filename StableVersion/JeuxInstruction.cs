@@ -19,6 +19,7 @@ using System.Windows.Media;
 using System.Windows.Shapes;
 using System.Windows.Navigation;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 namespace ArchiMind
 {
@@ -26,10 +27,101 @@ namespace ArchiMind
     internal class JeuxInstruction
     {
 
-        private static Animation _jeuxInstruction;
+        public  static Animation _jeuxInstruction;
+        public static ExecutionProgramme contextProgram;
+        public static void AnimatIndicateurProgram()
+        {
+            Grid Z = (Grid)contextProgram.FindName("IND_Z");
+            Grid A = (Grid)contextProgram.FindName("IND_A");
+            Grid S = (Grid)contextProgram.FindName("IND_S");
+            Grid D = (Grid)contextProgram.FindName("IND_D");
+            Grid R = (Grid)contextProgram.FindName("IND_R");
+            Grid P = (Grid)contextProgram.FindName("IND_P");
+            Grid T = (Grid)contextProgram.FindName("IND_T");
+            Grid I = (Grid)contextProgram.FindName("IND_I");
+            switch (Indicateur.getZero())
+            {
+                case '1':
+                    Z.Background = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    Z.Background = new SolidColorBrush(Colors.Blue);
+                    break;
+                    // default: Z.Fill = new SolidColorBrush(Colors.Black); break;
+            }
+            switch (Indicateur.getSigne())
+            {
+                case '1':
+                    S.Background = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    S.Background = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getOverflow())
+            {
+                case '1':
+                    D.Background = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    D.Background = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+
+            switch (Indicateur.getRetenu())
+            {
+                case '1':
+                    R.Background = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    R.Background = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getretenuAuxiliaire())
+            {
+                case '1':
+                    A.Background = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    A.Background = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getParite())
+            {
+                case '1':
+                    P.Background = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    P.Background = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getTrace())
+            {
+                case '1':
+                    T.Background = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    T.Background = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+            switch (Indicateur.getAutoIncrDec())
+            {
+                case '1':
+                    I.Background = new SolidColorBrush(Colors.Red);
+                    break;
+                case '0':
+                    I.Background = new SolidColorBrush(Colors.Blue);
+                    break;
+            }
+        }
+
+        public static void setContextProgram(ExecutionProgramme cntProgram)
+        {
+            contextProgram = cntProgram;
+        }
 
         public static void setJeux(Animation page)
-        { _jeuxInstruction = page; }
+        { _jeuxInstruction = page; }  
 
 
 
@@ -414,7 +506,7 @@ namespace ArchiMind
             detailInstruction.Add(mycouple);
 
             //------------------- transfere instructions ------------------------------------------------------------------
-            // l'intialisation des format de l'istruction MOV // index = 6 
+            // l'intialisation des format de l'istruction MOV // index = 5 
             mycouple = new CoupleCopFormat();
             instruction = new Instruction("Reg16,Reg16/Mem16", "10001011xxxxxxxx");
             mycouple.addInstruction(instruction);
@@ -426,7 +518,7 @@ namespace ArchiMind
             mycouple.addInstruction(instruction);
             detailInstruction.Add(mycouple);
 
-            // l'intialisation des format de l'istruction XCHG // index = 7 
+            // l'intialisation des format de l'istruction XCHG // index = 6
             mycouple = new CoupleCopFormat();
             instruction = new Instruction("AX,Reg16", "10010xxx");
             mycouple.addInstruction(instruction);
@@ -438,13 +530,13 @@ namespace ArchiMind
 
             //------------------- logic instructions ---------------------------------------------------------------------------------
 
-            // l'intialisation des format de l'istruction NOT // index = 8 
+            // l'intialisation des format de l'istruction NOT // index = 7
             mycouple = new CoupleCopFormat();
             instruction = new Instruction("Reg16/Mem16", "11110111xx010xxx", "010");
             mycouple.addInstruction(instruction);
             detailInstruction.Add(mycouple);
 
-            // l'intialisation des format de l'istruction AND // index = 9 
+            // l'intialisation des format de l'istruction AND // index = 8 
             mycouple = new CoupleCopFormat();
             instruction = new Instruction("Reg16/Mem16,imm16", "10000001xx100xxx", "100");
             mycouple.addInstruction(instruction);
@@ -454,7 +546,7 @@ namespace ArchiMind
             mycouple.addInstruction(instruction);
             detailInstruction.Add(mycouple);
 
-            // l'intialisation des format de l'istruction OR // index = 10 
+            // l'intialisation des format de l'istruction OR // index = 9 
             mycouple = new CoupleCopFormat();
             instruction = new Instruction("AX,imm16", "00001101");
             mycouple.addInstruction(instruction);
@@ -820,7 +912,7 @@ namespace ArchiMind
             string r_m_binaire;
             string reg_binaire;
             int index_of_mnemonique = recherche_index_mnemonique(inst);
-            Instruction myinstruction = new Instruction();
+            Instruction myinstruction = new Instruction(); 
             myinstruction = recherche_instruction(detailInstruction.ElementAt(index_of_mnemonique), "Reg16/Mem16,Reg16");
             instruction_binaire = myinstruction.getCop();
             reg_binaire = recherche_reg(reg);
@@ -4402,7 +4494,7 @@ namespace ArchiMind
                     hexaforme = remplir_Reg_mem_imm16(inst.getMnemonique(), inst.getDestination(), inst.getifdepl(), inst.getValDepl(),inst.getval_imm16());
                     break;
                 case "Reg16/Mem16,Reg16":
-                    hexaforme = remplir_reg_mem_reg(inst.getMnemonique(), inst.getSource(), inst.getDestination(), inst.getifdepl(),inst.getValDepl());
+                    hexaforme = remplir_reg_mem_reg(inst.getMnemonique(), inst.getDestination(), inst.getSource(), inst.getifdepl(),inst.getValDepl());
                     break;
                 case "Reg16,Reg16/Mem16":
                     hexaforme = remplir_reg_reg_mem(inst.getMnemonique(), inst.getSource(), inst.getDestination(), inst.getifdepl(), inst.getValDepl());

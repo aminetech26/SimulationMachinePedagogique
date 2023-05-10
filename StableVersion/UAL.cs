@@ -933,8 +933,16 @@ namespace ArchiMind
                     Console.Beep();
                     Console.WriteLine("Error in instruction !");
                     break;
+            } 
+            if (JeuxInstruction._jeuxInstruction != null)
+            {
+                JeuxInstruction.AnimatIndicateur();
+
             }
-            JeuxInstruction.AnimatIndicateur();
+             if (JeuxInstruction.contextProgram != null)
+            {
+                JeuxInstruction.AnimatIndicateurProgram();
+            }
         }
 
     }

@@ -1,0 +1,20 @@
+﻿<Window x:Class="projet.ContenuCaseMemoirePopUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projet"
+        mc:Ignorable="d"
+        Title="ContenuCaseMemoirePopUp" 
+        Width="400" Height="150"
+
+        >
+    <StackPanel>
+        <TextBlock Text="Enter le contenu de la case memoire :"/>
+        <Grid>
+            <TextBox x:Name="userInputTextBox" Margin="150,0,107,0"/>
+            <TextBlock x:Name="adresse" Margin="24,0,0,1" Grid.Column="2">Adresse case memoire : </TextBlock>
+        </Grid>
+        <Button x:Name="okButton" Click="OkButton_Click" Content="OK"/>
+    </StackPanel>
+</Window>

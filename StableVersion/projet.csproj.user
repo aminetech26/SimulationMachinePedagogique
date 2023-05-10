@@ -10,6 +10,9 @@
     <Compile Update="Animation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ContenuCaseMemoirePopUp.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ExecutionProgramme.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -61,6 +64,9 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Animation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ContenuCaseMemoirePopUp.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ExecutionProgramme.xaml">
