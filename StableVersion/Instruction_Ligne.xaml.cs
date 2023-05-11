@@ -420,6 +420,7 @@ namespace projet
                     switch (selectedItem_Format)
                     {
                         case "Reg16/Mem16,Reg16":
+                        case "AX,Reg16":
                             ComboBox7.ItemsSource = new List<string> { "BX", "CX", "DX", "BP", "SP", "SI", "DI" };
                             ComboBox7.IsEnabled = true;
                             break;
@@ -430,6 +431,10 @@ namespace projet
                             {
                                 case "Registre":
                                     ComboBox7.ItemsSource = new List<string> { "BX", "CX", "DX", "BP", "SP", "SI", "DI" };
+                                    ComboBox7.IsEnabled = true;
+                                    break;
+                                
+                                case "Memoire":
                                     ComboBox7.IsEnabled = true;
                                     break;
                             }
@@ -479,6 +484,9 @@ namespace projet
                                     ComboBox7.ItemsSource = new List<string> { "AX", "CX", "DX", "BP", "SP", "SI", "DI" };
                                     ComboBox7.IsEnabled = true;
                                     break;
+                                case "Memoire":
+                                    ComboBox7.IsEnabled = true;
+                                    break;
                             }
                             break;
 
@@ -523,6 +531,9 @@ namespace projet
                                     ComboBox7.ItemsSource = new List<string> { "AX", "BX", "DX", "BP", "SP", "SI", "DI" };
                                     ComboBox7.IsEnabled = true;
                                     break;
+                                case "Memoire":
+                                    ComboBox7.IsEnabled = true;
+                                    break;
                             }
                             break;
 
@@ -561,6 +572,9 @@ namespace projet
                             {
                                 case "Registre":
                                     ComboBox7.ItemsSource = new List<string> { "AX", "CX", "BX", "BP", "SP", "SI", "DI" };
+                                    ComboBox7.IsEnabled = true;
+                                    break;
+                                case "Memoire":
                                     ComboBox7.IsEnabled = true;
                                     break;
                             }
@@ -606,6 +620,9 @@ namespace projet
                                     ComboBox7.ItemsSource = new List<string> { "AX", "CX", "DX", "BX", "SP", "SI", "DI" };
                                     ComboBox7.IsEnabled = true;
                                     break;
+                                case "Memoire":
+                                    ComboBox7.IsEnabled = true;
+                                    break;
                             }
 
                             break;
@@ -646,6 +663,9 @@ namespace projet
                             {
                                 case "Registre":
                                     ComboBox7.ItemsSource = new List<string> { "AX", "CX", "DX", "BX", "BP", "SI", "DI" };
+                                    ComboBox7.IsEnabled = true;
+                                    break;
+                                case "Memoire":
                                     ComboBox7.IsEnabled = true;
                                     break;
                             }
@@ -689,6 +709,9 @@ namespace projet
                                     ComboBox7.ItemsSource = new List<string> { "AX", "CX", "DX", "BP", "SP", "SI", "BX" };
                                     ComboBox7.IsEnabled = true;
                                     break;
+                                case "Memoire":
+                                    ComboBox7.IsEnabled = true;
+                                    break;
                             }
 
                             break;
@@ -728,6 +751,9 @@ namespace projet
                             {
                                 case "Registre":
                                     ComboBox7.ItemsSource = new List<string> { "AX", "CX", "DX", "BP", "SP", "BX", "DI" };
+                                    ComboBox7.IsEnabled = true;
+                                    break;
+                                case "Memoire":
                                     ComboBox7.IsEnabled = true;
                                     break;
                             }
