@@ -357,16 +357,15 @@ namespace ArchiMind
                 case "MUL":
                     // carry / overflow check
                     if (resultBin[0] == '0')
-                    {
-                        Indicateur.setRetenu('0');
+                    { 
                         Indicateur.setOverflow('0');
                     }
                     else
                     {
-                        Indicateur.setRetenu('1');
                         Indicateur.setOverflow('1');
                     }
                     //undefined after mul instruction
+                    Indicateur.setRetenu('x');
                     Indicateur.setAutoIncrDec('x');
                     Indicateur.setretenuAuxiliaire('x');
                     Indicateur.setTrace('x');

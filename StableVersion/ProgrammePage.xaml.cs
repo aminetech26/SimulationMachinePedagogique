@@ -210,13 +210,7 @@ namespace projet
 
         private void NextPage_Click(object sender, RoutedEventArgs e)
         {
-            JeuxInstruction j = new JeuxInstruction();
-            string text = "";
-            foreach (Instruction ins in programInstructions)
-            {
-                text = text + j.convertir_instruction_Lmnemonique(ins) + "  \n";
-            }
-            System.Windows.MessageBox.Show(text);
+            
             Creerprogramme secondPage = new Creerprogramme(programInstructions);
             this.NavigationService.Navigate(secondPage);
 

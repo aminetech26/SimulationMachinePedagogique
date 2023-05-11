@@ -32,19 +32,9 @@ namespace projet
         public PageProgramme3(List<Instruction> programInstructions)
         {
             InitializeComponent();
-            JeuxInstruction j = new JeuxInstruction();
-            j.intialize();
-            int i = 0;
-            foreach(Instruction instruction in programInstructions)
-            {
-                MessageBox.Show(j.inst_to_hexaforme(programInstructions.ElementAt(i)));
-                i++;
-            }
-            
             suivant.IsEnabled= false;
             AX.Focus();
             programInst = new List<Instruction>(programInstructions);
-
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

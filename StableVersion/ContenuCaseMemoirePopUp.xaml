@@ -20,7 +20,7 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Entrer le contenu de la case mémoire" TextAlignment="Center" FontSize="21" Margin="0 10" />
+        <TextBlock Name="text_popup" Grid.Row="0" Text="Entrer le contenu de la case mémoire" TextAlignment="Center" FontSize="21" Margin="0 10" />
         
         <StackPanel Grid.Row="1" Orientation="Horizontal" >
             

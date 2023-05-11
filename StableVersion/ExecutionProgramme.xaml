@@ -425,6 +425,9 @@
 
 
         </Grid>
+        <TextBlock x:Name="DelayTextBlock" Margin="554,398,65,18" Grid.Row="1">Value selected :</TextBlock>
+        <Slider Name="DelaySlider" Minimum="0" Maximum="1000" Value="100" TickFrequency="100" Margin="67,402,555,22" Grid.Row="1" />
+        <Button Width="200" Height="50" Name="Execution_Button" Click="ButtonExecuter_Click" Margin="300,390,300,10" Grid.Row="1">Start</Button>
     </Grid>
 
 </Page>

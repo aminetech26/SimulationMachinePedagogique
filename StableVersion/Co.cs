@@ -19,9 +19,16 @@ namespace ArchiMind
         } 
         static  public void incCo()
         {   // Incrementation en Hexa decimal 
-            int DecimalValue  = Convert.ToInt32(Co.co,16);
-            DecimalValue++; 
-            setco(DecimalValue.ToString("X"));
+            // Conversion de la chaîne hexadécimale en entier
+            int coHexInt = Convert.ToInt32(Co.co, 16);
+
+            // Incrémentation de la valeur hexadécimale
+            coHexInt++;
+
+            // Conversion de la valeur hexadécimale en chaîne hexadécimale
+            string hexResult = coHexInt.ToString("X4");
+            
+            setco(hexResult);
         }
     }
 }
