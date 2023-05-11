@@ -714,3 +714,5 @@ C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Deb
 C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\Pages\Premierspas13.baml
 C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ContenuCaseMemoirePopUp.g.cs
 C:\Users\Administrator\Videos\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ContenuCaseMemoirePopUp.baml
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ContenuCaseMemoirePopUp.g.cs
+C:\Users\Admin\OneDrive\Documents\GitHub\SimulationMachinePedagogique\StableVersion\obj\Debug\net6.0-windows\ContenuCaseMemoirePopUp.baml

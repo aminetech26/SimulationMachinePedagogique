@@ -429,6 +429,50 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
+    <!-- /////////////////// PopUp -->
+
+    <Style x:Key="RoundedTextBox2" TargetType="{x:Type TextBox}">
+        <Setter Property="OverridesDefaultStyle" Value="True" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border x:Name="border" 
+                            CornerRadius="10" 
+                            BorderBrush="Black" 
+                            BorderThickness="1" 
+                            Background="{TemplateBinding Background}" />
+                        <ScrollViewer Margin="0" 
+                                  x:Name="PART_ContentHost" 
+                                  VerticalAlignment="Center" 
+                                  HorizontalAlignment="Center" 
+                                  Background="Transparent" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Foreground" Value="DimGray" />
+                            <Setter TargetName="border" 
+                                Property="BorderBrush" 
+                                Value="DimGray" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="border" 
+                                Property="BorderBrush" 
+                                Value="Black" />
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter TargetName="border" 
+                                Property="BorderBrush" 
+                                Value="Gold" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--///////////////////-->
+
     <Style TargetType="Button" x:Key="Creeprogrammebutton">
         <Setter Property="Background" Value="White" />
         <Setter Property="Foreground" Value="Black" />
@@ -472,6 +516,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    
     <Style TargetType="Button" x:Key="PremierPasbutton">
         <Setter Property="Background" Value="White" />
         <Setter Property="Foreground" Value="Black" />

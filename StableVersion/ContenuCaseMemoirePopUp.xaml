@@ -6,15 +6,35 @@
         xmlns:local="clr-namespace:projet"
         mc:Ignorable="d"
         Title="ContenuCaseMemoirePopUp" 
-        Width="400" Height="150"
-
+        Width="400" Height="225"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        
         >
-    <StackPanel>
-        <TextBlock Text="Enter le contenu de la case memoire :"/>
-        <Grid>
-            <TextBox x:Name="userInputTextBox" Margin="150,0,107,0"/>
-            <TextBlock x:Name="adresse" Margin="24,0,0,1" Grid.Column="2">Adresse case memoire : </TextBlock>
-        </Grid>
-        <Button x:Name="okButton" Click="OkButton_Click" Content="OK"/>
-    </StackPanel>
+    
+    <Grid MinHeight="225" MinWidth="400" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Entrer le contenu de la case mémoire" TextAlignment="Center" FontSize="21" Margin="0 10" />
+        
+        <StackPanel Grid.Row="1" Orientation="Horizontal" >
+            
+            <TextBlock x:Name="adresse" Margin="15 0 0 3" Grid.Column="2" Text="Adresse case mémoire :" TextAlignment="Center" VerticalAlignment="Center"
+                       FontSize="18" FontWeight="Regular" FontFamily="Comic Sans MS"
+                       ></TextBlock>
+            <TextBox x:Name="userInputTextBox" Margin="20 0" Height="35" Width="120" MaxLength="4" Style="{DynamicResource RoundedTextBox2}"
+                     VerticalAlignment="Center" HorizontalAlignment="Center" Padding="5" Background="White" Foreground="Black" BorderThickness="1" BorderBrush="Black"
+                     />
+        
+        </StackPanel>
+
+        <Button Grid.Row="2" x:Name="okButton" Click="OkButton_Click" Content="OK" Height="35" Width="100" VerticalAlignment="Top" 
+                HorizontalAlignment="Center" />
+        
+    </Grid>
 </Window>
