@@ -27,6 +27,30 @@ namespace projet
     /// </summary>
     public partial class ExecutionProgramme : Page
     {
+        //******************************************************************************************************//
+
+        List<string> conseils = new List<string>()
+        {
+            "Utiliser des commentaires pour documenter le code.",
+            "Utiliser des étiquettes pour référencer des adresses.",
+            "Utiliser des macros pour simplifier le code.",
+            "Utiliser des sous-programmes pour réutiliser le code.",
+            "Optimiser le code pour améliorer les performances.",
+            "Éviter les instructions longues.",
+            "Utiliser des opérateurs bit à bit pour manipuler les données binaires.",
+            "Éviter les instructions de saut inconditionnel pour améliorer la lisibilité du code.",
+            "Utiliser les instructions les plus rapides pour les tâches les plus courantes.",
+            "Éviter les opérations arithmétiques inutiles en utilisant les opérations de décalage pour les multiplications et les divisions par 2.",
+            "Utiliser les directives d'assemblage pour spécifier la taille et l'alignement des données.",
+            "Utiliser les instructions de comparaison pour éviter les erreurs d'arithmétique.",
+            "Utiliser les instructions de déplacement de données pour optimiser les transferts de données.",
+            "Éviter les instructions de chargement de données redondantes.",
+            "Éviter l'utilisation de registres de trop grande taille pour économiser de la mémoire.",
+            "Utiliser des structures de contrôle pour rendre le code plus lisible et compréhensible.",
+        };
+
+        //******************************************************************************************************//
+
         public static ExecutionProgramme instance;
         public static List<Instruction> programInst;
         public ExecutionProgramme(List<Instruction> programInstructions)
@@ -2876,12 +2900,31 @@ namespace projet
 
 
 
-        //------------------------------------------------------------------------------------------
+        //---------------------------------------------- Conseil du jour ----------------------------------------------//
 
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Popup.IsOpen = true;
+            mainGrid.Effect = new System.Windows.Media.Effects.BlurEffect { Radius = 7 };
 
+            // Generate a random number
+            Random random = new Random();
+            int randomNumber = random.Next(conseils.Count);
 
+            // Display the randomly selected name
+            string randomName = conseils[randomNumber];
 
+            Conseil.Text = randomName;
+        }
+
+        private void OK_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Popup.IsOpen = false;
+            mainGrid.Effect = null;
+        }
+
+        //---------------------------------------------- Conseil du jour ----------------------------------------------//
 
 
 

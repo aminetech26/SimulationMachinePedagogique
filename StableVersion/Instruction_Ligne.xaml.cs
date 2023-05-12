@@ -120,6 +120,7 @@ namespace projet
                     break;
                 
                 case "NOT":
+                case "JMP":
                     ComboBox3.ItemsSource = new List<string> { "Reg16/Mem16" };
                     break;
                 case "AND":
@@ -154,7 +155,6 @@ namespace projet
                     ComboBox3.ItemsSource = new List<string> { "DX,Mem16" };
                     break;
 
-                case "JMP":
                 case "LOOP":
                 case "LOOPZ":
                 case "LOOPE":
@@ -389,6 +389,8 @@ namespace projet
 
                         case "Reg16/Mem16":
                         case "Mem16":
+                            Source.Visibility = Visibility.Hidden;
+                            ComboBox7.Visibility = Visibility.Hidden;
                             ComboBox7.IsEnabled = false;
                             ComboBox7.ItemsSource = null;
                             ComboBox6.ItemsSource = new List<string> { "[BX+SI]", "[BX+DI]", "[BP+SI]", "[BP+DI]", "[SI]", "[DI]", "[BX]", "[BP]" };

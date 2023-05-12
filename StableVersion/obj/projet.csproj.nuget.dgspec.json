@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Administrator\\Pictures\\SimulationMachinePedagogique\\StableVersion\\projet.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Administrator\\Pictures\\SimulationMachinePedagogique\\StableVersion\\projet.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Administrator\\Pictures\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
         "projectName": "projet",
-        "projectPath": "C:\\Users\\Administrator\\Pictures\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
-        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Administrator\\Pictures\\SimulationMachinePedagogique\\StableVersion\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Documents\\GitHub\\SimulationMachinePedagogique\\StableVersion\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -68,24 +68,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
-            },
-            {
-              "name": "Microsoft.WindowsDesktop.App.Ref",
-              "version": "[6.0.15, 6.0.15]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -94,7 +76,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     }

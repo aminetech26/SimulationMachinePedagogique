@@ -85,6 +85,7 @@
     <None Remove="Pages\images\Home\cpu1.png" />
     <None Remove="Pages\images\Home\dossier.png" />
     <None Remove="Pages\images\Home\plus.png" />
+    <None Remove="Pages\images\idea.png" />
     <None Remove="Pages\images\intel.png" />
     <None Remove="Pages\images\ktab.png" />
     <None Remove="Pages\images\language.png" />
@@ -224,6 +225,7 @@
   <ItemGroup>
     <Resource Include="Pages\images\Home\cpu1.png" />
     <Resource Include="Pages\images\Home\plus.png" />
+    <Resource Include="Pages\images\idea.png" />
     <Resource Include="Pages\images\intel.png" />
     <Resource Include="Pages\images\ktab.png" />
     <Resource Include="Pages\images\language.png" />

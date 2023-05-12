@@ -9,7 +9,7 @@
       Title="ExecutionProgramme"
       >
 
-    <Grid Background="#90CAF9" SizeChanged="Grid_SizeChanged" >
+    <Grid Background="#90CAF9" SizeChanged="Grid_SizeChanged" x:Name="mainGrid" >
         <Grid.RowDefinitions>
             <RowDefinition Height="150"/>
             <RowDefinition Height="*"/>
@@ -48,8 +48,15 @@
                     <Rectangle Fill="White" Height="3" Width="180" />
                 </StackPanel>
 
-                <Button Grid.Column="2" HorizontalAlignment="Right" Margin="0 0 30 0" Height="Auto" Width="80" BorderThickness="0" Background="Transparent" BorderBrush="Transparent" >
-                    <Image Source="/Pages/images/Help.png" />
+                <Button Grid.Column="2" HorizontalAlignment="Right" Margin="0 5 30 0" Height="Auto" Width="75"
+                        BorderThickness="0" Background="Transparent" BorderBrush="Transparent" Click="Button_Click" >
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Grid>
+                                <Image Source="/Pages/images/Help.png" />
+                            </Grid>
+                        </ControlTemplate>
+                    </Button.Template>
                 </Button>
 
             </Grid>
@@ -428,6 +435,46 @@
         <TextBlock x:Name="DelayTextBlock" Margin="554,398,65,18" Grid.Row="1">Value selected :</TextBlock>
         <Slider Name="DelaySlider" Minimum="0" Maximum="1000" Value="100" TickFrequency="100" Margin="67,402,555,22" Grid.Row="1" />
         <Button Width="200" Height="50" Name="Execution_Button" Click="ButtonExecuter_Click" Margin="300,390,300,10" Grid.Row="1">Start</Button>
+        
+        <!--************************************* PopUp " Conseil du jour " *************************************-->
+
+
+        <Popup x:Name="Popup" IsOpen="False" Placement="Center" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Border BorderBrush="Black" BorderThickness="1" >
+                <Grid Background="White" Height="255" Width="380" HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0 5" >
+                        <Image Source="/Pages/images/idea.png" Height="Auto" Width="40" />
+                        <TextBlock Text="Conseil du jour" Foreground="#90CAF9" VerticalAlignment="Center" TextAlignment="Center"
+                           FontFamily="Montserrat" FontWeight="SemiBold" FontSize="24" Margin="12 0" Padding="0 10 0 0"
+                           />
+                    </StackPanel>
+
+                    <TextBlock Grid.Row="1" x:Name="Conseil" Text="Utiliser des commentaires pour documenter le code." TextAlignment="Center"
+                       Foreground="#317AC7" VerticalAlignment="Center" TextWrapping="Wrap"
+                       FontFamily="Montserrat" FontWeight="SemiBold" FontSize="23" Margin="12 0"
+                       />
+
+                    <Button Grid.Row="2" Height="40" Width="100" Margin="0 0 0 5" Background="#EFFAFF"
+                            Click="OK_Button_Click" Style="{DynamicResource RoundedButtonStyle9}"
+                    >
+                        <TextBlock Text="OK" Foreground="#317AC7" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold" TextAlignment="Center" />
+
+                    </Button>
+
+                </Grid>
+            </Border>
+        </Popup>
+
+
+        <!--************************************** PopUp " Conseil du jour " **********************************-->
     </Grid>
 
 </Page>
