@@ -133,16 +133,19 @@ namespace ArchiMind
             {
                 resultDec = Convert.ToInt32(resultHex, 16);
                 resultBin = Convert.ToString(resultDec, 2);
+                resultBin = Erreur.correctionFormat(resultBin);
             }
             if (operand1Hex != "default")
             {
                 operand1Dec = Convert.ToInt32(operand1Hex, 16);
                 operand1Bin = Convert.ToString(operand1Dec, 2);
+                operand1Bin = Erreur.correctionFormat(operand1Bin);
             }
             if (operand2hex != "default")
             {
                 operand2Dec = Convert.ToInt32(operand2hex, 16);
                 operand2Bin = Convert.ToString(operand2Dec, 2);
+                operand2Bin = Erreur.correctionFormat(operand2Bin);
             }
             else { }
 

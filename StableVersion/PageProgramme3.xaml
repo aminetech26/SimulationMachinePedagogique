@@ -69,7 +69,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0" Height="45" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <TextBlock Text="AX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox x:Name="AX" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
-                                 Height="30" MaxLength="4"
+                                 Height="30" MaxLength="4" 
                                  >
                         </TextBox>
                     </StackPanel>
@@ -79,7 +79,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0" Height="45" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <TextBlock Text="BX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox x:Name="BX" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
-                                 Height="30" MaxLength="4"
+                                 Height="30" MaxLength="4" 
                                  >
                         </TextBox>
                     </StackPanel>
@@ -89,7 +89,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0" Height="45" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <TextBlock Text="CX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox x:Name="CX" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
-                                 Height="30" MaxLength="4"
+                                 Height="30" MaxLength="4" 
                                  >
                         </TextBox>
                     </StackPanel>
@@ -100,6 +100,7 @@
                         <TextBlock Text="DX :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox x:Name="DX" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
                                  Height="30" MaxLength="4"
+                                 
                                  >
                         </TextBox>
                     </StackPanel>
@@ -138,7 +139,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0" Height="45" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <TextBlock Text="SI :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox x:Name="SI" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
-                                 Height="30" MaxLength="4"
+                                 Height="30" MaxLength="4" 
                                  >
                         </TextBox>
                     </StackPanel>
@@ -148,7 +149,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0" Height="45" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <TextBlock Text="DI :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox x:Name="DI" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
-                                 Height="30" MaxLength="4"
+                                 Height="30" MaxLength="4" 
                                  >
                         </TextBox>
                     </StackPanel>
@@ -158,7 +159,7 @@
                     <StackPanel Orientation="Horizontal" Margin="0" Height="45" Width="Auto" VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <TextBlock Text="BP :" FontSize="20" Margin="0 0 10 0" VerticalAlignment="Center" FontFamily="Montserrat" FontWeight="Bold" />
                         <TextBox x:Name="BP" Margin="7 0 0 5" Padding="5" TextAlignment="Center" TextChanged="TextBox_TextChanged" 
-                                 Height="30" MaxLength="4"
+                                 Height="30" MaxLength="4" 
                                  >
                         </TextBox>
                     </StackPanel>

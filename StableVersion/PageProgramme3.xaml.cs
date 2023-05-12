@@ -32,6 +32,14 @@ namespace projet
         public PageProgramme3(List<Instruction> programInstructions)
         {
             InitializeComponent();
+            AX.Text = "0000";
+            BX.Text = "0000";
+            CX.Text = "0000";
+            DX.Text = "0000";
+            SP.Text = "0000";
+            BP.Text = "0000";
+            SI.Text = "0000";
+            DI.Text = "0000"; 
             suivant.IsEnabled= false;
             AX.Focus();
             programInst = new List<Instruction>(programInstructions);

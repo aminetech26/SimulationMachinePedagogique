@@ -562,13 +562,13 @@ namespace projet
                 JeuxInstruction.SetInt(result);
                  }
                }
-        private static async void format_ax_reg(string mnenmonique, string source, string valAx, string valsource, string format, bool RegM)
+        private static async void format_ax_reg(string mnenmonique, string source)
         {
-            Registre.setAx(valAx);
-            Registre.setContenuRegistre(source, valsource);
+            
+            Registre.setContenuRegistre(source, Registre.getContenuRegistre(source) );
             UAL.setUal1(Registre.getAx());
             UAL.setUal2(Registre.getContenuRegistre(source));
-            Registre.setAx(UAL.getUal2());
+            Registre.setContenuRegistre("AX",UAL.getUal2());
             Registre.setContenuRegistre(source, UAL.getUal1());
             JeuxInstruction.SetInt(Registre.getContenuRegistre(source));
             switch (mnenmonique)
@@ -584,7 +584,7 @@ namespace projet
                     break;
             }
         }
-        private static async void format_ax_imm16(string mnemonique, string valAx, string valImmediate16, string format, bool RegM)
+        private static  void format_ax_imm16(string mnemonique, string valImmediate16)
         {
             // ici je vais faire un petite bloc du code pour intialisé la 2eme case de la memoire par la valeur immidiate
             Case case_memoire = new Case();
@@ -593,9 +593,11 @@ namespace projet
             case_memoire.setAdr("0101");
             // MC.AjouterCase(Convert.ToInt32("0101",16),case_memoire); 
             // fin de l'intialisation 
-            Registre.setAx(valAx);
+            
             Co.incCo();
             MC.setRam(Co.getco());
+            MC.setRim(valImmediate16);
+            Registre.setContenuRegistre("AX", Registre.getContenuRegistre("AX"));
             //  case_memoire = MC.recherche_mc(Co.getco());
             // MC.setRim(case_memoire.getContenu());
             UAL.setUal1(Registre.getAx());
@@ -629,12 +631,13 @@ namespace projet
             }
             // animation (UAL,registre,donne );
             UAL.positionnerIndicateurs(mnemonique, result, r, r1);
+            Registre.setContenuRegistre("AX", result); 
          }
-        private static async void format_reg16(string mnemonique, string reg, string valReg,string format, bool RegM)
+        private static async void format_reg16(string mnemonique, string reg)
         {
             //inc , dec 
 
-            Registre.setContenuRegistre(reg, valReg);
+            
             string result = "";
             UAL.setUal1(Registre.getContenuRegistre(reg));
             int hexInt;
@@ -663,7 +666,7 @@ namespace projet
             // ual to registr
             Registre.setContenuRegistre(reg, result);
         }
-        private static async void format_reg16_imm16(string mnemonique, string reg, string valReg, string valImm16, string format, bool RegM)
+        private static  void format_reg16_imm16(string mnemonique, string reg, string valImm16)
         {
             // ici je vais faire un petite bloc du code pour intialisé la 2eme case de la memoire par la valeur immidiate
             Case case_memoire = new Case();
@@ -672,13 +675,15 @@ namespace projet
             case_memoire.setAdr("0101");
             //MC.AjouterCase(Convert.ToInt32("0101", 16), case_memoire);
             // ----------------------------------//
-            Registre.setContenuRegistre(reg, valReg);
+            
             // animation(registre,UAL1,donne); 
             UAL.setUal1(Registre.getContenuRegistre(reg));
             Co.incCo();
             MC.setRam(Co.getco());
+            Registre.setContenuRegistre(reg, Registre.getContenuRegistre(reg));
             // case_memoire = MC.recherche_mc(Co.getco());
             //MC.setRim(case_memoire.getContenu());
+            MC.setRim(valImm16); 
             UAL.setUal2(MC.getRim());
             string result = "";
             string r = UAL.getUal1();
@@ -694,7 +699,9 @@ namespace projet
                     break;
             }
             // positionner les indicateurs 
+
             UAL.positionnerIndicateurs(mnemonique, result);
+            Registre.setContenuRegistre(reg,result);
 
         }
         private static async void format_dx_mem16(string mnemonique, string ccm, string mem, bool ifdepl, string valDepl, string valdx, string valmem1, string valmem2)
@@ -807,6 +814,7 @@ namespace projet
             //pop up pour recuperer contenu case memoire || cas format avec memoire
             ContenuCaseMemoirePopUp cont = new ContenuCaseMemoirePopUp();
             // les registres
+            Co.setco("0100");
             TextBox AX = (TextBox)instance.FindName("AX");
             TextBox BX = (TextBox)instance.FindName("BX");
             TextBox CX = (TextBox)instance.FindName("CX");
@@ -820,41 +828,41 @@ namespace projet
             //page phase2;
             switch (format)
             {
-                /*
+                
                 case "Reg16/Mem16,Reg16":
-                    if (mem_b)
+                    if (mem)
                     { //mem16,reg16
                         if (ifdepl)
                         {
-                            switch (mem)
+                            switch (destination)
                             {
                                 case "[BX+SI+depl]":
-                                    Registre.setContenuRegistre("BX", val1);
-                                    Registre.setContenuRegistre("SI", val2);
+                                    Registre.setContenuRegistre("BX", Registre.getBx());
+                                    Registre.setContenuRegistre("SI", Registre.getSi());
                                     break;
                                 case "[BX+DI+depl]":
-                                    Registre.setContenuRegistre("BX", val1);
-                                    Registre.setContenuRegistre("DI", val2);
+                                    Registre.setContenuRegistre("BX", Registre.getBx());
+                                    Registre.setContenuRegistre("DI", Registre.getDi());
                                     break;
                                 case "[BP+SI+depl]":
-                                    Registre.setContenuRegistre("BP", val1);
-                                    Registre.setContenuRegistre("SI", val2);
+                                    Registre.setContenuRegistre("BP", Registre.getBp());
+                                    Registre.setContenuRegistre("SI", Registre.getSi());
                                     break;
                                 case "[BP+DI+depl]":
-                                    Registre.setContenuRegistre("BP", val1);
-                                    Registre.setContenuRegistre("DI", val2);
+                                    Registre.setContenuRegistre("BP", Registre.getBp());
+                                    Registre.setContenuRegistre("DI", Registre.getDi());
                                     break;
                                 case "[SI+depl]":
-                                    Registre.setContenuRegistre("SI", val1);
+                                    Registre.setContenuRegistre("SI", Registre.getSi());
                                     break;
                                 case "[DI+depl]":
-                                    Registre.setContenuRegistre("DI", val1);
+                                    Registre.setContenuRegistre("DI", Registre.getDi());
                                     break;
                                 case "[BP+depl]":
-                                    Registre.setContenuRegistre("BP", val1);
+                                    Registre.setContenuRegistre("BP", Registre.getBp());
                                     break;
                                 case "[BX+depl]":
-                                    Registre.setContenuRegistre("BX", val1);
+                                    Registre.setContenuRegistre("BX", Registre.getBx());
                                     break;
                                 default:
                                     System.Console.WriteLine("Error ! no such mem_depl");
@@ -863,144 +871,161 @@ namespace projet
                         }
                         else
                         {
-                            switch (mem)
+                            switch (destination)
                             {
                                 case "[BX+SI]":
-                                    Registre.setContenuRegistre("BX", val3);
-                                    Registre.setContenuRegistre("SI", val2);
+                                    Registre.setContenuRegistre("BX", Registre.getBx());
+                                    Registre.setContenuRegistre("SI", Registre.getSi());
                                     break;
                                 case "[BX+DI]":
-                                    Registre.setContenuRegistre("BX", val3);
-                                    Registre.setContenuRegistre("DI", val2);
+                                    Registre.setContenuRegistre("BX", Registre.getBx());
+                                    Registre.setContenuRegistre("DI", Registre.getDi());
                                     break;
                                 case "[BP+SI]":
-                                    Registre.setContenuRegistre("BP", val3);
-                                    Registre.setContenuRegistre("SI", val2);
+                                    Registre.setContenuRegistre("BP", Registre.getBp());
+                                    Registre.setContenuRegistre("SI", Registre.getSi());
                                     break;
                                 case "[BP+DI]":
-                                    Registre.setContenuRegistre("BP", val3);
-                                    Registre.setContenuRegistre("DI", val2);
+                                    Registre.setContenuRegistre("BP", Registre.getBp());
+                                    Registre.setContenuRegistre("DI", Registre.getDi());
                                     break;
                                 case "[SI]":
-                                    Registre.setContenuRegistre("SI", val2);
+                                    Registre.setContenuRegistre("SI", Registre.getSi());
                                     break;
                                 case "[DI]":
-                                    Registre.setContenuRegistre("DI", val2);
+                                    Registre.setContenuRegistre("DI", Registre.getDi());
                                     break;
                                 case "[BP]":
-                                    Registre.setContenuRegistre("BP", val2);
+                                    Registre.setContenuRegistre("BP", Registre.getBp());
                                     break;
                                 case "[BX]":
-                                    Registre.setContenuRegistre("BX", val2);
+                                    Registre.setContenuRegistre("BX", Registre.getBx());
                                     break;
                                 default:
                                     System.Console.WriteLine("Error ! no such mem_depl");
                                     break;
                             }
                         }
-                        Registre.setContenuRegistre(source, val1);
-                        string adresse = UAL.calculAdresse(mem, ifdepl, valdepl);
+                        string adresse = UAL.calculAdresse(destination, ifdepl, valdep);
                         MC.setRam(adresse);
                         //case_memoire = MC.recherche_mc(adresse);
                         //case_memoire.setContenu(ccm);
-                        MC.setRim(ccm);
-                        UAL.setUal1(ccm);
-                        switch (mnemonique)
-                        {
-                            //add , sub ,mov, xchg ,and , or ,xor ,cmp
-                            case "ADD":
-                                //  result = ccm + contenue de registre ; 
-                                result = (Convert.ToInt32(ccm, 16) + Convert.ToInt32(val1, 16)).ToString("X4");
-                                JeuxInstruction.SetInt(result);
-                                // positionner les flags 
-                                break;
-                            case "SUB":
-                                result = (Convert.ToInt32(ccm, 16) - Convert.ToInt32(val1, 16)).ToString("X4");
-                                JeuxInstruction.SetInt(result);
-                                break;
-                            case "MOV": // je pens que le emu ne fonction pas comme ca dans des fonctions parielle 
-                                result = val1;
-                                JeuxInstruction.SetInt(result);
-                                break;
-                            case "XCHG": // ANIMATION PARTICULIER  
-                                result = val1; 
-                                break;
-                            case "AND":
-                                result = (Convert.ToInt32(ccm, 16) & Convert.ToInt32(val1, 16)).ToString("X4");
-                                JeuxInstruction.SetInt(result);
-                                break;
-                            case "OR":
-                                result = (Convert.ToInt32(ccm, 16) | Convert.ToInt32(val1, 16)).ToString("X4");
-                                JeuxInstruction.SetInt(result);
-                                break;
-                            case "XOR":
-                                result = (Convert.ToInt32(ccm, 16) ^ Convert.ToInt32(val1, 16)).ToString("X4");
-                                JeuxInstruction.SetInt(result);
-                                break;
-                        }
-                        UAL.positionnerIndicateurs(mnemonique, result, ccm, val1);
-                        MC.setRim(result);
-                        // vu que xchng a une animation particulier on va la traiter dans le switch
-                    }
-                    else
-                    { // la on est dans ke cas de reg,reg 
-                        Registre.setContenuRegistre(mem, val1);
-                        Registre.setContenuRegistre(source, val2);
-                        UAL.setUal1(Registre.getContenuRegistre(mem));
-                        UAL.setUal2(Registre.getContenuRegistre(source));
-                        switch (mnemonique)
-                        {
-                            //add , sub ,mov, xchg ,and , or ,xor ,cmp
-                            case "ADD":
-                                //  result = ccm + contenue de registre ; 
-                                result = (Convert.ToInt32(UAL.getUal1(), 16) + Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
-                                JeuxInstruction.SetInt(result);
-                                // positionner les flags 
-                                break;
-                            case "SUB":
-                                result = (Convert.ToInt32(UAL.getUal1(), 16) - Convert.ToInt32(UAL.getUal2(), 16)).ToString("X");
-                                JeuxInstruction.SetInt(result);
-                                break;
-                            case "MOV": // je pens que le emu ne fonction pas comme ca dans des fonctions parielle 
-                                result = UAL.getUal2();
-                                JeuxInstruction.SetInt(result);
-                                break;
-                            case "XCHG": // ANIMATION PARTICULIER  
+                        cont.adresse.Text = adresse;
+                        cont.ShowDialog();
+                        string contenu = cont.userInputTextBox.Text;
 
+                        MC.setRim(contenu);
+                        UAL.setUal1(contenu);
+                        Registre.setContenuRegistre(source, Registre.getContenuRegistre(source));
+
+                        switch (mnemonique)
+                        {
+                            //add , sub ,mov, xchg ,and , or ,xor ,cmp
+                            case "ADD":
+                                //  result = ccm + contenue de registre ; 
+                                result = (Convert.ToInt32(contenu, 16) + Convert.ToInt32(Registre.getContenuRegistre(source), 16)).ToString("X4");
+                                JeuxInstruction.SetInt(result);
+                                // positionner les flags 
+                                break;
+                            case "SUB":
+                                result = (Convert.ToInt32(contenu, 16) - Convert.ToInt32(Registre.getContenuRegistre(source), 16)).ToString("X4");
+                                JeuxInstruction.SetInt(result);
+                                break;
+                            case "MOV": // je pens que le emu ne fonction pas comme ca dans des fonctions parielle 
+                                result = Registre.getContenuRegistre(source);
+                                JeuxInstruction.SetInt(result);
+                                break;
+                            case "XCHG": // ANIMATION PARTICULIER  
+                                         //  result = val1; 
                                 break;
                             case "AND":
-                                result = (Convert.ToInt32(UAL.getUal1(), 16) & Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                                result = (Convert.ToInt32(contenu, 16) & Convert.ToInt32(Registre.getContenuRegistre(source), 16)).ToString("X4");
                                 JeuxInstruction.SetInt(result);
                                 break;
                             case "OR":
-                                result = (Convert.ToInt32(UAL.getUal1(), 16) | Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                                result = (Convert.ToInt32(contenu, 16) | Convert.ToInt32(Registre.getContenuRegistre(source), 16)).ToString("X4");
                                 JeuxInstruction.SetInt(result);
                                 break;
                             case "XOR":
-                                result = (Convert.ToInt32(UAL.getUal1(), 16) ^ Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                                result = (Convert.ToInt32(contenu, 16) ^ Convert.ToInt32(Registre.getContenuRegistre(source), 16)).ToString("X4");
                                 JeuxInstruction.SetInt(result);
                                 break;
                         }
-                        JeuxInstruction.SetInt(result);
+                        if (mnemonique != "XCHG")
+                        {
+                            UAL.positionnerIndicateurs(mnemonique, result, contenu, Registre.getContenuRegistre(source));
+                            MC.setRim(result);
+                            Registre.setContenuRegistre(source, Registre.getContenuRegistre(source));
+                            // vu que xchng a une animation particulier on va la traiter dans le switch
+                        }
+                        else
+                        { // la on est dans ke cas de reg,reg 
+                           // Registre.setContenuRegistre(destination, Registre.getContenuRegistre(destination));
+                           // Registre.setContenuRegistre(source, Registre.getContenuRegistre(source));
+                            UAL.setUal1(Registre.getContenuRegistre(destination));
+                            UAL.setUal2(Registre.getContenuRegistre(source));
+                            switch (mnemonique)
+                            {
+                                //add , sub ,mov, xchg ,and , or ,xor ,cmp
+                                case "ADD":
+                                    //  result = ccm + contenue de registre ; 
+                                    result = (Convert.ToInt32(UAL.getUal1(), 16) + Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                                    JeuxInstruction.SetInt(result);
+                                    // positionner les flags 
+                                    break;
+                                case "SUB":
+                                    result = (Convert.ToInt32(UAL.getUal1(), 16) - Convert.ToInt32(UAL.getUal2(), 16)).ToString("X");
+                                    JeuxInstruction.SetInt(result);
+                                    break;
+                                case "MOV": // je pens que le emu ne fonction pas comme ca dans des fonctions parielle 
+                                    result = UAL.getUal2();
+                                    JeuxInstruction.SetInt(result);
+                                    break;
+                                case "XCHG": // ANIMATION PARTICULIER  
+
+                                    break;
+                                case "AND":
+                                    result = (Convert.ToInt32(UAL.getUal1(), 16) & Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                                    JeuxInstruction.SetInt(result);
+                                    break;
+                                case "OR":
+                                    result = (Convert.ToInt32(UAL.getUal1(), 16) | Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                                    JeuxInstruction.SetInt(result);
+                                    break;
+                                case "XOR":
+                                    result = (Convert.ToInt32(UAL.getUal1(), 16) ^ Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                                    JeuxInstruction.SetInt(result);
+                                    break;
+                            }
+                            JeuxInstruction.SetInt(result);
+                           // if (mnemonique != "XCHG")
+                         //   {
+                                UAL.positionnerIndicateurs(mnemonique, result, Registre.getContenuRegistre(destination), Registre.getContenuRegistre(source));
+                                Registre.setContenuRegistre(destination, result);
+                                // vu que xchng a une animation particulier on va la traiter dans le switch
+                          //  }
+                        }
                     }
                     break;
+                /*
                 case "Reg16,Reg16/Mem16":
                    format_reg_regOUmem(mnemonique, format, mem_b, mem, ifdepl, valdepl, ccm, source, val1, val2, val3);
+                    break;*/
+                    case "AX,Reg16":
+                    format_ax_reg(mnemonique,source);
                     break;
-                case "AX,Reg16":
-                    format_ax_reg(mnemonique, source, val1, val2, format, mem_b);
+                    case "AX,imm16":
+                    format_ax_imm16(mnemonique,val_imm16);
                     break;
-                case "AX,imm16":
-                    format_ax_imm16(mnemonique, val1, val2,format, mem_b);
-                    break;
-                case "Reg16":
-                    format_reg16(mnemonique, source, val1 , format, mem_b);
-                    break;
+            case "Reg16":
+                format_reg16(mnemonique, destination);
+                break;
+
                 case "Reg16,imm16":
-                    format_reg16_imm16(mnemonique, source, val1, val3, format, mem_b);
+                    format_reg16_imm16(mnemonique, destination,val_imm16);
                     break;
                 // mem16
-                */
+                
                 case "Mem16":
                     //decodage -- delay
                     if (ifdepl)

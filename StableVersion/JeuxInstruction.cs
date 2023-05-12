@@ -42,75 +42,75 @@ namespace ArchiMind
             switch (Indicateur.getZero())
             {
                 case '1':
-                    Z.Background = new SolidColorBrush(Colors.Red);
+                    Z.Background = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case '0':
-                    Z.Background = new SolidColorBrush(Colors.Blue);
+                    Z.Background = new SolidColorBrush(Colors.DarkOliveGreen);
                     break;
                     // default: Z.Fill = new SolidColorBrush(Colors.Black); break;
             }
             switch (Indicateur.getSigne())
             {
                 case '1':
-                    S.Background = new SolidColorBrush(Colors.Red);
+                    S.Background = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case '0':
-                    S.Background = new SolidColorBrush(Colors.Blue);
+                    S.Background = new SolidColorBrush(Colors.DarkOliveGreen);
                     break;
             }
             switch (Indicateur.getOverflow())
             {
                 case '1':
-                    D.Background = new SolidColorBrush(Colors.Red);
+                    D.Background = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case '0':
-                    D.Background = new SolidColorBrush(Colors.Blue);
+                    D.Background = new SolidColorBrush(Colors.DarkOliveGreen);
                     break;
             }
 
             switch (Indicateur.getRetenu())
             {
                 case '1':
-                    R.Background = new SolidColorBrush(Colors.Red);
+                    R.Background = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case '0':
-                    R.Background = new SolidColorBrush(Colors.Blue);
+                    R.Background = new SolidColorBrush(Colors.DarkOliveGreen);
                     break;
             }
             switch (Indicateur.getretenuAuxiliaire())
             {
                 case '1':
-                    A.Background = new SolidColorBrush(Colors.Red);
+                    A.Background = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case '0':
-                    A.Background = new SolidColorBrush(Colors.Blue);
+                    A.Background = new SolidColorBrush(Colors.DarkOliveGreen);
                     break;
             }
             switch (Indicateur.getParite())
             {
                 case '1':
-                    P.Background = new SolidColorBrush(Colors.Red);
+                    P.Background = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case '0':
-                    P.Background = new SolidColorBrush(Colors.Blue);
+                    P.Background = new SolidColorBrush(Colors.DarkOliveGreen);
                     break;
             }
             switch (Indicateur.getTrace())
             {
                 case '1':
-                    T.Background = new SolidColorBrush(Colors.Red);
+                    T.Background = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case '0':
-                    T.Background = new SolidColorBrush(Colors.Blue);
+                    T.Background = new SolidColorBrush(Colors.DarkOliveGreen);
                     break;
             }
             switch (Indicateur.getAutoIncrDec())
             {
                 case '1':
-                    I.Background = new SolidColorBrush(Colors.Red);
+                    I.Background = new SolidColorBrush(Colors.GreenYellow);
                     break;
                 case '0':
-                    I.Background = new SolidColorBrush(Colors.Blue);
+                    I.Background = new SolidColorBrush(Colors.DarkOliveGreen);
                     break;
             }
         }
