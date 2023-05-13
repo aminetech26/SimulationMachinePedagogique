@@ -380,10 +380,10 @@ namespace projet
                 //executer_simulation_phase_a_phase("programme", inst.getMnemonique(), inst.getFormat(), inst.getmem(), inst.getDestination(), inst.getValDepl(), inst.getSource(), inst.getifdepl());//getValImm16
             }
         }//
-        private static async void format_reg_regOUmem(string mnemonique, string format, bool mem_b, string distinataire, bool ifdepl, string valdepl, string contenueCaseMemoire, string source, string val1, string val2, string val3  )
+        private static  void format_reg_regOUmem(string mnemonique,  bool mem_b, string distinataire, bool ifdepl, string valdepl, string source )
         {
 
-
+            ContenuCaseMemoirePopUp cont = new ContenuCaseMemoirePopUp();
             // le contenue de distinataire est toujour dans ual1
             string adresse = "";
             string result = "";
@@ -394,32 +394,32 @@ namespace projet
                     switch (source)
                     {
                         case "[BX+SI+depl]":
-                            Registre.setContenuRegistre("BX", val2);
-                            Registre.setContenuRegistre("SI", val3);
+                            Registre.setContenuRegistre("BX", Registre.getBx());
+                            Registre.setContenuRegistre("SI", Registre.getSi());
                             break;
                         case "[BX+DI+depl]":
-                            Registre.setContenuRegistre("BX", val2);
-                            Registre.setContenuRegistre("DI", val3);
+                            Registre.setContenuRegistre("BX", Registre.getBx());
+                            Registre.setContenuRegistre("DI", Registre.getDi());
                             break;
                         case "[BP+SI+depl]":
-                            Registre.setContenuRegistre("BP", val2);
-                            Registre.setContenuRegistre("SI", val3);
+                            Registre.setContenuRegistre("BP", Registre.getBp());
+                            Registre.setContenuRegistre("SI", Registre.getSi());
                             break;
                         case "[BP+DI+depl]":
-                            Registre.setContenuRegistre("BP", val2);
-                            Registre.setContenuRegistre("DI", val3);
+                            Registre.setContenuRegistre("BP", Registre.getBp());
+                            Registre.setContenuRegistre("DI", Registre.getDi());
                             break;
                         case "[SI+depl]":
-                            Registre.setContenuRegistre("SI", val2);
+                            Registre.setContenuRegistre("SI", Registre.getSi());
                             break;
                         case "[DI+depl]":
-                            Registre.setContenuRegistre("DI", val2);
+                            Registre.setContenuRegistre("DI", Registre.getDi());
                             break;
                         case "[BP+depl]":
-                            Registre.setContenuRegistre("BP", val2);
+                            Registre.setContenuRegistre("BP", Registre.getBp());
                             break;
                         case "[BX+depl]":
-                            Registre.setContenuRegistre("BX", val2);
+                            Registre.setContenuRegistre("BX", Registre.getBx());
                             break;
                         default:
                             System.Console.WriteLine("Error ! no such mem_depl");
@@ -431,32 +431,32 @@ namespace projet
                     switch (source)
                     {
                         case "[BX+SI]":
-                            Registre.setContenuRegistre("BX", val2);
-                            Registre.setContenuRegistre("SI", val3);
+                            Registre.setContenuRegistre("BX", Registre.getBx());
+                            Registre.setContenuRegistre("SI", Registre.getSi());
                             break;
                         case "[BX+DI]":
-                            Registre.setContenuRegistre("BX", val2);
-                            Registre.setContenuRegistre("DI", val3);
+                            Registre.setContenuRegistre("BX", Registre.getBx());
+                            Registre.setContenuRegistre("DI", Registre.getDi());
                             break;
                         case "[BP+SI]":
-                            Registre.setContenuRegistre("BP", val2);
-                            Registre.setContenuRegistre("SI", val3);
+                            Registre.setContenuRegistre("BP", Registre.getBp());
+                            Registre.setContenuRegistre("SI", Registre.getSi());
                             break;
                         case "[BP+DI]":
-                            Registre.setContenuRegistre("BP", val2);
-                            Registre.setContenuRegistre("DI", val3);
+                            Registre.setContenuRegistre("BP", Registre.getBp());
+                            Registre.setContenuRegistre("DI", Registre.getDi());
                             break;
                         case "[SI]":
-                            Registre.setContenuRegistre("SI", val2);
+                            Registre.setContenuRegistre("SI", Registre.getSi());
                             break;
                         case "[DI]":
-                            Registre.setContenuRegistre("DI", val2);
+                            Registre.setContenuRegistre("DI", Registre.getDi());
                             break;
                         case "[BP]":
-                            Registre.setContenuRegistre("BP", val2);
+                            Registre.setContenuRegistre("BP", Registre.getBp());
                             break;
                         case "[BX]":
-                            Registre.setContenuRegistre("BX", val2);
+                            Registre.setContenuRegistre("BX", Registre.getBx());
                             break;
                         default:
                             System.Console.WriteLine("Error ! no such mem_depl");
@@ -465,9 +465,12 @@ namespace projet
                 }
                 adresse = UAL.calculAdresse(source, ifdepl, valdepl);
                 // animation(ual,ram,adresse) ; 
-                MC.setRim(contenueCaseMemoire);
+                cont.adresse.Text = adresse;
+                cont.ShowDialog();
+                string contenu = cont.userInputTextBox.Text;
+                MC.setRim(contenu);
                 UAL.setUal2(MC.getRim());
-                Registre.setContenuRegistre(distinataire, val1);
+                Registre.setContenuRegistre(distinataire, Registre.getContenuRegistre(distinataire));
                 UAL.setUal1(Registre.getContenuRegistre(distinataire));
                 string resultf;
                 switch (mnemonique)
@@ -512,15 +515,18 @@ namespace projet
                 }
                 UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
                 string r = JeuxInstruction.GetInt();
-                MC.setRim(result);
+               
                 // vu que xchng a une animation particulier on va la traiter dans le switch
-                if (mnemonique == "XCHG") { }
+              
+                    Registre.setContenuRegistre(distinataire, result); 
+
+              
             }
             else
             {
 
-                Registre.setContenuRegistre(distinataire, val1);
-                Registre.setContenuRegistre(source, val2);
+                Registre.setContenuRegistre(distinataire, Registre.getContenuRegistre(distinataire));
+                Registre.setContenuRegistre(source, Registre.getContenuRegistre(source));
                 UAL.setUal2(Registre.getContenuRegistre(source));
                 UAL.setUal1(Registre.getContenuRegistre(distinataire));
                 // animation(reg,ual1,donne);
@@ -558,7 +564,11 @@ namespace projet
                 }
                 // sortie to registr
                 UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
-                Registre.setContenuRegistre(distinataire, result);
+                if (mnemonique != "XCHG")
+                {
+                    Registre.setContenuRegistre(distinataire, result);
+                }
+                
                 JeuxInstruction.SetInt(result);
                  }
                }
@@ -1007,10 +1017,10 @@ namespace projet
                         }
                     }
                     break;
-                /*
+               
                 case "Reg16,Reg16/Mem16":
-                   format_reg_regOUmem(mnemonique, format, mem_b, mem, ifdepl, valdepl, ccm, source, val1, val2, val3);
-                    break;*/
+                   format_reg_regOUmem(mnemonique,mem, destination, ifdepl ,valdep , source);
+                    break;
                     case "AX,Reg16":
                     format_ax_reg(mnemonique,source);
                     break;
