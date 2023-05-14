@@ -1376,7 +1376,7 @@ namespace ArchiMind
                 }
                 adresse = UAL.calculAdresse(source, ifdepl, valdepl);
                 // animation(ual,ram,adresse) ; 
-                if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                 Animation.AnimateImage3(Images[79], Images[81], Images[84], -1165, -30, -550, -365, 300, 1);
                 Animation.AnimateImage3(Images[78], Images[82], Images[85], -1165, -30, -550, -365, 300, 1);
                 Animation.AnimateImage3(Images[80], Images[83], Images[86], -1165, -30, -550, -365, 300, 1);
@@ -1438,7 +1438,7 @@ namespace ArchiMind
                 }
                 UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
                 string r = JeuxInstruction.GetInt();
-                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                 Animation.AnimateImage2(Images[70], Images[73], -1165, -30, -1210, -465, 1);
                 Animation.AnimateImage2(Images[71], Images[74], -1165, -30, -1210, -465, 1);
                 Animation.AnimateImage2(Images[69], Images[72], -1165, -30, -1210, -465, 1);
@@ -1463,7 +1463,7 @@ namespace ArchiMind
                 UAL.setUal1(Registre.getContenuRegistre(distinataire));
                 // animation(reg,ual1,donne);
                 //Registre to ual1  
-                if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                 Animation.AnimateImage(Images[21], Images[6], -900, 8, -70, 1);
                 Animation.AnimateImage(Images[22], Images[7], -900, 8, -70, 1);
                 Animation.AnimateImage(Images[23], Images[8], -900, 8, -70, 1);
@@ -1511,7 +1511,7 @@ namespace ArchiMind
                 // animation(ual, registre, donne);
                 // sortie to registr
                 UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
-                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                 Animation.AnimateImage2(Images[57], Images[54], -1165, -30, -1210, -465, 1);
                 Animation.AnimateImage2(Images[58], Images[55], -1165, -30, -1210, -465, 1);
                 Animation.AnimateImage2(Images[59], Images[56], -1165, -30, -1210, -465, 1);
@@ -1528,7 +1528,7 @@ namespace ArchiMind
         {
             Registre.setAx(valAx);
             Registre.setContenuRegistre(source, valsource);
-            if (Animation.btnclick == true) { Phase2(mnenmonique, format, RegM); await Task.Delay(20000); }
+            if (Animation.btnclick == true) { Phase2(mnenmonique, format, RegM); await Task.Delay(5000); }
             // animation (registre , ual1 , donne ); 
             Animation.AnimateImage(Images[21], Images[6], -900, 8, -70, 1);
             Animation.AnimateImage(Images[22], Images[7], -900, 8, -70, 1);
@@ -1550,7 +1550,7 @@ namespace ArchiMind
                 //xchg , 
                 case "XCHG":
                     // animation (ual , registre , donne )
-                    if (Animation.btnclick == true) { Phase3(mnenmonique, format, RegM); await Task.Delay(20000); }
+                    if (Animation.btnclick == true) { Phase3(mnenmonique, format, RegM); await Task.Delay(5000); }
                     Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
                     Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
                     Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
@@ -1575,7 +1575,7 @@ namespace ArchiMind
             // MC.AjouterCase(Convert.ToInt32("0101",16),case_memoire); 
             // fin de l'intialisation 
             Registre.setAx(valAx);
-            if (Animation.btnclick == true) { Phase2(mnemonique, format, RegM); await Task.Delay(20000); }
+            if (Animation.btnclick == true) { Phase2(mnemonique, format, RegM); await Task.Delay(5000); }
 
             // animation(registre,ual1,donne); 
             Animation.AnimateImage(Images[21], Images[9], -1020, 8, -70, 1);
@@ -1627,7 +1627,7 @@ namespace ArchiMind
             }
             // animation (UAL,registre,donne );
             UAL.positionnerIndicateurs(mnemonique, result, r, r1);
-            if (Animation.btnclick == true) { Phase3(mnemonique, format, RegM); await Task.Delay(10000); }
+            if (Animation.btnclick == true) { Phase3(mnemonique, format, RegM); await Task.Delay(5000); }
             Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
@@ -1647,7 +1647,7 @@ namespace ArchiMind
             string result = "";
             // animation (registre, UAL1, donne ); 
             //Registre to ual1  
-            if (Animation.btnclick == true) { Phase2(mnemonique, format, RegM); await Task.Delay(20000); }
+            if (Animation.btnclick == true) { Phase2(mnemonique, format, RegM); await Task.Delay(5000); }
             Animation.AnimateImage(Images[21], Images[6], -900, 8, -70, 1);
             Animation.AnimateImage(Images[22], Images[7], -900, 8, -70, 1);
             Animation.AnimateImage(Images[23], Images[8], -900, 8, -70, 1);
@@ -1677,7 +1677,7 @@ namespace ArchiMind
             UAL.positionnerIndicateurs(mnemonique, result);
             // animation (ual,registre,donne); 
             // ual to registr
-            if (Animation.btnclick == true) { Phase3(mnemonique, format, RegM); await Task.Delay(20000); }
+            if (Animation.btnclick == true) { Phase3(mnemonique, format, RegM); await Task.Delay(5000); }
             Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
@@ -1698,7 +1698,7 @@ namespace ArchiMind
             Registre.setContenuRegistre(reg, valReg);
             // animation(registre,UAL1,donne); 
             //Registre to ual1  
-            if (Animation.btnclick == true) { Phase2(mnemonique, format, RegM); await Task.Delay(20000); }
+            if (Animation.btnclick == true) { Phase2(mnemonique, format, RegM); await Task.Delay(5000); }
             Animation.AnimateImage(Images[21], Images[9], -1020, 8, -70, 1);
             Animation.AnimateImage(Images[22], Images[10], -1020, 8, -70, 1);
             Animation.AnimateImage(Images[23], Images[11], -1020, 8, -70, 1);
@@ -1737,7 +1737,7 @@ namespace ArchiMind
             UAL.positionnerIndicateurs(mnemonique, result);
             //animation(ual , registre , donne  )  ;
             // // ual to registr
-            if (Animation.btnclick == true) { Phase3(mnemonique, format, RegM); await Task.Delay(20000); }
+            if (Animation.btnclick == true) { Phase3(mnemonique, format, RegM); await Task.Delay(5000); }
             Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
             Animation.AnimateImage2(Images[20], Images[17], -1165, -30, -1210, -465, 1);
@@ -1876,7 +1876,7 @@ namespace ArchiMind
             case_memoire.setContenu(ccm);
             int delay = 0;
             Co.setco("0100");
-            if (Animation.btnclick == true) { Phase1(); await Task.Delay(20000); }
+            if (Animation.btnclick == true) { Phase1(); await Task.Delay(5000); }
 
             //page phase1;
             //animation(source : "co",destinataire : "ram",type : "adresse");
@@ -2003,7 +2003,7 @@ namespace ArchiMind
                         }
                         Registre.setContenuRegistre(source, val1);
                         string adresse = UAL.calculAdresse(mem, ifdepl, valdepl);
-                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                         // animation(UAL,RAM,adresse); 
                         Animation.AnimateImage3(Images[79], Images[81], Images[84], -1165, -30, -550, -365, 300, 1);
                         Animation.AnimateImage3(Images[78], Images[82], Images[85], -1165, -30, -550, -365, 300, 1);
@@ -2057,7 +2057,7 @@ namespace ArchiMind
                                 JeuxInstruction.SetInt(result);
                                 break;
                         }
-                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                         UAL.positionnerIndicateurs(mnemonique, result, ccm, val1);
                         Animation.AnimateImage2(Images[43], Images[37], -1165, -30, -170, -100, 1);
                         Animation.AnimateImage2(Images[42], Images[36], -1165, -30, -170, -100, 1);
@@ -2080,7 +2080,7 @@ namespace ArchiMind
                         Registre.setContenuRegistre(mem, val1);
                         Registre.setContenuRegistre(source, val2);
                         // animation(registre,ual1,donne) ; 
-                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                         //Registre to ual1  
                         Animation.AnimateImage(Images[21], Images[6], -900, 8, -70, 1);
                         Animation.AnimateImage(Images[22], Images[7], -900, 8, -70, 1);
@@ -2128,7 +2128,7 @@ namespace ArchiMind
                                 JeuxInstruction.SetInt(result);
                                 break;
                         }
-                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                         UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
                         Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
                         Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
@@ -2240,13 +2240,13 @@ namespace ArchiMind
                         case "JMP":
                             Co.setco(ccm);
                             MC.setRam(Co.getco());
-                           //MC.setRim(MC.recherche_mc(MC.getRam()).getContenu());
+                            //MC.setRim(MC.recherche_mc(MC.getRam()).getContenu());
                             UAL.positionnerIndicateurs("JMP");
                             //normalement c'est ca mnkmlush l'execution de la suite --
                             break;
                         case "LOOP":
                             Registre.setSp("0020");
-                            string XX; 
+                            string XX;
                             for (int i = 0; i < int.Parse(Registre.getCx()) - 1; i++)
                             {
                                 Registre.setCx(Convert.ToString((int.Parse(Registre.getCx()) - 1)));
@@ -2254,7 +2254,7 @@ namespace ArchiMind
                                 Co.setco(UAL.calculAdresse(mem, ifdepl, valdepl));
                                 MC.setRam(Co.getco());
 
-                               // executer_simulation_phase_a_phase("INC", "Reg16", false, "SP", false, "0000", "0000", "SP",Registre.getSp(), "0000", "0000", Images, Co.getco());
+                                // executer_simulation_phase_a_phase("INC", "Reg16", false, "SP", false, "0000", "0000", "SP",Registre.getSp(), "0000", "0000", Images, Co.getco());
                                 Co.incCo();
                                 Co.CoforLoop(Co.getco());
                                 await Task.Delay(TimeSpan.FromSeconds(2));
@@ -2368,6 +2368,7 @@ namespace ArchiMind
                             break;
                     }
 
+
                     break;
                 case "Reg16/mem16":
                     if (mem_b)
@@ -2449,7 +2450,7 @@ namespace ArchiMind
                         //hover (nombreregistre,reg1,reg2);
 
                         //animation (Registres,RAM,adresse)
-                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                         Animation.AnimateImage3(Images[79], Images[81], Images[84], -1165, -30, -550, -365, 300, 1);
                         Animation.AnimateImage3(Images[78], Images[82], Images[85], -1165, -30, -550, -365, 300, 1);
                         Animation.AnimateImage3(Images[80], Images[83], Images[86], -1165, -30, -550, -365, 300, 1);
@@ -2478,7 +2479,7 @@ namespace ArchiMind
                                 JeuxInstruction.SetInt(result);
                                 UAL.positionnerIndicateurs("INC", result, UAL.getUal1(), UAL.getUal2());
                                 //animation (UAL,rim);
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 Animation.AnimateImage2(Images[43], Images[37], -1165, -30, -170, -100, 1);
                                 Animation.AnimateImage2(Images[42], Images[36], -1165, -30, -170, -100, 1);
                                 Animation.AnimateImage2(Images[44], Images[38], -1165, -30, -170, -100, 1);
@@ -2495,7 +2496,7 @@ namespace ArchiMind
                                 JeuxInstruction.SetInt(result);
                                 UAL.positionnerIndicateurs("DEC", result, UAL.getUal1(), UAL.getUal2());
                                 //animation (UAL,rim);
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 Animation.AnimateImage2(Images[43], Images[37], -1165, -30, -170, -100, 1);
                                 Animation.AnimateImage2(Images[42], Images[36], -1165, -30, -170, -100, 1);
                                 Animation.AnimateImage2(Images[44], Images[38], -1165, -30, -170, -100, 1);
@@ -2518,7 +2519,7 @@ namespace ArchiMind
                                 BigInteger bi2 = BigInteger.Parse(Registre.getBx(), NumberStyles.HexNumber);
                                 BigInteger result_mul = bi1 * bi2;
                                 string hexResult = result_mul.ToString("X8");//32 bits representation
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("MUL", hexResult, UAL.getUal1(), UAL.getUal2());
                                 //animation(UAL,registre,donnee);
                                 Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
@@ -2538,7 +2539,7 @@ namespace ArchiMind
                                 JeuxInstruction.SetInt(hexResult);
                                 UAL.positionnerIndicateurs("NOT", hexResult, UAL.getUal1(), UAL.getUal2());
                                 //animation (UAL,rim);
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 Animation.AnimateImage2(Images[43], Images[37], -1165, -30, -170, -100, 1);
                                 Animation.AnimateImage2(Images[42], Images[36], -1165, -30, -170, -100, 1);
                                 Animation.AnimateImage2(Images[44], Images[38], -1165, -30, -170, -100, 1);
@@ -2634,7 +2635,7 @@ namespace ArchiMind
                         //hover (nombreregistre,reg1,reg2);
 
                         //animation (Registres,RAM,adresse)
-                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                         Animation.AnimateImage3(Images[79], Images[81], Images[84], -1165, -30, -550, -365, 300, 1);
                         Animation.AnimateImage3(Images[78], Images[82], Images[85], -1165, -30, -550, -365, 300, 1);
                         Animation.AnimateImage3(Images[80], Images[83], Images[86], -1165, -30, -550, -365, 300, 1);
@@ -2662,7 +2663,7 @@ namespace ArchiMind
                         Animation.AnimateImage(Images[31], Images[7], -910, 8, -70, 1);
                         Animation.AnimateImage(Images[32], Images[8], -910, 6, -70, 1);
                         UAL.setUal2(ccm);
-                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(10000); }
+                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                         switch (mnemonique)
                         {
 
@@ -2679,7 +2680,7 @@ namespace ArchiMind
                                 //Animation.AnimateImage1(Images[48], 300, 190, 1);
                                 //Animation.AnimateImage1(Images[49], 300, 190, 1);
                                 //Animation.AnimateImage1(Images[50], 300, 190, 1);
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
                                 Animation.AnimateImage(Images[53], Images[11], -910, 6, -70, 1);
@@ -2703,7 +2704,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("SUB", result, UAL.getUal1(), UAL.getUal2());
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -2727,7 +2728,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("MOV", result, UAL.getUal1(), UAL.getUal2());
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -2751,7 +2752,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("AND", result, UAL.getUal1(), UAL.getUal2());
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -2776,7 +2777,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("OR", result, UAL.getUal1(), UAL.getUal2());
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -2801,7 +2802,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("XOR", result, UAL.getUal1(), UAL.getUal2());
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -2845,7 +2846,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("SHL", str_res, val2, ccm);
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -2888,7 +2889,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("SHR", str_res, val2, ccm);
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -2940,7 +2941,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("SAL", str_res, val2, ccm);
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -2991,7 +2992,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("SAR", str_res, val2, ccm);
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -3036,7 +3037,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("ROR", destination.ToString("X4"), val2, ccm);
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -3083,7 +3084,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("ROL", destination.ToString("X4"), val2, ccm);
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -3130,7 +3131,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("RCR", destination.ToString("X4"), val2, ccm);
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -3188,7 +3189,7 @@ namespace ArchiMind
                                 //animation(Registre,co,adresse)
                                 Co.setco(adresse);
                                 //animation(CO,ram,adresse)
-                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                                if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                                 UAL.positionnerIndicateurs("RCL", destination.ToString("X4"), val2, ccm);
                                 Animation.AnimateImage(Images[51], Images[9], -910, 10, -70, 1);
                                 Animation.AnimateImage(Images[52], Images[10], -910, 8, -70, 1);
@@ -3217,7 +3218,7 @@ namespace ArchiMind
                     else
                     {//reg,imm16
                      //animation registre to ual1
-                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                         Animation.AnimateImage(Images[21], Images[9], -1020, 8, -70, 1);
                         Animation.AnimateImage(Images[22], Images[10], -1020, 8, -70, 1);
                         Animation.AnimateImage(Images[23], Images[11], -1020, 8, -70, 1);
@@ -3728,7 +3729,7 @@ namespace ArchiMind
                         }
                         //hover (nombreregistre,reg1,reg2);
                         //animation (Registres,RAM,adresse)// ual ram 
-                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                         Animation.AnimateImage3(Images[79], Images[81], Images[84], -1165, -30, -550, -365, 300, 1);
                         Animation.AnimateImage3(Images[78], Images[82], Images[85], -1165, -30, -550, -365, 300, 1);
                         Animation.AnimateImage3(Images[80], Images[83], Images[86], -1165, -30, -550, -365, 300, 1);
@@ -4055,7 +4056,7 @@ namespace ArchiMind
                                 System.Console.WriteLine("error ! no such mnemonique");
                                 break;
                         }
-                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                         UAL.positionnerIndicateurs(mnemonique, JeuxInstruction.GetInt(), val2, ccm);
                         Animation.AnimateImage2(Images[43], Images[37], -1165, -30, -170, -100, 1);
                         Animation.AnimateImage2(Images[42], Images[36], -1165, -30, -170, -100, 1);
@@ -4065,7 +4066,7 @@ namespace ArchiMind
                     else
                     {//reg,cx
                      //animation registre to ual1
-                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase2(mnemonique, format, mem_b); await Task.Delay(5000); }
                         Animation.AnimateImage(Images[21], Images[6], -900, 8, -70, 1);
                         Animation.AnimateImage(Images[22], Images[7], -900, 8, -70, 1);
                         Animation.AnimateImage(Images[23], Images[8], -900, 8, -70, 1);
@@ -4341,7 +4342,7 @@ namespace ArchiMind
                                 System.Console.WriteLine("error ! no such mnemonique");
                                 break;
                         }
-                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(20000); }
+                        if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                         UAL.positionnerIndicateurs("ROR", JeuxInstruction.GetInt(), val3, Registre.getCx());
                         Animation.AnimateImage2(Images[18], Images[15], -1165, -30, -1210, -465, 1);
                         Animation.AnimateImage2(Images[19], Images[16], -1165, -30, -1210, -465, 1);
@@ -4354,11 +4355,6 @@ namespace ArchiMind
             }
 
         }
-
-
-        //------------------------------------------------------------------------------------------
-
-
 
 
         public string convertir_instruction_Lmnemonique(Instruction instruction)
