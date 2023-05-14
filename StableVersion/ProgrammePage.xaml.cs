@@ -45,6 +45,11 @@ namespace projet
 
         static int currentLineNumber = 1;
         List<Instruction> programInstructions = new List<Instruction>();
+        public ProgrammePage()
+        {
+            InitializeComponent();
+            Loaded += ProgrammePage_Loaded;
+        }
         public ProgrammePage(string filePath = "")
         {
             InitializeComponent();
