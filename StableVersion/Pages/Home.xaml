@@ -91,7 +91,7 @@
             </Grid>
 
             <Grid Grid.Column="1" HorizontalAlignment="Left" Margin="20 0"  >
-                <Button x:Name="Button2" Style="{StaticResource RoundedButtonStyle3}"  
+                <Button Click="ButtonOuvrir_Click" x:Name="Button2" Style="{StaticResource RoundedButtonStyle3}"  
                         HorizontalAlignment="Center" VerticalAlignment="Center"
                         Height="50" Width="300" Margin="0">
 

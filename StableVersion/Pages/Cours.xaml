@@ -60,7 +60,7 @@
                     </StackPanel>
                 </Button>
                 
-                <Button x:Name="Button3" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="2">
+                <Button Click="Exemple1_Click" x:Name="Exemple1" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="2">
                     <StackPanel Orientation="Horizontal" Width="500">
                         <Image Source="/Pages/images/code.png" Height="Auto" Width="32" RenderTransformOrigin="0.5,10.20" Margin="22,0,0,0"/>
                     <TextBlock Text="Exemple 3 : Programme ASSEMBLEUR" TextAlignment="Left" FontFamily="Open Sans"
@@ -69,7 +69,7 @@
                     </StackPanel>
                 </Button>
                 
-                <Button x:Name="Button4" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="3">
+                <Button Click="Exemple2_Click" x:Name="Exemple2" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="3">
                     <StackPanel Orientation="Horizontal" Width="500">
                         <Image Source="/Pages/images/code.png" Height="Auto" Width="32" RenderTransformOrigin="0.5,10.20" Margin="22,0,0,0"/>
                         <TextBlock Text="Exemple 4 : Programme ASSEMBLEUR" TextAlignment="Left" FontFamily="Open Sans"
@@ -78,7 +78,7 @@
                     </StackPanel>
                 </Button>
                 
-                <Button x:Name="Button5" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="4">
+                <Button Click="Exemple3_Click" x:Name="Exemple3" Style="{DynamicResource RoundedButtonStyle4}" Height="50" Width="520" Margin="20,10" Grid.Row="4">
                     <StackPanel Orientation="Horizontal" Width="500">
                         <Image Source="/Pages/images/code.png" Height="Auto" Width="32" RenderTransformOrigin="0.5,10.20" Margin="22,0,0,0"/>
                         <TextBlock Text="Exemple 5 : Programme ASSEMBLEUR" TextAlignment="Left" FontFamily="Open Sans"

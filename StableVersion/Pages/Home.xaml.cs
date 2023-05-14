@@ -116,5 +116,25 @@ namespace projet.Pages
         {
             Grid_Language.Visibility = Visibility.Hidden;
         }
+
+        private void ButtonOuvrir_Click(object sender, RoutedEventArgs e)
+        {
+                Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+                dlg.FileName = "Program"; // Default file name
+                dlg.DefaultExt = ".archimind"; // Default file extension
+                dlg.Filter = "Archimind files (.archimind)|*.archimind"; // Filter files by extension
+
+                Nullable<bool> result = dlg.ShowDialog();
+
+                if (result == true)
+                {
+                    string filePath = dlg.FileName;//return the full path not only the name as it seems.
+                    ProgrammePage firstPage = new ProgrammePage(filePath);
+                    nchlhtmchi();
+                    Frame frame = (Frame)contextofwindow.FindName("window");
+                    frame.NavigationService.Navigate(firstPage);
+                    //this.NavigationService.Navigate(firstPage);
+                 }
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace projet
             InitializeComponent();
             mainpage = this;
             Home.setcontex(mainpage);
+            Cours.setcontex(mainpage);
             Quizs_Exercices.setcontex(mainpage);
             Page1.setcontex(mainpage);
             window.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Page1.xaml", UriKind.RelativeOrAbsolute));

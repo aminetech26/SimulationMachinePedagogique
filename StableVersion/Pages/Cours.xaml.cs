@@ -26,6 +26,19 @@ namespace projet.Pages
             InitializeComponent();
         }
 
+        private static MainWindow contextofwindow;
+
+        public static void setcontex(MainWindow contex)
+        {
+            contextofwindow = contex;
+        }
+
+        public static void nchlhtmchi()
+        {
+            Frame frame = (Frame)contextofwindow.FindName("window");
+            frame.Content = null;
+        }
+
 
         private void Grid_SizeChanged(object sender, SizeChangedEventArgs e)
         {
@@ -39,12 +52,12 @@ namespace projet.Pages
                 Button1.Width = 620;
                 Button2.Height = 60;
                 Button2.Width = 620;
-                Button3.Height = 60;
-                Button3.Width = 620;
-                Button4.Height = 60;
-                Button4.Width = 620;
-                Button5.Height = 60;
-                Button5.Width = 620;
+                Exemple1.Height = 60;
+                Exemple1.Width = 620;
+                Exemple2.Height = 60;
+                Exemple2.Width = 620;
+                Exemple3.Height = 60;
+                Exemple3.Width = 620;
             }
             else
             {
@@ -56,12 +69,12 @@ namespace projet.Pages
                 Button1.Width = 520;
                 Button2.Height = 50;
                 Button2.Width = 520;
-                Button3.Height = 50;
-                Button3.Width = 520;
-                Button4.Height = 50;
-                Button4.Width = 520;
-                Button5.Height = 50;
-                Button5.Width = 520;
+                Exemple1.Height = 50;
+                Exemple1.Width = 520;
+                Exemple2.Height = 50;
+                Exemple2.Width = 520;
+                Exemple3.Height = 50;
+                Exemple3.Width = 520;
 
             }
 
@@ -71,6 +84,69 @@ namespace projet.Pages
             private void GoBackHome(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
+        }
+
+        private void Exemple1_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "Exemple1"; // Default file name
+            dlg.DefaultExt = ".archimind"; // Default file extension
+            dlg.Filter = "Archimind files (.archimind)|*.archimind"; // Filter files by extension
+
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                string filePath = dlg.FileName;//return the full path not only the name as it seems.
+                ProgrammePage firstPage = new ProgrammePage(filePath);
+                nchlhtmchi();
+                Frame frame = (Frame)contextofwindow.FindName("window");
+                frame.NavigationService.Navigate(firstPage);
+                //this.NavigationService.Navigate(firstPage);
+            }
+
+        }
+
+        private void Exemple2_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "Exemple2"; // Default file name
+            dlg.DefaultExt = ".archimind"; // Default file extension
+            dlg.Filter = "Archimind files (.archimind)|*.archimind"; // Filter files by extension
+
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                string filePath = dlg.FileName;//return the full path not only the name as it seems.
+                ProgrammePage firstPage = new ProgrammePage(filePath);
+                nchlhtmchi();
+                Frame frame = (Frame)contextofwindow.FindName("window");
+                frame.NavigationService.Navigate(firstPage);
+                //this.NavigationService.Navigate(firstPage);
+            }
+
+        }
+
+        private void Exemple3_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+            dlg.FileName = "Exemple3"; // Default file name
+            dlg.DefaultExt = ".archimind"; // Default file extension
+            dlg.Filter = "Archimind files (.archimind)|*.archimind"; // Filter files by extension
+
+            Nullable<bool> result = dlg.ShowDialog();
+
+            if (result == true)
+            {
+                string filePath = dlg.FileName;//return the full path not only the name as it seems.
+                ProgrammePage firstPage = new ProgrammePage(filePath);
+                nchlhtmchi();
+                Frame frame = (Frame)contextofwindow.FindName("window");
+                frame.NavigationService.Navigate(firstPage);
+                //this.NavigationService.Navigate(firstPage);
+            }
+
         }
     }
 }
