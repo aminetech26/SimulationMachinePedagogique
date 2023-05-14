@@ -2238,22 +2238,41 @@ namespace ArchiMind
                     {
 
                         case "JMP":
-                            Co.setco(UAL.calculAdresse(mem, ifdepl, valdepl));
+                            Co.setco(ccm);
                             MC.setRam(Co.getco());
-                            MC.setRim(MC.recherche_mc(MC.getRam()).getContenu());
+                           //MC.setRim(MC.recherche_mc(MC.getRam()).getContenu());
                             UAL.positionnerIndicateurs("JMP");
                             //normalement c'est ca mnkmlush l'execution de la suite --
                             break;
                         case "LOOP":
-
+                            Registre.setSp("0020");
+                            string XX; 
                             for (int i = 0; i < int.Parse(Registre.getCx()) - 1; i++)
                             {
                                 Registre.setCx(Convert.ToString((int.Parse(Registre.getCx()) - 1)));
                                 UAL.positionnerIndicateurs("LOOP");
-                                executer_simulation_phase_a_phase("INC", "Reg16", false, "SP", false, "0000", "0000", "0000", Registre.getSp(), "0000", "0000", Images, Co.getco());
                                 Co.setco(UAL.calculAdresse(mem, ifdepl, valdepl));
                                 MC.setRam(Co.getco());
-                                MC.setRim(MC.recherche_mc(MC.getRam()).getContenu());
+
+                               // executer_simulation_phase_a_phase("INC", "Reg16", false, "SP", false, "0000", "0000", "SP",Registre.getSp(), "0000", "0000", Images, Co.getco());
+                                Co.incCo();
+                                Co.CoforLoop(Co.getco());
+                                await Task.Delay(TimeSpan.FromSeconds(2));
+                                Co.incCo();
+                                Co.CoforLoop(Co.getco());
+                                await Task.Delay(TimeSpan.FromSeconds(4));
+                                Co.incCo();
+                                Co.CoforLoop(Co.getco());
+                                await Task.Delay(TimeSpan.FromSeconds(6));
+                                Co.incCo();
+                                Co.CoforLoop(Co.getco());
+                                await Task.Delay(TimeSpan.FromSeconds(8));
+                                Co.incCo();
+                                Co.CoforLoop(Co.getco());
+                                await Task.Delay(TimeSpan.FromSeconds(10));
+
+
+                                //MC.setRim(MC.recherche_mc(MC.getRam()).getContenu());
                                 //apres la on doit dechiffrer l'instruction qui se trouve a l'adresse pour pouvoir l'executer
                                 //executer instruction a l'adresse x a partir du code binaire. -- recursif chghul lehna
                             }

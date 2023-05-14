@@ -342,7 +342,7 @@
 
                             </Grid>
                             <Grid Grid.Column="1">
-                                <TextBlock  Background="#DAF3FF" Text="FDC5"   FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
+                                <TextBlock  Background="White" Text="FDC5"   FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
                            TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
 
                                 </TextBlock>

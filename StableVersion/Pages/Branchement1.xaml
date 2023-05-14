@@ -289,7 +289,24 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            
+            <Grid Grid.Column="1">
+                <Button x:Name="Button_simuler" Height="75" Width="300"
+                Style="{StaticResource RoundedButtonStyle}"
+                Foreground="White" Click="convertButton_Click"
+                BorderBrush="#4E719D" Visibility="Collapsed"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Margin="20"
+                >
+                    <Button.Background>
+                        <SolidColorBrush Color="#81C784" Opacity="0.6"/>
+                    </Button.Background>
+
+                    <TextBlock Text="Simuler Maintenant" FontFamily="Montserrat" FontSize="24" FontWeight="SemiBold" ></TextBlock>
+
+                </Button>
+
+            </Grid>
             <Grid Grid.Column="1">
                 <Button x:Name="Button_simuler1" Height="75" Width="300"
                 Style="{StaticResource RoundedButtonStyle}"

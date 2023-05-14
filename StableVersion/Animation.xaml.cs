@@ -271,7 +271,7 @@ namespace projet
             }
 
 
-            if (((Format == "Reg16/mem16") && (RegM == " Memoire ")) && (memonique != "MUL") || ((Format== "Reg16/Mem16,CX") && (RegM == " Memoire ")))
+            if (((Format == "Reg16/mem16") && (RegM == " Memoire ")) && (memonique != "MUL") || (Format== "mem16") || ((Format== "Reg16/Mem16,CX") && (RegM == " Memoire ")))
             {
 
                 MC.mc.Add(new Case { ADR = "100", Donnee = "0005" });
