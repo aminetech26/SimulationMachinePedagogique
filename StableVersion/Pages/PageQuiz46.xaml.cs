@@ -88,7 +88,7 @@ namespace projet.Pages
                 myGridExpl.Visibility = Visibility.Visible;
                 Text5.Visibility = Visibility.Visible;
                 Image2.Visibility = Visibility.Visible;
-                if (selectedItem.Content.ToString() == "OF = 0")
+                if (selectedItem.Content.ToString() == "OF = 1")
                 {
                     Text4.Visibility = Visibility.Visible;
                     Image1.Visibility = Visibility.Visible;

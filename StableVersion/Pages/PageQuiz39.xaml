@@ -100,7 +100,7 @@ SUB AX, BX
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
                                    FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
-                                   Text="l'instruction SUB AX, BX soustrait la valeur du registre BX de la valeur du registre AX et stocke le résultat dans le registre AX. La valeur de AX est donc 0x0A0A - 0x0505 = 0x0F0F. La valeur du registre BX reste inchangée à 0x0505."
+                                   Text="l'instruction SUB AX, BX soustrait la valeur du registre BX de la valeur du registre AX et stocke le résultat dans le registre AX. La valeur de AX est donc 0x0A0A - 0x0505 = 0x0505. La valeur du registre BX reste inchangée à 0x0505."
                                     />
 
                 </Grid>

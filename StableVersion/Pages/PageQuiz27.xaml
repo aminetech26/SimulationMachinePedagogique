@@ -42,7 +42,7 @@
             <TextBlock x:Name="Text2" Text="Choisir la bonne réponse" FontFamily="Montserrat" FontSize="22" 
                    FontWeight="Thin" Margin="75 3 0 0" FontStyle="Italic" />
 
-            <TextBlock x:Name="Text3" Text="●	Quelle sera l'adresse effective après l'exécution de l'instruction 'MOV [BX+SI+10], AL' si BX contient la valeur 2000H et SI contient la valeur 1000H ?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
+            <TextBlock x:Name="Text3" Text="●	Quelle sera l'adresse effective après l'exécution de l'instruction 'MOV [BX+SI+10H], AL' si BX contient la valeur 2000H et SI contient la valeur 1000H ?" FontFamily="Montserrat" FontSize="23"  TextWrapping="Wrap"
                    FontWeight="Medium" Margin="75 10 0 5" FontStyle="Normal" TextAlignment="Left" />
 
             <ComboBox Style="{DynamicResource ComboBoxStyle1}" 

@@ -99,8 +99,7 @@
 
                     <TextBlock FontFamily="Montserrat" TextWrapping="Wrap" Background="#E0E0E0"
                                    FontSize="18"   x:Name="Text5"   Margin="0,0,10,0"            
-                                   Text="l'indicateur de débordement (OF) est mis à 1 si le résultat d'une opération de multiplication ou de division ne rentre pas sur le nombre de bits prévus pour le résultat.  la multiplication de AX par BX donne un résultat qui rentre sur 16 bits, donc il n'y a pas de débordement .
-"
+                                   Text=" la multiplication de 4000H par 4000H produit un résultat de 100000H qui ne peut pas être représenté sur 16 bits en complément à deux. Donc, l'indicateur de débordement (OF) est mis à 1 après l'exécution de l'instruction 'IMUL AX, BX'."
                                     />
 
                 </Grid>

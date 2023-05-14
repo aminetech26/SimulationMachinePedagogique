@@ -89,7 +89,7 @@ namespace projet.Pages
                 myGridExpl.Visibility = Visibility.Visible;
                 Text5.Visibility = Visibility.Visible;
                 Image2.Visibility = Visibility.Visible;
-                if (selectedItem.Content.ToString() == "14 bits")
+                if (selectedItem.Content.ToString() == "13 bits")
                 {
                     Text4.Visibility = Visibility.Visible;
                     Image1.Visibility = Visibility.Visible;

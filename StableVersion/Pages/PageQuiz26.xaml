@@ -51,7 +51,7 @@
                 <ComboBoxItem>061AH</ComboBoxItem>
                 <ComboBoxItem>0612H</ComboBoxItem>
                 <ComboBoxItem>61AH</ComboBoxItem>
-                <ComboBoxItem>612H</ComboBoxItem>
+                <ComboBoxItem>0</ComboBoxItem>
             </ComboBox>
 
             <Button x:Name="Button1" Height="43" Width="125"
