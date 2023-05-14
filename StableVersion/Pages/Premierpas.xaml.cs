@@ -84,12 +84,12 @@ namespace projet.Pages
         }
         private void BackToPremierpas12(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas12.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas2.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void GoToPremierpas2(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas2.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas6.xaml", UriKind.RelativeOrAbsolute));
         }
         private void GoBack(object sender, RoutedEventArgs e)
         {

@@ -58,7 +58,7 @@ namespace projet.Pages
 
         private void toPremierpasPage(object sender, MouseButtonEventArgs e)
         {
-            Main2.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas.xaml", UriKind.RelativeOrAbsolute));
+            Main2.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas5.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void Fermer(object sender, MouseButtonEventArgs e)

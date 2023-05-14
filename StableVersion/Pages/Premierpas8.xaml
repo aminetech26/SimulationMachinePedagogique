@@ -16,13 +16,19 @@
 
             <StackPanel x:Name="stackpanel" Height="525" Width="675" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-                <TextBlock x:Name="text1" TextAlignment="Center" Text="Page des informations sur le programme a simuler" FontSize="19" Margin="0 20 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" ></TextBlock>
+                <TextBlock x:Name="text1" TextAlignment="Center" Text="page de creation du
+programme" FontSize="19" Margin="0 20 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="Auto" ></TextBlock>
 
                 <Image x:Name="image1" Source="/Pages/images/Programme 1.png" Width="375" Height="Auto" Margin="20" ></Image>
 
                 <Border x:Name="grid2" CornerRadius="3" BorderThickness="1" BorderBrush="#6F6D6D" Width="520" Background="#F7F7F7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" >
-                    <TextBlock x:Name="text2" Text="Cette page vous permet de specifier toutes les informations concernant l’instruction que vous voulez simuler a savoir sa mnemoniuqe, son format, les operandes et puis de remplir les champs des operandes impliques dans votre instruction. une fois terminer, le code operation de votre instruction apparait en hexa et vous pouvez simuler en cliquant sur Simuler Maintenant." 
-                               TextWrapping="Wrap" Padding="7" FontFamily="Open Sans" FontSize="16" Foreground="#6F6D6D"
+                    <TextBlock x:Name="text2" Text="Cette page vous permet de créer votre propre programme en choisissant depuis les listes la catégorie de
+l’instruction, la mnémonique, le format, Reg/M qui permet de spécifier s’il s’agit de registre ou mémoire
+dans les formats du type Reg16/Mem16[,xxxx], le déplacement éventuellement, la source et la
+destination et la valeur immédiate ou du déplacement en cas du besoin. Une fois le programme terminé
+vous avez la possibilité de l’enregistrer afin de le resimuler une autre fois et ceci en cliquant sur l’icone
+de sauvegarde." 
+                               TextWrapping="Wrap" Padding="7" FontFamily="Open Sans" FontSize="15" Foreground="#6F6D6D"
                                ></TextBlock>
                 </Border>
 

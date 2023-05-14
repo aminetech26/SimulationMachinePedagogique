@@ -16,13 +16,14 @@
 
             <StackPanel x:Name="stackpanel" Height="525" Width="675" HorizontalAlignment="Center" VerticalAlignment="Center" >
 
-                <TextBlock x:Name="text1" TextAlignment="Center" Text="Page consultation/sauvegarde du programme  " FontSize="19" Margin="0 20 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" ></TextBlock>
+                <TextBlock x:Name="text1" TextAlignment="Center" Text="page de programme en mnemonique et en hexa  " FontSize="19" Margin="0 20 0 0" HorizontalAlignment="Center" VerticalAlignment="Top" ></TextBlock>
 
                 <Image x:Name="image1" Source="/Pages/images/Programme 2.png" Width="375" Height="Auto" Margin="20" ></Image>
 
                 <Border x:Name="grid2" CornerRadius="3" BorderThickness="1" BorderBrush="#6F6D6D" Width="520" Background="#F7F7F7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" >
-                    <TextBlock x:Name="text2" Text="Cette page vous permet de specifier toutes les informations concernant l’instruction que vous voulez simuler a savoir sa mnemoniuqe, son format, les operandes et puis de remplir les champs des operandes impliques dans votre instruction. une fois terminer, le code operation de votre instruction apparait en hexa et vous pouvez simuler en cliquant sur Simuler Maintenant." 
-                               TextWrapping="Wrap" Padding="7" FontFamily="Open Sans" FontSize="16" Foreground="#6F6D6D"
+                    <TextBlock x:Name="text2" Text="Cette page vous permet de voir la traduction de votre programme en langage mnémonique et en hexa-
+décimal." 
+                               TextWrapping="Wrap" Padding="7" FontFamily="Open Sans" FontSize="18" Foreground="#6F6D6D"
                                ></TextBlock>
                 </Border>
 

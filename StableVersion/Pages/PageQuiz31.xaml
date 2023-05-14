@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="50" ></RowDefinition>
+            <RowDefinition Height="40" ></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="50" ></RowDefinition>
             <RowDefinition Height="80" ></RowDefinition>
@@ -30,18 +30,7 @@
         <!--<Image Grid.Row="0" Source="/Pages/retour.png" Height="35" Width="Auto" 
                Margin="30 10" HorizontalAlignment="Left"  />-->
 
-        <Button Width="50" Height="30" BorderThickness="0" HorizontalAlignment="Left"
-                VerticalAlignment="Bottom" Click="GoListQuiz" 
-                Margin="25,0,0,0" Grid.ColumnSpan="2" >
-            <Button.Template>
-                <ControlTemplate TargetType="Button">
-                    <Grid>
-                        <Image Source="/Pages/images/retour.png" Stretch="Uniform"  />
-                    </Grid>
-                </ControlTemplate>
-            </Button.Template>
-        </Button>
-
+        
 
 
         <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
@@ -66,10 +55,10 @@
             </ComboBox>
 
             <Button x:Name="Button1" Height="43" Width="125"
-                Style="{StaticResource RoundedButtonStyle}"
-                Background="#81C784"
+                Style="{StaticResource RoundedButtonStyle6}"
+                Background="#90CAF9"
                 Foreground="White"
-                BorderBrush="#81C784"
+                BorderBrush="#90CAF9"
                 HorizontalAlignment="Left"
                 Margin="75 0" Click="Reponse1"
                 >
@@ -99,9 +88,9 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <StackPanel Orientation="Horizontal" Height="40" VerticalAlignment="Top">
-                        <Image x:Name="Image2" Source="/Pages/images/idee-removebg-preview 1.png" 
-                                 Width="30" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top" />
-                        <TextBlock Text="Explication :" FontSize="23" />
+                        <Image x:Name="Image2" Source="/Pages/images/Explication.png" Margin="0 0 0 3"
+                                 Width="40" Height="Auto" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                        <TextBlock Text="Explication :" FontSize="23" FontFamily="Montserrat" FontWeight="Medium" Padding="7" TextAlignment="Center" />
                     </StackPanel>
                 </Grid>
                 <Grid Grid.Row="1" Width="Auto" >
@@ -133,10 +122,10 @@
                 </StackPanel>
             </Button>
 
-            <Button Style="{StaticResource RoundedButtonStyle}" Height="55" Width="155"
-                    Background="#81C784"
+            <Button Style="{StaticResource RoundedButtonStyle6}" Height="55" Width="155"
+                    Background="#90CAF9"
                     Foreground="white"
-                    BorderBrush="#81C784"
+                    BorderBrush="#90CAF9"
                     Margin="0 5 50 0"  x:Name="Button3" Click="Suivant"
                     >
 

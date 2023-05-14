@@ -21,7 +21,9 @@
                 <Image x:Name="image1" Source="/Pages/images/Quiz_Page_Principal.png" Width="375" Height="Auto" Margin="20" ></Image>
 
                 <Border x:Name="grid2" CornerRadius="3" BorderThickness="1" BorderBrush="#6F6D6D" Width="520" Background="#F7F7F7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" >
-                    <TextBlock x:Name="text2" Text="Cette page vous permet de specifier toutes les informations concernant l’instruction que vous voulez simuler a savoir sa mnemoniuqe, son format, les operandes et puis de remplir les champs des operandes impliques dans votre instruction. une fois terminer, le code operation de votre instruction apparait en hexa et vous pouvez simuler en cliquant sur Simuler Maintenant." 
+                    <TextBlock x:Name="text2" Text="Cette page vous permet de choisir sur quoi vous voulez exercer : des exercices du type rappels de cours
+permettant de rafraîchir votre mémoire sur les notions théoriques vu en cours afin de mieux l’assimiler
+ou bien des exercices types permettant d’évaluer et de tester vos connaissances." 
                                TextWrapping="Wrap" Padding="7" FontFamily="Open Sans" FontSize="16" Foreground="#6F6D6D"
                                ></TextBlock>
                 </Border>

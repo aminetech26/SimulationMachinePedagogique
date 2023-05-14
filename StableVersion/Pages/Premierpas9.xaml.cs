@@ -84,7 +84,7 @@ namespace projet.Pages
 
         private void GoToPremierpas10(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas10.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierspas13.xaml", UriKind.RelativeOrAbsolute));
         }
         private void GoBack(object sender, RoutedEventArgs e)
         {

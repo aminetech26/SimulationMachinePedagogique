@@ -57,9 +57,9 @@ namespace projet.Pages
                 stackpanel.Height = 525;
                 grid.Width = 675;
                 grid.Height = 525;
-                text1.FontSize = 14;
+                text1.FontSize =14;
                 text1.Width = 300;
-                text2.FontSize = 16;
+                text2.FontSize = 13;
                 text2.Width = 510;
                 grid2.Width = 520;
                 image1.Width = 375;
@@ -78,12 +78,12 @@ namespace projet.Pages
         }
         private void BackToPremierpas5(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas5.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas.xaml", UriKind.RelativeOrAbsolute));
         }
 
         private void GoToPremierpas7(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas7.xaml", UriKind.RelativeOrAbsolute));
+            NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Premierpas8.xaml", UriKind.RelativeOrAbsolute));
         }
         private void GoBack(object sender, RoutedEventArgs e)
         {

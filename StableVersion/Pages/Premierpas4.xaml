@@ -21,7 +21,10 @@
                 <Image x:Name="image1"  Source="/Pages/Programme 4.png" Width="375" Height="Auto" Margin="20" ></Image>
 
                 <Border x:Name="grid2" CornerRadius="3" BorderThickness="1" BorderBrush="#6F6D6D" Width="520" Background="#F7F7F7" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10" >
-                    <TextBlock x:Name="text2" Text="Cette page vous permet de specifier toutes les informations concernant l’instruction que vous voulez simuler a savoir sa mnemoniuqe, son format, les operandes et puis de remplir les champs des operandes impliques dans votre instruction. une fois terminer, le code operation de votre instruction apparait en hexa et vous pouvez simuler en cliquant sur Simuler Maintenant." 
+                    <TextBlock x:Name="text2" Text="Dans cette page vous pouvez simuler un programme en assembleur en voyant le changement du
+contenu des registres ainsi que les indicateurs pour chaque instruction de votre programme. En cliquant
+sur la lampe une fenêtre s’ouvre contenant un conseil sur la programmation en assembleur afin de
+perfectionner vos compétences en programmation assembleur." 
                                TextWrapping="Wrap" Padding="7" FontFamily="Open Sans" FontSize="16" Foreground="#6F6D6D"
                                ></TextBlock>
                 </Border>
