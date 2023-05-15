@@ -12,8 +12,13 @@
       }
     ],
     "additionalProbingPaths": [
+<<<<<<< Updated upstream
       "C:\\Users\\TRETEC\\.dotnet\\store\\|arch|\\|tfm|",
       "C:\\Users\\TRETEC\\.nuget\\packages",
+=======
+      "C:\\Users\\ad\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\ad\\.nuget\\packages",
+>>>>>>> Stashed changes
       "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
     ],
     "configProperties": {

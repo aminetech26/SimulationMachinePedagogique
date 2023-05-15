@@ -80,11 +80,8 @@
                            HorizontalAlignment="Left" Background="White" Foreground="Black"
                            x:Name="Instruction" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
 
-                        <ComboBoxItem>LOOP</ComboBoxItem>
-                        <ComboBoxItem>LOOPZ</ComboBoxItem>
-                        <ComboBoxItem>LOOPE</ComboBoxItem>
-                        <ComboBoxItem>LOOPNE</ComboBoxItem>
-                        <ComboBoxItem>LOOPNZ</ComboBoxItem>
+                       
+                        
                         <ComboBoxItem>CMP</ComboBoxItem>
                         <ComboBoxItem>JMP</ComboBoxItem>
                     </ComboBox>

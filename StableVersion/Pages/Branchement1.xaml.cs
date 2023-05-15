@@ -116,7 +116,7 @@ namespace projet.Pages
                 if (!Regex.IsMatch(input, @"^[0-9A-Fa-f]{4}$"))
                 {
                     tb.ToolTip = "Entrer 4 caracteres en hexa";
-                    tb.Background = Brushes.Red;
+                    tb.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#DAF3FF"));
                     allValid = false;
                 }
                 else
@@ -611,7 +611,7 @@ namespace projet.Pages
             string letter1 = Format.SelectedItem.ToString();
             //string letter2 = Reg.SelectedItem.ToString();
 
-            if ((letter != null) && ((letter1 == "Reg16/mem16,Reg16") || (letter1 == "Reg16/mem16,imm16") || (letter1 == "Reg16/mem16") || (letter1 == "mem16")))
+            if ((letter != null) && ((letter1 == "Reg16/mem16,Reg16") || (letter1 == "Reg16/mem16,imm16") || (letter1 == "Reg16,Reg16/mem16") || (letter1 == "mem16")))
             {
                 if (string.Compare(letter, "Avec deplacement") == 0)
                 {
@@ -710,7 +710,7 @@ namespace projet.Pages
 
 
 
-            if ((letter1 != null) && ((letter2 == "Reg16/mem16,Reg16") || (letter2 == "Reg16/mem16,imm16") || (letter2 == "Reg16/mem16")))
+            if ((letter1 != null) && ((letter2 == "Reg16/mem16,Reg16") || (letter2 == "Reg16/mem16,imm16") || (letter2 == "Reg16,Reg16/mem16")))
             {
                 letter3 = Reg.SelectedItem.ToString();
                 Reg.IsEnabled = false;
@@ -1000,7 +1000,7 @@ namespace projet.Pages
                     Source.Items.Add("SP");
                 }
 
-                if ((letter2 == "Reg16/mem16,imm16") || (letter2 == "Reg16/mem16"))
+                if ((letter2 == "Reg16/mem16,imm16") || (letter2 == "Reg16,Reg16/mem16"))
                 {
                     if (letter3 == " Memoire ")
                     {

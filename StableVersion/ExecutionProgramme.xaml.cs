@@ -518,6 +518,7 @@ namespace projet
                
                 // vu que xchng a une animation particulier on va la traiter dans le switch
               
+
                     Registre.setContenuRegistre(distinataire, result); 
 
               
@@ -820,7 +821,7 @@ namespace projet
         }
         //-----------------------------------------------------------------------------------
         public async static void execution_programme(string mnemonique, string format, string destination, string source, bool mem = true, bool ifdepl = true, string valdep = "", string val_imm16 = "")
-        {
+        { 
             //pop up pour recuperer contenu case memoire || cas format avec memoire
             ContenuCaseMemoirePopUp cont = new ContenuCaseMemoirePopUp();
             // les registres
@@ -833,6 +834,23 @@ namespace projet
             TextBox DI = (TextBox)instance.FindName("DI");
             TextBox BP = (TextBox)instance.FindName("BP");
             TextBox SP = (TextBox)instance.FindName("SP");
+            MC.setRam(Co.getco()); 
+            Instruction inst = new Instruction(mnemonique,format,destination,source, mem,ifdepl,valdep,val_imm16);
+            JeuxInstruction o = new JeuxInstruction();
+            o.intialize();
+            string instructionHexForme = o.inst_to_hexaforme(inst);
+            if (string.IsNullOrEmpty(instructionHexForme) || instructionHexForme.Length < 4)
+            {
+                MC.setRim(instructionHexForme);
+            }
+            else
+            {
+                MC.setRim( instructionHexForme.Substring(0, 4));
+            }
+            Ri.setRi(MC.getRim()); 
+
+
+
             Case case_memoire = new Case();
             string result = "";
             //page phase2;
@@ -1008,12 +1026,12 @@ namespace projet
                                     break;
                             }
                             JeuxInstruction.SetInt(result);
-                           // if (mnemonique != "XCHG")
-                         //   {
+                           if (mnemonique != "XCHG")
+                          {
                                 UAL.positionnerIndicateurs(mnemonique, result, Registre.getContenuRegistre(destination), Registre.getContenuRegistre(source));
                                 Registre.setContenuRegistre(destination, result);
                                 // vu que xchng a une animation particulier on va la traiter dans le switch
-                          //  }
+                          }
                         }
                     }
                     break;

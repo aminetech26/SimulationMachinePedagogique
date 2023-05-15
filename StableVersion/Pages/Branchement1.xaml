@@ -35,9 +35,9 @@
             </Button>
 
             <Button x:Name="actualiser" Width="30" Height="30" HorizontalAlignment="Center"
-                    VerticalAlignment="Center" Margin="625 0 0 0" Background="White"  BorderBrush="Blue"
+                    VerticalAlignment="Center" Margin="625 0 0 0"  BorderBrush="Blue"
                     Click="Actualiser" BorderThickness="0" >
-                <TextBlock Text="AC" FontWeight="Bold"/>
+                <TextBlock Text="AC" FontWeight="Bold" Visibility="Visible"/>
 
                 <!--<Image Source="/Pages/images/Actualiser.png" />-->
 
@@ -79,11 +79,7 @@
                            HorizontalAlignment="Left" Background="White" Foreground="Black"
                            x:Name="Instruction" Style="{DynamicResource MaterialDesignOutlinedComboBox}">
 
-                        <ComboBoxItem>LOOP</ComboBoxItem>
-                        <ComboBoxItem>LOOPZ</ComboBoxItem>
-                        <ComboBoxItem>LOOPE</ComboBoxItem>
-                        <ComboBoxItem>LOOPNE</ComboBoxItem>
-                        <ComboBoxItem>LOOPNZ</ComboBoxItem>
+                       
                         <ComboBoxItem>CMP</ComboBoxItem>
                         <ComboBoxItem>JMP</ComboBoxItem>
                     </ComboBox>

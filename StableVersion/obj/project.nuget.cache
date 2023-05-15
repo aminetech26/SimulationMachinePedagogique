@@ -1,5 +1,6 @@
 {
   "version": 2,
+<<<<<<< Updated upstream
   "dgSpecHash": "Rc5TukBXKF3AYmkYf2XRUdUDWH5GK1YH2ytAewJjqD/M9VYMq9k3IbmUCaDkQp4M7jogqX7ctpW677KN1dtmaQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\TRETEC\\Videos\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
@@ -22,6 +23,30 @@
     "C:\\Users\\TRETEC\\.nuget\\packages\\polly\\7.2.3\\polly.7.2.3.nupkg.sha512",
     "C:\\Users\\TRETEC\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
     "C:\\Users\\TRETEC\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
+=======
+  "dgSpecHash": "YFl8FTIazS7xbVgpycyMRug6KFa/pI9xmH20XIwciejeifAlaZkXml35Eehlt7GACczEM5IZF4a/270sBlNfWQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ad\\Desktop\\ARCHIMIND\\LASTVERSION\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ad\\.nuget\\packages\\ark.tools.core\\4.9.2\\ark.tools.core.4.9.2.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\ark.tools.newtonsoftjson\\4.9.2\\ark.tools.newtonsoftjson.4.9.2.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\ark.tools.nodatime\\4.9.2\\ark.tools.nodatime.4.9.2.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\ark.tools.nodatime.json\\4.9.2\\ark.tools.nodatime.json.4.9.2.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\avalonedit\\6.3.0.90\\avalonedit.6.3.0.90.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\ensure.that\\10.1.0\\ensure.that.10.1.0.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\materialdesigncolors\\2.1.2\\materialdesigncolors.2.1.2.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\materialdesignthemes\\4.7.1\\materialdesignthemes.4.7.1.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\microsoft.codeanalysis.netanalyzers\\7.0.1\\microsoft.codeanalysis.netanalyzers.7.0.1.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\morelinq\\3.4.2\\morelinq.3.4.2.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\nodatime\\3.1.9\\nodatime.3.1.9.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\nodatime.serialization.jsonnet\\3.0.1\\nodatime.serialization.jsonnet.3.0.1.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\polly\\7.2.3\\polly.7.2.3.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
+    "C:\\Users\\ad\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.7.1\\system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
+>>>>>>> Stashed changes
   ],
   "logs": []
 }

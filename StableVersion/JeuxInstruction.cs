@@ -42,75 +42,75 @@ namespace ArchiMind
             switch (Indicateur.getZero())
             {
                 case '1':
-                    Z.Background = new SolidColorBrush(Colors.GreenYellow);
+                    Z.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    Z.Background = new SolidColorBrush(Colors.DarkOliveGreen);
+                    Z.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
                     // default: Z.Fill = new SolidColorBrush(Colors.Black); break;
             }
             switch (Indicateur.getSigne())
             {
                 case '1':
-                    S.Background = new SolidColorBrush(Colors.GreenYellow);
+                    S.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    S.Background = new SolidColorBrush(Colors.DarkOliveGreen);
+                    S.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getOverflow())
             {
                 case '1':
-                    D.Background = new SolidColorBrush(Colors.GreenYellow);
+                    D.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    D.Background = new SolidColorBrush(Colors.DarkOliveGreen);
+                    D.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
 
             switch (Indicateur.getRetenu())
             {
                 case '1':
-                    R.Background = new SolidColorBrush(Colors.GreenYellow);
+                    R.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    R.Background = new SolidColorBrush(Colors.DarkOliveGreen);
+                    R.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getretenuAuxiliaire())
             {
                 case '1':
-                    A.Background = new SolidColorBrush(Colors.GreenYellow);
+                    A.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    A.Background = new SolidColorBrush(Colors.DarkOliveGreen);
+                    A.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getParite())
             {
                 case '1':
-                    P.Background = new SolidColorBrush(Colors.GreenYellow);
+                    P.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    P.Background = new SolidColorBrush(Colors.DarkOliveGreen);
+                    P.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getTrace())
             {
                 case '1':
-                    T.Background = new SolidColorBrush(Colors.GreenYellow);
+                    T.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    T.Background = new SolidColorBrush(Colors.DarkOliveGreen);
+                    T.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getAutoIncrDec())
             {
                 case '1':
-                    I.Background = new SolidColorBrush(Colors.GreenYellow);
+                    I.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    I.Background = new SolidColorBrush(Colors.DarkOliveGreen);
+                    I.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
         }
@@ -330,75 +330,75 @@ namespace ArchiMind
             switch (Indicateur.getZero())
             {
                 case '1':
-                    Z.Fill = new SolidColorBrush(Colors.Red);
+                    Z.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    Z.Fill = new SolidColorBrush(Colors.Blue);
+                    Z.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
                     // default: Z.Fill = new SolidColorBrush(Colors.Black); break;
             }
             switch (Indicateur.getSigne())
             {
                 case '1':
-                    S.Fill = new SolidColorBrush(Colors.Red);
+                    S.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    S.Fill = new SolidColorBrush(Colors.Blue);
+                    S.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getOverflow())
             {
                 case '1':
-                    D.Fill = new SolidColorBrush(Colors.Red);
+                    D.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    D.Fill = new SolidColorBrush(Colors.Blue);
+                    D.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
 
             switch (Indicateur.getRetenu())
             {
                 case '1':
-                    R.Fill = new SolidColorBrush(Colors.Red);
+                    R.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    R.Fill = new SolidColorBrush(Colors.Blue);
+                    R.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getretenuAuxiliaire())
             {
                 case '1':
-                    A.Fill = new SolidColorBrush(Colors.Red);
+                    A.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    A.Fill = new SolidColorBrush(Colors.Blue);
+                    A.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getParite())
             {
                 case '1':
-                    P.Fill = new SolidColorBrush(Colors.Red);
+                    P.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    P.Fill = new SolidColorBrush(Colors.Blue);
+                    P.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getTrace())
             {
                 case '1':
-                    T.Fill = new SolidColorBrush(Colors.Red);
+                    T.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    T.Fill = new SolidColorBrush(Colors.Blue);
+                    T.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
             switch (Indicateur.getAutoIncrDec())
             {
                 case '1':
-                    I.Fill = new SolidColorBrush(Colors.Red);
+                    I.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7CF6FD"));
                     break;
                 case '0':
-                    I.Fill = new SolidColorBrush(Colors.Blue);
+                    I.Fill = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#3285a8"));
                     break;
             }
         }
@@ -1435,8 +1435,13 @@ namespace ArchiMind
                         JeuxInstruction.SetInt(result);
                         resultf = JeuxInstruction.GetInt();
                         break;
+                    case "CMP":
+                        result = (Convert.ToInt32(UAL.getUal1(), 16) - Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                        JeuxInstruction.SetInt(result);
+                        resultf = JeuxInstruction.GetInt();
+                        break;
                 }
-                UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
+                UAL.positionnerIndicateurs(mnemonique, result);
                 string r = JeuxInstruction.GetInt();
                 if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                 Animation.AnimateImage2(Images[70], Images[73], -1165, -30, -1210, -465, 1);
@@ -1505,12 +1510,16 @@ namespace ArchiMind
                     case "XOR":
                         result = (Convert.ToInt32(UAL.getUal1(), 16) ^ Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
                         break;
+                    case "CMP":
+                        result = (Convert.ToInt32(UAL.getUal1(), 16) - Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                        JeuxInstruction.SetInt(result);
+                     break;
                 }
 
 
                 // animation(ual, registre, donne);
                 // sortie to registr
-                UAL.positionnerIndicateurs(mnemonique, result, UAL.getUal1(), UAL.getUal2());
+                UAL.positionnerIndicateurs(mnemonique, result);
                 if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                 Animation.AnimateImage2(Images[57], Images[54], -1165, -30, -1210, -465, 1);
                 Animation.AnimateImage2(Images[58], Images[55], -1165, -30, -1210, -465, 1);
@@ -2056,6 +2065,10 @@ namespace ArchiMind
                                 result = (Convert.ToInt32(ccm, 16) ^ Convert.ToInt32(val1, 16)).ToString("X4");
                                 JeuxInstruction.SetInt(result);
                                 break;
+                            case "CMP":
+                            result = (Convert.ToInt32(UAL.getUal1(), 16) - Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                            JeuxInstruction.SetInt(result);
+                                break;
                         }
                         if (Animation.btnclick == true) { Phase3(mnemonique, format, mem_b); await Task.Delay(5000); }
                         UAL.positionnerIndicateurs(mnemonique, result, ccm, val1);
@@ -2125,6 +2138,10 @@ namespace ArchiMind
                                 break;
                             case "XOR":
                                 result = (Convert.ToInt32(UAL.getUal1(), 16) ^ Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
+                                JeuxInstruction.SetInt(result);
+                                break;
+                            case "CMP":
+                                result = (Convert.ToInt32(UAL.getUal1(), 16) - Convert.ToInt32(UAL.getUal2(), 16)).ToString("X4");
                                 JeuxInstruction.SetInt(result);
                                 break;
                         }
@@ -2247,11 +2264,13 @@ namespace ArchiMind
                         case "LOOP":
                             Registre.setSp("0020");
                             string XX;
+                            int cxInt = 0; 
                             for (int i = 0; i < int.Parse(Registre.getCx()) - 1; i++)
                             {
-                                Registre.setCx(Convert.ToString((int.Parse(Registre.getCx()) - 1)));
+                               //Registre.setCx(Convert.ToString((int.Parse(Registre.getCx()) - 1)));
                                 UAL.positionnerIndicateurs("LOOP");
-                                Co.setco(UAL.calculAdresse(mem, ifdepl, valdepl));
+                               XX =  UAL.calculAdresse(mem, ifdepl, valdepl);
+                                Co.setco(XX);
                                 MC.setRam(Co.getco());
 
                                 // executer_simulation_phase_a_phase("INC", "Reg16", false, "SP", false, "0000", "0000", "SP",Registre.getSp(), "0000", "0000", Images, Co.getco());
@@ -2260,16 +2279,16 @@ namespace ArchiMind
                                 await Task.Delay(TimeSpan.FromSeconds(2));
                                 Co.incCo();
                                 Co.CoforLoop(Co.getco());
-                                await Task.Delay(TimeSpan.FromSeconds(4));
+                                await Task.Delay(TimeSpan.FromSeconds(2));
                                 Co.incCo();
                                 Co.CoforLoop(Co.getco());
-                                await Task.Delay(TimeSpan.FromSeconds(6));
+                                await Task.Delay(TimeSpan.FromSeconds(2));
                                 Co.incCo();
                                 Co.CoforLoop(Co.getco());
-                                await Task.Delay(TimeSpan.FromSeconds(8));
+                                await Task.Delay(TimeSpan.FromSeconds(2));
                                 Co.incCo();
                                 Co.CoforLoop(Co.getco());
-                                await Task.Delay(TimeSpan.FromSeconds(10));
+                                await Task.Delay(TimeSpan.FromSeconds(2));
 
 
                                 //MC.setRim(MC.recherche_mc(MC.getRam()).getContenu());
