@@ -48,29 +48,14 @@ namespace projet
         public ProgrammePage()
         {
             InitializeComponent();
-            Loaded += ProgrammePage_Loaded;
         }
         public ProgrammePage(string filePath = "")
         {
             InitializeComponent();
-            Loaded += ProgrammePage_Loaded;
             if(filePath != "") {
                 LoadProgramFromFile(filePath);
             }
         }
-        private void ProgrammePage_Loaded(object sender, RoutedEventArgs e)
-        {
-            programInstructions = new List<Instruction>();//bech a chaque nreinitialiser
-        }
-        //private void Go_Back(object sender, RoutedEventArgs e)
-        //{
-        //    this.Close();
-        //}
-
-
-
-
-
         private Instruction SetInstruction(string mnemonique, string format, string destination, string source, bool mem, bool ifdepl, string valdep,string val_imm16)
         {
             Instruction new_instruction = new Instruction(mnemonique, format, destination, source, mem, ifdepl, valdep,val_imm16);
@@ -221,23 +206,14 @@ namespace projet
             
             Creerprogramme secondPage = new Creerprogramme(programInstructions);
             this.NavigationService.Navigate(secondPage);
-
             Set_number_inst(currentLineNumber);
 
         }
-
-
-
-
 
         private void GoBack_To_Home(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new Uri("/Pages/Page1.xaml", UriKind.Relative));
         }
-
-
-
-
 
 
         public void SaveProgramToFile(string filename)
@@ -269,10 +245,9 @@ namespace projet
         }
 
 
-
         public void LoadProgramFromFile(string filePath)
         {
-            int currentLineNumber = 1;
+            currentLineNumber = 1;
 
                 //    string filePathJson = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\schema.json";
                 //    string filePathArchimind = @"C:\Users\Amine's PC\Music\SimulationMachinePedagogique\StableVersion\ArchimindFiles\Program.archimind";
@@ -407,21 +382,22 @@ namespace projet
                 SaveProgramToFile(filePath);
             }
         }
-        private void LoadButton_Click(object sender, RoutedEventArgs e)
-        {
-            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            dlg.FileName = "Program"; // Default file name
-            dlg.DefaultExt = ".archimind"; // Default file extension
-            dlg.Filter = "Archimind files (.archimind)|*.archimind"; // Filter files by extension
 
-            Nullable<bool> result = dlg.ShowDialog();
+        //private void LoadButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+        //    dlg.FileName = "Program"; // Default file name
+        //    dlg.DefaultExt = ".archimind"; // Default file extension
+        //    dlg.Filter = "Archimind files (.archimind)|*.archimind"; // Filter files by extension
 
-            if (result == true)
-            {
-                string filePath = dlg.FileName;//return the full path not only the name as it seems.
-                LoadProgramFromFile(filePath);
-            }
-        }
+        //    Nullable<bool> result = dlg.ShowDialog();
+
+        //    if (result == true)
+        //    {
+        //        string filePath = dlg.FileName;//return the full path not only the name as it seems.
+        //        LoadProgramFromFile(filePath);
+        //    }
+        //}
 
 
 

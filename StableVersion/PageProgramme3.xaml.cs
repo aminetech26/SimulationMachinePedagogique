@@ -123,7 +123,6 @@ namespace projet
 
         private void suivant_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hello i'm clicked");
             Registre.setAx(AX.Text);
             Registre.setBx(BX.Text);
             Registre.setCx(CX.Text);
@@ -133,7 +132,6 @@ namespace projet
             Registre.setSp(SP.Text);
             Registre.setBp(BP.Text);
             //test
-            MessageBox.Show("AX:"+Registre.getAx()+"BP:"+Registre.getBp());
             //navigate to execution page.
             ExecutionProgramme thirdPage = new ExecutionProgramme(programInst);
             this.NavigationService.Navigate(thirdPage);

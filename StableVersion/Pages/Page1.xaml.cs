@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Channels;
 using System.Threading.Tasks;
@@ -13,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.WebRequestMethods;
 
 namespace projet.Pages
 {
@@ -40,6 +43,8 @@ namespace projet.Pages
             InitializeComponent();
             Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
 
+            WebSite_Button.PreviewMouseDown += OpenWebsite;
+
         }
 
 
@@ -64,7 +69,25 @@ namespace projet.Pages
         {
             Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/Home.xaml", UriKind.RelativeOrAbsolute));
         }
-        
+
+        private void OpenWebsite(object sender, MouseButtonEventArgs e)
+        {
+            string websiteUrl = "https://archimind.netlify.app/";
+
+            // Prefix the URL with "http://" or "https://" to open it in a web browser
+            if (!websiteUrl.StartsWith("http://") && !websiteUrl.StartsWith("https://"))
+            {
+                websiteUrl = "http://" + websiteUrl;
+            }
+
+            // Open the website in the default browser
+            System.Diagnostics.Process.Start(new ProcessStartInfo
+            {
+                FileName = websiteUrl,
+                UseShellExecute = true
+            });
+        }
+
         private void toSimulateurPage(object sender, MouseButtonEventArgs e)
         {
             Main.NavigationService.Navigate(new Uri("pack://application:,,,/Pages/PageSimulateur.xaml", UriKind.RelativeOrAbsolute));

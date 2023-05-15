@@ -75,8 +75,8 @@
                                 </Grid>
                             </Menu:Btn>
 
-                            <Menu:Btn Style="{StaticResource BtnStyle}"
-                                      Margin="0,50,0,0" >
+                            <Menu:Btn Style="{StaticResource BtnStyle}" PreviewMouseDown="OpenWebsite"
+                                      Margin="0,50,0,0" x:Name="WebSite_Button" >
 
                                 <Grid>
                                     <Image Source="/Pages/images/siteweb.png"

@@ -41,7 +41,7 @@
                 </Button>
 
                 <StackPanel Grid.Column="1" >
-                    <TextBlock Text="Cree un programme" 
+                    <TextBlock Text="Creer un programme" 
                            TextAlignment="Center" VerticalAlignment="Center" FontFamily="Open Sans" Padding="5" Margin="0 10" 
                            FontSize="25" FontWeight="Bold" Foreground="White"
                            ></TextBlock>
@@ -82,7 +82,7 @@
 
             <!-- First 4 elements -->
 
-            <StackPanel Grid.Column="0" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <StackPanel Grid.Column="0" x:Name="Stack1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 25 0 0" >
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type TextBox}">
                         <Setter Property="FontSize" Value="20"/>
@@ -151,7 +151,7 @@
 
             <!-- Second 4 elements -->
 
-            <StackPanel Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <StackPanel x:Name="Stack2" Grid.Column="1" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 25 0 0" >
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type TextBox}">
                         <Setter Property="FontSize" Value="20"/>
@@ -221,7 +221,7 @@
 
             <!-- Third 4 elements -->
 
-            <StackPanel Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <StackPanel x:Name="Stack3" Grid.Column="2" Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0 25 0 0" >
                 <StackPanel.Resources>
                     <Style TargetType="{x:Type TextBox}">
                         <Setter Property="FontSize" Value="20"/>
@@ -432,10 +432,23 @@
 
 
         </Grid>
-        <TextBlock x:Name="DelayTextBlock" Margin="554,398,65,18" Grid.Row="1">Value selected :</TextBlock>
-        <Slider Name="DelaySlider" Minimum="0" Maximum="1000" Value="100" TickFrequency="100" Margin="67,402,555,22" Grid.Row="1" />
-        <Button Width="200" Height="50" Name="Execution_Button" Click="ButtonExecuter_Click" Margin="300,390,300,10" Grid.Row="1">Start</Button>
-        
+
+        <TextBlock x:Name="DelayTextBlock" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="-800 0 0 80" 
+                   Grid.Row="1" Text="Controller la vitesse de simulation" TextAlignment="Center" FontWeight="SemiBold"
+                   Foreground="White" FontSize="19" FontFamily="Courier" ></TextBlock>
+        <Slider x:Name="DelaySlider" VerticalAlignment="Bottom" Width="300" HorizontalAlignment="Center"
+                   Minimum="0" Maximum="1000" Value="100" TickFrequency="100" Margin="-800 0 0 30" 
+                   Grid.Row="1" />
+
+        <Button Width="200" Height="50" Foreground="White" Background="#317AC7" x:Name="Execution_Button" Click="ButtonExecuter_Click" 
+                VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="-100 0 0 25" Grid.Row="1"
+                Style="{StaticResource RoundedButtonStyle7}" BorderBrush="#317AC7" BorderThickness="0"
+                >
+            <TextBlock Text="Start" FontFamily="Montserrat" Padding="5" 
+                       FontSize="20" FontWeight="SemiBold"/>
+        </Button>
+
+
         <!--************************************* PopUp " Conseil du jour " *************************************-->
 
 

@@ -32,7 +32,7 @@
                 </Setter>
             </Style>
 
-           
+
             <Style x:Key="{x:Type ScrollBar}" TargetType="{x:Type ScrollBar}">
                 <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
                 <Setter Property="Foreground" Value="#D9D9D9"/>
@@ -94,14 +94,14 @@
     </Page.Resources>
 
     <Grid Background="#90CAF9" >
-        
+
         <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="4.17*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="4.17*"/>
         </Grid.RowDefinitions>
 
-        
+
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -138,9 +138,8 @@
         </Grid>
 
         <Grid Grid.Row="1" >
-           
+
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
@@ -166,236 +165,23 @@
                 />
 
             </Button>
-            
-            <Button x:Name="Button3" Style="{StaticResource RoundedButtonStyle8}"  Height="40" Width="Auto" 
-                    Margin="10 0" Click="Hexadecimal" Grid.Column="3" VerticalAlignment="Center" >
-
-                <StackPanel Orientation="Horizontal" Width="200" Height="Auto" >
-                    <Image Source="/Pages/images/enregistrer.png" Height="Auto" Width="30" Margin="15 0 10 0"/>
-                    <TextBlock Text="Sauvegarder" TextAlignment="Center" FontFamily="Open Sans" 
-                                       FontSize="18" FontWeight="Regular" VerticalAlignment="Center"
-                                       Padding="0" Margin="0" 
-                                   />
-                </StackPanel>
-
-            </Button>
-          
 
         </Grid>
-     
+
         <Border x:Name="BorderHexadecimal" CornerRadius="20" Background="White" Margin="70 10 70 25" Grid.Row="2" >
 
             <Grid >
-
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
                 <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0"  >
 
-                    <StackPanel>
-                        <Grid Margin="15 10 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="1" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
+                    <Grid VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="Grid_Hexa" Margin="35 20 0 0" >
 
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock  Background="White" Text="FDC5_Hexadecimal"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Montserrat" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5"   >
+                    </Grid>
 
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-                        <Grid Margin="15 0 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="2" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
-
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock Background="White"  Text="FDC5"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-                        <Grid Margin="15 0 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock   Text="3" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
-
-                            </Grid>
-                            <Grid Grid.Column="3">
-                                <TextBlock  Background="White"  Text="FDC5"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-                        <Grid Margin="15 0 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="4" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
-
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock  Background="White"   Text="FDC5"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-                        <Grid Margin="15 0 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="5" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
-
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock  Background="White"  Text="FDC5"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-
-                        <Grid Margin="15 0 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="6" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
-
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock  Background="White"   Text="FDC5"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-                        <Grid Margin="15 0 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="7" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64"  />
-
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock  Background="White" Text="FDC5" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-                        <Grid Margin="15 0 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="8" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
-
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock  Background="White" Text="FDC5"   FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-                        <Grid Margin="15 0 15 0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="9" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
-
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock  Background="White"  Text="FDC5"  FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-
-                                </TextBlock>
-
-                            </Grid>
-                        </Grid>
-                        
-                        
-                        
-                        <Grid Margin="15 0 15 15">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="7*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid Grid.Column="0">
-                                <TextBlock  Text="10" FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Center"  FontFamily="Open Sans" 
-                           TextAlignment="Center"  Foreground="#4E719D" Height="64" />
-
-                            </Grid>
-                            <Grid Grid.Column="1">
-                                <TextBlock  Background="White" Text="FDC5"   FontStyle="Normal" FontSize="22" FontWeight="Bold" Padding="18" HorizontalAlignment="Left"  FontFamily="Open Sans" 
-                           TextAlignment="Left"  Foreground="#7A7A7A" Height="64" Width="545" RenderTransformOrigin="0.5,0.5" >
-
-                                </TextBlock>
-
-                            </Grid>
-
-
-                        </Grid>
-
-
-
-                    </StackPanel>
                 </ScrollViewer>
 
 
@@ -403,12 +189,16 @@
 
             </Grid>
         </Border>
-        
+
         <Border x:Name="BorderMnemonique" CornerRadius="20" Background="White" Margin="70 10 70 25" Grid.Row="2" >
 
             <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="25*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
 
-                <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0"  >
+                <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.ColumnSpan="2"  >
 
                     <Grid VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="Grid_Mnem" Margin="35 20 0 0" >
 
@@ -423,6 +213,6 @@
 
 
     </Grid>
-            
-   
+
+
 </Page>

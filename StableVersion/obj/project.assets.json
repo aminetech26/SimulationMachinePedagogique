@@ -961,24 +961,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ad\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ad\\Desktop\\ARCHIMIND\\LASTVERSION\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+      "projectUniqueName": "C:\\Ilyes\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
       "projectName": "projet",
-      "projectPath": "C:\\Users\\ad\\Desktop\\ARCHIMIND\\LASTVERSION\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
-      "packagesPath": "C:\\Users\\ad\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ad\\Desktop\\ARCHIMIND\\LASTVERSION\\SimulationMachinePedagogique\\StableVersion\\obj\\",
+      "projectPath": "C:\\Ilyes\\SimulationMachinePedagogique\\StableVersion\\projet.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Ilyes\\SimulationMachinePedagogique\\StableVersion\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\ad\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -986,7 +981,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -1044,13 +1038,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problème de lecture du fichier cache C:\\Users\\ad\\Desktop\\ARCHIMIND\\LASTVERSION\\SimulationMachinePedagogique\\StableVersion\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }

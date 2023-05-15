@@ -210,7 +210,7 @@
 
             </Grid>
 
-            <Border Background="#DAF3FF" Height="50" Width="200" HorizontalAlignment="Center"
+            <Border Background="#DAF3FF" Height="50" Width="125" HorizontalAlignment="Center"
                     CornerRadius="15 15 0 0" Grid.Column="1" 
                     >
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
@@ -226,16 +226,6 @@
                         </Button.Template>
                     </Button>
 
-                    <Button Grid.Column="0" x:Name="LoadPage" Click="LoadButton_Click" Background="Transparent" 
-                            Margin="20 0" Width="30" Height="Auto" BorderBrush="Transparent" BorderThickness="0">
-                        <Button.Template>
-                            <ControlTemplate TargetType="Button">
-                                <Grid>
-                                    <Image Source="/Pages/images/add.png" Height="Auto" Width="30" Stretch="Uniform"  />
-                                </Grid>
-                            </ControlTemplate>
-                        </Button.Template>
-                    </Button>
                     
                 </StackPanel>
                 

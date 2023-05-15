@@ -4,9 +4,11 @@
                 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 mc:Ignorable="d"
-                Title="MainWindow" Height="600" Width="1028"             
+                Title="ArchiMind" Height="600" Width="1028"             
                 WindowStartupLocation="CenterScreen" MinHeight="600" MinWidth="1028" 
-                Background="Transparent">
+                Background="Transparent"
+                Icon="/Pages/images/logo.png"
+        >
 
 
     <Frame Name="window" NavigationUIVisibility="Hidden" ></Frame>
